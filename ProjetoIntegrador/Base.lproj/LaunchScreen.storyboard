@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pdb-hI-RG8">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="hp1-vT-5UX">
+            <objects>
+                <viewController id="pdb-hI-RG8" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Gc4-2t-zFP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoMarvel" translatesAutoresizingMaskIntoConstraints="NO" id="ThW-4l-pd0">
+                                <rect key="frame" x="87" y="384" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="NSJ-3X-5Tm"/>
+                                    <constraint firstAttribute="width" constant="240" id="rZG-gc-Ec7"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="DJG-Xi-GgE"/>
+                        <color key="backgroundColor" red="0.85490196939999996" green="0.21960783" blue="0.19607841970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="ThW-4l-pd0" firstAttribute="centerY" secondItem="Gc4-2t-zFP" secondAttribute="centerY" id="EOF-Tl-C6J"/>
+                            <constraint firstItem="ThW-4l-pd0" firstAttribute="centerY" secondItem="Gc4-2t-zFP" secondAttribute="centerY" id="GRh-0M-KVd"/>
+                            <constraint firstItem="ThW-4l-pd0" firstAttribute="centerX" secondItem="Gc4-2t-zFP" secondAttribute="centerX" id="PkC-ec-Xr0"/>
+                            <constraint firstItem="ThW-4l-pd0" firstAttribute="centerX" secondItem="Gc4-2t-zFP" secondAttribute="centerX" id="bN3-hO-AC7"/>
+                            <constraint firstItem="ThW-4l-pd0" firstAttribute="centerY" secondItem="Gc4-2t-zFP" secondAttribute="centerY" id="nn8-mt-TnG"/>
+                            <constraint firstItem="ThW-4l-pd0" firstAttribute="centerX" secondItem="Gc4-2t-zFP" secondAttribute="centerX" id="rUj-jk-ujJ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dEc-5K-7FA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="36" y="376"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="logoMarvel" width="2560" height="1029"/>
+    </resources>
+</document>
