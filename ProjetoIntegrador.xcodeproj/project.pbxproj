@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1629ED2B28417271009F9D2C /* Main Tela Cadastro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1629ED2A28417271009F9D2C /* Main Tela Cadastro.storyboard */; };
 		16753069283EB9F700D7CE3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16753068283EB9F700D7CE3A /* AppDelegate.swift */; };
 		1675306B283EB9F700D7CE3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1675306A283EB9F700D7CE3A /* SceneDelegate.swift */; };
 		1675306D283EB9F700D7CE3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1675306C283EB9F700D7CE3A /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1629ED2A28417271009F9D2C /* Main Tela Cadastro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Main Tela Cadastro.storyboard"; sourceTree = "<group>"; };
 		16753065283EB9F700D7CE3A /* ProjetoIntegrador.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetoIntegrador.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16753068283EB9F700D7CE3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1675306A283EB9F700D7CE3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				1675306A283EB9F700D7CE3A /* SceneDelegate.swift */,
 				1675306C283EB9F700D7CE3A /* ViewController.swift */,
 				1675306E283EB9F700D7CE3A /* Main.storyboard */,
+				1629ED2A28417271009F9D2C /* Main Tela Cadastro.storyboard */,
 				16753074283EB9F800D7CE3A /* Assets.xcassets */,
 				16753076283EB9F800D7CE3A /* LaunchScreen.storyboard */,
 				16753079283EB9F800D7CE3A /* Info.plist */,
@@ -234,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1629ED2B28417271009F9D2C /* Main Tela Cadastro.storyboard in Resources */,
 				16753078283EB9F800D7CE3A /* LaunchScreen.storyboard in Resources */,
 				16753075283EB9F800D7CE3A /* Assets.xcassets in Resources */,
 				16753070283EB9F700D7CE3A /* Main.storyboard in Resources */,
