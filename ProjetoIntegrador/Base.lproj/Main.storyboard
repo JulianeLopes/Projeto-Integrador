@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Favoritos-->
         <scene sceneID="yUZ-7A-Nt5">
             <objects>
                 <viewController id="ll5-b8-UTf" sceneMemberID="viewController">
@@ -132,11 +132,12 @@
                             <constraint firstItem="UCg-wx-GqY" firstAttribute="trailing" secondItem="VMC-CT-UKr" secondAttribute="trailing" id="XPe-OE-R4o"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Favoritos" image="coracao" id="Gja-Nz-tpd"/>
                     <navigationItem key="navigationItem" id="YJY-ea-F38"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psJ-QO-OwJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="333.33333333333337" y="2181.0267857142858"/>
+            <point key="canvasLocation" x="138" y="1338"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="scU-uQ-ahO">
@@ -389,16 +390,16 @@
                     </tabBar>
                     <connections>
                         <segue destination="168-bl-aB6" kind="relationship" relationship="viewControllers" id="Kpf-ar-Lej"/>
-                        <segue destination="BuY-qi-z7d" kind="relationship" relationship="viewControllers" id="hfT-Fk-0G4"/>
-                        <segue destination="fHp-5B-2Ia" kind="relationship" relationship="viewControllers" id="WuW-mb-VLT"/>
-                        <segue destination="63T-Hx-zKK" kind="relationship" relationship="viewControllers" id="Lg3-tg-PI2"/>
+                        <segue destination="Au0-jG-IHi" kind="relationship" relationship="viewControllers" id="xIL-BC-kis"/>
+                        <segue destination="6oC-yW-fv3" kind="relationship" relationship="viewControllers" id="Hvv-uy-GkR"/>
+                        <segue destination="ll5-b8-UTf" kind="relationship" relationship="viewControllers" id="53a-5t-SyU"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WKF-R9-dz3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="786" y="730"/>
+            <point key="canvasLocation" x="799" y="569"/>
         </scene>
-        <!--View Controller-->
+        <!--Fanzonmetro-->
         <scene sceneID="ipe-Ss-sRU">
             <objects>
                 <viewController id="Au0-jG-IHi" sceneMemberID="viewController">
@@ -407,7 +408,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Dgd-oz-16q">
-                                <rect key="frame" x="85" y="290" width="244" height="168"/>
+                                <rect key="frame" x="85" y="246" width="244" height="168"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meu nivel de fã marvel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJy-eq-pXN">
                                         <rect key="frame" x="18" y="0.0" width="208" height="30"/>
@@ -444,7 +445,7 @@
                                 </constraints>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gkv-GQ-ZUF">
-                                <rect key="frame" x="0.0" y="474" width="414" height="339"/>
+                                <rect key="frame" x="0.0" y="430" width="414" height="383"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="EiM-fX-Llq"/>
@@ -500,7 +501,7 @@
                                 </cells>
                             </collectionView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster" translatesAutoresizingMaskIntoConstraints="NO" id="PLf-YU-dHO">
-                                <rect key="frame" x="53" y="37" width="311" height="237"/>
+                                <rect key="frame" x="53" y="-7" width="311" height="237"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="237" id="0iW-G3-n8D"/>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="237" id="I48-Gx-rjV"/>
@@ -545,27 +546,28 @@
                             <constraint firstItem="PLf-YU-dHO" firstAttribute="top" secondItem="Di5-rK-Igl" secondAttribute="top" constant="-51" id="vZ6-T4-aMR"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Fanzonmetro" image="grafico" id="YF1-oh-F0K"/>
                     <navigationItem key="navigationItem" id="Xsa-TN-AxZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UKP-bU-THd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1488.4057971014495" y="2164.2857142857142"/>
+            <point key="canvasLocation" x="1488" y="1337"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="R7B-a5-bSv">
+        <!--Configuração-->
+        <scene sceneID="eS8-11-OPf">
             <objects>
-                <viewController id="wur-qa-F47" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ldm-UR-p5s">
+                <viewController id="6oC-yW-fv3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M1I-QA-at2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="W4j-kj-lw5"/>
+                        <viewLayoutGuide key="safeArea" id="0Hz-sy-UUl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="xL5-IX-dyB"/>
+                    <tabBarItem key="tabBarItem" title="Configuração" image="configuracao" id="lcl-rR-CXq"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="y5T-hh-AFf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uDc-AM-sKI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2699" y="2158"/>
+            <point key="canvasLocation" x="2677" y="1310"/>
         </scene>
         <!--Home-->
         <scene sceneID="Yrg-L9-mcB">
@@ -584,7 +586,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r8y-qf-5Q4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1452" y="1447"/>
+            <point key="canvasLocation" x="-1448" y="1340"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Iss-cv-adc">
@@ -604,37 +606,49 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="p8c-0C-nuz">
                                 <rect key="frame" x="16" y="524" width="382" height="141.66666666666663"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Uoa-am-tN6">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Uoa-am-tN6">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="105.33333333333333"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Titulo Filme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Day-EE-sws">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo Filme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Day-EE-sws">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="20.333333333333332"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20.333333333333332" id="ZVC-AN-dEm"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Elenco" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrp-Ee-Mia">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elenco" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrp-Ee-Mia">
                                                 <rect key="frame" x="0.0" y="28.333333333333371" width="382" height="20.333333333333329"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20.333333333333329" id="C8G-R6-SWk"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Direção" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPj-9Y-hxr">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direção" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPj-9Y-hxr">
                                                 <rect key="frame" x="0.0" y="56.666666666666636" width="382" height="20.333333333333336"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Descrição" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSX-PR-aqA">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSX-PR-aqA">
                                                 <rect key="frame" x="0.0" y="85" width="382" height="20.333333333333329"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20.333333333333329" id="m5r-Of-rdP"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Indicação de filmes para assistir antes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TA3-Re-4C6">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indicação de filmes para assistir antes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TA3-Re-4C6">
                                         <rect key="frame" x="0.0" y="121.33333333333336" width="382" height="20.333333333333329"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20.333333333333329" id="BRK-Gp-cCk"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -648,7 +662,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dM7-Og-tEo">
                                 <rect key="frame" x="16" y="681.66666666666663" width="382" height="115.33333333333337"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SR-Du-0TQ">
+                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SR-Du-0TQ">
                                         <rect key="frame" x="156.33333333333334" y="0.0" width="69.333333333333343" height="31"/>
                                         <color key="backgroundColor" red="0.85490196939999996" green="0.21960783" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <state key="normal" title="Button"/>
@@ -660,7 +674,7 @@
                                             <segue destination="3Ya-ss-7Ni" kind="showDetail" id="7Er-5j-t2N"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Avalie esse filme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHu-Cc-gvX">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalie esse filme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHu-Cc-gvX">
                                         <rect key="frame" x="128.33333333333334" y="47" width="125.33333333333334" height="20.333333333333329"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -806,66 +820,9 @@
             </objects>
             <point key="canvasLocation" x="-714.49275362318849" y="2898.913043478261"/>
         </scene>
-        <!--Favoritos-->
-        <scene sceneID="rwd-Fa-rLf">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BuY-qi-z7d" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favoritos" image="coracao" id="Eck-wC-Oxc"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RAn-En-xfS">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="ll5-b8-UTf" kind="relationship" relationship="rootViewController" id="2w7-UW-7p3"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="y23-hG-QQL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="342.0560747663551" y="1454.6436285097193"/>
-        </scene>
-        <!--Fanzometro-->
-        <scene sceneID="BE6-8c-Oxe">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fHp-5B-2Ia" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Fanzometro" image="grafico" id="3jo-t0-bWA"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uIw-W8-Evm">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Au0-jG-IHi" kind="relationship" relationship="rootViewController" id="JVw-Od-ji6"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TCi-ne-Egv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1495.6521739130435" y="1455.8035714285713"/>
-        </scene>
-        <!--Configuração-->
-        <scene sceneID="hCC-kr-13m">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="63T-Hx-zKK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Configuração" image="configuracao" id="b50-ef-qah"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kGt-4Z-Hct">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="wur-qa-F47" kind="relationship" relationship="rootViewController" id="r7w-iX-4vS"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="81M-6U-slJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2698.5507246376815" y="1451.7857142857142"/>
-        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Mox-He-4eR"/>
+        <segue reference="6rI-7d-8yD"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="compartilhar" width="24" height="24"/>
