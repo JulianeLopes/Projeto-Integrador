@@ -43,7 +43,7 @@ class Servico {
         poster: UIImage(named: "vingadores"))
     
     
-   // var listaDeFilmes: [Filme] = [ eternos, viuvaNegra, shangchi, vingadores ]
+    static var listaDeFilmes: [Filme] = [eternos, viuvaNegra, shangchi, vingadores]
     
 }
 
