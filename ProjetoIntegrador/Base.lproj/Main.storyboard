@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RQv-ZR-wKF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RQv-ZR-wKF">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -141,7 +141,7 @@
                             <constraint firstItem="Kgy-x4-6gh" firstAttribute="centerX" secondItem="fFx-Zk-QT3" secondAttribute="centerX" id="rLh-Y4-XK5"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favoritos" image="heart" selectedImage="heart.fill" catalog="system" id="Gja-Nz-tpd"/>
+                    <tabBarItem key="tabBarItem" title="Favoritos" image="heart" catalog="system" selectedImage="heart.fill" id="Gja-Nz-tpd"/>
                     <navigationItem key="navigationItem" id="YJY-ea-F38"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psJ-QO-OwJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -768,13 +768,13 @@
         <image name="coracao" width="32" height="32"/>
         <image name="estrela" width="32" height="32"/>
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
-        <image name="heart" width="128" height="128"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="poster" width="2480" height="3508"/>
         <namedColor name="Vermelho Marvel">
-            <color red="0.85490196080000003" green="0.023529411760000001" blue="0.023529411760000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.85500001907348633" green="0.024000000208616257" blue="0.024000000208616257" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

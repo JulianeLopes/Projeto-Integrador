@@ -18,6 +18,7 @@
 		16753083283EB9F800D7CE3A /* ProjetoIntegradorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16753082283EB9F800D7CE3A /* ProjetoIntegradorTests.swift */; };
 		1675308D283EB9F800D7CE3A /* ProjetoIntegradorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1675308C283EB9F800D7CE3A /* ProjetoIntegradorUITests.swift */; };
 		1675308F283EB9F800D7CE3A /* ProjetoIntegradorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1675308E283EB9F800D7CE3A /* ProjetoIntegradorUITestsLaunchTests.swift */; };
+		3357B1AB28442858007D611C /* Filme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357B1AA28442858007D611C /* Filme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		16753088283EB9F800D7CE3A /* ProjetoIntegradorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjetoIntegradorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1675308C283EB9F800D7CE3A /* ProjetoIntegradorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetoIntegradorUITests.swift; sourceTree = "<group>"; };
 		1675308E283EB9F800D7CE3A /* ProjetoIntegradorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetoIntegradorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3357B1AA28442858007D611C /* Filme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				16753076283EB9F800D7CE3A /* LaunchScreen.storyboard */,
 				16753079283EB9F800D7CE3A /* Info.plist */,
 				16753071283EB9F700D7CE3A /* ProjetoIntegrador.xcdatamodeld */,
+				3357B1AA28442858007D611C /* Filme.swift */,
 			);
 			path = ProjetoIntegrador;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 			files = (
 				16753073283EB9F700D7CE3A /* ProjetoIntegrador.xcdatamodeld in Sources */,
 				1675306D283EB9F700D7CE3A /* ViewController.swift in Sources */,
+				3357B1AB28442858007D611C /* Filme.swift in Sources */,
 				16753069283EB9F700D7CE3A /* AppDelegate.swift in Sources */,
 				1675306B283EB9F700D7CE3A /* SceneDelegate.swift in Sources */,
 			);
