@@ -18,6 +18,7 @@
 		16753083283EB9F800D7CE3A /* ProjetoIntegradorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16753082283EB9F800D7CE3A /* ProjetoIntegradorTests.swift */; };
 		1675308D283EB9F800D7CE3A /* ProjetoIntegradorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1675308C283EB9F800D7CE3A /* ProjetoIntegradorUITests.swift */; };
 		1675308F283EB9F800D7CE3A /* ProjetoIntegradorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1675308E283EB9F800D7CE3A /* ProjetoIntegradorUITestsLaunchTests.swift */; };
+		1F7303A128452B9B00BA5002 /* ViewControllerMainTelaCadastro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F7303A028452B9B00BA5002 /* ViewControllerMainTelaCadastro.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		16753088283EB9F800D7CE3A /* ProjetoIntegradorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjetoIntegradorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1675308C283EB9F800D7CE3A /* ProjetoIntegradorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetoIntegradorUITests.swift; sourceTree = "<group>"; };
 		1675308E283EB9F800D7CE3A /* ProjetoIntegradorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetoIntegradorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		1F7303A028452B9B00BA5002 /* ViewControllerMainTelaCadastro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerMainTelaCadastro.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				16753068283EB9F700D7CE3A /* AppDelegate.swift */,
 				1675306A283EB9F700D7CE3A /* SceneDelegate.swift */,
 				1675306C283EB9F700D7CE3A /* ViewController.swift */,
+				1F7303A028452B9B00BA5002 /* ViewControllerMainTelaCadastro.swift */,
 				1675306E283EB9F700D7CE3A /* Main.storyboard */,
 				1629ED2A28417271009F9D2C /* Main Tela Cadastro.storyboard */,
 				16753074283EB9F800D7CE3A /* Assets.xcassets */,
@@ -268,6 +271,7 @@
 				16753073283EB9F700D7CE3A /* ProjetoIntegrador.xcdatamodeld in Sources */,
 				1675306D283EB9F700D7CE3A /* ViewController.swift in Sources */,
 				16753069283EB9F700D7CE3A /* AppDelegate.swift in Sources */,
+				1F7303A128452B9B00BA5002 /* ViewControllerMainTelaCadastro.swift in Sources */,
 				1675306B283EB9F700D7CE3A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
