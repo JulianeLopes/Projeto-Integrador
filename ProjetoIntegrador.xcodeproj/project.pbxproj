@@ -20,6 +20,8 @@
 		16753083283EB9F800D7CE3A /* ProjetoIntegradorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16753082283EB9F800D7CE3A /* ProjetoIntegradorTests.swift */; };
 		1675308D283EB9F800D7CE3A /* ProjetoIntegradorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1675308C283EB9F800D7CE3A /* ProjetoIntegradorUITests.swift */; };
 		1675308F283EB9F800D7CE3A /* ProjetoIntegradorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1675308E283EB9F800D7CE3A /* ProjetoIntegradorUITestsLaunchTests.swift */; };
+		330B982F2844554500313B85 /* FavoritoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330B982E2844554500313B85 /* FavoritoViewController.swift */; };
+		330B9831284455DF00313B85 /* FavoritoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330B9830284455DF00313B85 /* FavoritoTableViewCell.swift */; };
 		3357B1AB28442858007D611C /* Filme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357B1AA28442858007D611C /* Filme.swift */; };
 		FBDBE28028443AC100C897A4 /*  ServicoDeUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE27F28443AC100C897A4 /*  ServicoDeUsuario.swift */; };
 		FBDBE28228443D7B00C897A4 /* Fanzometro.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE28128443D7B00C897A4 /* Fanzometro.swift */; };
@@ -62,6 +64,8 @@
 		16753088283EB9F800D7CE3A /* ProjetoIntegradorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjetoIntegradorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1675308C283EB9F800D7CE3A /* ProjetoIntegradorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetoIntegradorUITests.swift; sourceTree = "<group>"; };
 		1675308E283EB9F800D7CE3A /* ProjetoIntegradorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetoIntegradorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		330B982E2844554500313B85 /* FavoritoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritoViewController.swift; sourceTree = "<group>"; };
+		330B9830284455DF00313B85 /* FavoritoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritoTableViewCell.swift; sourceTree = "<group>"; };
 		3357B1AA28442858007D611C /* Filme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filme.swift; sourceTree = "<group>"; };
 		FBDBE27F28443AC100C897A4 /*  ServicoDeUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " ServicoDeUsuario.swift"; sourceTree = "<group>"; };
 		FBDBE28128443D7B00C897A4 /* Fanzometro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fanzometro.swift; sourceTree = "<group>"; };
@@ -117,22 +121,20 @@
 		16753067283EB9F700D7CE3A /* ProjetoIntegrador */ = {
 			isa = PBXGroup;
 			children = (
+				330B982D284454E400313B85 /* Modelo */,
+				330B982C284454AC00313B85 /* ViewModel */,
+				330B982B2844549000313B85 /* ViewController */,
 				16753068283EB9F700D7CE3A /* AppDelegate.swift */,
-				1642540328442A7D006F92A4 /* Usuario.swift */,
-				3357B1AA28442858007D611C /* Filme.swift */,
-				1642540528442A86006F92A4 /* Servico.swift */,
 				1675306A283EB9F700D7CE3A /* SceneDelegate.swift */,
 				1675306C283EB9F700D7CE3A /* ViewController.swift */,
-				FBDBE27F28443AC100C897A4 /*  ServicoDeUsuario.swift */,
-				FBDBE28128443D7B00C897A4 /* Fanzometro.swift */,
-				FBDBE28328443F5600C897A4 /*  FanzometroViewModel.swift */,
-				FBDBE2852844437C00C897A4 /* FanzometroCollectionViewCell.swift */,
 				1675306E283EB9F700D7CE3A /* Main.storyboard */,
 				1629ED2A28417271009F9D2C /* Main Tela Cadastro.storyboard */,
 				16753074283EB9F800D7CE3A /* Assets.xcassets */,
 				16753076283EB9F800D7CE3A /* LaunchScreen.storyboard */,
 				16753079283EB9F800D7CE3A /* Info.plist */,
 				16753071283EB9F700D7CE3A /* ProjetoIntegrador.xcdatamodeld */,
+				330B982E2844554500313B85 /* FavoritoViewController.swift */,
+				330B9830284455DF00313B85 /* FavoritoTableViewCell.swift */,
 			);
 			path = ProjetoIntegrador;
 			sourceTree = "<group>";
@@ -152,6 +154,34 @@
 				1675308E283EB9F800D7CE3A /* ProjetoIntegradorUITestsLaunchTests.swift */,
 			);
 			path = ProjetoIntegradorUITests;
+			sourceTree = "<group>";
+		};
+		330B982B2844549000313B85 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FBDBE28128443D7B00C897A4 /* Fanzometro.swift */,
+				FBDBE2852844437C00C897A4 /* FanzometroCollectionViewCell.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		330B982C284454AC00313B85 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FBDBE28328443F5600C897A4 /*  FanzometroViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		330B982D284454E400313B85 /* Modelo */ = {
+			isa = PBXGroup;
+			children = (
+				3357B1AA28442858007D611C /* Filme.swift */,
+				FBDBE27F28443AC100C897A4 /*  ServicoDeUsuario.swift */,
+				1642540528442A86006F92A4 /* Servico.swift */,
+				1642540328442A7D006F92A4 /* Usuario.swift */,
+			);
+			path = Modelo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,9 +321,11 @@
 				1642540428442A7D006F92A4 /* Usuario.swift in Sources */,
 				3357B1AB28442858007D611C /* Filme.swift in Sources */,
 				16753069283EB9F700D7CE3A /* AppDelegate.swift in Sources */,
+				330B9831284455DF00313B85 /* FavoritoTableViewCell.swift in Sources */,
 				1675306B283EB9F700D7CE3A /* SceneDelegate.swift in Sources */,
 				FBDBE28028443AC100C897A4 /*  ServicoDeUsuario.swift in Sources */,
 				FBDBE28228443D7B00C897A4 /* Fanzometro.swift in Sources */,
+				330B982F2844554500313B85 /* FavoritoViewController.swift in Sources */,
 				1642540628442A86006F92A4 /* Servico.swift in Sources */,
 				FBDBE2862844437C00C897A4 /* FanzometroCollectionViewCell.swift in Sources */,
 				FBDBE28428443F5600C897A4 /*  FanzometroViewModel.swift in Sources */,
