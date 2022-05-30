@@ -270,7 +270,7 @@
                                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
                                                         <connections>
-                                                            <segue destination="IgN-dP-P9f" kind="show" id="6rI-7d-8yD"/>
+                                                            <segue destination="IgN-dP-P9f" kind="show" identifier="procurarSegue" id="6rI-7d-8yD"/>
                                                         </connections>
                                                     </button>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RA7-aN-fl8">
@@ -797,7 +797,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6rI-7d-8yD"/>
+        <segue reference="Mox-He-4eR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chart.bar.fill" catalog="system" width="128" height="92"/>

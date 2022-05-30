@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     
     let viewModel = HomeViewModel()
     var filmeDestaque: Filme?
+    var filmeProcurado: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +24,17 @@ class HomeViewController: UIViewController {
         filmesDestaqueCollectionView.dataSource = self
         filmesDestaqueCollectionView.delegate = self
         filmeDestaqueImage.image = Servico.filmeEmDestaque.poster
-        nomeLabel.text = "Olá, \(ServicoDeUsuario.user.nome)"
+        
+        filmeProcurado = ""
+        nomeLabel.text = "Olá,\(ServicoDeUsuario.user.nome)"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detalhesVC = segue.destination as? FilmesDetalhesViewController {
             detalhesVC.filmeDestaque = filmeDestaque
+        }
+        if let pesquisaVC = segue.destination as? PesquisaViewController {
+            pesquisaVC.filmeProcurado = filmeProcurado
         }
     }
     
@@ -38,7 +44,8 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func pesquisaButton(_ sender: Any) {
-        
+        filmeProcurado = pesquisaTextField.text
+        performSegue(withIdentifier: "procurarSegue", sender: filmeProcurado)
     }
     
 }
@@ -52,7 +59,7 @@ extension HomeViewController: UICollectionViewDataSource {
         
         let filme = Servico.listaDeFilmeEmDestaques[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "destaquesCell", for: indexPath) as? FilmesEmDestaquesCollectionViewCell
-        cell?.configuraCelula(filme: filme)
+        cell?.configuraCelula(filme)
         
         return cell ?? UICollectionViewCell()
     }
@@ -60,7 +67,7 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        var filme = Servico.listaDeFilmeEmDestaques[indexPath.item]
+        let filme = Servico.listaDeFilmeEmDestaques[indexPath.item]
         
         filmeDestaque = filme
         
