@@ -38,7 +38,7 @@ func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection s
 func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"fanzometroCell", for:  indexPath) as? FanzometroCollectionViewCell
-    cell?.customizaCelula(usuario: ServicoDeUsuario.user )
+    cell?.customizaCelula(filme: ServicoDeUsuario.user.filmesFavoritos[indexPath.item] )
     
     return cell ??  UICollectionViewCell()
 }

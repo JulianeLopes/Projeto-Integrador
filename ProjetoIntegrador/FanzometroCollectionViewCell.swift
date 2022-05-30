@@ -13,6 +13,6 @@ class FanzometroCollectionViewCell: UICollectionViewCell {
     
     func customizaCelula(filme: Filme) {
         posterCollectionViewCell.image = filme.poster
-
+        posterCollectionViewCell.layer.cornerRadius = 20
     }
 }
