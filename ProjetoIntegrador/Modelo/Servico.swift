@@ -45,6 +45,10 @@ class Servico {
     
     static var listaDeFilmes: [Filme] = [eternos, viuvaNegra, shangchi, vingadores]
     
+    static var listaDeFilmeEmDestaques: [Filme] = [eternos, vingadores, shangchi]
+    
+    static var filmeEmDestaque: Filme = viuvaNegra
+    
 }
 
 

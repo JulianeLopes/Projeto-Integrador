@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RQv-ZR-wKF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RQv-ZR-wKF">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -155,10 +155,10 @@
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="1337.9464285714284"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="scU-uQ-ahO">
             <objects>
-                <viewController id="PDK-Rc-AVA" sceneMemberID="viewController">
+                <viewController id="PDK-Rc-AVA" customClass="HomeViewController" customModule="ProjetoIntegrador" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qMp-NB-z6e">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -181,7 +181,8 @@
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <segue destination="mWI-Zi-r8U" kind="show" id="D0p-vf-2eU"/>
+                                                    <action selector="filmeDestaqueSaibaMais:" destination="PDK-Rc-AVA" eventType="touchUpInside" id="i0r-EX-peo"/>
+                                                    <segue destination="mWI-Zi-r8U" kind="show" identifier="saibaMaisSegue" id="D0p-vf-2eU"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Universo Cinematografico Marvel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLL-YX-P8B">
@@ -201,15 +202,16 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="215" id="sFg-Q4-exo"/>
                                         </constraints>
-                                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LnU-ro-d0Q">
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LnU-ro-d0Q">
                                             <size key="itemSize" width="116" height="162"/>
+                                            <size key="estimatedItemSize" width="116" height="162"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="64p-vg-apK">
-                                                <rect key="frame" x="0.0" y="0.0" width="116" height="162"/>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="destaquesCell" id="64p-vg-apK" customClass="FilmesEmDestaquesCollectionViewCell" customModule="ProjetoIntegrador" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="26.666666666666668" width="116" height="162"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Bn7-8X-ZZQ">
                                                     <rect key="frame" x="0.0" y="0.0" width="116" height="162"/>
@@ -218,22 +220,21 @@
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster" translatesAutoresizingMaskIntoConstraints="NO" id="mD4-o1-ESv">
                                                             <rect key="frame" x="0.0" y="0.0" width="116" height="162"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="162" id="DT9-Wl-8VV"/>
-                                                                <constraint firstAttribute="height" constant="153" id="Fhv-1B-QNJ"/>
+                                                                <constraint firstAttribute="height" constant="162" id="6bx-Ir-8z6"/>
+                                                                <constraint firstAttribute="width" constant="116" id="bmK-UH-z1H"/>
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="mD4-o1-ESv" firstAttribute="leading" secondItem="Bn7-8X-ZZQ" secondAttribute="leading" id="ESR-ef-LnD"/>
-                                                        <constraint firstAttribute="trailing" secondItem="mD4-o1-ESv" secondAttribute="trailing" id="LzY-iq-W32"/>
-                                                        <constraint firstItem="mD4-o1-ESv" firstAttribute="top" secondItem="Bn7-8X-ZZQ" secondAttribute="top" id="O4p-jC-0nV"/>
-                                                        <constraint firstItem="mD4-o1-ESv" firstAttribute="top" secondItem="Bn7-8X-ZZQ" secondAttribute="top" id="SmG-81-fhR"/>
-                                                        <constraint firstAttribute="trailing" secondItem="mD4-o1-ESv" secondAttribute="trailing" id="TVe-3n-UcY"/>
-                                                        <constraint firstAttribute="bottom" secondItem="mD4-o1-ESv" secondAttribute="bottom" id="lRg-tl-Pco"/>
-                                                        <constraint firstItem="mD4-o1-ESv" firstAttribute="leading" secondItem="Bn7-8X-ZZQ" secondAttribute="leading" id="rvK-Td-doZ"/>
+                                                        <constraint firstItem="mD4-o1-ESv" firstAttribute="leading" secondItem="Bn7-8X-ZZQ" secondAttribute="leading" id="NOA-gG-jX6"/>
+                                                        <constraint firstAttribute="bottom" secondItem="mD4-o1-ESv" secondAttribute="bottom" id="gFD-uw-R9J"/>
+                                                        <constraint firstItem="mD4-o1-ESv" firstAttribute="top" secondItem="Bn7-8X-ZZQ" secondAttribute="top" id="mMo-dx-ocw"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
                                                 <size key="customSize" width="116" height="162"/>
+                                                <connections>
+                                                    <outlet property="posterImage" destination="mD4-o1-ESv" id="kCn-Hg-jl9"/>
+                                                </connections>
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
@@ -280,6 +281,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
+                                                        <connections>
+                                                            <action selector="pesquisaButton:" destination="PDK-Rc-AVA" eventType="editingDidEnd" id="VPF-LN-zzj"/>
+                                                        </connections>
                                                     </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -323,6 +327,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wNw-7j-hkt"/>
+                    <connections>
+                        <outlet property="filmeDestaqueImage" destination="pu6-Z0-sAn" id="CQf-yZ-Jdn"/>
+                        <outlet property="filmesDestaqueCollectionView" destination="Wuc-87-Al6" id="HcS-1N-TD3"/>
+                        <outlet property="nomeLabel" destination="9aJ-FU-91D" id="J47-Vg-yvi"/>
+                        <outlet property="pesquisaTextField" destination="RA7-aN-fl8" id="GvP-oS-5Lz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oA4-rh-NFQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -571,10 +581,10 @@
             </objects>
             <point key="canvasLocation" x="-1448" y="1340"/>
         </scene>
-        <!--View Controller-->
+        <!--Filmes Detalhes View Controller-->
         <scene sceneID="Iss-cv-adc">
             <objects>
-                <viewController id="mWI-Zi-r8U" sceneMemberID="viewController">
+                <viewController id="mWI-Zi-r8U" customClass="FilmesDetalhesViewController" customModule="ProjetoIntegrador" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZyJ-Mc-y55">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -649,6 +659,7 @@
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
+                                            <action selector="spoilerButton:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="kXk-1B-slj"/>
                                             <segue destination="3Ya-ss-7Ni" kind="showDetail" id="7Er-5j-t2N"/>
                                         </connections>
                                     </button>
@@ -697,6 +708,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="zDG-Me-h7X"/>
                     <connections>
+                        <outlet property="descricaoLabel" destination="jSX-PR-aqA" id="JNC-MT-R1c"/>
+                        <outlet property="direcaoLabel" destination="MPj-9Y-hxr" id="X9Y-IJ-Kpl"/>
+                        <outlet property="elencoLabel" destination="wrp-Ee-Mia" id="jpd-aC-FOB"/>
+                        <outlet property="indicacaoLabel" destination="TA3-Re-4C6" id="onK-aH-ufZ"/>
+                        <outlet property="posterImage" destination="ukI-X5-Yoe" id="L6w-6A-YzV"/>
+                        <outlet property="tituloLabel" destination="Day-EE-sws" id="vrQ-hC-bpF"/>
                         <segue destination="IgN-dP-P9f" kind="show" id="Mox-He-4eR"/>
                     </connections>
                 </viewController>
