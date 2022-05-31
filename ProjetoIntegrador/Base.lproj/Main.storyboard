@@ -553,6 +553,7 @@
                     <view key="view" contentMode="scaleToFill" id="M1I-QA-at2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<<<<<<< HEAD
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GCt-fz-9xv">
                                 <rect key="frame" x="16" y="74" width="382" height="215"/>
@@ -605,12 +606,17 @@
                             <constraint firstItem="yU1-zK-g9m" firstAttribute="centerX" secondItem="M1I-QA-at2" secondAttribute="centerX" id="vvw-u8-PIZ"/>
                             <constraint firstAttribute="bottom" secondItem="yU1-zK-g9m" secondAttribute="bottom" constant="90" id="ySo-H2-kBR"/>
                         </constraints>
+=======
+                        <viewLayoutGuide key="safeArea" id="0Hz-sy-UUl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+>>>>>>> d96499dd57de6ca0f8a7069b3e3ebb782c4f2f8b
                     </view>
                     <tabBarItem key="tabBarItem" title="Configuração" image="gearshape.fill" catalog="system" selectedImage="gearshape.fill" id="lcl-rR-CXq"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uDc-AM-sKI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2677" y="1310"/>
+<<<<<<< HEAD
         </scene>
         <!--Dados pessoais-->
         <scene sceneID="SCK-fK-x2z">
@@ -690,6 +696,8 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9aZ-t1-3c2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4428" y="1310"/>
+=======
+>>>>>>> d96499dd57de6ca0f8a7069b3e3ebb782c4f2f8b
         </scene>
         <!--Home-->
         <scene sceneID="Yrg-L9-mcB">
@@ -711,16 +719,22 @@
             <point key="canvasLocation" x="-1448" y="1340"/>
         </scene>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <!--View Controller Main Tela Cadastro-->
         <scene sceneID="Iss-cv-adc">
             <objects>
                 <viewController id="mWI-Zi-r8U" customClass="ViewControllerMainTelaCadastro" customModule="ProjetoIntegrador" customModuleProvider="target" sceneMemberID="viewController">
 =======
+=======
+>>>>>>> d96499dd57de6ca0f8a7069b3e3ebb782c4f2f8b
         <!--Filmes Detalhes View Controller-->
         <scene sceneID="Iss-cv-adc">
             <objects>
                 <viewController id="mWI-Zi-r8U" customClass="FilmesDetalhesViewController" customModule="ProjetoIntegrador" customModuleProvider="target" sceneMemberID="viewController">
+<<<<<<< HEAD
 >>>>>>> b13cb129fa6be30f1dd2effb511ca822e134edc4
+=======
+>>>>>>> d96499dd57de6ca0f8a7069b3e3ebb782c4f2f8b
                     <view key="view" contentMode="scaleToFill" id="ZyJ-Mc-y55">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -796,9 +810,12 @@
                                         </buttonConfiguration>
                                         <connections>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                             <action selector="buttomSpoiler:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="LEW-aD-2SJ"/>
                                             <segue destination="3Ya-ss-7Ni" kind="showDetail" identifier="telaSpoiler1" id="7Er-5j-t2N"/>
 =======
+=======
+>>>>>>> d96499dd57de6ca0f8a7069b3e3ebb782c4f2f8b
                                             <action selector="spoilerButton:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="kXk-1B-slj"/>
                                             <segue destination="3Ya-ss-7Ni" kind="showDetail" id="7Er-5j-t2N"/>
 >>>>>>> b13cb129fa6be30f1dd2effb511ca822e134edc4
@@ -850,8 +867,11 @@
                     <navigationItem key="navigationItem" id="zDG-Me-h7X"/>
                     <connections>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <segue destination="IgN-dP-P9f" kind="show" identifier="telaListaDeFilmes1" id="Mox-He-4eR"/>
 =======
+=======
+>>>>>>> d96499dd57de6ca0f8a7069b3e3ebb782c4f2f8b
                         <outlet property="descricaoLabel" destination="jSX-PR-aqA" id="JNC-MT-R1c"/>
                         <outlet property="direcaoLabel" destination="MPj-9Y-hxr" id="X9Y-IJ-Kpl"/>
                         <outlet property="elencoLabel" destination="wrp-Ee-Mia" id="jpd-aC-FOB"/>
@@ -940,6 +960,7 @@
             </objects>
             <point key="canvasLocation" x="-714.49275362318849" y="2898.913043478261"/>
         </scene>
+<<<<<<< HEAD
         <!--Navigation Controller-->
         <scene sceneID="ekF-HY-Qcw">
             <objects>
@@ -963,6 +984,8 @@
             </objects>
             <point key="canvasLocation" x="3653.6231884057975" y="1309.8214285714284"/>
         </scene>
+=======
+>>>>>>> d96499dd57de6ca0f8a7069b3e3ebb782c4f2f8b
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Mox-He-4eR"/>
@@ -976,7 +999,10 @@
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
+<<<<<<< HEAD
         <image name="logoMarvel" width="2560" height="1029"/>
+=======
+>>>>>>> d96499dd57de6ca0f8a7069b3e3ebb782c4f2f8b
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="poster" width="2480" height="3508"/>
         <namedColor name="Vermelho Marvel">
