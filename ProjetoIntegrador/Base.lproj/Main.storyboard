@@ -788,8 +788,9 @@
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="spoilerButton:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="kXk-1B-slj"/>
-                                            <segue destination="3Ya-ss-7Ni" kind="showDetail" id="7Er-5j-t2N"/>
+                                            <action selector="buttonSpoiler:" destination="wbl-3P-KpC" eventType="touchUpInside" id="Z55-SN-FvR"/>
+                                            <action selector="buttonSpoiler:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="pgh-Dg-K8N"/>
+                                            <segue destination="3Ya-ss-7Ni" kind="showDetail" identifier="telaSpoiler" id="7Er-5j-t2N"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalie esse filme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHu-Cc-gvX">
@@ -843,10 +844,11 @@
                         <outlet property="indicacaoLabel" destination="TA3-Re-4C6" id="onK-aH-ufZ"/>
                         <outlet property="posterImage" destination="ukI-X5-Yoe" id="L6w-6A-YzV"/>
                         <outlet property="tituloLabel" destination="Day-EE-sws" id="vrQ-hC-bpF"/>
-                        <segue destination="IgN-dP-P9f" kind="show" id="Mox-He-4eR"/>
+                        <segue destination="IgN-dP-P9f" kind="show" identifier="telaListaDeFilmes" id="Mox-He-4eR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GKH-qy-5yz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="wbl-3P-KpC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1469.5652173913045" y="2900.2232142857142"/>
         </scene>
