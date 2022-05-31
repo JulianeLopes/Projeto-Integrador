@@ -34,12 +34,12 @@ class ViewControllerMainTelaCadastro: UIViewController {
         
         let telaSpoiler = UIAlertAction(title: "SIM", style: UIAlertAction.Style.default) { (UIAlertAction) in
             
-            self.performSegue(withIdentifier: "telaSpoiler", sender: nil)
+            self.performSegue(withIdentifier: "telaSpoiler1", sender: nil)
         }
         
         let telaListaDeFilmes = UIAlertAction(title: "NÃO", style: UIAlertAction.Style.default) { (UIAlertAction) in
             
-            self.performSegue(withIdentifier: "telaListaDeFilmes", sender: nil)
+            self.performSegue(withIdentifier: "telaListaDeFilmes1", sender: nil)
         }
 
         let ok = UIAlertAction(title: "Continuar nesta tela", style: UIAlertAction.Style.default, handler: nil)
@@ -49,6 +49,8 @@ class ViewControllerMainTelaCadastro: UIViewController {
         alerta.addAction(ok)
         
         self.present(alerta, animated: true, completion: nil)
+        
+        
     }
     
 }

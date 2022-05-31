@@ -658,7 +658,7 @@
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="buttomSpoiler:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="LEW-aD-2SJ"/>
-                                            <segue destination="3Ya-ss-7Ni" kind="showDetail" identifier="telaSpoiler" id="7Er-5j-t2N"/>
+                                            <segue destination="3Ya-ss-7Ni" kind="showDetail" identifier="telaSpoiler1" id="7Er-5j-t2N"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Avalie esse filme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHu-Cc-gvX">
@@ -727,7 +727,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="zDG-Me-h7X"/>
                     <connections>
-                        <segue destination="IgN-dP-P9f" kind="show" identifier="telaListaDeFilmes" id="Mox-He-4eR"/>
+                        <segue destination="IgN-dP-P9f" kind="show" identifier="telaListaDeFilmes1" id="Mox-He-4eR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GKH-qy-5yz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
