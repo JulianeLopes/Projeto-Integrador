@@ -910,6 +910,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                             <action selector="buttomSpoiler:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="LEW-aD-2SJ"/>
                                             <segue destination="3Ya-ss-7Ni" kind="showDetail" identifier="telaSpoiler1" id="7Er-5j-t2N"/>
 =======
@@ -923,6 +924,10 @@
                                             <action selector="buttonSpoiler:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="pgh-Dg-K8N"/>
                                             <segue destination="3Ya-ss-7Ni" kind="showDetail" identifier="telaSpoiler" id="7Er-5j-t2N"/>
 >>>>>>> Guilherme
+=======
+                                            <action selector="buttonSpoiler:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="P4o-wI-K7l"/>
+                                            <segue destination="3Ya-ss-7Ni" kind="showDetail" identifier="telaSpoiler" id="7Er-5j-t2N"/>
+>>>>>>> main
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalie esse filme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHu-Cc-gvX">
@@ -983,11 +988,15 @@
                         <outlet property="posterImage" destination="ukI-X5-Yoe" id="L6w-6A-YzV"/>
                         <outlet property="tituloLabel" destination="Day-EE-sws" id="vrQ-hC-bpF"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <segue destination="IgN-dP-P9f" kind="show" id="Mox-He-4eR"/>
 >>>>>>> b13cb129fa6be30f1dd2effb511ca822e134edc4
 =======
                         <segue destination="IgN-dP-P9f" kind="show" identifier="telaListaDeFilmes" id="Mox-He-4eR"/>
 >>>>>>> Guilherme
+=======
+                        <segue destination="IgN-dP-P9f" kind="show" identifier="telaListaDeFilmes" id="Mox-He-4eR"/>
+>>>>>>> main
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GKH-qy-5yz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

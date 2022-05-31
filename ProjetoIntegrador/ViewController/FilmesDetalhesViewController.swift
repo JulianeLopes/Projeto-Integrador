@@ -29,6 +29,7 @@ class FilmesDetalhesViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+<<<<<<< HEAD
     
     @IBAction func buttonSpoiler(_ sender: Any) {
         
@@ -54,4 +55,31 @@ class FilmesDetalhesViewController: UIViewController {
         
     }
     
+=======
+   
+    @IBAction func buttonSpoiler(_ sender: Any) {
+        
+        let alerta = UIAlertController(title: "Alerta de Spoiler", message: "Agora é por sua conta e risco!", preferredStyle: UIAlertController.Style.alert)
+                
+                let telaSpoiler = UIAlertAction(title: "SIM", style: UIAlertAction.Style.default) { (UIAlertAction) in
+                    
+                    self.performSegue(withIdentifier: "telaSpoiler", sender: nil)
+                }
+                
+                let telaListaDeFilmes = UIAlertAction(title: "NÃO", style: UIAlertAction.Style.default) { (UIAlertAction) in
+                    
+                    self.performSegue(withIdentifier: "telaListaDeFilmes", sender: nil)
+                }
+
+                let ok = UIAlertAction(title: "Continuar nesta tela", style: UIAlertAction.Style.default, handler: nil)
+                
+                alerta.addAction(telaSpoiler)
+                alerta.addAction(telaListaDeFilmes)
+                alerta.addAction(ok)
+                
+                self.present(alerta, animated: true, completion: nil)
+        
+    }
+    
+>>>>>>> main
 }
