@@ -549,19 +549,13 @@
         <!--Configuração-->
         <scene sceneID="eS8-11-OPf">
             <objects>
-                <viewController id="6oC-yW-fv3" sceneMemberID="viewController">
+                <viewController id="6oC-yW-fv3" customClass="ConfiguracoesViewController" customModule="ProjetoIntegrador" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M1I-QA-at2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GCt-fz-9xv">
-                                <rect key="frame" x="16" y="74" width="382" height="215"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="215" id="jNi-8c-ock"/>
-                                </constraints>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="F5D-dV-yq2">
-                                <rect key="frame" x="16" y="304" width="382" height="396"/>
+                                <rect key="frame" x="16" y="325" width="382" height="375"/>
                                 <color key="backgroundColor" name="Vermelho Marvel"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="kLQ-DX-Lg0">
@@ -591,6 +585,18 @@
                                     <constraint firstAttribute="height" constant="56" id="n6N-i6-3jb"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Configurações" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shM-3v-3e4">
+                                <rect key="frame" x="101.66666666666667" y="54" width="210.66666666666663" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GCt-fz-9xv">
+                                <rect key="frame" x="16" y="95" width="382" height="215"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="215" id="jNi-8c-ock"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0Hz-sy-UUl"/>
                         <color key="backgroundColor" name="Vermelho Marvel"/>
@@ -598,8 +604,10 @@
                             <constraint firstItem="GCt-fz-9xv" firstAttribute="leading" secondItem="0Hz-sy-UUl" secondAttribute="leading" constant="16" id="6Ck-Ec-4gr"/>
                             <constraint firstItem="0Hz-sy-UUl" firstAttribute="trailing" secondItem="F5D-dV-yq2" secondAttribute="trailing" constant="16" id="C3v-Uq-4vU"/>
                             <constraint firstItem="F5D-dV-yq2" firstAttribute="leading" secondItem="0Hz-sy-UUl" secondAttribute="leading" constant="16" id="K1R-EE-pyJ"/>
+                            <constraint firstItem="shM-3v-3e4" firstAttribute="centerX" secondItem="M1I-QA-at2" secondAttribute="centerX" id="KSv-rZ-mbx"/>
                             <constraint firstItem="F5D-dV-yq2" firstAttribute="top" secondItem="GCt-fz-9xv" secondAttribute="bottom" constant="15" id="MFa-r4-U8Q"/>
-                            <constraint firstItem="GCt-fz-9xv" firstAttribute="top" secondItem="0Hz-sy-UUl" secondAttribute="top" constant="30" id="csW-p8-yba"/>
+                            <constraint firstItem="shM-3v-3e4" firstAttribute="top" secondItem="0Hz-sy-UUl" secondAttribute="top" constant="10" id="joq-oq-X0x"/>
+                            <constraint firstItem="GCt-fz-9xv" firstAttribute="top" secondItem="shM-3v-3e4" secondAttribute="bottom" constant="5" id="jyc-20-mJq"/>
                             <constraint firstItem="0Hz-sy-UUl" firstAttribute="trailing" secondItem="GCt-fz-9xv" secondAttribute="trailing" constant="16" id="lpN-e4-bhp"/>
                             <constraint firstItem="yU1-zK-g9m" firstAttribute="top" secondItem="F5D-dV-yq2" secondAttribute="bottom" constant="50" id="qH5-eb-e5a"/>
                             <constraint firstItem="yU1-zK-g9m" firstAttribute="centerX" secondItem="M1I-QA-at2" secondAttribute="centerX" id="vvw-u8-PIZ"/>
@@ -607,6 +615,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Configuração" image="gearshape.fill" catalog="system" selectedImage="gearshape.fill" id="lcl-rR-CXq"/>
+                    <connections>
+                        <outlet property="fotoImageView" destination="GCt-fz-9xv" id="2JR-4E-SYu"/>
+                        <outlet property="listaOpcoesTableView" destination="F5D-dV-yq2" id="oLE-5Z-dGn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uDc-AM-sKI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -615,7 +627,7 @@
         <!--Dados pessoais-->
         <scene sceneID="SCK-fK-x2z">
             <objects>
-                <viewController id="IUN-CD-b0q" sceneMemberID="viewController">
+                <viewController id="IUN-CD-b0q" customClass="dadosPessoaisViewController" customModule="ProjetoIntegrador" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QdQ-5r-6oU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -686,6 +698,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Dados pessoais" id="Gf1-i6-9OJ"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="WxI-AW-FSp" id="EFZ-qC-8Lq"/>
+                        <outlet property="fotoPerfilImageView" destination="IxH-aX-JRE" id="gP7-X2-Sx1"/>
+                        <outlet property="nomeTextField" destination="HUk-0S-rbx" id="JWC-73-IMH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9aZ-t1-3c2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
