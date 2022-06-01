@@ -182,7 +182,6 @@
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="filmeDestaqueSaibaMais:" destination="PDK-Rc-AVA" eventType="touchUpInside" id="i0r-EX-peo"/>
-                                                    <segue destination="mWI-Zi-r8U" kind="show" identifier="saibaMaisSegue" id="D0p-vf-2eU"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Universo Cinematografico Marvel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLL-YX-P8B">
@@ -269,9 +268,6 @@
                                                         <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system" title="">
                                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </buttonConfiguration>
-                                                        <connections>
-                                                            <segue destination="IgN-dP-P9f" kind="show" identifier="procurarSegue" id="6rI-7d-8yD"/>
-                                                        </connections>
                                                     </button>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RA7-aN-fl8">
                                                         <rect key="frame" x="0.0" y="0.0" width="335" height="40"/>
@@ -332,6 +328,8 @@
                         <outlet property="filmesDestaqueCollectionView" destination="Wuc-87-Al6" id="HcS-1N-TD3"/>
                         <outlet property="nomeLabel" destination="9aJ-FU-91D" id="J47-Vg-yvi"/>
                         <outlet property="pesquisaTextField" destination="RA7-aN-fl8" id="GvP-oS-5Lz"/>
+                        <segue destination="mWI-Zi-r8U" kind="presentation" identifier="saibaMaisSegue" id="kEu-Pf-PAy"/>
+                        <segue destination="IgN-dP-P9f" kind="show" identifier="procurarSegue" id="76X-0U-tRS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oA4-rh-NFQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -396,7 +394,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uF6-MR-kaP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2277" y="2902"/>
+            <point key="canvasLocation" x="-2372" y="2932"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="1d9-7o-vR7">
@@ -549,7 +547,7 @@
         <!--Configuração-->
         <scene sceneID="eS8-11-OPf">
             <objects>
-                <viewController id="6oC-yW-fv3" sceneMemberID="viewController">
+                <viewController id="6oC-yW-fv3" customClass="ConfiguracoesViewController" customModule="ProjetoIntegrador" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M1I-QA-at2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -558,14 +556,8 @@
 =======
 >>>>>>> Guilherme
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GCt-fz-9xv">
-                                <rect key="frame" x="16" y="74" width="382" height="215"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="215" id="jNi-8c-ock"/>
-                                </constraints>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="F5D-dV-yq2">
-                                <rect key="frame" x="16" y="304" width="382" height="396"/>
+                                <rect key="frame" x="16" y="325" width="382" height="375"/>
                                 <color key="backgroundColor" name="Vermelho Marvel"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="kLQ-DX-Lg0">
@@ -595,6 +587,18 @@
                                     <constraint firstAttribute="height" constant="56" id="n6N-i6-3jb"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Configurações" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shM-3v-3e4">
+                                <rect key="frame" x="101.66666666666667" y="54" width="210.66666666666663" height="36"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vingadores" translatesAutoresizingMaskIntoConstraints="NO" id="GCt-fz-9xv">
+                                <rect key="frame" x="16" y="95" width="382" height="215"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="215" id="jNi-8c-ock"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
 <<<<<<< HEAD
                         <viewLayoutGuide key="safeArea" id="0Hz-sy-UUl"/>
@@ -603,8 +607,10 @@
                             <constraint firstItem="GCt-fz-9xv" firstAttribute="leading" secondItem="0Hz-sy-UUl" secondAttribute="leading" constant="16" id="6Ck-Ec-4gr"/>
                             <constraint firstItem="0Hz-sy-UUl" firstAttribute="trailing" secondItem="F5D-dV-yq2" secondAttribute="trailing" constant="16" id="C3v-Uq-4vU"/>
                             <constraint firstItem="F5D-dV-yq2" firstAttribute="leading" secondItem="0Hz-sy-UUl" secondAttribute="leading" constant="16" id="K1R-EE-pyJ"/>
+                            <constraint firstItem="shM-3v-3e4" firstAttribute="centerX" secondItem="M1I-QA-at2" secondAttribute="centerX" id="KSv-rZ-mbx"/>
                             <constraint firstItem="F5D-dV-yq2" firstAttribute="top" secondItem="GCt-fz-9xv" secondAttribute="bottom" constant="15" id="MFa-r4-U8Q"/>
-                            <constraint firstItem="GCt-fz-9xv" firstAttribute="top" secondItem="0Hz-sy-UUl" secondAttribute="top" constant="30" id="csW-p8-yba"/>
+                            <constraint firstItem="shM-3v-3e4" firstAttribute="top" secondItem="0Hz-sy-UUl" secondAttribute="top" constant="10" id="joq-oq-X0x"/>
+                            <constraint firstItem="GCt-fz-9xv" firstAttribute="top" secondItem="shM-3v-3e4" secondAttribute="bottom" constant="5" id="jyc-20-mJq"/>
                             <constraint firstItem="0Hz-sy-UUl" firstAttribute="trailing" secondItem="GCt-fz-9xv" secondAttribute="trailing" constant="16" id="lpN-e4-bhp"/>
                             <constraint firstItem="yU1-zK-g9m" firstAttribute="top" secondItem="F5D-dV-yq2" secondAttribute="bottom" constant="50" id="qH5-eb-e5a"/>
                             <constraint firstItem="yU1-zK-g9m" firstAttribute="centerX" secondItem="M1I-QA-at2" secondAttribute="centerX" id="vvw-u8-PIZ"/>
@@ -631,6 +637,10 @@
 >>>>>>> Guilherme
                     </view>
                     <tabBarItem key="tabBarItem" title="Configuração" image="gearshape.fill" catalog="system" selectedImage="gearshape.fill" id="lcl-rR-CXq"/>
+                    <connections>
+                        <outlet property="fotoImageView" destination="GCt-fz-9xv" id="2JR-4E-SYu"/>
+                        <outlet property="listaOpcoesTableView" destination="F5D-dV-yq2" id="oLE-5Z-dGn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uDc-AM-sKI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -721,7 +731,7 @@
         <!--Dados pessoais-->
         <scene sceneID="SCK-fK-x2z">
             <objects>
-                <viewController id="IUN-CD-b0q" sceneMemberID="viewController">
+                <viewController id="IUN-CD-b0q" customClass="dadosPessoaisViewController" customModule="ProjetoIntegrador" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QdQ-5r-6oU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -756,8 +766,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IxH-aX-JRE">
-                                <rect key="frame" x="87" y="390" width="240" height="250"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IxH-aX-JRE">
+                                <rect key="frame" x="82" y="390" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="JwQ-k3-hgQ"/>
                                     <constraint firstAttribute="width" constant="250" id="Zag-um-Mqg"/>
@@ -783,6 +793,7 @@
                             <constraint firstItem="7Nc-0N-0Wg" firstAttribute="leading" secondItem="J56-VI-FFl" secondAttribute="leading" constant="20" id="Yf7-bv-Grh"/>
                             <constraint firstItem="sFZ-BX-G8x" firstAttribute="centerX" secondItem="QdQ-5r-6oU" secondAttribute="centerX" id="bqv-Dk-h01"/>
                             <constraint firstItem="J56-VI-FFl" firstAttribute="trailing" secondItem="HUk-0S-rbx" secondAttribute="trailing" constant="20" id="ccv-o8-niC"/>
+                            <constraint firstItem="IxH-aX-JRE" firstAttribute="centerX" secondItem="WxI-AW-FSp" secondAttribute="centerX" id="dES-5d-TyN"/>
                             <constraint firstItem="oZI-GK-PWr" firstAttribute="leading" secondItem="J56-VI-FFl" secondAttribute="leading" constant="20" id="mrZ-hM-3nX"/>
                             <constraint firstItem="HUk-0S-rbx" firstAttribute="leading" secondItem="J56-VI-FFl" secondAttribute="leading" constant="20" id="q6Y-8g-2Kg"/>
                             <constraint firstItem="J56-VI-FFl" firstAttribute="bottom" secondItem="sFZ-BX-G8x" secondAttribute="bottom" constant="50" id="r0U-aN-MFH"/>
@@ -792,6 +803,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Dados pessoais" id="Gf1-i6-9OJ"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="WxI-AW-FSp" id="EFZ-qC-8Lq"/>
+                        <outlet property="fotoPerfilImageView" destination="IxH-aX-JRE" id="gP7-X2-Sx1"/>
+                        <outlet property="nomeTextField" destination="HUk-0S-rbx" id="JWC-73-IMH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9aZ-t1-3c2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -834,18 +850,18 @@
 =======
 >>>>>>> d96499dd57de6ca0f8a7069b3e3ebb782c4f2f8b
                     <view key="view" contentMode="scaleToFill" id="ZyJ-Mc-y55">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster" translatesAutoresizingMaskIntoConstraints="NO" id="ukI-X5-Yoe">
-                                <rect key="frame" x="63" y="112" width="288" height="401"/>
+                                <rect key="frame" x="63" y="68" width="288" height="401"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="401" id="0u3-N4-xxa"/>
                                     <constraint firstAttribute="width" constant="288" id="kFD-FQ-RSC"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="ZCi-f8-CCk">
-                                <rect key="frame" x="16" y="521" width="69" height="32"/>
+                                <rect key="frame" x="16" y="477" width="69" height="32"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coracao" translatesAutoresizingMaskIntoConstraints="NO" id="LsQ-Ky-VOV">
                                         <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
@@ -856,7 +872,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="p8c-0C-nuz">
-                                <rect key="frame" x="16" y="561" width="382" height="141.66666666666663"/>
+                                <rect key="frame" x="16" y="517" width="382" height="141.66666666666663"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Uoa-am-tN6">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="105.33333333333333"/>
@@ -896,7 +912,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dM7-Og-tEo">
-                                <rect key="frame" x="65" y="708.66666666666663" width="284" height="115.33333333333337"/>
+                                <rect key="frame" x="65" y="664.66666666666663" width="284" height="115.33333333333337"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SR-Du-0TQ">
                                         <rect key="frame" x="107.33333333333334" y="0.0" width="69.333333333333343" height="31"/>
@@ -989,6 +1005,7 @@
                         <outlet property="tituloLabel" destination="Day-EE-sws" id="vrQ-hC-bpF"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <segue destination="IgN-dP-P9f" kind="show" id="Mox-He-4eR"/>
 >>>>>>> b13cb129fa6be30f1dd2effb511ca822e134edc4
 =======
@@ -997,6 +1014,8 @@
 =======
                         <segue destination="IgN-dP-P9f" kind="show" identifier="telaListaDeFilmes" id="Mox-He-4eR"/>
 >>>>>>> main
+=======
+>>>>>>> c4926bdba03d0edeb196fe097fd1994fe26bbbe4
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GKH-qy-5yz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1111,9 +1130,6 @@
 =======
 >>>>>>> Guilherme
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Mox-He-4eR"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="chart.bar.fill" catalog="system" width="128" height="92"/>
         <image name="compartilhar" width="24" height="24"/>
@@ -1133,6 +1149,7 @@
 >>>>>>> Guilherme
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="poster" width="2480" height="3508"/>
+        <image name="vingadores" width="757" height="1080"/>
         <namedColor name="Vermelho Marvel">
             <color red="0.85500001907348633" green="0.024000000208616257" blue="0.024000000208616257" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
