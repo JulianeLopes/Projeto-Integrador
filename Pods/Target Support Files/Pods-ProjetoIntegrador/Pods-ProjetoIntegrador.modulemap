@@ -1,0 +1,6 @@
+framework module Pods_ProjetoIntegrador {
+  umbrella header "Pods-ProjetoIntegrador-umbrella.h"
+
+  export *
+  module * { export * }
+}
