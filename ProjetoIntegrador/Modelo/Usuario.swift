@@ -16,6 +16,7 @@ class Usuario {
     let nivelDeFa: Double
     var filmesFavoritos: [Filme]
     
+    
     init(nome: String, email: String, senha: String, foto: String?, nivelDeFa: Double, filmesFavoritos: [Filme]){
     self.nome = nome
     self.email = email

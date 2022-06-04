@@ -8,16 +8,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="Ofx-pM-4IZ">
             <objects>
-                <viewController id="cMu-Lh-r6K" customClass="ViewController" customModule="ProjetoIntegrador" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cMu-Lh-r6K" customClass="LoginViewController" customModule="ProjetoIntegrador" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ju2-y1-EXa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoMarvel" translatesAutoresizingMaskIntoConstraints="NO" id="Ogy-Yy-hbh">
-                                <rect key="frame" x="87" y="170" width="240" height="128"/>
+                                <rect key="frame" x="87" y="214" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="3mj-PA-ZMe"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="128" id="MVF-wM-MUd"/>
@@ -25,7 +25,7 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bM6-BW-feu">
-                                <rect key="frame" x="20" y="350" width="374" height="34"/>
+                                <rect key="frame" x="20" y="394" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -33,7 +33,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tkA-Bd-Vwk">
-                                <rect key="frame" x="20" y="409" width="374" height="34"/>
+                                <rect key="frame" x="20" y="453" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
                                 <connections>
@@ -41,7 +41,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJX-ta-jcF">
-                                <rect key="frame" x="20" y="468" width="374" height="31"/>
+                                <rect key="frame" x="20" y="512" width="374" height="31"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="9zn-pE-ktA"/>
@@ -54,10 +54,11 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="buttomLogin:" destination="cMu-Lh-r6K" eventType="touchUpInside" id="la9-Zm-QQv"/>
+                                    <action selector="loginAction:" destination="cMu-Lh-r6K" eventType="touchUpInside" id="KEy-nB-AB1"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nkv-uk-3BB">
-                                <rect key="frame" x="20" y="524" width="374" height="31"/>
+                                <rect key="frame" x="20" y="568" width="374" height="31"/>
                                 <color key="backgroundColor" red="0.85490196939999996" green="0.21960783" blue="0.19607841970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="nSS-q0-8Pl"/>
@@ -69,11 +70,10 @@
                                 <connections>
                                     <action selector="buttomCadastreSeAqui:" destination="cMu-Lh-r6K" eventType="touchUpInside" id="Bkk-SK-vVl"/>
                                     <action selector="buttomCliqueAqui:" destination="cMu-Lh-r6K" eventType="touchUpInside" id="twS-TI-8m0"/>
-                                    <segue destination="C98-jh-gdW" kind="show" id="gfA-ur-RaO"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="m05-9h-43X">
-                                <rect key="frame" x="100" y="565" width="214" height="74"/>
+                                <rect key="frame" x="100" y="609" width="214" height="74"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dCC-pU-X1E">
                                         <rect key="frame" x="0.0" y="0.0" width="78" height="74"/>
@@ -122,8 +122,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="yb5-N7-7hf"/>
                     <connections>
-                        <outlet property="senhaTextField" destination="tkA-Bd-Vwk" id="xAL-9e-ffO"/>
-                        <outlet property="usuarioTextField" destination="bM6-BW-feu" id="LZD-Zf-VR2"/>
+                        <outlet property="senhaTextField" destination="tkA-Bd-Vwk" id="Zbs-vA-Yrp"/>
+                        <outlet property="usuarioTextField" destination="bM6-BW-feu" id="Xec-a4-8BO"/>
                         <segue destination="GSi-nI-jT9" kind="show" identifier="appSegueIndentifier" id="m2Q-WG-8e2"/>
                     </connections>
                 </viewController>
@@ -137,7 +137,7 @@
             <objects>
                 <viewController id="C98-jh-gdW" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jpn-3D-d2G">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoMarvel" translatesAutoresizingMaskIntoConstraints="NO" id="FVw-oh-9xz">
@@ -172,13 +172,10 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Login">
+                                <buttonConfiguration key="configuration" style="plain" title="Cadastrar">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <segue destination="cMu-Lh-r6K" kind="show" id="bmA-cF-EOZ"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="f65-RE-8Np"/>
@@ -246,10 +243,6 @@
             <point key="canvasLocation" x="-26.086956521739133" y="16.741071428571427"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="gfA-ur-RaO"/>
-        <segue reference="bmA-cF-EOZ"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="Facebook" width="56" height="60"/>
         <image name="Google" width="58" height="57"/>
