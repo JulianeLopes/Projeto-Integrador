@@ -14,29 +14,59 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var senhaTextField: UITextField!
     
+    let service = ServicoDeUsuario()
+    var usuarioEnviado: Usuario?
     let viewModel = LoginViewModel()
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.delegate = self
-
+        
     }
     
 
     @IBAction func loginAction(_ sender: Any) {
-        // valida texto?
-        // colocar os dados de email e senha
+        mudarDeTela(usuario: confereUsuario())
+    }
+
+
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? HomeViewController {
+            destination.usuarioEnviado = usuarioEnviado
+        }
+    }
+    
+    // conferir se o usuario existe
+    
+    func confereUsuario() -> Bool {
+        var isSameUsuario: Bool = false
+        let usuarioDig = usuarioTextField.text
+        let senhaDigitada = senhaTextField.text
         
-        viewModel.converteTextField(email: usuarioTextField.text, senha: senhaTextField.text)
+        for usuario in service.listaDeUsuario{
+            if usuarioDig == usuario.email {
+                if senhaDigitada == usuario.senha {
+                      usuarioEnviado = usuario
+                    isSameUsuario = true
+                }
+            }
+        }
         
+        return isSameUsuario
+    }
+        
+    func mudarDeTela(usuario: Bool){
+        if usuario == true {
+            performSegue(withIdentifier: "appSegueIndentifier", sender: usuarioEnviado)
+            usuarioTextField.layer.borderWidth = 1
+            senhaTextField.layer.borderWidth = 1
+            usuarioTextField.layer.borderColor = UIColor.clear.cgColor
+            senhaTextField.layer.borderColor = UIColor.clear.cgColor
+        } else {
+            usuarioTextField.layer.borderWidth = 1
+            senhaTextField.layer.borderWidth = 1
+            usuarioTextField.layer.borderColor = UIColor.black.cgColor
+            senhaTextField.layer.borderColor = UIColor.black.cgColor
+        }
     }
 }
 
-extension LoginViewController: LoginViewModelDelegate {
-    func getDados() {
-//        usuarioTextField.text  = usua
-//        let senha = senhaTextField.text ?? ""
-    }
-    
-    
-}
