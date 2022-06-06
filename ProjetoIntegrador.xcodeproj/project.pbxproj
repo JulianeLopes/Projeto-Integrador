@@ -20,6 +20,9 @@
 		16753083283EB9F800D7CE3A /* ProjetoIntegradorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16753082283EB9F800D7CE3A /* ProjetoIntegradorTests.swift */; };
 		1675308D283EB9F800D7CE3A /* ProjetoIntegradorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1675308C283EB9F800D7CE3A /* ProjetoIntegradorUITests.swift */; };
 		1675308F283EB9F800D7CE3A /* ProjetoIntegradorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1675308E283EB9F800D7CE3A /* ProjetoIntegradorUITestsLaunchTests.swift */; };
+		16993168284E8C8200AF1014 /* testeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16993167284E8C8200AF1014 /* testeViewController.swift */; };
+		1699316A284E984F00AF1014 /* PesquisaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16993169284E984F00AF1014 /* PesquisaViewModel.swift */; };
+		1699316C284E9D9F00AF1014 /* PesquisaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1699316B284E9D9F00AF1014 /* PesquisaCollectionViewCell.swift */; };
 		16D749EB284981F200ECD9DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D749EA284981F200ECD9DB /* LoginViewController.swift */; };
 		16D749ED2849829400ECD9DB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D749EC2849829400ECD9DB /* LoginViewModel.swift */; };
 		330B982F2844554500313B85 /* FavoritoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330B982E2844554500313B85 /* FavoritoViewController.swift */; };
@@ -75,6 +78,9 @@
 		16753088283EB9F800D7CE3A /* ProjetoIntegradorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjetoIntegradorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1675308C283EB9F800D7CE3A /* ProjetoIntegradorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetoIntegradorUITests.swift; sourceTree = "<group>"; };
 		1675308E283EB9F800D7CE3A /* ProjetoIntegradorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetoIntegradorUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		16993167284E8C8200AF1014 /* testeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testeViewController.swift; sourceTree = "<group>"; };
+		16993169284E984F00AF1014 /* PesquisaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PesquisaViewModel.swift; sourceTree = "<group>"; };
+		1699316B284E9D9F00AF1014 /* PesquisaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PesquisaCollectionViewCell.swift; sourceTree = "<group>"; };
 		16D749EA284981F200ECD9DB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		16D749EC2849829400ECD9DB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		2A283DAF1B45491C38FBBCEE /* Pods_ProjetoIntegradorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjetoIntegradorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,10 +199,12 @@
 		330B982B2844549000313B85 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				16993167284E8C8200AF1014 /* testeViewController.swift */,
 				FBDBE28128443D7B00C897A4 /* Fanzometro.swift */,
 				FBDBE2852844437C00C897A4 /* FanzometroCollectionViewCell.swift */,
 				EE118C3528446054005852F7 /* FilmesDetalhesViewController.swift */,
 				EE118C372844E6D6005852F7 /* PesquisaViewController.swift */,
+				1699316B284E9D9F00AF1014 /* PesquisaCollectionViewCell.swift */,
 				EE118C2F284459BA005852F7 /* FilmesEmDestaquesCollectionViewCell.swift */,
 				EE118C2D28445906005852F7 /* HomeViewController.swift */,
 				330B982E2844554500313B85 /* FavoritoViewController.swift */,
@@ -214,6 +222,7 @@
 				FBDBE28328443F5600C897A4 /*  FanzometroViewModel.swift */,
 				EE118C3128445AB2005852F7 /* HomeViewModel.swift */,
 				16D749EC2849829400ECD9DB /* LoginViewModel.swift */,
+				16993169284E984F00AF1014 /* PesquisaViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -410,6 +419,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16993168284E8C8200AF1014 /* testeViewController.swift in Sources */,
+				1699316A284E984F00AF1014 /* PesquisaViewModel.swift in Sources */,
 				16D749EB284981F200ECD9DB /* LoginViewController.swift in Sources */,
 				16753073283EB9F700D7CE3A /* ProjetoIntegrador.xcdatamodeld in Sources */,
 				16D749ED2849829400ECD9DB /* LoginViewModel.swift in Sources */,
@@ -418,6 +429,7 @@
 				EE118C3628446054005852F7 /* FilmesDetalhesViewController.swift in Sources */,
 				1675306D283EB9F700D7CE3A /* ViewController.swift in Sources */,
 				1642540428442A7D006F92A4 /* Usuario.swift in Sources */,
+				1699316C284E9D9F00AF1014 /* PesquisaCollectionViewCell.swift in Sources */,
 				EE118C3228445AB2005852F7 /* HomeViewModel.swift in Sources */,
 				5E5B68CC2846519800AF6A6C /* dadosPessoaisViewController.swift in Sources */,
 				EE118C30284459BA005852F7 /* FilmesEmDestaquesCollectionViewCell.swift in Sources */,
