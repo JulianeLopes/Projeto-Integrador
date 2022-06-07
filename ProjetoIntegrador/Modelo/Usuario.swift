@@ -12,11 +12,12 @@ class Usuario {
     let nome: String
     let email: String
     let senha: String
-    let foto: String?
+    let foto: String
     let nivelDeFa: Double
     var filmesFavoritos: [Filme]
     
-    init(nome: String, email: String, senha: String, foto: String?, nivelDeFa: Double, filmesFavoritos: [Filme]){
+    
+    init(nome: String, email: String, senha: String, foto: String, nivelDeFa: Double, filmesFavoritos: [Filme]){
     self.nome = nome
     self.email = email
     self.senha = senha

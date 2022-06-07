@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ccl-xQ-baq">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="Ofx-pM-4IZ">
             <objects>
-                <viewController id="cMu-Lh-r6K" customClass="ViewController" customModule="ProjetoIntegrador" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cMu-Lh-r6K" customClass="LoginViewController" customModule="ProjetoIntegrador" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ju2-y1-EXa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,14 +29,14 @@
                                 <rect key="frame" x="20" y="394" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="labelLoginUser:" destination="jad-eq-cwk" eventType="editingDidEnd" id="Ik8-Hg-RbY"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tkA-Bd-Vwk">
                                 <rect key="frame" x="20" y="453" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES"/>
-                                <connections>
-                                    <action selector="senha:" destination="cMu-Lh-r6K" eventType="editingDidEnd" id="OTW-ra-dwQ"/>
-                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJX-ta-jcF">
                                 <rect key="frame" x="20" y="512" width="374" height="31"/>
@@ -49,6 +50,9 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
                                     <color key="baseForegroundColor" red="0.85490196939999996" green="0.21960783" blue="0.19607841970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="loginAction:" destination="cMu-Lh-r6K" eventType="touchUpInside" id="KEy-nB-AB1"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nkv-uk-3BB">
                                 <rect key="frame" x="20" y="568" width="374" height="31"/>
@@ -61,7 +65,7 @@
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="C98-jh-gdW" kind="show" id="gfA-ur-RaO"/>
+                                    <action selector="cadastrarNovoUsuarioButton:" destination="cMu-Lh-r6K" eventType="touchUpInside" id="iaI-vl-Pkq"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="m05-9h-43X">
@@ -108,18 +112,21 @@
                     </view>
                     <navigationItem key="navigationItem" id="yb5-N7-7hf"/>
                     <connections>
-                        <outlet property="senhaTextField" destination="tkA-Bd-Vwk" id="xAL-9e-ffO"/>
-                        <outlet property="usuarioTextField" destination="bM6-BW-feu" id="LZD-Zf-VR2"/>
+                        <outlet property="senhaTextField" destination="tkA-Bd-Vwk" id="Zbs-vA-Yrp"/>
+                        <outlet property="usuarioTextField" destination="bM6-BW-feu" id="Xec-a4-8BO"/>
+                        <segue destination="GSi-nI-jT9" kind="show" identifier="appSegueIndentifier" id="m2Q-WG-8e2"/>
+                        <segue destination="C98-jh-gdW" kind="show" identifier="novoCadastro" id="vOh-dE-qSS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gpw-56-6HU" sceneMemberID="firstResponder"/>
+                <exit id="jad-eq-cwk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="806.07476635514013" y="18.790496760259181"/>
+            <point key="canvasLocation" x="1713.0434782608697" y="18.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Novo Usuario View Controller-->
         <scene sceneID="XGx-dq-qQo">
             <objects>
-                <viewController id="C98-jh-gdW" sceneMemberID="viewController">
+                <viewController id="C98-jh-gdW" customClass="NovoUsuarioViewController" customModule="ProjetoIntegrador" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jpn-3D-d2G">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -134,6 +141,9 @@
                                 <rect key="frame" x="20" y="394" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="novoUsuarioTextField:" destination="ehK-Ed-4SG" eventType="editingDidEnd" id="7OA-hs-jFh"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cgf-e9-sPJ">
                                 <rect key="frame" x="20" y="453" width="374" height="34"/>
@@ -153,12 +163,12 @@
                                 </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Login">
+                                <buttonConfiguration key="configuration" style="plain" title="Cadastrar">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="cMu-Lh-r6K" kind="show" id="bmA-cF-EOZ"/>
+                                    <action selector="cadastrarButton:" destination="C98-jh-gdW" eventType="touchUpInside" id="VRg-99-eNd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -192,37 +202,55 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GUD-dO-vGF"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="Cgf-e9-sPJ" id="hjn-Fl-Ic2"/>
+                        <outlet property="nomeTextField" destination="jnB-zI-qDf" id="kwL-hk-AL4"/>
+                        <outlet property="senhaTextField" destination="CcD-1O-00D" id="IHK-pO-gFv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5p-lD-6aB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ehK-Ed-4SG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1577" y="16"/>
+            <point key="canvasLocation" x="2610" y="425"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="I6C-Yn-4ic">
+        <!--Main-->
+        <scene sceneID="zwI-eL-CsU">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YWv-Ua-h0l" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="app" storyboardName="Main" id="GSi-nI-jT9" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="3uX-Tf-pqd"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T85-ty-OGm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3483" y="-109"/>
+        </scene>
+        <!--Login-->
+        <scene sceneID="k1c-mv-TQu">
+            <objects>
+                <navigationController title="Login" automaticallyAdjustsScrollViewInsets="NO" id="ccl-xQ-baq" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="A1U-Xb-9gZ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="M1r-BQ-lEU">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="Vermelho Marvel"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="cMu-Lh-r6K" kind="relationship" relationship="rootViewController" id="XD5-Za-LQC"/>
+                        <segue destination="cMu-Lh-r6K" kind="relationship" relationship="rootViewController" id="69N-je-ddy"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Oc5-XM-k92" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4zp-1m-5Lq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26.086956521739133" y="16.741071428571427"/>
+            <point key="canvasLocation" x="805.79710144927537" y="18.75"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="XD5-Za-LQC"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="Facebook" width="56" height="60"/>
         <image name="Google" width="58" height="57"/>
         <image name="logoMarvel" width="2560" height="1029"/>
+        <namedColor name="Vermelho Marvel">
+            <color red="0.85500001907348633" green="0.024000000208616257" blue="0.024000000208616257" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

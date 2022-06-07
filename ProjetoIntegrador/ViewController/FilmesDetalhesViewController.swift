@@ -21,36 +21,33 @@ class FilmesDetalhesViewController: UIViewController {
         super.viewDidLoad()
         
         posterImage.image = filmeDestaque?.poster
+        posterImage.layer.cornerRadius = 20
         tituloLabel.text = filmeDestaque?.titulo
         elencoLabel.text = filmeDestaque?.elenco
         direcaoLabel.text = filmeDestaque?.direcao
         descricaoLabel.text = filmeDestaque?.descricao
+        
         //colocar indicação
         
         // Do any additional setup after loading the view.
     }
-    
+
+   
     @IBAction func buttonSpoiler(_ sender: Any) {
         
         let alerta = UIAlertController(title: "Alerta de Spoiler", message: "Agora é por sua conta e risco!", preferredStyle: UIAlertController.Style.alert)
-         
-         let telaSpoiler = UIAlertAction(title: "SIM", style: UIAlertAction.Style.default) { (UIAlertAction) in
-             
-             self.performSegue(withIdentifier: "telaSpoiler", sender: nil)
-         }
-         
-         let telaListaDeFilmes = UIAlertAction(title: "NÃO", style: UIAlertAction.Style.default) { (UIAlertAction) in
-             
-             self.performSegue(withIdentifier: "telaListaDeFilmes", sender: nil)
-         }
+                
+                let telaSpoiler = UIAlertAction(title: "SIM", style: UIAlertAction.Style.default) { (UIAlertAction) in
+                    
+                    self.performSegue(withIdentifier: "telaSpoiler", sender: nil)
+                }
 
-         let ok = UIAlertAction(title: "Continuar nesta tela", style: UIAlertAction.Style.default, handler: nil)
-         
-         alerta.addAction(telaSpoiler)
-         alerta.addAction(telaListaDeFilmes)
-         alerta.addAction(ok)
-         
-         self.present(alerta, animated: true, completion: nil)
+                let ok = UIAlertAction(title: "NÃO", style: UIAlertAction.Style.default, handler: nil)
+                
+                alerta.addAction(telaSpoiler)
+                alerta.addAction(ok)
+                
+                self.present(alerta, animated: true, completion: nil)
         
     }
     

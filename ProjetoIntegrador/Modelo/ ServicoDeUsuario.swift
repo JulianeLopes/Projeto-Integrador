@@ -11,11 +11,18 @@ import UIKit
 
 class  ServicoDeUsuario {
    
-    static let user = Usuario(nome:" Giselle",
-                                 email: " Andrade.giselles@gmail.com",
-                                 senha: " Giselle12",
+     static let user = Usuario(nome:"Giselle",
+                                 email: "giselle@gmail.com",
+                                 senha: "Giselle12",
                                  foto: "FotoGiselle",
                                  nivelDeFa: 5.5,
                                  filmesFavoritos: [Servico.viuvaNegra])
+    
+    var listaDeUsuario: [Usuario] = [Usuario(nome:"Giselle",
+                                             email: "giselle@gmail.com",
+                                             senha: "Giselle12",
+                                             foto: "FotoGiselle",
+                                             nivelDeFa: 5.5,
+                                             filmesFavoritos: [Servico.viuvaNegra])]
     
 }

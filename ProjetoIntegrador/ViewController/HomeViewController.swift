@@ -13,20 +13,20 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var pesquisaTextField: UITextField!
     @IBOutlet weak var filmesDestaqueCollectionView: UICollectionView!
     
+    
     let viewModel = HomeViewModel()
     var filmeDestaque: Filme?
     var filmeProcurado: String?
+    var usuarioEnviado: Usuario?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         filmeDestaque = Servico.filmeEmDestaque
-        
         filmesDestaqueCollectionView.dataSource = self
         filmesDestaqueCollectionView.delegate = self
         filmeDestaqueImage.image = Servico.filmeEmDestaque.poster
-        
         filmeProcurado = ""
-        nomeLabel.text = "Olá,\(ServicoDeUsuario.user.nome)"
+        nomeLabel.text = "Ola, \(usuarioEnviado?.nome)"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

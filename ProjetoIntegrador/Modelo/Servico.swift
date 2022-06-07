@@ -49,6 +49,12 @@ class Servico {
     
     static var filmeEmDestaque: Filme = viuvaNegra
     
+//    let fanzometro = Fanzometro()
+//    let dadosPessoais = dadosPessoaisViewController()
+//    let login = LoginViewController()
+//    
+//    static var listaDeViewController: UIViewController = [fanzometro, dadosPessoais, login]
+    
 }
 
 

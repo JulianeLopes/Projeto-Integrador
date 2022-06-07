@@ -24,8 +24,8 @@ class Fanzometro: UIViewController {
         userImageView.layer.borderWidth = 4
         userImageView.layer.borderColor = UIColor.red.cgColor
         favoritosCollectionView.dataSource = self
-    
-       
+        
+        porcentagemLabel.text = "\(fanzometroPorcentagem(listaDeFavoritos: ServicoDeUsuario.user.filmesFavoritos)) % "
     }
     
 }
@@ -42,5 +42,15 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
     
     return cell ??  UICollectionViewCell()
 }
+    
+    func fanzometroPorcentagem(listaDeFavoritos: [Filme]) -> Double{
+        
+        let quantidadeDeFavoritos = Double(listaDeFavoritos.count)
+        let quantidadeDeFilmes = Double(Servico.listaDeFilmes.count)
+        
+        let porcentagemFanzometro = (quantidadeDeFavoritos / quantidadeDeFilmes)*100
+
+        return porcentagemFanzometro
+    }
 }
     

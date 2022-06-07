@@ -11,8 +11,8 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var usuarioTextField: UITextField!
-    
     @IBOutlet weak var senhaTextField: UITextField!
+    
     
     
     
@@ -21,6 +21,22 @@ class ViewController: UIViewController {
         
         // colocar limpar texto no final do textField
         usuarioTextField.clearButtonMode = .whileEditing
+        
+    }
+    
+    @IBAction func buttomLogin(_ sender: Any) {
+        
+    }
+    
+    @IBAction func buttonGoogle(_ sender: Any) {
+        
+    }
+    
+    @IBAction func buttonFacebook(_ sender: Any) {
+        
+    }
+    
+    @IBAction func buttomCadastreSeAqui(_ sender: Any) {
         
     }
     

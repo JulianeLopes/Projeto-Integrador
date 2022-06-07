@@ -14,4 +14,6 @@ class HomeViewModel {
         return Servico.listaDeFilmeEmDestaques.count
     }
     
+    
+    
 }
