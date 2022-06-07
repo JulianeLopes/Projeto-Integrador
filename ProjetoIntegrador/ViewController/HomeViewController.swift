@@ -22,11 +22,9 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         filmeDestaque = Servico.filmeEmDestaque
-        
         filmesDestaqueCollectionView.dataSource = self
         filmesDestaqueCollectionView.delegate = self
         filmeDestaqueImage.image = Servico.filmeEmDestaque.poster
-        
         filmeProcurado = ""
         nomeLabel.text = "Ola, \(usuarioEnviado?.nome)"
     }

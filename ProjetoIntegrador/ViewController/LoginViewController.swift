@@ -28,6 +28,9 @@ class LoginViewController: UIViewController {
         mudarDeTela(usuario: confereUsuario())
     }
     
+    @IBAction func cadastrarNovoUsuarioButton(_ sender: Any) {
+        performSegue(withIdentifier: "novoCadastro", sender: nil)
+    }
     func apresentaAlerta() {
         
         let alerta = UIAlertController(title: "Usuário ou senha inválido", message: "Tente novamente", preferredStyle: UIAlertController.Style.alert)
