@@ -27,6 +27,19 @@ class LoginViewController: UIViewController {
     @IBAction func loginAction(_ sender: Any) {
         mudarDeTela(usuario: confereUsuario())
     }
+    
+    func apresentaAlerta() {
+        
+        let alerta = UIAlertController(title: "Usuário ou senha inválido", message: "Tente novamente", preferredStyle: UIAlertController.Style.alert)
+                
+                
+                let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+                
+                alerta.addAction(ok)
+                
+                self.present(alerta, animated: true, completion: nil)
+        
+    }
 
 
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -57,15 +70,9 @@ class LoginViewController: UIViewController {
     func mudarDeTela(usuario: Bool){
         if usuario == true {
             performSegue(withIdentifier: "appSegueIndentifier", sender: usuarioEnviado)
-            usuarioTextField.layer.borderWidth = 1
-            senhaTextField.layer.borderWidth = 1
-            usuarioTextField.layer.borderColor = UIColor.clear.cgColor
-            senhaTextField.layer.borderColor = UIColor.clear.cgColor
         } else {
-            usuarioTextField.layer.borderWidth = 1
-            senhaTextField.layer.borderWidth = 1
-            usuarioTextField.layer.borderColor = UIColor.black.cgColor
-            senhaTextField.layer.borderColor = UIColor.black.cgColor
+            
+            apresentaAlerta()
         }
     }
 }
