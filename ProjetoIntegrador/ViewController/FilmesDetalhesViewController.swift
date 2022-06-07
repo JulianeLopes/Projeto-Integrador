@@ -21,10 +21,12 @@ class FilmesDetalhesViewController: UIViewController {
         super.viewDidLoad()
         
         posterImage.image = filmeDestaque?.poster
+        posterImage.layer.cornerRadius = 20
         tituloLabel.text = filmeDestaque?.titulo
         elencoLabel.text = filmeDestaque?.elenco
         direcaoLabel.text = filmeDestaque?.direcao
         descricaoLabel.text = filmeDestaque?.descricao
+        
         //colocar indicação
         
         // Do any additional setup after loading the view.
