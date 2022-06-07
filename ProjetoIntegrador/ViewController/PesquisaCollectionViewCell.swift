@@ -15,5 +15,6 @@ class PesquisaCollectionViewCell: UICollectionViewCell {
     func configuraCelula(filme: Filme){
         imagem.image = filme.poster
         titulo.text = filme.titulo
+        imagem.layer.cornerRadius = 20
     }
 }

@@ -21,10 +21,12 @@ class FilmesDetalhesViewController: UIViewController {
         super.viewDidLoad()
         
         posterImage.image = filmeDestaque?.poster
+        posterImage.layer.cornerRadius = 20
         tituloLabel.text = filmeDestaque?.titulo
         elencoLabel.text = filmeDestaque?.elenco
         direcaoLabel.text = filmeDestaque?.direcao
         descricaoLabel.text = filmeDestaque?.descricao
+        
         //colocar indicação
         
         // Do any additional setup after loading the view.
@@ -39,11 +41,19 @@ class FilmesDetalhesViewController: UIViewController {
                     
                     self.performSegue(withIdentifier: "telaSpoiler", sender: nil)
                 }
+<<<<<<< HEAD
                 
                 let telaListaDeFilmes = UIAlertAction(title: "NÃO", style: UIAlertAction.Style.default,  handler: nil)
 
                 alerta.addAction(telaSpoiler)
                 alerta.addAction(telaListaDeFilmes)
+=======
+
+                let ok = UIAlertAction(title: "NÃO", style: UIAlertAction.Style.default, handler: nil)
+                
+                alerta.addAction(telaSpoiler)
+                alerta.addAction(ok)
+>>>>>>> main
                 
                 self.present(alerta, animated: true, completion: nil)
         
