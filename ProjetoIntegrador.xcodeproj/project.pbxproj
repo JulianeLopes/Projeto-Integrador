@@ -20,7 +20,6 @@
 		16753083283EB9F800D7CE3A /* ProjetoIntegradorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16753082283EB9F800D7CE3A /* ProjetoIntegradorTests.swift */; };
 		1675308D283EB9F800D7CE3A /* ProjetoIntegradorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1675308C283EB9F800D7CE3A /* ProjetoIntegradorUITests.swift */; };
 		1675308F283EB9F800D7CE3A /* ProjetoIntegradorUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1675308E283EB9F800D7CE3A /* ProjetoIntegradorUITestsLaunchTests.swift */; };
-		16993168284E8C8200AF1014 /* testeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16993167284E8C8200AF1014 /* testeViewController.swift */; };
 		1699316A284E984F00AF1014 /* PesquisaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16993169284E984F00AF1014 /* PesquisaViewModel.swift */; };
 		1699316C284E9D9F00AF1014 /* PesquisaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1699316B284E9D9F00AF1014 /* PesquisaCollectionViewCell.swift */; };
 		16D749EB284981F200ECD9DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D749EA284981F200ECD9DB /* LoginViewController.swift */; };
@@ -38,6 +37,7 @@
 		EE118C3228445AB2005852F7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118C3128445AB2005852F7 /* HomeViewModel.swift */; };
 		EE118C3628446054005852F7 /* FilmesDetalhesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118C3528446054005852F7 /* FilmesDetalhesViewController.swift */; };
 		EE118C382844E6D6005852F7 /* PesquisaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118C372844E6D6005852F7 /* PesquisaViewController.swift */; };
+		EE2D484B284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2D484A284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift */; };
 		FBDBE28028443AC100C897A4 /*  ServicoDeUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE27F28443AC100C897A4 /*  ServicoDeUsuario.swift */; };
 		FBDBE28228443D7B00C897A4 /* Fanzometro.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE28128443D7B00C897A4 /* Fanzometro.swift */; };
 		FBDBE28428443F5600C897A4 /*  FanzometroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE28328443F5600C897A4 /*  FanzometroViewModel.swift */; };
@@ -79,7 +79,6 @@
 		16753088283EB9F800D7CE3A /* ProjetoIntegradorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProjetoIntegradorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1675308C283EB9F800D7CE3A /* ProjetoIntegradorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetoIntegradorUITests.swift; sourceTree = "<group>"; };
 		1675308E283EB9F800D7CE3A /* ProjetoIntegradorUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjetoIntegradorUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		16993167284E8C8200AF1014 /* testeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testeViewController.swift; sourceTree = "<group>"; };
 		16993169284E984F00AF1014 /* PesquisaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PesquisaViewModel.swift; sourceTree = "<group>"; };
 		1699316B284E9D9F00AF1014 /* PesquisaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PesquisaCollectionViewCell.swift; sourceTree = "<group>"; };
 		16D749EA284981F200ECD9DB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -97,6 +96,7 @@
 		EE118C3128445AB2005852F7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		EE118C3528446054005852F7 /* FilmesDetalhesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesDetalhesViewController.swift; sourceTree = "<group>"; };
 		EE118C372844E6D6005852F7 /* PesquisaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PesquisaViewController.swift; sourceTree = "<group>"; };
+		EE2D484A284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracaoViewModel.swift; sourceTree = "<group>"; };
 		F53FC665A2528476EA2994BE /* Pods_ProjetoIntegrador_ProjetoIntegradorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjetoIntegrador_ProjetoIntegradorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBDBE27F28443AC100C897A4 /*  ServicoDeUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " ServicoDeUsuario.swift"; sourceTree = "<group>"; };
 		FBDBE28128443D7B00C897A4 /* Fanzometro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fanzometro.swift; sourceTree = "<group>"; };
@@ -201,7 +201,6 @@
 		330B982B2844549000313B85 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				16993167284E8C8200AF1014 /* testeViewController.swift */,
 				FBDBE28128443D7B00C897A4 /* Fanzometro.swift */,
 				FBDBE2852844437C00C897A4 /* FanzometroCollectionViewCell.swift */,
 				EE118C3528446054005852F7 /* FilmesDetalhesViewController.swift */,
@@ -226,6 +225,7 @@
 				EE118C3128445AB2005852F7 /* HomeViewModel.swift */,
 				16D749EC2849829400ECD9DB /* LoginViewModel.swift */,
 				16993169284E984F00AF1014 /* PesquisaViewModel.swift */,
+				EE2D484A284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -422,12 +422,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16993168284E8C8200AF1014 /* testeViewController.swift in Sources */,
 				1699316A284E984F00AF1014 /* PesquisaViewModel.swift in Sources */,
 				16D749EB284981F200ECD9DB /* LoginViewController.swift in Sources */,
 				16753073283EB9F700D7CE3A /* ProjetoIntegrador.xcdatamodeld in Sources */,
 				16D749ED2849829400ECD9DB /* LoginViewModel.swift in Sources */,
 				5E5B68CA28464F6D00AF6A6C /* ConfiguracoesViewController.swift in Sources */,
+				EE2D484B284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift in Sources */,
 				EE118C382844E6D6005852F7 /* PesquisaViewController.swift in Sources */,
 				EE118C3628446054005852F7 /* FilmesDetalhesViewController.swift in Sources */,
 				1675306D283EB9F700D7CE3A /* ViewController.swift in Sources */,

@@ -7,16 +7,31 @@
 
 import UIKit
 
+protocol ConfiguracaoViewModelDelegate: AnyObject{
+    func clicouNoBotao(title: String)
+}
+
+
 class ConfiguracaoTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var labelConfig: UILabel!
+    weak var delegate: ConfiguracaoViewModelDelegate?
+    
+    @IBOutlet weak var button: UIButton!
+    private var titulo: String = ""
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        button.setTitleColor(.white, for: .normal)
         
     }
     
-    func configuraCelula(UIViewController: UIViewController) {
-        labelConfig.text = UIViewController.nibName
+    @IBAction func buttonPressed(_ sender: Any) {
+        delegate?.clicouNoBotao(title: titulo)
+    }
+    
+    func configuraCelula(titulo: String) {
+        self.titulo = titulo
+        button.setTitle(titulo, for: .normal)
     }
 }
