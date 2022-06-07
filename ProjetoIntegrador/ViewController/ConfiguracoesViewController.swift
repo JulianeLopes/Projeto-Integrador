@@ -43,9 +43,9 @@ extension ConfiguracoesViewController: ConfiguracaoViewModelDelegate {
         case "Dados Pessoais":
             performSegue(withIdentifier: "dadosPessoais", sender: nil)
         case "Trocar usuário":
-            performSegue(withIdentifier: "dadosPessoais", sender: nil)
+            performSegue(withIdentifier: "voltarParaLogin", sender: nil)
         case "Sair":
-            performSegue(withIdentifier: "dadosPessoais", sender: nil)
+            performSegue(withIdentifier: "voltarParaLogin", sender: nil)
         default:
             performSegue(withIdentifier: "dadosPessoais", sender: nil)
         }
