@@ -27,6 +27,8 @@ class ConfiguracaoTableViewCell: UITableViewCell {
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
+//        let loginViewController = LoginViewController()
+//        present(loginViewController, animated: true)
         delegate?.clicouNoBotao(title: titulo)
     }
     
