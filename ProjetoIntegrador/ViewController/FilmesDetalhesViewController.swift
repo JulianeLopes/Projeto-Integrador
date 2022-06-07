@@ -8,6 +8,13 @@
 import UIKit
 
 class FilmesDetalhesViewController: UIViewController {
+    
+    @IBOutlet weak var estrelaUmButton: UIButton!
+    @IBOutlet weak var estrelaDoisButton: UIButton!
+    @IBOutlet weak var estrelaTresButton: UIButton!
+    @IBOutlet weak var estrelaQuatroButton: UIButton!
+    @IBOutlet weak var estrelaCincoButton: UIButton!
+    
     @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var tituloLabel: UILabel!
     @IBOutlet weak var elencoLabel: UILabel!
@@ -16,6 +23,7 @@ class FilmesDetalhesViewController: UIViewController {
     @IBOutlet weak var indicacaoLabel: UILabel!
     
     var filmeDestaque: Filme?
+   // var estrelaImagemPintada = UIImage(named: "star.fill") as! UIImage
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +39,6 @@ class FilmesDetalhesViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
-
    
     @IBAction func buttonSpoiler(_ sender: Any) {
         
@@ -50,5 +57,32 @@ class FilmesDetalhesViewController: UIViewController {
                 self.present(alerta, animated: true, completion: nil)
         
     }
+    
+    @IBAction func pintarPrimeiraEstrela(_ sender: Any) {
+        estrelaUmButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+    }
+    @IBAction func pintarSegundaEstrela(_ sender: Any) {
+        estrelaUmButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaDoisButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+    }
+    @IBAction func pintarTerceiraEstrela(_ sender: Any) {
+        estrelaUmButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaDoisButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaTresButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+    }
+    @IBAction func pintarQuartaEstrela(_ sender: Any) {
+        estrelaUmButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaDoisButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaTresButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaQuatroButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+    }
+    @IBAction func pintarQuintaEstrela(_ sender: Any) {
+        estrelaUmButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaDoisButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaTresButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaQuatroButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaCincoButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+    }
+    
     
 }

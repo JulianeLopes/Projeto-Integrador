@@ -110,11 +110,13 @@
                             <constraint firstItem="m05-9h-43X" firstAttribute="leading" secondItem="oKN-Zo-HdP" secondAttribute="leading" constant="100" id="zgR-Ih-Mrs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="yb5-N7-7hf"/>
+                    <navigationItem key="navigationItem" id="yb5-N7-7hf">
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="Mdc-Tt-bJg"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="senhaTextField" destination="tkA-Bd-Vwk" id="Zbs-vA-Yrp"/>
                         <outlet property="usuarioTextField" destination="bM6-BW-feu" id="Xec-a4-8BO"/>
-                        <segue destination="GSi-nI-jT9" kind="show" identifier="appSegueIndentifier" id="m2Q-WG-8e2"/>
+                        <segue destination="GSi-nI-jT9" kind="presentation" identifier="appSegueIndentifier" modalPresentationStyle="fullScreen" id="m2Q-WG-8e2"/>
                         <segue destination="C98-jh-gdW" kind="show" identifier="novoCadastro" id="vOh-dE-qSS"/>
                     </connections>
                 </viewController>

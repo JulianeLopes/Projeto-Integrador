@@ -902,30 +902,45 @@
                                                 <color key="tintColor" name="Vermelho Marvel"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                                <connections>
+                                                    <action selector="pintarPrimeiraEstrela:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="OrA-KH-Y26"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vx-1P-KWz">
                                                 <rect key="frame" x="78" y="0.0" width="47" height="31"/>
                                                 <color key="tintColor" name="Vermelho Marvel"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                                <connections>
+                                                    <action selector="pintarSegundaEstrela:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="oFx-y9-Z14"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfg-hQ-aHK">
                                                 <rect key="frame" x="156" y="0.0" width="47" height="31"/>
                                                 <color key="tintColor" name="Vermelho Marvel"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                                <connections>
+                                                    <action selector="pintarTerceiraEstrela:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="RCB-Li-YgX"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPi-AY-cOU">
                                                 <rect key="frame" x="234" y="0.0" width="47" height="31"/>
                                                 <color key="tintColor" name="Vermelho Marvel"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                                <connections>
+                                                    <action selector="pintarQuartaEstrela:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="yjs-jc-SI2"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NjT-6a-FQk">
                                                 <rect key="frame" x="312" y="0.0" width="47" height="31"/>
                                                 <color key="tintColor" name="Vermelho Marvel"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                                <connections>
+                                                    <action selector="pintarQuintaEstrela:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="TBR-e0-IMJ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -951,6 +966,11 @@
                         <outlet property="descricaoLabel" destination="jSX-PR-aqA" id="JNC-MT-R1c"/>
                         <outlet property="direcaoLabel" destination="MPj-9Y-hxr" id="X9Y-IJ-Kpl"/>
                         <outlet property="elencoLabel" destination="wrp-Ee-Mia" id="jpd-aC-FOB"/>
+                        <outlet property="estrelaCincoButton" destination="NjT-6a-FQk" id="J3C-Xg-WwU"/>
+                        <outlet property="estrelaDoisButton" destination="1vx-1P-KWz" id="PUJ-Tn-hna"/>
+                        <outlet property="estrelaQuatroButton" destination="kPi-AY-cOU" id="Aa0-td-BZ1"/>
+                        <outlet property="estrelaTresButton" destination="Qfg-hQ-aHK" id="Xiy-rM-kjB"/>
+                        <outlet property="estrelaUmButton" destination="7jM-4d-tIs" id="JWc-up-xl4"/>
                         <outlet property="indicacaoLabel" destination="TA3-Re-4C6" id="onK-aH-ufZ"/>
                         <outlet property="posterImage" destination="ukI-X5-Yoe" id="L6w-6A-YzV"/>
                         <outlet property="tituloLabel" destination="Day-EE-sws" id="vrQ-hC-bpF"/>
