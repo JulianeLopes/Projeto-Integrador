@@ -22,9 +22,11 @@ class NovoUsuarioViewController: UIViewController {
     
     @IBAction func cadastrarButton(_ sender: Any) {
         service.listaDeUsuario.append(novoUsuario())
-        
-        
+        dismiss(animated: true) {
+            self.performSegue(withIdentifier: "voltarIndetifier", sender: nil)
+        }
     }
+    
     func novoUsuario() -> Usuario {
         if let nome = nomeTextField.text, let email = emailTextField.text, let senha = senhaTextField.text {
             
