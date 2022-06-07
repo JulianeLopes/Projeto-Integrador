@@ -18,7 +18,7 @@ class  ServicoDeUsuario {
                                  nivelDeFa: 5.5,
                                  filmesFavoritos: [Servico.viuvaNegra])
     
-    let listaDeUsuario: [Usuario] = [Usuario(nome:"Giselle",
+    var listaDeUsuario: [Usuario] = [Usuario(nome:"Giselle",
                                              email: "giselle@gmail.com",
                                              senha: "Giselle12",
                                              foto: "FotoGiselle",

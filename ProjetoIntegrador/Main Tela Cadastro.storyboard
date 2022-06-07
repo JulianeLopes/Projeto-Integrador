@@ -63,6 +63,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Não tem conta? Cadastre-se aqui">
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="cadastrarNovoUsuarioButton:" destination="cMu-Lh-r6K" eventType="touchUpInside" id="iaI-vl-Pkq"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="56" translatesAutoresizingMaskIntoConstraints="NO" id="m05-9h-43X">
                                 <rect key="frame" x="100" y="565" width="214" height="74"/>
@@ -111,7 +114,7 @@
                         <outlet property="senhaTextField" destination="tkA-Bd-Vwk" id="Zbs-vA-Yrp"/>
                         <outlet property="usuarioTextField" destination="bM6-BW-feu" id="Xec-a4-8BO"/>
                         <segue destination="GSi-nI-jT9" kind="show" identifier="appSegueIndentifier" id="m2Q-WG-8e2"/>
-                        <segue destination="C98-jh-gdW" kind="show" id="vOh-dE-qSS"/>
+                        <segue destination="C98-jh-gdW" kind="show" identifier="novoCadastro" id="vOh-dE-qSS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gpw-56-6HU" sceneMemberID="firstResponder"/>
@@ -119,10 +122,10 @@
             </objects>
             <point key="canvasLocation" x="1713.0434782608697" y="18.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Novo Usuario View Controller-->
         <scene sceneID="XGx-dq-qQo">
             <objects>
-                <viewController id="C98-jh-gdW" sceneMemberID="viewController">
+                <viewController id="C98-jh-gdW" customClass="NovoUsuarioViewController" customModule="ProjetoIntegrador" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jpn-3D-d2G">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,6 +166,9 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="cadastrarButton:" destination="C98-jh-gdW" eventType="touchUpInside" id="VRg-99-eNd"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="f65-RE-8Np"/>
@@ -195,6 +201,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GUD-dO-vGF"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="Cgf-e9-sPJ" id="hjn-Fl-Ic2"/>
+                        <outlet property="nomeTextField" destination="jnB-zI-qDf" id="kwL-hk-AL4"/>
+                        <outlet property="senhaTextField" destination="CcD-1O-00D" id="IHK-pO-gFv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5p-lD-6aB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="ehK-Ed-4SG" userLabel="Exit" sceneMemberID="exit"/>
