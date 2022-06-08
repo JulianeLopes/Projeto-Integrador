@@ -224,6 +224,7 @@
                     <navigationItem key="navigationItem" id="YJY-ea-F38"/>
                     <connections>
                         <outlet property="listaFavoritoTableView" destination="VMC-CT-UKr" id="vSR-tQ-2Uu"/>
+                        <segue destination="mWI-Zi-r8U" kind="show" identifier="favoritoDetalhesFilmeSegue" id="lyi-mc-ALf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="psJ-QO-OwJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -246,12 +247,14 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yf7-Vo-FVr">
                                                 <rect key="frame" x="137" y="0.0" width="108" height="35"/>
-                                                <color key="backgroundColor" name="Vermelho Marvel"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="iY2-g2-l6S"/>
                                                 </constraints>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Saiba mais">
+                                                <buttonConfiguration key="configuration" style="plain" title="Saiba mais" cornerStyle="large">
+                                                    <backgroundConfiguration key="background">
+                                                        <color key="backgroundColor" red="0.85490196080000003" green="0.023529411760000001" blue="0.023529411760000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </backgroundConfiguration>
                                                     <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </buttonConfiguration>
@@ -819,20 +822,25 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="ZCi-f8-CCk">
-                                <rect key="frame" x="16" y="477" width="54.5" height="20"/>
+                                <rect key="frame" x="16" y="477" width="79.5" height="31"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LsQ-Ky-VOV">
-                                        <rect key="frame" x="0.0" y="1.5" width="20.5" height="17.5"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xo5-pi-Ve5">
+                                        <rect key="frame" x="0.0" y="0.0" width="45.5" height="31"/>
                                         <color key="tintColor" name="Vermelho Marvel"/>
-                                    </imageView>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                        <connections>
+                                            <action selector="favoritarAction:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="Oni-cz-5aL"/>
+                                        </connections>
+                                    </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paperplane" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="23a-88-hr8">
-                                        <rect key="frame" x="33.5" y="0.5" width="21" height="19.5"/>
+                                        <rect key="frame" x="58.5" y="0.5" width="21" height="30.5"/>
                                         <color key="tintColor" name="Vermelho Marvel"/>
                                     </imageView>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="p8c-0C-nuz">
-                                <rect key="frame" x="16" y="505" width="382" height="142.5"/>
+                                <rect key="frame" x="16" y="516" width="382" height="142.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Uoa-am-tN6">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="106"/>
@@ -872,14 +880,15 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dM7-Og-tEo">
-                                <rect key="frame" x="27.5" y="653.5" width="359" height="114.5"/>
+                                <rect key="frame" x="27.5" y="664.5" width="359" height="114.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SR-Du-0TQ">
                                         <rect key="frame" x="145" y="0.0" width="69.5" height="31"/>
-                                        <color key="backgroundColor" name="Vermelho Marvel"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Spoiler" titleAlignment="center">
-                                            <backgroundConfiguration key="background"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Spoiler" cornerStyle="large" titleAlignment="center">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" red="0.85490196080000003" green="0.023529411760000001" blue="0.023529411760000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            </backgroundConfiguration>
                                             <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
@@ -902,30 +911,45 @@
                                                 <color key="tintColor" name="Vermelho Marvel"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                                <connections>
+                                                    <action selector="pintarPrimeiraEstrela:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="OrA-KH-Y26"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vx-1P-KWz">
                                                 <rect key="frame" x="78" y="0.0" width="47" height="31"/>
                                                 <color key="tintColor" name="Vermelho Marvel"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                                <connections>
+                                                    <action selector="pintarSegundaEstrela:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="oFx-y9-Z14"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfg-hQ-aHK">
                                                 <rect key="frame" x="156" y="0.0" width="47" height="31"/>
                                                 <color key="tintColor" name="Vermelho Marvel"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                                <connections>
+                                                    <action selector="pintarTerceiraEstrela:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="RCB-Li-YgX"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPi-AY-cOU">
                                                 <rect key="frame" x="234" y="0.0" width="47" height="31"/>
                                                 <color key="tintColor" name="Vermelho Marvel"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                                <connections>
+                                                    <action selector="pintarQuartaEstrela:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="yjs-jc-SI2"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NjT-6a-FQk">
                                                 <rect key="frame" x="312" y="0.0" width="47" height="31"/>
                                                 <color key="tintColor" name="Vermelho Marvel"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                                <connections>
+                                                    <action selector="pintarQuintaEstrela:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="TBR-e0-IMJ"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -951,6 +975,12 @@
                         <outlet property="descricaoLabel" destination="jSX-PR-aqA" id="JNC-MT-R1c"/>
                         <outlet property="direcaoLabel" destination="MPj-9Y-hxr" id="X9Y-IJ-Kpl"/>
                         <outlet property="elencoLabel" destination="wrp-Ee-Mia" id="jpd-aC-FOB"/>
+                        <outlet property="estrelaCincoButton" destination="NjT-6a-FQk" id="J3C-Xg-WwU"/>
+                        <outlet property="estrelaDoisButton" destination="1vx-1P-KWz" id="PUJ-Tn-hna"/>
+                        <outlet property="estrelaQuatroButton" destination="kPi-AY-cOU" id="Aa0-td-BZ1"/>
+                        <outlet property="estrelaTresButton" destination="Qfg-hQ-aHK" id="Xiy-rM-kjB"/>
+                        <outlet property="estrelaUmButton" destination="7jM-4d-tIs" id="JWc-up-xl4"/>
+                        <outlet property="favoritarButton" destination="Xo5-pi-Ve5" id="owt-qb-7sv"/>
                         <outlet property="indicacaoLabel" destination="TA3-Re-4C6" id="onK-aH-ufZ"/>
                         <outlet property="posterImage" destination="ukI-X5-Yoe" id="L6w-6A-YzV"/>
                         <outlet property="tituloLabel" destination="Day-EE-sws" id="vrQ-hC-bpF"/>
@@ -961,26 +991,22 @@
             </objects>
             <point key="canvasLocation" x="-1469.5652173913045" y="2900.2232142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Spoiler View Controller-->
         <scene sceneID="e23-Ky-PeF">
             <objects>
-                <viewController id="3Ya-ss-7Ni" sceneMemberID="viewController">
+                <viewController id="3Ya-ss-7Ni" customClass="SpoilerViewController" customModule="ProjetoIntegrador" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JI7-4k-efx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spoiler" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXO-3A-wsv">
-                                <rect key="frame" x="0.0" y="66" width="414" height="343"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="343" id="86e-BT-tOy"/>
-                                    <constraint firstAttribute="height" constant="343" id="v3a-yd-k2e"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spoiler" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EXO-3A-wsv">
+                                <rect key="frame" x="8" y="66" width="398" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esse filme contem cenas pos credito?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3y5-mc-h7u">
-                                <rect key="frame" x="0.0" y="425" width="414" height="47"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esse filme contém cenas pós credito?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3y5-mc-h7u">
+                                <rect key="frame" x="0.0" y="102.5" width="414" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="47" id="mYu-IQ-5z4"/>
                                 </constraints>
@@ -994,42 +1020,50 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8Qt-TV-1jP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="25"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="35"/>
                                 <color key="textColor" red="0.85490196939999996" green="0.21960783" blue="0.19607841970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWN-jA-Fdl">
-                                <rect key="frame" x="0.0" y="488" width="414" height="276"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="276" id="jWY-T7-lRd"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="180" id="q4D-PG-fUi"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AWN-jA-Fdl">
+                                <rect key="frame" x="8" y="165.5" width="398" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PX6-ga-75K">
+                                <rect key="frame" x="159" y="731" width="96" height="31"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Fechar tela" cornerStyle="large">
+                                    <backgroundConfiguration key="background">
+                                        <color key="backgroundColor" red="0.85490196080000003" green="0.023529411760000001" blue="0.023529411760000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </backgroundConfiguration>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IcZ-jS-U1p"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="EXO-3A-wsv" firstAttribute="trailing" secondItem="IcZ-jS-U1p" secondAttribute="trailing" id="2BH-di-GGB"/>
                             <constraint firstItem="IcZ-jS-U1p" firstAttribute="trailing" secondItem="3y5-mc-h7u" secondAttribute="trailing" id="3JJ-YF-hZb"/>
-                            <constraint firstItem="EXO-3A-wsv" firstAttribute="top" secondItem="ogO-sE-cHw" secondAttribute="bottom" constant="16" id="58g-w1-gd7"/>
-                            <constraint firstItem="AWN-jA-Fdl" firstAttribute="leading" secondItem="IcZ-jS-U1p" secondAttribute="leading" id="7fv-o9-Lhu"/>
-                            <constraint firstAttribute="trailing" secondItem="AWN-jA-Fdl" secondAttribute="trailing" id="7qL-cw-jhm"/>
                             <constraint firstItem="3y5-mc-h7u" firstAttribute="leading" secondItem="IcZ-jS-U1p" secondAttribute="leading" id="9Pu-M9-aS0"/>
-                            <constraint firstItem="3y5-mc-h7u" firstAttribute="top" secondItem="EXO-3A-wsv" secondAttribute="bottom" constant="16" id="AZf-wq-LU3"/>
+                            <constraint firstItem="AWN-jA-Fdl" firstAttribute="top" secondItem="3y5-mc-h7u" secondAttribute="bottom" constant="16" id="EVq-L9-n0i"/>
                             <constraint firstAttribute="trailing" secondItem="ogO-sE-cHw" secondAttribute="trailing" id="Eba-Qg-dRX"/>
                             <constraint firstItem="ogO-sE-cHw" firstAttribute="leading" secondItem="IcZ-jS-U1p" secondAttribute="leading" id="IIU-zR-52Z"/>
-                            <constraint firstItem="AWN-jA-Fdl" firstAttribute="leading" secondItem="IcZ-jS-U1p" secondAttribute="leading" id="P6Z-tl-vac"/>
-                            <constraint firstItem="EXO-3A-wsv" firstAttribute="top" secondItem="ogO-sE-cHw" secondAttribute="bottom" constant="16" id="aQn-61-Zfg"/>
+                            <constraint firstItem="IcZ-jS-U1p" firstAttribute="trailing" secondItem="EXO-3A-wsv" secondAttribute="trailing" constant="8" id="PcI-jI-4oH"/>
+                            <constraint firstItem="EXO-3A-wsv" firstAttribute="leading" secondItem="IcZ-jS-U1p" secondAttribute="leading" constant="8" id="SdB-KT-2Dz"/>
+                            <constraint firstItem="AWN-jA-Fdl" firstAttribute="leading" secondItem="IcZ-jS-U1p" secondAttribute="leading" constant="8" id="TC8-E1-v2w"/>
+                            <constraint firstItem="EXO-3A-wsv" firstAttribute="top" secondItem="ogO-sE-cHw" secondAttribute="bottom" constant="16" id="VuE-jc-6w3"/>
+                            <constraint firstItem="IcZ-jS-U1p" firstAttribute="bottom" secondItem="PX6-ga-75K" secondAttribute="bottom" constant="80" id="jha-fQ-4Ml"/>
                             <constraint firstItem="ogO-sE-cHw" firstAttribute="top" secondItem="JI7-4k-efx" secondAttribute="top" id="jw0-em-gs3"/>
-                            <constraint firstItem="AWN-jA-Fdl" firstAttribute="top" secondItem="3y5-mc-h7u" secondAttribute="bottom" constant="16" id="nwA-m8-fEx"/>
-                            <constraint firstItem="AWN-jA-Fdl" firstAttribute="top" secondItem="3y5-mc-h7u" secondAttribute="bottom" constant="16" id="pTK-Xf-StI"/>
-                            <constraint firstItem="IcZ-jS-U1p" firstAttribute="trailing" secondItem="AWN-jA-Fdl" secondAttribute="trailing" id="uwO-lB-Ghl"/>
-                            <constraint firstItem="EXO-3A-wsv" firstAttribute="leading" secondItem="IcZ-jS-U1p" secondAttribute="leading" id="vfq-9v-PiM"/>
+                            <constraint firstItem="3y5-mc-h7u" firstAttribute="top" secondItem="EXO-3A-wsv" secondAttribute="bottom" constant="16" id="tjH-h8-C24"/>
+                            <constraint firstAttribute="trailing" secondItem="AWN-jA-Fdl" secondAttribute="trailing" constant="8" id="z5K-Vc-h6d"/>
+                            <constraint firstItem="PX6-ga-75K" firstAttribute="centerX" secondItem="JI7-4k-efx" secondAttribute="centerX" id="zmw-7m-kAq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textoCenaPósCrédito" destination="AWN-jA-Fdl" id="wUa-Zt-k0s"/>
+                        <outlet property="textoSpoiler" destination="EXO-3A-wsv" id="XZ7-nU-Bjz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tIL-aQ-SzP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

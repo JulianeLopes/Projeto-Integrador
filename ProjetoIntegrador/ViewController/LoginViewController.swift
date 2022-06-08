@@ -44,13 +44,6 @@ class LoginViewController: UIViewController {
         
     }
 
-
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? HomeViewController {
-            destination.usuarioEnviado = usuarioEnviado
-        }
-    }
-    
     // conferir se o usuario existe
     
     func confereUsuario() -> Bool {
@@ -58,7 +51,7 @@ class LoginViewController: UIViewController {
         let usuarioDig = usuarioTextField.text
         let senhaDigitada = senhaTextField.text
         
-        for usuario in service.listaDeUsuario{
+        for usuario in ServicoDeUsuario.listaDeUsuario{
             if usuarioDig == usuario.email {
                 if senhaDigitada == usuario.senha {
                       usuarioEnviado = usuario
@@ -72,9 +65,9 @@ class LoginViewController: UIViewController {
         
     func mudarDeTela(usuario: Bool){
         if usuario == true {
-            performSegue(withIdentifier: "appSegueIndentifier", sender: usuarioEnviado)
+            SessionManager.shared.usuarioLogado = usuarioEnviado
+            performSegue(withIdentifier: "appSegueIndentifier", sender: nil)
         } else {
-            
             apresentaAlerta()
         }
     }

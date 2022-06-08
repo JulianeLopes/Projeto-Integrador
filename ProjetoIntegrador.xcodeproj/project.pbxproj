@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1629ED2B28417271009F9D2C /* Main Tela Cadastro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1629ED2A28417271009F9D2C /* Main Tela Cadastro.storyboard */; };
+		163CF01528512565005E4476 /* FilmesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163CF01428512565005E4476 /* FilmesViewModel.swift */; };
 		1642540428442A7D006F92A4 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1642540328442A7D006F92A4 /* Usuario.swift */; };
 		1642540628442A86006F92A4 /* Servico.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1642540528442A86006F92A4 /* Servico.swift */; };
 		16753069283EB9F700D7CE3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16753068283EB9F700D7CE3A /* AppDelegate.swift */; };
@@ -32,6 +33,7 @@
 		5947F00A7D8BEEC0CBED7425 /* Pods_ProjetoIntegrador_ProjetoIntegradorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F53FC665A2528476EA2994BE /* Pods_ProjetoIntegrador_ProjetoIntegradorUITests.framework */; };
 		5E5B68CA28464F6D00AF6A6C /* ConfiguracoesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B68C928464F6D00AF6A6C /* ConfiguracoesViewController.swift */; };
 		5E5B68CC2846519800AF6A6C /* DadosPessoaisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B68CB2846519800AF6A6C /* DadosPessoaisViewController.swift */; };
+		5EABB816285011EC00250EF6 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EABB815285011EC00250EF6 /* SessionManager.swift */; };
 		EE118C2E28445906005852F7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118C2D28445906005852F7 /* HomeViewController.swift */; };
 		EE118C30284459BA005852F7 /* FilmesEmDestaquesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118C2F284459BA005852F7 /* FilmesEmDestaquesCollectionViewCell.swift */; };
 		EE118C3228445AB2005852F7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118C3128445AB2005852F7 /* HomeViewModel.swift */; };
@@ -39,6 +41,8 @@
 		EE118C382844E6D6005852F7 /* PesquisaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118C372844E6D6005852F7 /* PesquisaViewController.swift */; };
 		EE2D484B284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2D484A284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift */; };
 		EE53C4B9284FEC20005DB3AC /* NovoUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE53C4B8284FEC20005DB3AC /* NovoUsuarioViewController.swift */; };
+		EE53C4BB2851087B005DB3AC /* FavoritoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE53C4BA2851087B005DB3AC /* FavoritoViewModel.swift */; };
+		EE53C4BD28510B3C005DB3AC /* SpoilerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE53C4BC28510B3C005DB3AC /* SpoilerViewController.swift */; };
 		FBDBE28028443AC100C897A4 /*  ServicoDeUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE27F28443AC100C897A4 /*  ServicoDeUsuario.swift */; };
 		FBDBE28228443D7B00C897A4 /* Fanzometro.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE28128443D7B00C897A4 /* Fanzometro.swift */; };
 		FBDBE28428443F5600C897A4 /*  FanzometroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE28328443F5600C897A4 /*  FanzometroViewModel.swift */; };
@@ -64,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		1629ED2A28417271009F9D2C /* Main Tela Cadastro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Main Tela Cadastro.storyboard"; sourceTree = "<group>"; };
+		163CF01428512565005E4476 /* FilmesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesViewModel.swift; sourceTree = "<group>"; };
 		1642540328442A7D006F92A4 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		1642540528442A86006F92A4 /* Servico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servico.swift; sourceTree = "<group>"; };
 		16753065283EB9F700D7CE3A /* ProjetoIntegrador.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetoIntegrador.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,6 +97,7 @@
 		4EE2BDC3F79A7042ED402856 /* Pods_ProjetoIntegrador.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjetoIntegrador.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E5B68C928464F6D00AF6A6C /* ConfiguracoesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracoesViewController.swift; sourceTree = "<group>"; };
 		5E5B68CB2846519800AF6A6C /* DadosPessoaisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadosPessoaisViewController.swift; sourceTree = "<group>"; };
+		5EABB815285011EC00250EF6 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		EE118C2D28445906005852F7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EE118C2F284459BA005852F7 /* FilmesEmDestaquesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesEmDestaquesCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE118C3128445AB2005852F7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -99,6 +105,8 @@
 		EE118C372844E6D6005852F7 /* PesquisaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PesquisaViewController.swift; sourceTree = "<group>"; };
 		EE2D484A284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracaoViewModel.swift; sourceTree = "<group>"; };
 		EE53C4B8284FEC20005DB3AC /* NovoUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovoUsuarioViewController.swift; sourceTree = "<group>"; };
+		EE53C4BA2851087B005DB3AC /* FavoritoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritoViewModel.swift; sourceTree = "<group>"; };
+		EE53C4BC28510B3C005DB3AC /* SpoilerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoilerViewController.swift; sourceTree = "<group>"; };
 		F53FC665A2528476EA2994BE /* Pods_ProjetoIntegrador_ProjetoIntegradorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjetoIntegrador_ProjetoIntegradorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBDBE27F28443AC100C897A4 /*  ServicoDeUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " ServicoDeUsuario.swift"; sourceTree = "<group>"; };
 		FBDBE28128443D7B00C897A4 /* Fanzometro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fanzometro.swift; sourceTree = "<group>"; };
@@ -157,6 +165,7 @@
 		16753067283EB9F700D7CE3A /* ProjetoIntegrador */ = {
 			isa = PBXGroup;
 			children = (
+				5EABB814285011B500250EF6 /* Manager */,
 				330B982D284454E400313B85 /* Modelo */,
 				330B982C284454AC00313B85 /* ViewModel */,
 				330B982B2844549000313B85 /* ViewController */,
@@ -204,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				FBDBE28128443D7B00C897A4 /* Fanzometro.swift */,
+				EE53C4BC28510B3C005DB3AC /* SpoilerViewController.swift */,
 				FBDBE2852844437C00C897A4 /* FanzometroCollectionViewCell.swift */,
 				EE118C3528446054005852F7 /* FilmesDetalhesViewController.swift */,
 				EE118C372844E6D6005852F7 /* PesquisaViewController.swift */,
@@ -229,6 +239,8 @@
 				16D749EC2849829400ECD9DB /* LoginViewModel.swift */,
 				16993169284E984F00AF1014 /* PesquisaViewModel.swift */,
 				EE2D484A284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift */,
+				EE53C4BA2851087B005DB3AC /* FavoritoViewModel.swift */,
+				163CF01428512565005E4476 /* FilmesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -242,6 +254,14 @@
 				1642540328442A7D006F92A4 /* Usuario.swift */,
 			);
 			path = Modelo;
+			sourceTree = "<group>";
+		};
+		5EABB814285011B500250EF6 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				5EABB815285011EC00250EF6 /* SessionManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,6 +451,7 @@
 				16D749ED2849829400ECD9DB /* LoginViewModel.swift in Sources */,
 				5E5B68CA28464F6D00AF6A6C /* ConfiguracoesViewController.swift in Sources */,
 				EE2D484B284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift in Sources */,
+				5EABB816285011EC00250EF6 /* SessionManager.swift in Sources */,
 				EE118C382844E6D6005852F7 /* PesquisaViewController.swift in Sources */,
 				EE118C3628446054005852F7 /* FilmesDetalhesViewController.swift in Sources */,
 				1675306D283EB9F700D7CE3A /* ViewController.swift in Sources */,
@@ -442,10 +463,13 @@
 				3357B1AB28442858007D611C /* Filme.swift in Sources */,
 				16753069283EB9F700D7CE3A /* AppDelegate.swift in Sources */,
 				EE118C2E28445906005852F7 /* HomeViewController.swift in Sources */,
+				163CF01528512565005E4476 /* FilmesViewModel.swift in Sources */,
 				330B9831284455DF00313B85 /* FavoritoTableViewCell.swift in Sources */,
+				EE53C4BD28510B3C005DB3AC /* SpoilerViewController.swift in Sources */,
 				EE53C4B9284FEC20005DB3AC /* NovoUsuarioViewController.swift in Sources */,
 				331CF45A284EDA3400A32933 /* ConfiguracaoTableViewCell.swift in Sources */,
 				1675306B283EB9F700D7CE3A /* SceneDelegate.swift in Sources */,
+				EE53C4BB2851087B005DB3AC /* FavoritoViewModel.swift in Sources */,
 				FBDBE28028443AC100C897A4 /*  ServicoDeUsuario.swift in Sources */,
 				FBDBE28228443D7B00C897A4 /* Fanzometro.swift in Sources */,
 				330B982F2844554500313B85 /* FavoritoViewController.swift in Sources */,
