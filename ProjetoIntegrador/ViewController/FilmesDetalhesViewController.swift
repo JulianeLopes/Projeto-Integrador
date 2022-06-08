@@ -25,12 +25,16 @@ class FilmesDetalhesViewController: UIViewController {
     
     var filmeDestaque: Filme?
     
+    var viewModel = FilmesViewModel()
+    
     private var usuarioLogado: Usuario? {
         return SessionManager.shared.usuarioLogado
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        
         
         posterImage.image = filmeDestaque?.poster
         posterImage.layer.cornerRadius = 20
@@ -50,7 +54,8 @@ class FilmesDetalhesViewController: UIViewController {
     
     @IBAction func favoritarAction(_ sender: Any) {
         favoritarButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-        usuarioLogado?.filmesFavoritos.append(filmeDestaque!)
+        viewModel.favorita(filme: filmeDestaque!)
+        
     }
     
     @IBAction func buttonSpoiler(_ sender: Any) {
@@ -103,3 +108,5 @@ class FilmesDetalhesViewController: UIViewController {
     
     
 }
+
+

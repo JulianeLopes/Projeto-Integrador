@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1629ED2B28417271009F9D2C /* Main Tela Cadastro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1629ED2A28417271009F9D2C /* Main Tela Cadastro.storyboard */; };
+		163CF01528512565005E4476 /* FilmesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163CF01428512565005E4476 /* FilmesViewModel.swift */; };
 		1642540428442A7D006F92A4 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1642540328442A7D006F92A4 /* Usuario.swift */; };
 		1642540628442A86006F92A4 /* Servico.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1642540528442A86006F92A4 /* Servico.swift */; };
 		16753069283EB9F700D7CE3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16753068283EB9F700D7CE3A /* AppDelegate.swift */; };
@@ -67,6 +68,7 @@
 
 /* Begin PBXFileReference section */
 		1629ED2A28417271009F9D2C /* Main Tela Cadastro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Main Tela Cadastro.storyboard"; sourceTree = "<group>"; };
+		163CF01428512565005E4476 /* FilmesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesViewModel.swift; sourceTree = "<group>"; };
 		1642540328442A7D006F92A4 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		1642540528442A86006F92A4 /* Servico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Servico.swift; sourceTree = "<group>"; };
 		16753065283EB9F700D7CE3A /* ProjetoIntegrador.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetoIntegrador.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -238,6 +240,7 @@
 				16993169284E984F00AF1014 /* PesquisaViewModel.swift */,
 				EE2D484A284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift */,
 				EE53C4BA2851087B005DB3AC /* FavoritoViewModel.swift */,
+				163CF01428512565005E4476 /* FilmesViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				3357B1AB28442858007D611C /* Filme.swift in Sources */,
 				16753069283EB9F700D7CE3A /* AppDelegate.swift in Sources */,
 				EE118C2E28445906005852F7 /* HomeViewController.swift in Sources */,
+				163CF01528512565005E4476 /* FilmesViewModel.swift in Sources */,
 				330B9831284455DF00313B85 /* FavoritoTableViewCell.swift in Sources */,
 				EE53C4BD28510B3C005DB3AC /* SpoilerViewController.swift in Sources */,
 				EE53C4B9284FEC20005DB3AC /* NovoUsuarioViewController.swift in Sources */,

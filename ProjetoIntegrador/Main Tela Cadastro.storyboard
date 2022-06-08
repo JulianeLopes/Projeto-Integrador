@@ -250,6 +250,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="vOh-dE-qSS"/>
         <segue reference="rra-xs-p7Q"/>
     </inferredMetricsTieBreakers>
     <resources>

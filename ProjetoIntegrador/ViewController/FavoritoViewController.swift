@@ -18,11 +18,13 @@ class FavoritoViewController: UIViewController {
     
     let viewModel = FavoritoViewModel()
     var filmeSelecionado: Filme?
+    var viewModelFavorito = FilmesViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         listaFavoritoTableView.dataSource = self
         listaFavoritoTableView.delegate = self
+        viewModelFavorito.delegate = self
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -49,4 +51,12 @@ extension FavoritoViewController: UITableViewDelegate {
         filmeSelecionado = viewModel.getItem(row: indexPath.row)
         performSegue(withIdentifier: "favoritoDetalhesFilmeSegue", sender: filmeSelecionado)
     }
+}
+
+extension FavoritoViewController: FilmesViewModelDelegate {
+    func atualizaFavorito() {
+        listaFavoritoTableView.reloadData()
+    }
+    
+    
 }
