@@ -7,9 +7,9 @@
 
 import Foundation
 
-class SessionMenager {
+class SessionManager {
     
-    static var shared = SessionMenager()
+    static var shared = SessionManager()
     var usuarioLogado: Usuario?
     
 }

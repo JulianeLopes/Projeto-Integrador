@@ -14,10 +14,16 @@ class DadosPessoaisViewController: UIViewController {
     @IBOutlet weak var senhaTextField: UITextField!
     @IBOutlet weak var fotoPerfil: UIImageView!
     
+    private var usuarioLogado: Usuario? {
+        return SessionManager.shared.usuarioLogado
+    }
+    
+//    var fotoUsuario: String = usuarioLogado?.foto
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fotoPerfil.image = UIImage(named: ServicoDeUsuario.user.foto ?? "")
+        nomeLabel.text = "Olá \(usuarioLogado?.nome)"
+        fotoPerfil.image = UIImage(named: usuarioLogado?.foto ?? "")
         fotoPerfil.layer.cornerRadius = 125
         
     }
@@ -28,7 +34,7 @@ class DadosPessoaisViewController: UIViewController {
         imagePicker.delegate = self
         
         present(imagePicker, animated: true)
-
+        viewWillAppear(true)
     }
 }
 

@@ -16,16 +16,19 @@ class Fanzometro: UIViewController {
     
     let viewModel = FanzometroViewModel()
 
+    private var usuarioLogado: Usuario? {
+        return SessionManager.shared.usuarioLogado
+    }
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        userImageView.image = UIImage(named: ServicoDeUsuario.user.foto ?? " ")
+        userImageView.image = UIImage(named: usuarioLogado?.foto ?? "")
         userImageView.layer.cornerRadius = 150
         userImageView.layer.borderWidth = 4
         userImageView.layer.borderColor = UIColor.red.cgColor
         favoritosCollectionView.dataSource = self
         
-        porcentagemLabel.text = "\(fanzometroPorcentagem(listaDeFavoritos: ServicoDeUsuario.user.filmesFavoritos)) % "
+        porcentagemLabel.text = "\(fanzometroPorcentagem(listaDeFavoritos: usuarioLogado?.filmesFavoritos ?? [])) % "
     }
     
 }
@@ -38,7 +41,9 @@ func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection s
 func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"fanzometroCell", for:  indexPath) as? FanzometroCollectionViewCell
-    cell?.customizaCelula(filme: ServicoDeUsuario.user.filmesFavoritos[indexPath.item] )
+ 
+    // verificar no colearning como não fazer um forceunwrap nesse caso:
+    cell?.customizaCelula(filme: (usuarioLogado?.filmesFavoritos[indexPath.item])!)
     
     return cell ??  UICollectionViewCell()
 }

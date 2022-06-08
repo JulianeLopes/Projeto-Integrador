@@ -12,7 +12,7 @@ class Usuario {
     let nome: String
     let email: String
     let senha: String
-    let foto: String
+    var foto: String
     let nivelDeFa: Double
     var filmesFavoritos: [Filme]
     

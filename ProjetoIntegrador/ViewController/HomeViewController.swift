@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
     var filmeProcurado: String?
     
     private var usuarioLogado: Usuario? {
-        return SessionMenager.shared.usuarioLogado
+        return SessionManager.shared.usuarioLogado
     }
     
     override func viewDidLoad() {
@@ -28,7 +28,7 @@ class HomeViewController: UIViewController {
         filmesDestaqueCollectionView.delegate = self
         filmeDestaqueImage.image = Servico.filmeEmDestaque.poster
         filmeProcurado = ""
-        nomeLabel.text = "Ola, \(usuarioLogado?.nome ?? "")"
+        nomeLabel.text = "Olá, \(usuarioLogado?.nome ?? "")"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

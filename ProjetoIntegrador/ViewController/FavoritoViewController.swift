@@ -11,11 +11,24 @@ class FavoritoViewController: UIViewController {
 
   
     @IBOutlet weak var listaFavoritoTableView: UITableView!
-    let viewModel = FanzometroViewModel()
+    
+    private var usuarioLogado: Usuario? {
+        return SessionManager.shared.usuarioLogado
+    }
+    
+    let viewModel = FavoritoViewModel()
+    var filmeSelecionado: Filme?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         listaFavoritoTableView.dataSource = self
+        listaFavoritoTableView.delegate = self
+        
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detalhesFilmeVC = segue.destination as? FilmesDetalhesViewController {
+            detalhesFilmeVC.filmeDestaque = filmeSelecionado
+        }
     }
 }
 
@@ -26,7 +39,14 @@ extension FavoritoViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"favoritoCell", for:  indexPath) as? FavoritoTableViewCell
-        cell?.customizaCelula(filme: ServicoDeUsuario.user.filmesFavoritos[indexPath.item] )
+        cell?.customizaCelula(filme: (usuarioLogado?.filmesFavoritos[indexPath.item])!)
         return cell ??  UITableViewCell()
+    }
+}
+
+extension FavoritoViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        filmeSelecionado = viewModel.getItem(row: indexPath.row)
+        performSegue(withIdentifier: "favoritoDetalhesFilmeSegue", sender: filmeSelecionado)
     }
 }
