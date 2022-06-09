@@ -18,14 +18,18 @@ class FavoritoViewController: UIViewController {
     
     let viewModel = FavoritoViewModel()
     var filmeSelecionado: Filme?
-    var viewModelFavorito = FilmesViewModel()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         listaFavoritoTableView.dataSource = self
         listaFavoritoTableView.delegate = self
-        viewModelFavorito.delegate = self
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        listaFavoritoTableView.reloadData()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detalhesFilmeVC = segue.destination as? FilmesDetalhesViewController {
@@ -53,10 +57,4 @@ extension FavoritoViewController: UITableViewDelegate {
     }
 }
 
-extension FavoritoViewController: FilmesViewModelDelegate {
-    func atualizaFavorito() {
-        listaFavoritoTableView.reloadData()
-    }
-    
-    
-}
+

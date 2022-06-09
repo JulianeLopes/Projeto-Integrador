@@ -31,6 +31,12 @@ class Fanzometro: UIViewController {
         porcentagemLabel.text = "\(fanzometroPorcentagem(listaDeFavoritos: usuarioLogado?.filmesFavoritos ?? [])) % "
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        favoritosCollectionView.reloadData()
+        porcentagemLabel.text = "\(fanzometroPorcentagem(listaDeFavoritos: usuarioLogado?.filmesFavoritos ?? [])) % "
+    }
+    
 }
 
 extension Fanzometro: UICollectionViewDataSource {
