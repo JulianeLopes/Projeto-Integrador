@@ -12,30 +12,26 @@ class NovoUsuarioViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var senhaTextField: UITextField!
     
-//    let service = ServicoDeUsuario()
-    var novoUsuarioCriado: Usuario = Usuario(nome: "", email: "", senha: "", foto: "", nivelDeFa: 0.0, filmesFavoritos: [])
+
+
+    let viewModel = NovoUsuarioViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //viewModel.delegate = self
     }
     
     @IBAction func cadastrarButton(_ sender: Any) {
-        ServicoDeUsuario.listaDeUsuario.append(novoUsuario())
+        ServicoDeUsuario.listaDeUsuario.append(viewModel.novoUsuario(nome: nomeTextField.text, email: emailTextField.text, senha: senhaTextField.text))
         dismiss(animated: true) {
-            self.performSegue(withIdentifier: "voltarIdentifier", sender: self.novoUsuarioCriado)
+            self.performSegue(withIdentifier: "voltarIdentifier", sender: self.viewModel.novoUsuarioCriado)
         }
     }
     
-    func novoUsuario() -> Usuario {
-        if let nome = nomeTextField.text, let email = emailTextField.text, let senha = senhaTextField.text {
-            
-            novoUsuarioCriado = Usuario(nome: nome, email: email, senha: senha, foto: "", nivelDeFa: 0.0, filmesFavoritos: [])
-            
-            
-            return novoUsuarioCriado
-        }
-        return novoUsuarioCriado
-    }
+ 
     
 }
+
+//extension NovoUsuarioViewController: NovoUsuarioViewModelDelegate {
+//
+//}

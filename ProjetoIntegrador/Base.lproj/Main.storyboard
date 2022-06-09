@@ -814,160 +814,182 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster" translatesAutoresizingMaskIntoConstraints="NO" id="ukI-X5-Yoe">
-                                <rect key="frame" x="63" y="68" width="288" height="401"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fe9-bw-hWs">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="R4o-jw-d5Q">
+                                        <rect key="frame" x="24" y="84" width="366" height="710"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qdw-mP-VZJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="366" height="401"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster" translatesAutoresizingMaskIntoConstraints="NO" id="ukI-X5-Yoe">
+                                                        <rect key="frame" x="39" y="0.0" width="288" height="401"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="401" id="0u3-N4-xxa"/>
+                                                            <constraint firstAttribute="width" constant="288" id="kFD-FQ-RSC"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="JXV-TX-AZY">
+                                                <rect key="frame" x="0.0" y="408" width="366" height="31"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="ZCi-f8-CCk">
+                                                        <rect key="frame" x="0.0" y="0.0" width="79.5" height="31"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xo5-pi-Ve5">
+                                                                <rect key="frame" x="0.0" y="0.0" width="45.5" height="31"/>
+                                                                <color key="tintColor" name="Vermelho Marvel"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                                                <connections>
+                                                                    <action selector="favoritarAction:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="Oni-cz-5aL"/>
+                                                                </connections>
+                                                            </button>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paperplane" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="23a-88-hr8">
+                                                                <rect key="frame" x="58.5" y="0.5" width="21" height="30.5"/>
+                                                                <color key="tintColor" name="Vermelho Marvel"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="p8c-0C-nuz">
+                                                <rect key="frame" x="0.0" y="446" width="366" height="142.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Uoa-am-tN6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="366" height="106"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo Filme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Day-EE-sws">
+                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elenco" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrp-Ee-Mia">
+                                                                <rect key="frame" x="0.0" y="28.5" width="366" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direção" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPj-9Y-hxr">
+                                                                <rect key="frame" x="0.0" y="57" width="366" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSX-PR-aqA">
+                                                                <rect key="frame" x="0.0" y="85.5" width="366" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indicação de filmes para assistir antes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TA3-Re-4C6">
+                                                        <rect key="frame" x="0.0" y="122" width="366" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dM7-Og-tEo">
+                                                <rect key="frame" x="0.0" y="595.5" width="366" height="114.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SR-Du-0TQ">
+                                                        <rect key="frame" x="148.5" y="0.0" width="69.5" height="31"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Spoiler" cornerStyle="large" titleAlignment="center">
+                                                            <backgroundConfiguration key="background">
+                                                                <color key="backgroundColor" red="0.85490196080000003" green="0.023529411760000001" blue="0.023529411760000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </backgroundConfiguration>
+                                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="buttonSpoiler:" destination="wbl-3P-KpC" eventType="touchUpInside" id="Z55-SN-FvR"/>
+                                                            <action selector="buttonSpoiler:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="pgh-Dg-K8N"/>
+                                                            <segue destination="3Ya-ss-7Ni" kind="showDetail" identifier="telaSpoiler" id="7Er-5j-t2N"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalie esse filme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHu-Cc-gvX">
+                                                        <rect key="frame" x="120.5" y="47" width="125.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="uYL-9a-fW8">
+                                                        <rect key="frame" x="3.5" y="83.5" width="359" height="31"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jM-4d-tIs">
+                                                                <rect key="frame" x="0.0" y="0.0" width="47" height="31"/>
+                                                                <color key="tintColor" name="Vermelho Marvel"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                                                <connections>
+                                                                    <action selector="pintarPrimeiraEstrela:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="OrA-KH-Y26"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vx-1P-KWz">
+                                                                <rect key="frame" x="78" y="0.0" width="47" height="31"/>
+                                                                <color key="tintColor" name="Vermelho Marvel"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                                                <connections>
+                                                                    <action selector="pintarSegundaEstrela:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="oFx-y9-Z14"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfg-hQ-aHK">
+                                                                <rect key="frame" x="156" y="0.0" width="47" height="31"/>
+                                                                <color key="tintColor" name="Vermelho Marvel"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                                                <connections>
+                                                                    <action selector="pintarTerceiraEstrela:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="RCB-Li-YgX"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPi-AY-cOU">
+                                                                <rect key="frame" x="234" y="0.0" width="47" height="31"/>
+                                                                <color key="tintColor" name="Vermelho Marvel"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                                                <connections>
+                                                                    <action selector="pintarQuartaEstrela:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="yjs-jc-SI2"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NjT-6a-FQk">
+                                                                <rect key="frame" x="312" y="0.0" width="47" height="31"/>
+                                                                <color key="tintColor" name="Vermelho Marvel"/>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                                                <connections>
+                                                                    <action selector="pintarQuintaEstrela:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="TBR-e0-IMJ"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="401" id="0u3-N4-xxa"/>
-                                    <constraint firstAttribute="width" constant="288" id="kFD-FQ-RSC"/>
+                                    <constraint firstItem="R4o-jw-d5Q" firstAttribute="leading" secondItem="fe9-bw-hWs" secondAttribute="leadingMargin" constant="16" id="YwU-Iy-MY2"/>
+                                    <constraint firstAttribute="bottom" secondItem="R4o-jw-d5Q" secondAttribute="bottomMargin" constant="32" id="Zhz-lr-VYc"/>
+                                    <constraint firstItem="R4o-jw-d5Q" firstAttribute="top" secondItem="fe9-bw-hWs" secondAttribute="topMargin" constant="32" id="a0e-Vn-jXd"/>
+                                    <constraint firstItem="R4o-jw-d5Q" firstAttribute="centerX" secondItem="fe9-bw-hWs" secondAttribute="centerX" id="lvu-QP-4DR"/>
+                                    <constraint firstAttribute="trailing" secondItem="R4o-jw-d5Q" secondAttribute="trailingMargin" constant="16" id="vpB-aG-qQE"/>
                                 </constraints>
-                            </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="ZCi-f8-CCk">
-                                <rect key="frame" x="16" y="477" width="79.5" height="31"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xo5-pi-Ve5">
-                                        <rect key="frame" x="0.0" y="0.0" width="45.5" height="31"/>
-                                        <color key="tintColor" name="Vermelho Marvel"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
-                                        <connections>
-                                            <action selector="favoritarAction:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="Oni-cz-5aL"/>
-                                        </connections>
-                                    </button>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paperplane" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="23a-88-hr8">
-                                        <rect key="frame" x="58.5" y="0.5" width="21" height="30.5"/>
-                                        <color key="tintColor" name="Vermelho Marvel"/>
-                                    </imageView>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="p8c-0C-nuz">
-                                <rect key="frame" x="16" y="516" width="382" height="142.5"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Uoa-am-tN6">
-                                        <rect key="frame" x="0.0" y="0.0" width="382" height="106"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo Filme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Day-EE-sws">
-                                                <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elenco" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrp-Ee-Mia">
-                                                <rect key="frame" x="0.0" y="28.5" width="382" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direção" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPj-9Y-hxr">
-                                                <rect key="frame" x="0.0" y="57" width="382" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSX-PR-aqA">
-                                                <rect key="frame" x="0.0" y="85.5" width="382" height="20.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indicação de filmes para assistir antes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TA3-Re-4C6">
-                                        <rect key="frame" x="0.0" y="122" width="382" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dM7-Og-tEo">
-                                <rect key="frame" x="27.5" y="664.5" width="359" height="114.5"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SR-Du-0TQ">
-                                        <rect key="frame" x="145" y="0.0" width="69.5" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Spoiler" cornerStyle="large" titleAlignment="center">
-                                            <backgroundConfiguration key="background">
-                                                <color key="backgroundColor" red="0.85490196080000003" green="0.023529411760000001" blue="0.023529411760000001" alpha="1" colorSpace="calibratedRGB"/>
-                                            </backgroundConfiguration>
-                                            <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="buttonSpoiler:" destination="wbl-3P-KpC" eventType="touchUpInside" id="Z55-SN-FvR"/>
-                                            <action selector="buttonSpoiler:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="pgh-Dg-K8N"/>
-                                            <segue destination="3Ya-ss-7Ni" kind="showDetail" identifier="telaSpoiler" id="7Er-5j-t2N"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avalie esse filme" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VHu-Cc-gvX">
-                                        <rect key="frame" x="117" y="47" width="125.5" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="uYL-9a-fW8">
-                                        <rect key="frame" x="0.0" y="83.5" width="359" height="31"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jM-4d-tIs">
-                                                <rect key="frame" x="0.0" y="0.0" width="47" height="31"/>
-                                                <color key="tintColor" name="Vermelho Marvel"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
-                                                <connections>
-                                                    <action selector="pintarPrimeiraEstrela:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="OrA-KH-Y26"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vx-1P-KWz">
-                                                <rect key="frame" x="78" y="0.0" width="47" height="31"/>
-                                                <color key="tintColor" name="Vermelho Marvel"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
-                                                <connections>
-                                                    <action selector="pintarSegundaEstrela:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="oFx-y9-Z14"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qfg-hQ-aHK">
-                                                <rect key="frame" x="156" y="0.0" width="47" height="31"/>
-                                                <color key="tintColor" name="Vermelho Marvel"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
-                                                <connections>
-                                                    <action selector="pintarTerceiraEstrela:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="RCB-Li-YgX"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPi-AY-cOU">
-                                                <rect key="frame" x="234" y="0.0" width="47" height="31"/>
-                                                <color key="tintColor" name="Vermelho Marvel"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
-                                                <connections>
-                                                    <action selector="pintarQuartaEstrela:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="yjs-jc-SI2"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NjT-6a-FQk">
-                                                <rect key="frame" x="312" y="0.0" width="47" height="31"/>
-                                                <color key="tintColor" name="Vermelho Marvel"/>
-                                                <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
-                                                <connections>
-                                                    <action selector="pintarQuintaEstrela:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="TBR-e0-IMJ"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Fz0-i7-izl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="p8c-0C-nuz" firstAttribute="leading" secondItem="Fz0-i7-izl" secondAttribute="leading" constant="16" id="CS6-7B-vlb"/>
-                            <constraint firstItem="p8c-0C-nuz" firstAttribute="top" secondItem="ZCi-f8-CCk" secondAttribute="bottom" constant="8" id="Cc2-fr-rJb"/>
-                            <constraint firstItem="ukI-X5-Yoe" firstAttribute="top" secondItem="Fz0-i7-izl" secondAttribute="top" constant="24" id="J6S-rU-gYO"/>
-                            <constraint firstItem="Fz0-i7-izl" firstAttribute="trailing" secondItem="p8c-0C-nuz" secondAttribute="trailing" constant="16" id="KiA-Rx-D8d"/>
-                            <constraint firstItem="dM7-Og-tEo" firstAttribute="centerX" secondItem="ZyJ-Mc-y55" secondAttribute="centerX" id="Rmj-ys-w2H"/>
-                            <constraint firstItem="dM7-Og-tEo" firstAttribute="top" secondItem="p8c-0C-nuz" secondAttribute="bottom" constant="6" id="S0a-aI-oiq"/>
-                            <constraint firstItem="ZCi-f8-CCk" firstAttribute="top" secondItem="ukI-X5-Yoe" secondAttribute="bottom" constant="8" id="VRp-iW-dlv"/>
-                            <constraint firstItem="ukI-X5-Yoe" firstAttribute="centerX" secondItem="ZyJ-Mc-y55" secondAttribute="centerX" id="Xay-mV-OR1"/>
-                            <constraint firstItem="ZCi-f8-CCk" firstAttribute="leading" secondItem="Fz0-i7-izl" secondAttribute="leading" constant="16" id="paE-dI-uka"/>
+                            <constraint firstItem="fe9-bw-hWs" firstAttribute="leading" secondItem="ZyJ-Mc-y55" secondAttribute="leading" id="DPn-Ou-xDK"/>
+                            <constraint firstAttribute="bottom" secondItem="fe9-bw-hWs" secondAttribute="bottom" id="Zph-Ev-QPI"/>
+                            <constraint firstItem="fe9-bw-hWs" firstAttribute="top" secondItem="ZyJ-Mc-y55" secondAttribute="top" id="lyX-9O-bgn"/>
+                            <constraint firstAttribute="trailing" secondItem="fe9-bw-hWs" secondAttribute="trailing" id="v2m-O9-fSp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="zDG-Me-h7X"/>

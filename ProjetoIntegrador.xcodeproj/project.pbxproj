@@ -34,6 +34,7 @@
 		5E5B68CA28464F6D00AF6A6C /* ConfiguracoesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B68C928464F6D00AF6A6C /* ConfiguracoesViewController.swift */; };
 		5E5B68CC2846519800AF6A6C /* DadosPessoaisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B68CB2846519800AF6A6C /* DadosPessoaisViewController.swift */; };
 		5EABB816285011EC00250EF6 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EABB815285011EC00250EF6 /* SessionManager.swift */; };
+		EE1020A12852A94900D39141 /* NovoUsuarioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1020A02852A94900D39141 /* NovoUsuarioViewModel.swift */; };
 		EE118C2E28445906005852F7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118C2D28445906005852F7 /* HomeViewController.swift */; };
 		EE118C30284459BA005852F7 /* FilmesEmDestaquesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118C2F284459BA005852F7 /* FilmesEmDestaquesCollectionViewCell.swift */; };
 		EE118C3228445AB2005852F7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118C3128445AB2005852F7 /* HomeViewModel.swift */; };
@@ -98,6 +99,7 @@
 		5E5B68C928464F6D00AF6A6C /* ConfiguracoesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracoesViewController.swift; sourceTree = "<group>"; };
 		5E5B68CB2846519800AF6A6C /* DadosPessoaisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadosPessoaisViewController.swift; sourceTree = "<group>"; };
 		5EABB815285011EC00250EF6 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		EE1020A02852A94900D39141 /* NovoUsuarioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovoUsuarioViewModel.swift; sourceTree = "<group>"; };
 		EE118C2D28445906005852F7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EE118C2F284459BA005852F7 /* FilmesEmDestaquesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesEmDestaquesCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE118C3128445AB2005852F7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				16D749EA284981F200ECD9DB /* LoginViewController.swift */,
+				EE53C4B8284FEC20005DB3AC /* NovoUsuarioViewController.swift */,
 				FBDBE28128443D7B00C897A4 /* Fanzometro.swift */,
 				EE53C4BC28510B3C005DB3AC /* SpoilerViewController.swift */,
 				FBDBE2852844437C00C897A4 /* FanzometroCollectionViewCell.swift */,
@@ -226,7 +229,6 @@
 				5E5B68C928464F6D00AF6A6C /* ConfiguracoesViewController.swift */,
 				331CF459284EDA3400A32933 /* ConfiguracaoTableViewCell.swift */,
 				5E5B68CB2846519800AF6A6C /* DadosPessoaisViewController.swift */,
-				EE53C4B8284FEC20005DB3AC /* NovoUsuarioViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -235,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				16D749EC2849829400ECD9DB /* LoginViewModel.swift */,
+				EE1020A02852A94900D39141 /* NovoUsuarioViewModel.swift */,
 				FBDBE28328443F5600C897A4 /*  FanzometroViewModel.swift */,
 				EE118C3128445AB2005852F7 /* HomeViewModel.swift */,
 				16993169284E984F00AF1014 /* PesquisaViewModel.swift */,
@@ -456,6 +459,7 @@
 				EE118C3628446054005852F7 /* FilmesDetalhesViewController.swift in Sources */,
 				1675306D283EB9F700D7CE3A /* ViewController.swift in Sources */,
 				1642540428442A7D006F92A4 /* Usuario.swift in Sources */,
+				EE1020A12852A94900D39141 /* NovoUsuarioViewModel.swift in Sources */,
 				1699316C284E9D9F00AF1014 /* PesquisaCollectionViewCell.swift in Sources */,
 				EE118C3228445AB2005852F7 /* HomeViewModel.swift in Sources */,
 				5E5B68CC2846519800AF6A6C /* DadosPessoaisViewController.swift in Sources */,
