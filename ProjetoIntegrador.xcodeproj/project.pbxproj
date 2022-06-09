@@ -212,6 +212,7 @@
 		330B982B2844549000313B85 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				16D749EA284981F200ECD9DB /* LoginViewController.swift */,
 				FBDBE28128443D7B00C897A4 /* Fanzometro.swift */,
 				EE53C4BC28510B3C005DB3AC /* SpoilerViewController.swift */,
 				FBDBE2852844437C00C897A4 /* FanzometroCollectionViewCell.swift */,
@@ -225,7 +226,6 @@
 				5E5B68C928464F6D00AF6A6C /* ConfiguracoesViewController.swift */,
 				331CF459284EDA3400A32933 /* ConfiguracaoTableViewCell.swift */,
 				5E5B68CB2846519800AF6A6C /* DadosPessoaisViewController.swift */,
-				16D749EA284981F200ECD9DB /* LoginViewController.swift */,
 				EE53C4B8284FEC20005DB3AC /* NovoUsuarioViewController.swift */,
 			);
 			path = ViewController;
@@ -234,9 +234,9 @@
 		330B982C284454AC00313B85 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				16D749EC2849829400ECD9DB /* LoginViewModel.swift */,
 				FBDBE28328443F5600C897A4 /*  FanzometroViewModel.swift */,
 				EE118C3128445AB2005852F7 /* HomeViewModel.swift */,
-				16D749EC2849829400ECD9DB /* LoginViewModel.swift */,
 				16993169284E984F00AF1014 /* PesquisaViewModel.swift */,
 				EE2D484A284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift */,
 				EE53C4BA2851087B005DB3AC /* FavoritoViewModel.swift */,

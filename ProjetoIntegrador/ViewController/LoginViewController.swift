@@ -11,65 +11,37 @@ class LoginViewController: UIViewController {
     
     
     @IBOutlet weak var usuarioTextField: UITextField!
-    
     @IBOutlet weak var senhaTextField: UITextField!
     
     let service = ServicoDeUsuario()
-    var usuarioEnviado: Usuario?
     let viewModel = LoginViewModel()
   
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        viewModel.delegate = self
     }
     
 
     @IBAction func loginAction(_ sender: Any) {
-        mudarDeTela(usuario: confereUsuario())
+        viewModel.mudarDeTela(usuario: viewModel.confereUsuario(usuarioDig: usuarioTextField.text, senhaDigitada: senhaTextField.text))
     }
     
     @IBAction func cadastrarNovoUsuarioButton(_ sender: Any) {
         performSegue(withIdentifier: "novoCadastro", sender: nil)
     }
-    func apresentaAlerta() {
-        
-        let alerta = UIAlertController(title: "Usuário ou senha inválido", message: "Tente novamente", preferredStyle: UIAlertController.Style.alert)
-                
-                
-                let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
-                
-                alerta.addAction(ok)
-                
-                self.present(alerta, animated: true, completion: nil)
-        
-    }
-
-    // conferir se o usuario existe
-    
-    func confereUsuario() -> Bool {
-        var isSameUsuario: Bool = false
-        let usuarioDig = usuarioTextField.text
-        let senhaDigitada = senhaTextField.text
-        
-        for usuario in ServicoDeUsuario.listaDeUsuario{
-            if usuarioDig == usuario.email {
-                if senhaDigitada == usuario.senha {
-                      usuarioEnviado = usuario
-                    isSameUsuario = true
-                }
-            }
-        }
-        
-        return isSameUsuario
-    }
-        
-    func mudarDeTela(usuario: Bool){
-        if usuario == true {
-            SessionManager.shared.usuarioLogado = usuarioEnviado
-            performSegue(withIdentifier: "appSegueIndentifier", sender: nil)
-        } else {
-            apresentaAlerta()
-        }
-    }
 }
 
+extension LoginViewController: LoginViewModelDelegate {
+    func apresentaAlerta(){
+        let alerta = UIAlertController(title: "Usuário ou senha inválido", message: "Tente novamente", preferredStyle: UIAlertController.Style.alert)
+                let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+                alerta.addAction(ok)
+                self.present(alerta, animated: true, completion: nil)
+    }
+    
+    func segue() {
+        performSegue(withIdentifier: "appSegueIndentifier", sender: nil)
+    }
+    
+    
+}

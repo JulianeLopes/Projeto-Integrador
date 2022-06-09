@@ -27,8 +27,6 @@ class Fanzometro: UIViewController {
         userImageView.layer.borderWidth = 4
         userImageView.layer.borderColor = UIColor.red.cgColor
         favoritosCollectionView.dataSource = self
-        
-        porcentagemLabel.text = "\(fanzometroPorcentagem(listaDeFavoritos: usuarioLogado?.filmesFavoritos ?? [])) % "
     }
     
     override func viewWillAppear(_ animated: Bool) {
