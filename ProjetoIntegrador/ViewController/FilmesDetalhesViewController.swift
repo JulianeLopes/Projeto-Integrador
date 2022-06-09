@@ -66,19 +66,12 @@ class FilmesDetalhesViewController: UIViewController {
                     
                     self.performSegue(withIdentifier: "telaSpoiler", sender: self.filmeDestaque)
                 }
-<<<<<<< HEAD
-                
-                let telaListaDeFilmes = UIAlertAction(title: "NÃO", style: UIAlertAction.Style.default,  handler: nil)
 
-                alerta.addAction(telaSpoiler)
-                alerta.addAction(telaListaDeFilmes)
-=======
 
                 let ok = UIAlertAction(title: "NÃO", style: UIAlertAction.Style.default, handler: nil)
                 
                 alerta.addAction(telaSpoiler)
                 alerta.addAction(ok)
->>>>>>> main
                 
                 self.present(alerta, animated: true, completion: nil)
         
