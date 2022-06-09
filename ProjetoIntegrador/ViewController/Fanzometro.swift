@@ -55,7 +55,7 @@ func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath:
     func fanzometroPorcentagem(listaDeFavoritos: [Filme]) -> Double{
         
         let quantidadeDeFavoritos = Double(listaDeFavoritos.count)
-        let quantidadeDeFilmes = Double(Servico.listaDeFilmes.count)
+        let quantidadeDeFilmes = Double(Servico.shared.listaDeFilmes.count)
         
         let porcentagemFanzometro = (quantidadeDeFavoritos / quantidadeDeFilmes)*100
 

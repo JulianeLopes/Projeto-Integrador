@@ -11,7 +11,7 @@ import UIKit
 class HomeViewModel {
     
     func numeroDeFilmesEmdestaques() -> Int {
-        return Servico.listaDeFilmeEmDestaques.count
+        return Servico.shared.listaDeFilmeEmDestaques.count
     }
     
     

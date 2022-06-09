@@ -77,17 +77,28 @@ class FilmesDetalhesViewController: UIViewController {
     
     @IBAction func pintarPrimeiraEstrela(_ sender: Any) {
         estrelaUmButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaDoisButton.setImage(UIImage(systemName: "star"), for: .normal)
+        estrelaTresButton.setImage(UIImage(systemName: "star"), for: .normal)
+        estrelaQuatroButton.setImage(UIImage(systemName: "star"), for: .normal)
+        estrelaCincoButton.setImage(UIImage(systemName: "star"), for: .normal)
+        
     }
     
     @IBAction func pintarSegundaEstrela(_ sender: Any) {
         estrelaUmButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
         estrelaDoisButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaTresButton.setImage(UIImage(systemName: "star"), for: .normal)
+        estrelaQuatroButton.setImage(UIImage(systemName: "star"), for: .normal)
+        estrelaCincoButton.setImage(UIImage(systemName: "star"), for: .normal)
     }
     
     @IBAction func pintarTerceiraEstrela(_ sender: Any) {
         estrelaUmButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
         estrelaDoisButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
         estrelaTresButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaQuatroButton.setImage(UIImage(systemName: "star"), for: .normal)
+        estrelaCincoButton.setImage(UIImage(systemName: "star"), for: .normal)
+        
     }
     
     @IBAction func pintarQuartaEstrela(_ sender: Any) {
@@ -95,6 +106,7 @@ class FilmesDetalhesViewController: UIViewController {
         estrelaDoisButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
         estrelaTresButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
         estrelaQuatroButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaCincoButton.setImage(UIImage(systemName: "star"), for: .normal)
     }
     
     @IBAction func pintarQuintaEstrela(_ sender: Any) {

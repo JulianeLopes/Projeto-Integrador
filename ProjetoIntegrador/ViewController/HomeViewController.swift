@@ -23,10 +23,10 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        filmeDestaque = Servico.filmeEmDestaque
+        filmeDestaque = Servico.shared.filmeEmDestaque
         filmesDestaqueCollectionView.dataSource = self
         filmesDestaqueCollectionView.delegate = self
-        filmeDestaqueImage.image = Servico.filmeEmDestaque.poster
+        filmeDestaqueImage.image = Servico.shared.filmeEmDestaque.poster
         filmeProcurado = ""
         nomeLabel.text = "Olá, \(usuarioLogado?.nome ?? "")"
     }
@@ -41,7 +41,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func filmeDestaqueSaibaMais(_ sender: Any) {
-        filmeDestaque = Servico.filmeEmDestaque
+        filmeDestaque = Servico.shared.filmeEmDestaque
         performSegue(withIdentifier: "saibaMaisSegue", sender: filmeDestaque)
     }
     
@@ -59,7 +59,7 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let filme = Servico.listaDeFilmeEmDestaques[indexPath.item]
+        let filme = Servico.shared.listaDeFilmeEmDestaques[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "destaquesCell", for: indexPath) as? FilmesEmDestaquesCollectionViewCell
         cell?.configuraCelula(filme)
         
@@ -69,7 +69,7 @@ extension HomeViewController: UICollectionViewDataSource {
 
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let filme = Servico.listaDeFilmeEmDestaques[indexPath.item]
+        let filme = Servico.shared.listaDeFilmeEmDestaques[indexPath.item]
         
         filmeDestaque = filme
         

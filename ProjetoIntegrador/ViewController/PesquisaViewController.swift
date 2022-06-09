@@ -21,17 +21,17 @@ class PesquisaViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
        
-        listaDeFilme = Servico.listaDeFilmes
+        listaDeFilme = Servico.shared.listaDeFilmes
     }
     
     @IBAction func buscarAction(_ sender: Any) {
-        let resultado = Servico.listaDeFilmes.filter ({ filme in
+        let resultado = Servico.shared.listaDeFilmes.filter ({ filme in
             return filme.titulo.lowercased().contains(pesquisaTextField.text?.lowercased() ?? "")
         })
         if pesquisaTextField.hasText{
             listaDeFilme = resultado
         } else {
-            listaDeFilme = Servico.listaDeFilmes
+            listaDeFilme = Servico.shared.listaDeFilmes
         }
         collectionView.reloadData()
     }

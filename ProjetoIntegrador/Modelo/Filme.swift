@@ -12,18 +12,18 @@ class Filme {
     var elenco: String
     var direcao: String
     var descricao: String
-//    var indicacaoDeFilmes: [Filme?]
+    var indicacaoDeFilmes: [Filme]
     var poster: UIImage?
     var spoiler: String
     var cenaPosCredito: String
     
     
-    init(titulo: String, elenco: String, direcao: String, descricao: String, poster: UIImage?, spoiler: String, cenaPosCredito: String){
+    init(titulo: String, elenco: String, direcao: String, descricao: String, indicacaoDeFilmes: [Filme], poster: UIImage?, spoiler: String, cenaPosCredito: String){
         self.titulo = titulo
         self.elenco = elenco
         self.direcao = direcao
         self.descricao = descricao
-      //  self.indicacaoDeFilmes = indicacaoDeFilmes
+        self.indicacaoDeFilmes = indicacaoDeFilmes
         self.poster = poster
         self.spoiler = spoiler
         self.cenaPosCredito = cenaPosCredito

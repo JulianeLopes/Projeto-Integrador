@@ -23,6 +23,6 @@ class  ServicoDeUsuario {
                                              senha: "Giselle12",
                                              foto: "FotoGiselle",
                                              nivelDeFa: 5.5,
-                                             filmesFavoritos: [Servico.viuvaNegra])]
+                                                    filmesFavoritos: [Servico.shared.viuvaNegra])]
     
 }
