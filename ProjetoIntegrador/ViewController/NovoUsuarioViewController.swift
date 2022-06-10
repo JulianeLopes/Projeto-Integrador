@@ -40,7 +40,6 @@ extension NovoUsuarioViewController: NovoUsuarioViewModelDelegate {
         alerta.addAction(ok)
         
         self.present(alerta, animated: true, completion: nil)
-        
     }
 }
 
