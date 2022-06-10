@@ -20,11 +20,9 @@ class NovoUsuarioViewModel {
     
     func novoUsuario(nome: String?, email: String?, senha: String?) -> Usuario {
         if let nome = nome, let email = email, let senha = senha {
-            if email.contains("@") {
-                if senha.count == 6 {
+            if email.contains("@") && senha.count == 6 {
                     novoUsuarioCriado = Usuario(nome: nome, email: email, senha: senha, foto: "", nivelDeFa: 0.0, filmesFavoritos: [])
                     return novoUsuarioCriado
-                }
             }
         }
         // alertar o usuário que os dados estão incorretos

@@ -33,7 +33,7 @@ class NovoUsuarioViewController: UIViewController {
 extension NovoUsuarioViewController: NovoUsuarioViewModelDelegate {
     func alertaDadosDeCadastroIncorretos() {
         
-        let alerta = UIAlertController(title: "Dados Incorretos", message: "Insira um email válido e uma senha de 6 caracteres", preferredStyle: UIAlertController.Style.alert)
+        let alerta = UIAlertController(title: "Dados Incorretos", message: "Insira um email válido e uma senha de 6 caracteres", preferredStyle: .alert)
         
         let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
         
