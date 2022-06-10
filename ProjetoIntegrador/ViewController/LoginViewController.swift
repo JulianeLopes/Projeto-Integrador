@@ -44,6 +44,4 @@ extension LoginViewController: LoginViewModelDelegate {
     func segue() {
         performSegue(withIdentifier: "appSegueIndentifier", sender: nil)
     }
-    
-    
 }

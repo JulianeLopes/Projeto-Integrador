@@ -21,14 +21,11 @@ class LoginViewModel {
         var isSameUsuario: Bool = false
         
         for usuario in ServicoDeUsuario.listaDeUsuario {
-            if usuarioDig == usuario.email {
-                if senhaDigitada == usuario.senha {
+            if usuarioDig == usuario.email && senhaDigitada == usuario.senha {
                     usuarioEnviado = usuario
                     isSameUsuario = true
-                }
             }
         }
-        
         return isSameUsuario
     }
     
