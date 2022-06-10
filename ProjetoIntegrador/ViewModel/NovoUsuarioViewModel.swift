@@ -7,45 +7,28 @@
 
 import Foundation
 
-//protocol NovoUsuarioViewModelDelegate {
-//
-//}
+protocol NovoUsuarioViewModelDelegate {
+    func alertaDadosDeCadastroIncorretos()
+    
+}
 
 class NovoUsuarioViewModel {
-   // var delegate: NovoUsuarioViewModelDelegate?
+   var delegate: NovoUsuarioViewModelDelegate?
     
     // criando um usuário universal vazio para preencher
     var novoUsuarioCriado: Usuario = Usuario(nome: "", email: "", senha: "", foto: "", nivelDeFa: 0.0, filmesFavoritos: [])
     
     func novoUsuario(nome: String?, email: String?, senha: String?) -> Usuario {
         if let nome = nome, let email = email, let senha = senha {
-            novoUsuarioCriado = Usuario(nome: nome, email: email, senha: senha, foto: "", nivelDeFa: 0.0, filmesFavoritos: [])
-            return novoUsuarioCriado
-        }
-    
-        return novoUsuarioCriado
-    }
-    
-    func validaEmail(){
-        
-    }
-    
-    func converteTextField(email: String?, senha: String?) -> Bool {
-        if let email = email, email != "" {
-            if email.contains("@"){
-                return true
-            }else {
-                return false
-            }
-        }
-            if let senha = senha {
+            if email.contains("@") {
                 if senha.count == 6 {
-                    return true
-                } else {
-                    return false
+                    novoUsuarioCriado = Usuario(nome: nome, email: email, senha: senha, foto: "", nivelDeFa: 0.0, filmesFavoritos: [])
+                    return novoUsuarioCriado
                 }
             }
-
-        return false
+        }
+        // alertar o usuário que os dados estão incorretos
+        delegate?.alertaDadosDeCadastroIncorretos()
+        return novoUsuarioCriado
     }
 }

@@ -18,20 +18,31 @@ class NovoUsuarioViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //viewModel.delegate = self
+        viewModel.delegate = self
     }
     
+    //
     @IBAction func cadastrarButton(_ sender: Any) {
         ServicoDeUsuario.listaDeUsuario.append(viewModel.novoUsuario(nome: nomeTextField.text, email: emailTextField.text, senha: senhaTextField.text))
         dismiss(animated: true) {
             self.performSegue(withIdentifier: "voltarIdentifier", sender: self.viewModel.novoUsuarioCriado)
         }
     }
-    
- 
-    
 }
 
-//extension NovoUsuarioViewController: NovoUsuarioViewModelDelegate {
-//
-//}
+extension NovoUsuarioViewController: NovoUsuarioViewModelDelegate {
+    func alertaDadosDeCadastroIncorretos() {
+        
+        let alerta = UIAlertController(title: "Dados Incorretos", message: "Insira um email válido e uma senha de 6 caracteres", preferredStyle: UIAlertController.Style.alert)
+        
+        let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        
+        alerta.addAction(ok)
+        
+        self.present(alerta, animated: true, completion: nil)
+        
+    }
+}
+
+
+
