@@ -47,7 +47,7 @@
 		EE53C4BD28510B3C005DB3AC /* SpoilerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE53C4BC28510B3C005DB3AC /* SpoilerViewController.swift */; };
 		FBDBE28028443AC100C897A4 /*  ServicoDeUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE27F28443AC100C897A4 /*  ServicoDeUsuario.swift */; };
 		FBDBE28228443D7B00C897A4 /* Fanzometro.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE28128443D7B00C897A4 /* Fanzometro.swift */; };
-		FBDBE28428443F5600C897A4 /*  FanzometroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE28328443F5600C897A4 /*  FanzometroViewModel.swift */; };
+		FBDBE28428443F5600C897A4 /* FanzometroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE28328443F5600C897A4 /* FanzometroViewModel.swift */; };
 		FBDBE2862844437C00C897A4 /* FanzometroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE2852844437C00C897A4 /* FanzometroCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -114,7 +114,7 @@
 		F53FC665A2528476EA2994BE /* Pods_ProjetoIntegrador_ProjetoIntegradorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjetoIntegrador_ProjetoIntegradorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBDBE27F28443AC100C897A4 /*  ServicoDeUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " ServicoDeUsuario.swift"; sourceTree = "<group>"; };
 		FBDBE28128443D7B00C897A4 /* Fanzometro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fanzometro.swift; sourceTree = "<group>"; };
-		FBDBE28328443F5600C897A4 /*  FanzometroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " FanzometroViewModel.swift"; sourceTree = "<group>"; };
+		FBDBE28328443F5600C897A4 /* FanzometroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanzometroViewModel.swift; sourceTree = "<group>"; };
 		FBDBE2852844437C00C897A4 /* FanzometroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanzometroCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -241,7 +241,7 @@
 			children = (
 				16D749EC2849829400ECD9DB /* LoginViewModel.swift */,
 				EE1020A02852A94900D39141 /* NovoUsuarioViewModel.swift */,
-				FBDBE28328443F5600C897A4 /*  FanzometroViewModel.swift */,
+				FBDBE28328443F5600C897A4 /* FanzometroViewModel.swift */,
 				EE118C3128445AB2005852F7 /* HomeViewModel.swift */,
 				16993169284E984F00AF1014 /* PesquisaViewModel.swift */,
 				EE2D484A284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift */,
@@ -483,7 +483,7 @@
 				330B982F2844554500313B85 /* FavoritoViewController.swift in Sources */,
 				1642540628442A86006F92A4 /* Servico.swift in Sources */,
 				FBDBE2862844437C00C897A4 /* FanzometroCollectionViewCell.swift in Sources */,
-				FBDBE28428443F5600C897A4 /*  FanzometroViewModel.swift in Sources */,
+				FBDBE28428443F5600C897A4 /* FanzometroViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
