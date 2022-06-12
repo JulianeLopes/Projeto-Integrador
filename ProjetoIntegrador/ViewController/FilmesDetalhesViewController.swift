@@ -23,7 +23,7 @@ class FilmesDetalhesViewController: UIViewController {
     @IBOutlet weak var indicacaoLabel: UILabel!
     @IBOutlet weak var favoritarButton: UIButton!
     
-    var filmeDestaque: Filme?
+    //var filmeDestaque: Filme?
     
     var viewModel = FilmesViewModel()
     

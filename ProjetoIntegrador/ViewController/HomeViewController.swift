@@ -15,11 +15,6 @@ class HomeViewController: UIViewController {
     
     let viewModel = HomeViewModel()
     var filmeDestaque: Filme?
-    var filmeProcurado: String?
-    
-    private var usuarioLogado: Usuario? {
-        return SessionManager.shared.usuarioLogado
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,29 +22,27 @@ class HomeViewController: UIViewController {
         filmesDestaqueCollectionView.dataSource = self
         filmesDestaqueCollectionView.delegate = self
         filmeDestaqueImage.image = Servico.shared.filmeEmDestaque.poster
-        filmeProcurado = ""
-        nomeLabel.text = "Olá, \(usuarioLogado?.nome ?? "")"
+        configuraTela()
     }
     
+//visualizar os detalhes do filme selecionado
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detalhesVC = segue.destination as? FilmesDetalhesViewController {
-            detalhesVC.filmeDestaque = filmeDestaque
-        }
-        if let pesquisaVC = segue.destination as? PesquisaViewController {
-            pesquisaVC.filmeProcurado = filmeProcurado
+           let posicaoSelecionada = sender as? Int
+            detalhesVC.viewModel.getDetalheDoFilmeViewModel(posicao: posicaoSelecionada)
         }
     }
     
+    //visualizar os detalhes do filme em destaque
     @IBAction func filmeDestaqueSaibaMais(_ sender: Any) {
         filmeDestaque = Servico.shared.filmeEmDestaque
         performSegue(withIdentifier: "saibaMaisSegue", sender: filmeDestaque)
     }
     
-    @IBAction func pesquisaButton(_ sender: Any) {
-        filmeProcurado = pesquisaTextField.text
-        performSegue(withIdentifier: "procurarSegue", sender: filmeProcurado)
+    //demostra o nome do usuário logado e o cumprimenta
+    func configuraTela(){
+        nomeLabel.text = "Olá, \(viewModel.getNomeUsuario())"
     }
-    
 }
 
 extension HomeViewController: UICollectionViewDataSource {
@@ -58,11 +51,9 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let filme = Servico.shared.listaDeFilmeEmDestaques[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "destaquesCell", for: indexPath) as? FilmesEmDestaquesCollectionViewCell
-        cell?.configuraCelula(filme)
-        
+        let cellViewModel = viewModel.getCellViewModel(posicao: indexPath.row)
+        cell?.configuraCelula(viewModel: cellViewModel)
         return cell ?? UICollectionViewCell()
     }
 }
@@ -70,10 +61,7 @@ extension HomeViewController: UICollectionViewDataSource {
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let filme = Servico.shared.listaDeFilmeEmDestaques[indexPath.item]
-        
         filmeDestaque = filme
-        
-        performSegue(withIdentifier: "saibaMaisSegue", sender: filmeDestaque)
-        
+        performSegue(withIdentifier: "saibaMaisSegue", sender: indexPath.row)
     }
 }
