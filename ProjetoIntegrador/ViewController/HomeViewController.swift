@@ -10,7 +10,6 @@ import UIKit
 class HomeViewController: UIViewController {
     @IBOutlet weak var filmeDestaqueImage: UIImageView!
     @IBOutlet weak var nomeLabel: UILabel!
-    @IBOutlet weak var pesquisaTextField: UITextField!
     @IBOutlet weak var filmesDestaqueCollectionView: UICollectionView!
     
     let viewModel = HomeViewModel()
@@ -28,8 +27,7 @@ class HomeViewController: UIViewController {
 //visualizar os detalhes do filme selecionado
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detalhesVC = segue.destination as? FilmesDetalhesViewController {
-           let posicaoSelecionada = sender as? Int
-            detalhesVC.viewModel.getDetalheDoFilmeViewModel(posicao: posicaoSelecionada)
+            detalhesVC.filmeDestaque = filmeDestaque
         }
     }
     
@@ -58,10 +56,12 @@ extension HomeViewController: UICollectionViewDataSource {
     }
 }
 
+
+// fazer mvvm de segue
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let filme = Servico.shared.listaDeFilmeEmDestaques[indexPath.item]
         filmeDestaque = filme
-        performSegue(withIdentifier: "saibaMaisSegue", sender: indexPath.row)
+        performSegue(withIdentifier: "saibaMaisSegue", sender: filmeDestaque)
     }
 }

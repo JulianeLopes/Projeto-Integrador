@@ -23,9 +23,9 @@ class FilmesDetalhesViewController: UIViewController {
     @IBOutlet weak var indicacaoLabel: UILabel!
     @IBOutlet weak var favoritarButton: UIButton!
     
-    //var filmeDestaque: Filme?
+   var filmeDestaque: Filme?
     
-    var viewModel = FilmesViewModel()
+    var viewModel: DetalheDoFilmeViewModel?
     
     private var usuarioLogado: Usuario? {
         return SessionManager.shared.usuarioLogado
@@ -52,7 +52,7 @@ class FilmesDetalhesViewController: UIViewController {
     
     @IBAction func favoritarAction(_ sender: Any) {
         favoritarButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-        viewModel.favorita(filme: filmeDestaque!)
+        viewModel?.favorita(filme: filmeDestaque)
         
     }
     

@@ -7,24 +7,9 @@
 
 import Foundation
 
-protocol FilmesViewModelDelegate {
-    func atualizaFavorito()
-    
-}
-
-
-
 class FilmesViewModel {
     
     var servico = Servico()
-    
-    var delegate: FilmesViewModelDelegate?
-    
-    func favorita(filme: Filme){
-        usuarioLogado?.filmesFavoritos.append(filme)
-        
-        delegate?.atualizaFavorito()
-    }
     
     private var usuarioLogado: Usuario? {
         return SessionManager.shared.usuarioLogado
@@ -38,6 +23,7 @@ class FilmesViewModel {
         let detalheViewModel = DetalheDoFilmeViewModel(filme: filmeSelecionado)
         return detalheViewModel
     }
+    
 }
 
 

@@ -8,9 +8,20 @@
 import Foundation
 import UIKit
 
+protocol FilmesViewModelDelegate {
+    func atualizaFavorito()
+    
+}
 class DetalheDoFilmeViewModel {
+    var delegate: FilmesViewModelDelegate?
+    var servico = Servico()
+    
+    private var usuarioLogado: Usuario? {
+        return SessionManager.shared.usuarioLogado
+    }
     
     private let filme: Filme
+
     
     init(filme: Filme) {
         self.filme = filme
@@ -21,6 +32,12 @@ class DetalheDoFilmeViewModel {
             return nil
         }
         return image
+    }
+    
+    func favorita(filme: Filme?){
+        guard let filme = filme else { return }
+        usuarioLogado?.filmesFavoritos.append(filme)
+        delegate?.atualizaFavorito()
     }
     
     func getTitulo() -> String {
@@ -38,4 +55,14 @@ class DetalheDoFilmeViewModel {
     func getDescricao() -> String {
         return filme.descricao
     }
+    
+    func getDetalheDoFilmeViewModel(posicao: Int?) -> DetalheDoFilmeViewModel? {
+        guard let posicao = posicao else {
+            return nil
+        }
+        let filmeSelecionado = servico.listaDeFilmeEmDestaques[posicao]
+        let detalheViewModel = DetalheDoFilmeViewModel(filme: filmeSelecionado)
+        return detalheViewModel
+    }
+    
 }
