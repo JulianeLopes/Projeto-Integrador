@@ -36,6 +36,7 @@
 		5947F00A7D8BEEC0CBED7425 /* Pods_ProjetoIntegrador_ProjetoIntegradorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F53FC665A2528476EA2994BE /* Pods_ProjetoIntegrador_ProjetoIntegradorUITests.framework */; };
 		5E5B68CA28464F6D00AF6A6C /* ConfiguracoesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B68C928464F6D00AF6A6C /* ConfiguracoesViewController.swift */; };
 		5E5B68CC2846519800AF6A6C /* DadosPessoaisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B68CB2846519800AF6A6C /* DadosPessoaisViewController.swift */; };
+		5E8A070028593BD900F09A5D /* MovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A06FF28593BD900F09A5D /* MovieAPI.swift */; };
 		5EABB816285011EC00250EF6 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EABB815285011EC00250EF6 /* SessionManager.swift */; };
 		EE1020A12852A94900D39141 /* NovoUsuarioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1020A02852A94900D39141 /* NovoUsuarioViewModel.swift */; };
 		EE118C2E28445906005852F7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118C2D28445906005852F7 /* HomeViewController.swift */; };
@@ -104,6 +105,7 @@
 		4EE2BDC3F79A7042ED402856 /* Pods_ProjetoIntegrador.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjetoIntegrador.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E5B68C928464F6D00AF6A6C /* ConfiguracoesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracoesViewController.swift; sourceTree = "<group>"; };
 		5E5B68CB2846519800AF6A6C /* DadosPessoaisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadosPessoaisViewController.swift; sourceTree = "<group>"; };
+		5E8A06FF28593BD900F09A5D /* MovieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPI.swift; sourceTree = "<group>"; };
 		5EABB815285011EC00250EF6 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		EE1020A02852A94900D39141 /* NovoUsuarioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovoUsuarioViewModel.swift; sourceTree = "<group>"; };
 		EE118C2D28445906005852F7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 		16753067283EB9F700D7CE3A /* ProjetoIntegrador */ = {
 			isa = PBXGroup;
 			children = (
+				5E8A06FE28593B7A00F09A5D /* API */,
 				5EABB814285011B500250EF6 /* Manager */,
 				330B982D284454E400313B85 /* Modelo */,
 				330B982C284454AC00313B85 /* ViewModel */,
@@ -266,6 +269,14 @@
 				1642540328442A7D006F92A4 /* Usuario.swift */,
 			);
 			path = Modelo;
+			sourceTree = "<group>";
+		};
+		5E8A06FE28593B7A00F09A5D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				5E8A06FF28593BD900F09A5D /* MovieAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		5EABB814285011B500250EF6 /* Manager */ = {
@@ -487,6 +498,7 @@
 				EE53C4BB2851087B005DB3AC /* FavoritoViewModel.swift in Sources */,
 				FBDBE28028443AC100C897A4 /*  ServicoDeUsuario.swift in Sources */,
 				FBDBE28228443D7B00C897A4 /* Fanzometro.swift in Sources */,
+				5E8A070028593BD900F09A5D /* MovieAPI.swift in Sources */,
 				330B982F2844554500313B85 /* FavoritoViewController.swift in Sources */,
 				1642540628442A86006F92A4 /* Servico.swift in Sources */,
 				336A38D12856987D00814CA3 /* DetalheDoFilmeViewModel.swift in Sources */,
