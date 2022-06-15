@@ -13,11 +13,10 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var filmesDestaqueCollectionView: UICollectionView!
     
     let viewModel = HomeViewModel()
-    var filmeDestaque: Filme?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        filmeDestaque = Servico.shared.filmeEmDestaque
+        viewModel.aplicarFilmePadrao()
         filmesDestaqueCollectionView.dataSource = self
         filmesDestaqueCollectionView.delegate = self
         filmeDestaqueImage.image = Servico.shared.filmeEmDestaque.poster
@@ -27,14 +26,14 @@ class HomeViewController: UIViewController {
 //visualizar os detalhes do filme selecionado
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detalhesVC = segue.destination as? FilmesDetalhesViewController {
-            detalhesVC.filmeDestaque = filmeDestaque
+            detalhesVC.filmeDestaque = viewModel.getFilmeSelecionado()
         }
     }
     
     //visualizar os detalhes do filme em destaque
     @IBAction func filmeDestaqueSaibaMais(_ sender: Any) {
-        filmeDestaque = Servico.shared.filmeEmDestaque
-        performSegue(withIdentifier: "saibaMaisSegue", sender: filmeDestaque)
+        viewModel.aplicarFilmePadrao()
+        performSegue(withIdentifier: "saibaMaisSegue", sender: nil)
     }
     
     //demostra o nome do usuário logado e o cumprimenta
@@ -60,8 +59,7 @@ extension HomeViewController: UICollectionViewDataSource {
 // fazer mvvm de segue
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let filme = Servico.shared.listaDeFilmeEmDestaques[indexPath.item]
-        filmeDestaque = filme
-        performSegue(withIdentifier: "saibaMaisSegue", sender: filmeDestaque)
+        viewModel.selecionarFilme(posicao: indexPath.row)
+        performSegue(withIdentifier: "saibaMaisSegue", sender: nil)
     }
 }

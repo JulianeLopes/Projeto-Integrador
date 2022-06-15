@@ -13,6 +13,8 @@ class HomeViewModel {
     
     private let servico = Servico()
     
+    private var filmeSelecionado: Filme?
+    
     private var usuarioLogado: Usuario? {
         return SessionManager.shared.usuarioLogado
     }
@@ -32,14 +34,28 @@ class HomeViewModel {
         return cellViewModel
     }
     
-//    func getDetalheDoFilmeViewModel(posicao: Int?) -> DetalheDoFilmeViewModel? {
-//        guard let posicao = posicao else {
-//            return nil
-//        }
-//        let filmeSelecionado = servico.listaDeFilmeEmDestaques[posicao]
-//        let detalheViewModel = DetalheDoFilmeViewModel(filme: filmeSelecionado)
-//        return detalheViewModel
-//    }
+    func getFilme(posicao: Int) -> Filme? {
+       
+        let filmeSelecionado = servico.listaDeFilmeEmDestaques[posicao]
+        return filmeSelecionado
+    }
+    
+    func selecionarFilme(posicao: Int) {
+        filmeSelecionado = getFilme(posicao: posicao)
+    }
+    
+    func selecionarFilme(filme: Filme) {
+        filmeSelecionado = filme
+    }
+    
+    func getFilmeSelecionado() -> Filme? {
+        return filmeSelecionado
+    }
+    
+    func aplicarFilmePadrao() {
+        selecionarFilme(filme: Servico.shared.filmeEmDestaque)
+    }
+    
 }
 
     
