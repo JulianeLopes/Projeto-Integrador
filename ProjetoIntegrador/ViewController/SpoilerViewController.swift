@@ -18,8 +18,6 @@ class SpoilerViewController: UIViewController {
         configuraTexto()
 
     }
-
-
     func configuraTexto(){
         textoSpoiler.text = filmeDestaque?.spoiler
         textoCenaPósCrédito.text = filmeDestaque?.cenaPosCredito

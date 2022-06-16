@@ -15,14 +15,14 @@ class FilmesViewModel {
         return SessionManager.shared.usuarioLogado
     }
     
-    func getDetalheDoFilmeViewModel(posicao: Int?) -> DetalheDoFilmeViewModel? {
-        guard let posicao = posicao else {
-            return nil
-        }
-        let filmeSelecionado = servico.listaDeFilmeEmDestaques[posicao]
-        let detalheViewModel = DetalheDoFilmeViewModel(filme: filmeSelecionado)
-        return detalheViewModel
-    }
+//    func getDetalheDoFilmeViewModel(posicao: Int?) -> DetalheDoFilmeViewModel? {
+//        guard let posicao = posicao else {
+//            return nil
+//        }
+//        let filmeSelecionado = servico.listaDeFilmeEmDestaques[posicao]
+//        let detalheViewModel = DetalheDoFilmeViewModel(filme: filmeSelecionado)
+//        return detalheViewModel
+//    }
     
 }
 

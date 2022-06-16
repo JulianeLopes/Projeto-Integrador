@@ -1,5 +1,5 @@
 
-refatorar e MVVM a partir da HomeViewController - fazer mvvm de segue linha 60 em diante 
+refatorar e MVVM a partir da FilmesDetalheViewController - fazer mvvm de segue linha 60 em diante 
 mudar o botao de compartilhar da tela detalhes filmes para a tela de fanzometro
 fazer scrollview em todas as telas
 botao favoritar - fazer logica com filme favoritado,  o coracao precisa ficar cheio/ colorido, bug 2x - duplicando, se o filme ja for favoritado apresentar alerta para desfavoritar 
