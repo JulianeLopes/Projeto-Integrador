@@ -14,20 +14,22 @@ class DadosPessoaisViewController: UIViewController {
     @IBOutlet weak var senhaTextField: UITextField!
     @IBOutlet weak var fotoPerfil: UIImageView!
     
-    private var usuarioLogado: Usuario? {
-        return SessionManager.shared.usuarioLogado
-    }
-    
-//    var fotoUsuario: String = usuarioLogado?.foto
+
+    let viewModel = DadosPessoaisViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nomeLabel.text = "Olá \(converteParaString(string: usuarioLogado?.nome))"
-        fotoPerfil.image = UIImage(named: usuarioLogado?.foto ?? "")
-        fotoPerfil.layer.cornerRadius = 125
-        
+        configuraTela()
     }
     
+    // configura a tela com dados do usuario
+    private func configuraTela(){
+        nomeLabel.text = "Olá \(viewModel.getNomeDoUsuario())"
+        fotoPerfil.image = UIImage(named: viewModel.getFotoDoUsuario())
+        fotoPerfil.layer.cornerRadius = 125
+    }
+    
+    // botão de upload da foto
     @IBAction func uploadFotoButton(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
@@ -36,15 +38,8 @@ class DadosPessoaisViewController: UIViewController {
         present(imagePicker, animated: true)
         viewWillAppear(true)
     }
-    
-    func converteParaString(string: String?) -> String {
-        guard let string = string else { return ""}
-        return string
-    }
+
 }
-
-
-
 extension DadosPessoaisViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {

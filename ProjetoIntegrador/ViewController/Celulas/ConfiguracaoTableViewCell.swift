@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol ConfiguracaoViewModelDelegate: AnyObject{
+protocol ConfiguracaoViewModelDelegate: AnyObject {
     func clicouNoBotao(title: String)
 }
 

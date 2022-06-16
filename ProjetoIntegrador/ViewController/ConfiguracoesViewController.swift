@@ -13,6 +13,7 @@ class ConfiguracoesViewController: UIViewController {
     @IBOutlet weak var listaOpcoesTableView: UITableView!
     
     let viewModel = ConfiguracaoViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         listaOpcoesTableView.dataSource = self

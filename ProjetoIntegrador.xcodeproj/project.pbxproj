@@ -45,6 +45,7 @@
 		EE118C3628446054005852F7 /* FilmesDetalhesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118C3528446054005852F7 /* FilmesDetalhesViewController.swift */; };
 		EE118C382844E6D6005852F7 /* PesquisaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118C372844E6D6005852F7 /* PesquisaViewController.swift */; };
 		EE2D484B284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2D484A284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift */; };
+		EE4ABEBE285BE8B1002A5AC7 /* DadosPessoaisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4ABEBD285BE8B1002A5AC7 /* DadosPessoaisViewModel.swift */; };
 		EE53C4B9284FEC20005DB3AC /* NovoUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE53C4B8284FEC20005DB3AC /* NovoUsuarioViewController.swift */; };
 		EE53C4BB2851087B005DB3AC /* FavoritoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE53C4BA2851087B005DB3AC /* FavoritoViewModel.swift */; };
 		EE53C4BD28510B3C005DB3AC /* SpoilerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE53C4BC28510B3C005DB3AC /* SpoilerViewController.swift */; };
@@ -114,6 +115,7 @@
 		EE118C3528446054005852F7 /* FilmesDetalhesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesDetalhesViewController.swift; sourceTree = "<group>"; };
 		EE118C372844E6D6005852F7 /* PesquisaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PesquisaViewController.swift; sourceTree = "<group>"; };
 		EE2D484A284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracaoViewModel.swift; sourceTree = "<group>"; };
+		EE4ABEBD285BE8B1002A5AC7 /* DadosPessoaisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadosPessoaisViewModel.swift; sourceTree = "<group>"; };
 		EE53C4B8284FEC20005DB3AC /* NovoUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovoUsuarioViewController.swift; sourceTree = "<group>"; };
 		EE53C4BA2851087B005DB3AC /* FavoritoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritoViewModel.swift; sourceTree = "<group>"; };
 		EE53C4BC28510B3C005DB3AC /* SpoilerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoilerViewController.swift; sourceTree = "<group>"; };
@@ -224,20 +226,16 @@
 		330B982B2844549000313B85 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				EE4ABEBC285BE750002A5AC7 /* Celulas */,
 				16D749EA284981F200ECD9DB /* LoginViewController.swift */,
 				EE53C4B8284FEC20005DB3AC /* NovoUsuarioViewController.swift */,
 				EE118C2D28445906005852F7 /* HomeViewController.swift */,
 				EE118C3528446054005852F7 /* FilmesDetalhesViewController.swift */,
 				EE53C4BC28510B3C005DB3AC /* SpoilerViewController.swift */,
+				330B982E2844554500313B85 /* FavoritoViewController.swift */,
 				EE118C372844E6D6005852F7 /* PesquisaViewController.swift */,
 				FBDBE28128443D7B00C897A4 /* Fanzometro.swift */,
-				FBDBE2852844437C00C897A4 /* FanzometroCollectionViewCell.swift */,
-				1699316B284E9D9F00AF1014 /* PesquisaCollectionViewCell.swift */,
-				EE118C2F284459BA005852F7 /* FilmesEmDestaquesCollectionViewCell.swift */,
-				330B982E2844554500313B85 /* FavoritoViewController.swift */,
-				330B9830284455DF00313B85 /* FavoritoTableViewCell.swift */,
 				5E5B68C928464F6D00AF6A6C /* ConfiguracoesViewController.swift */,
-				331CF459284EDA3400A32933 /* ConfiguracaoTableViewCell.swift */,
 				5E5B68CB2846519800AF6A6C /* DadosPessoaisViewController.swift */,
 			);
 			path = ViewController;
@@ -256,6 +254,7 @@
 				EE53C4BA2851087B005DB3AC /* FavoritoViewModel.swift */,
 				163CF01428512565005E4476 /* FilmesViewModel.swift */,
 				336A38CE2856916C00814CA3 /* FilmeViewModel.swift */,
+				EE4ABEBD285BE8B1002A5AC7 /* DadosPessoaisViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -285,6 +284,18 @@
 				5EABB815285011EC00250EF6 /* SessionManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		EE4ABEBC285BE750002A5AC7 /* Celulas */ = {
+			isa = PBXGroup;
+			children = (
+				1699316B284E9D9F00AF1014 /* PesquisaCollectionViewCell.swift */,
+				330B9830284455DF00313B85 /* FavoritoTableViewCell.swift */,
+				EE118C2F284459BA005852F7 /* FilmesEmDestaquesCollectionViewCell.swift */,
+				331CF459284EDA3400A32933 /* ConfiguracaoTableViewCell.swift */,
+				FBDBE2852844437C00C897A4 /* FanzometroCollectionViewCell.swift */,
+			);
+			path = Celulas;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -490,6 +501,7 @@
 				16753069283EB9F700D7CE3A /* AppDelegate.swift in Sources */,
 				EE118C2E28445906005852F7 /* HomeViewController.swift in Sources */,
 				163CF01528512565005E4476 /* FilmesViewModel.swift in Sources */,
+				EE4ABEBE285BE8B1002A5AC7 /* DadosPessoaisViewModel.swift in Sources */,
 				330B9831284455DF00313B85 /* FavoritoTableViewCell.swift in Sources */,
 				EE53C4BD28510B3C005DB3AC /* SpoilerViewController.swift in Sources */,
 				EE53C4B9284FEC20005DB3AC /* NovoUsuarioViewController.swift in Sources */,
