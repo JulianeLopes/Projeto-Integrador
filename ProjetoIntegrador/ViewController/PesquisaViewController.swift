@@ -25,22 +25,23 @@ class PesquisaViewController: UIViewController {
        
         viewModel.getListaDeFilme()
     }
-    
+    // ação de pesquisar dinamicamente, conforme a ação do usuario
     @IBAction func buscarAction(_ sender: Any) {
         viewModel.pesquisarFilme(filmePesquisado: pesquisaTextField.text)
 
     }
+    // transição de dados entre telas em MVVM
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detalheVC = segue.destination as? FilmesDetalhesViewController {
-            detalheVC.filmeDestaque = filmeSelecionado
+            detalheVC.filmeDestaque = viewModel.getFilmeSelecionado()
         }
     }
 }
-
+// ação de selecionar o filme em MVVM
 extension PesquisaViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        filmeSelecionado = viewModel.listaDeFilme[indexPath.item]
-        performSegue(withIdentifier: "detalhesCell", sender: filmeSelecionado)
+        viewModel.selecionarFilme(posicao: indexPath.row)
+        performSegue(withIdentifier: "detalhesCell", sender: nil)
     }
 }
 
@@ -50,10 +51,13 @@ extension PesquisaViewController: UICollectionViewDataSource{
         return viewModel.listaDeFilme.count
     }
     
+    // celula customizada em MVVM
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let celula = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? PesquisaCollectionViewCell
         
-        celula?.configuraCelula(filme: viewModel.listaDeFilme[indexPath.item])
+        let celulaViewModel = viewModel.getCellViewModel(posicao: indexPath.row)
+        
+        celula?.configuraCelula(viewModel: celulaViewModel)
         
         return  celula ?? UICollectionViewCell()
     }

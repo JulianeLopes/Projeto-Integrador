@@ -17,10 +17,12 @@ class DetalheDoFilmeViewModel {
     var delegate: FilmesViewModelDelegate?
     var servico = Servico()
     
+    // usuario logado
     private var usuarioLogado: Usuario? {
         return SessionManager.shared.usuarioLogado
     }
     
+    // função de favoritar filmes
     func favorita(filme: Filme?){
         guard let filme = filme else { return }
         usuarioLogado?.filmesFavoritos.append(filme)

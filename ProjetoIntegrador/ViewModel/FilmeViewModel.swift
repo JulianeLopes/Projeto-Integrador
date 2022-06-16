@@ -23,4 +23,8 @@ class FilmeViewModel {
         }
         return image
     }
+    
+    func getTitulo() -> String {
+        return filme.titulo
+    }
 }

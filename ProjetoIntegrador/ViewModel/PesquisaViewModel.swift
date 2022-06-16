@@ -14,12 +14,15 @@ protocol PesquisaViewModelDelegate {
 class PesquisaViewModel {
     var delegate: PesquisaViewModelDelegate?
     var listaDeFilme: [Filme] = []
+    var filmeSelecionado: Filme?
 
+    // recebe a lista de filmes
     func getListaDeFilme() -> [Filme] {
         listaDeFilme = Servico.shared.listaDeFilmes
         return listaDeFilme
     }
     
+    // função de pesquisar o filme no textfield
     func pesquisarFilme(filmePesquisado: String?){
         let resultado = getListaDeFilme().filter ({ filme in
             return filme.titulo.lowercased().contains(filmePesquisado?.lowercased() ?? "")
@@ -29,7 +32,30 @@ class PesquisaViewModel {
         } else {
             getListaDeFilme()
         }
-
         delegate?.atualizalista()
     }
+    
+    // recebe o filme na celula
+    func getCellViewModel(posicao: Int) -> FilmeViewModel {
+        let filme = getListaDeFilme()[posicao]
+        let cellViewModel = FilmeViewModel(filme: filme)
+        return cellViewModel
+    }
+    
+    // pega a posição do filme na lista
+    func getFilme(posicao: Int) -> Filme? {
+        let filmeSelecionado = getListaDeFilme()[posicao]
+        return filmeSelecionado
+    }
+    
+    // pega a posição do filme selecionado
+    func selecionarFilme(posicao: Int) {
+        filmeSelecionado = getFilme(posicao: posicao)
+    }
+    
+    // recebe o filme selecionado e envia para outra tela
+    func getFilmeSelecionado() -> Filme? {
+        return filmeSelecionado
+    }
+    
 }

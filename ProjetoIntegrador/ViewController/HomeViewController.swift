@@ -50,7 +50,9 @@ extension HomeViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "destaquesCell", for: indexPath) as? FilmesEmDestaquesCollectionViewCell
+        
         let cellViewModel = viewModel.getCellViewModel(posicao: indexPath.row)
+        
         cell?.configuraCelula(viewModel: cellViewModel)
         return cell ?? UICollectionViewCell()
     }
