@@ -8,3 +8,6 @@ tela de spoiler - fazer botao de fechar
 tela de detalhes do filme - fazer a logica dos filmes indicado e botao de filmes assistido
 tela conta - manual de fanzometro 
 tela de trocar usuario e tela de sair - tirar modal
+
+perguntar no colearning: 
+fanzometroViewModel = linha 31/60 (forceUnwrap)

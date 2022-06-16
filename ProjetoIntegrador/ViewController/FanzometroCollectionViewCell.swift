@@ -11,8 +11,8 @@ class FanzometroCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var posterCollectionViewCell: UIImageView!
     
-    func customizaCelula(filme: Filme) {
-        posterCollectionViewCell.image = filme.poster
+    func customizaCelula(viewModel: FilmeViewModel) {
+        posterCollectionViewCell.image = viewModel.getPoster()
         posterCollectionViewCell.layer.cornerRadius = 20
     }
 }
