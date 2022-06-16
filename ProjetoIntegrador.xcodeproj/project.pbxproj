@@ -249,11 +249,11 @@
 				EE1020A02852A94900D39141 /* NovoUsuarioViewModel.swift */,
 				16D749EC2849829400ECD9DB /* LoginViewModel.swift */,
 				EE118C3128445AB2005852F7 /* HomeViewModel.swift */,
+				336A38D02856987D00814CA3 /* DetalheDoFilmeViewModel.swift */,
 				FBDBE28328443F5600C897A4 /* FanzometroViewModel.swift */,
 				16993169284E984F00AF1014 /* PesquisaViewModel.swift */,
 				EE2D484A284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift */,
 				EE53C4BA2851087B005DB3AC /* FavoritoViewModel.swift */,
-				336A38D02856987D00814CA3 /* DetalheDoFilmeViewModel.swift */,
 				163CF01428512565005E4476 /* FilmesViewModel.swift */,
 				336A38CE2856916C00814CA3 /* FilmeViewModel.swift */,
 			);

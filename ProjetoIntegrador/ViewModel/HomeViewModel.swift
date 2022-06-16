@@ -44,7 +44,7 @@ class HomeViewModel {
         filmeSelecionado = getFilme(posicao: posicao)
     }
     
-    func selecionarFilme(filme: Filme) {
+    private func selecionarFilme(filme: Filme) {
         filmeSelecionado = filme
     }
     
@@ -56,6 +56,9 @@ class HomeViewModel {
         selecionarFilme(filme: Servico.shared.filmeEmDestaque)
     }
     
+    func getPosterFilmeDestaque() -> UIImage? {
+        Servico.shared.filmeEmDestaque.poster
+    }
 }
 
     

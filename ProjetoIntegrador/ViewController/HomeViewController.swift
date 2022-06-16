@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
         viewModel.aplicarFilmePadrao()
         filmesDestaqueCollectionView.dataSource = self
         filmesDestaqueCollectionView.delegate = self
-        filmeDestaqueImage.image = Servico.shared.filmeEmDestaque.poster
+        
         configuraTela()
     }
     
@@ -36,9 +36,10 @@ class HomeViewController: UIViewController {
         performSegue(withIdentifier: "saibaMaisSegue", sender: nil)
     }
     
-    //demostra o nome do usuário logado e o cumprimenta
+    //demostra o nome do usuário logado e o cumprimenta e configura poster de filme em destaque
     func configuraTela(){
         nomeLabel.text = "Olá, \(viewModel.getNomeUsuario())"
+        filmeDestaqueImage.image = viewModel.getPosterFilmeDestaque()
     }
 }
 
@@ -56,7 +57,7 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 
 
-// fazer mvvm de segue
+// segue para tela de detalhes do filme em mvvm - OBS: usamos o nil no sender pois temos doi locais de perform segue com listas diferentes de filmes nessa tela
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.selecionarFilme(posicao: indexPath.row)

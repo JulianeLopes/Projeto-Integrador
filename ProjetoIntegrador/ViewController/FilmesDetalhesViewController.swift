@@ -27,9 +27,6 @@ class FilmesDetalhesViewController: UIViewController {
     
     var viewModel: DetalheDoFilmeViewModel?
     
-    private var usuarioLogado: Usuario? {
-        return SessionManager.shared.usuarioLogado
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
