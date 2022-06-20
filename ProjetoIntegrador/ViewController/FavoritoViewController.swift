@@ -31,7 +31,6 @@ class FavoritoViewController: UIViewController {
         super.viewWillAppear(animated)
         listaFavoritoTableView.reloadData()
     }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detalhesFilmeVC = segue.destination as? FilmesDetalhesViewController {
             detalhesFilmeVC.filmeDestaque = filmeSelecionado

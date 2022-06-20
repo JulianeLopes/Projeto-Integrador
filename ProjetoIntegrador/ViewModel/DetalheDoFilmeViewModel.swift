@@ -23,11 +23,9 @@ class DetalheDoFilmeViewModel {
     }
     
     // função de favoritar filmes
-    // ver o pq não chega aqui
     func favorita(filme: Filme?){
         guard let filme = filme else { return }
         usuarioLogado?.filmesFavoritos.append(filme)
-        print(usuarioLogado?.filmesFavoritos)
         delegate?.atualizaFavorito()
     }
 }

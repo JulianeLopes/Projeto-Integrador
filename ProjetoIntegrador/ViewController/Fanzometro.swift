@@ -48,16 +48,9 @@ func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection s
 
 func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
-//    if error == true {
-//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"errorViewCell", for:  indexPath) as? FanzometroCollectionViewCell
-//       // montar a celula de erro
-//        return cell
-//    }
-    
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"fanzometroCell", for:  indexPath) as? FanzometroCollectionViewCell
  
     let viewModel = viewModel.getViewModel(posicao: indexPath.row)
-    
     cell?.customizaCelula(viewModel: viewModel)
     
     return cell ??  UICollectionViewCell()

@@ -52,7 +52,6 @@ class FanzometroViewModel {
     
     // envia os dados do filme para a celula
     func getViewModel(posicao: Int) -> FilmeViewModel {
-        // faz guard let e no return chama uma celula com a tratativa de erro, tratativa de erro no servico 
         let filme = usuarioLogado?.filmesFavoritos[posicao]
             // verificar o !
         let cellViewModel = FilmeViewModel(filme: filme!)
