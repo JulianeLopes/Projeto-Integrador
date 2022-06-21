@@ -13,40 +13,40 @@ protocol PesquisaViewModelDelegate {
 
 class PesquisaViewModel {
     
-    var servicodeAPI = MovieAPI()
+    var servicoDeAPI = MovieAPI()
     var delegate: PesquisaViewModelDelegate?
     var listaDeFilme: [Filme] = []
     var filmeSelecionado: Filme?
 
     // recebe a lista de filmes
     func getListaDeFilme() -> [Filme] {
-        listaDeFilme = servicodeAPI.filmesFromData
         return listaDeFilme
     }
     
     // função de pesquisar o filme no textfield
     func pesquisarFilme(filmePesquisado: String?){
-        let resultado = getListaDeFilme().filter ({ filme in
+
+        let resultado = listaDeFilme.filter ({ filme in
             return filme.title.lowercased().contains(filmePesquisado?.lowercased() ?? "")
         })
         if filmePesquisado != nil && filmePesquisado != ""{
             listaDeFilme = resultado
         } else {
-            getListaDeFilme()
+            listaDeFilme = servicoDeAPI.filmesFromData
         }
         delegate?.atualizalista()
     }
     
     // recebe o filme na celula
     func getCellViewModel(posicao: Int) -> FilmeViewModel {
-        let filme = getListaDeFilme()[posicao]
+        let filme = listaDeFilme[posicao]
         let cellViewModel = FilmeViewModel(filme: filme)
         return cellViewModel
     }
     
     // pega a posição do filme na lista
     func getFilme(posicao: Int) -> Filme? {
-        let filmeSelecionado = getListaDeFilme()[posicao]
+        let filmeSelecionado = listaDeFilme[posicao]
         return filmeSelecionado
     }
     
@@ -58,6 +58,13 @@ class PesquisaViewModel {
     // recebe o filme selecionado e envia para outra tela
     func getFilmeSelecionado() -> Filme? {
         return filmeSelecionado
+    }
+    
+    func getFilmesDaAPI(completion: @escaping () -> Void){
+        servicoDeAPI.loadFilmes { filmes in
+            self.listaDeFilme = filmes
+            completion()
+        }
     }
     
 }
