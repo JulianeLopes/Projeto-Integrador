@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     let viewModel = HomeViewModel()
     
     override func viewDidLoad() {
+        viewModel.delegate = self
         viewModel.getFilmesDaAPI {
             DispatchQueue.main.async {
                 self.filmesDestaqueCollectionView.reloadData()
@@ -70,4 +71,9 @@ extension HomeViewController: UICollectionViewDelegate {
     }
 }
 
+extension HomeViewController: HomeViewModelDelegate {
+    func configuraPosterFilmeDestaque(imagem: UIImage) {
+        filmeDestaqueImage.image = imagem
+    }
 
+}

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol MovieAPIDelegate {
     func atualizaDados(filmes: [Filme])
@@ -33,10 +34,9 @@ class MovieAPI {
             do {
                 let filmes = try self.decoder.decode(Data.self, from: data)
                 DispatchQueue.main.async {
-                    print("api: \(filmes.data.count)")
                     self.quantidadeDeFilmes = filmes.data.count
                     self.filmesFromData = filmes.data
-                    self.filmeDestaque = filmes.data[1]
+                    self.filmeDestaque = filmes.data[2]
                     self.delegate?.atualizaDados(filmes: self.filmesFromData)
                     completion(self.filmesFromData)
                 }
@@ -47,5 +47,29 @@ class MovieAPI {
         task.resume()
     }
 
+    func getPosterFilmeDestaqueDaApi(url: String?, completion: @escaping (UIImage?) -> Void) {
+        guard let poster = url else {
+            completion(nil)
+            return
+            
+        }
+        guard let url = URL(string: poster) else {
+            completion(nil)
+            return
+            
+        }
+        
+        let dataTask = URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data else { return }
+            DispatchQueue.main.async {
+                print(data)
+                let coverImagem = UIImage(data: data)
+                completion(coverImagem)
+            }
+            
+        }
+        dataTask.resume()
+    }
+    
 }
 

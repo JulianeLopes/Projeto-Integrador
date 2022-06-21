@@ -11,20 +11,22 @@ import UIKit
 
 class FilmeViewModel {
     
-    private let filme: Filme
+    var servicoDeApi = MovieAPI()
+
+    private var filme: Filme
     
     init (filme: Filme) {
         self.filme = filme
     }
     
-//    func getPoster() -> UIImage? {
-//        guard let image = filme.poster else {
-//            return nil
-//        }
-//        return image
-//    }
+    func getPoster(completion: @escaping (UIImage?) -> Void) {
+        servicoDeApi.getPosterFilmeDestaqueDaApi(url: filme.cover_url, completion: completion)
+        
+    }
     
     func getTitulo() -> String {
         return filme.title
     }
+    
+    
 }

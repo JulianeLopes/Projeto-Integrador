@@ -8,15 +8,21 @@
 import Foundation
 import UIKit
 
+protocol HomeViewModelDelegate {
+    func configuraPosterFilmeDestaque(imagem: UIImage)
+}
 
 class HomeViewModel {
     
 //    private let servico = Servico()
     private let servicosDeAPI = MovieAPI()
     
+    var delegate: HomeViewModelDelegate?
     var filmeSelecionado: Filme?
     var filmeDestaque: Filme?
+    var filmeDestaquePoster: UIImage?
     var filmes: [Filme] = []
+    
     // usuario logado
     private var usuarioLogado: Usuario? {
         return SessionManager.shared.usuarioLogado
@@ -64,21 +70,39 @@ class HomeViewModel {
     // configura o filme de destaque
     func aplicarFilmePadrao() {
         guard let filmeDestaque = filmeDestaque else { return }
+        getPosterFilmeDestaqueDaApi()
+
         selecionarFilme(filme: filmeDestaque)
     }
     
-    // configura o poster do filme
-    func getPosterFilmeDestaque() -> UIImage? {
-        
-        return nil
-    }
+     //configura o poster do filme
+//    func getPosterFilmeDestaque() -> UIImage? {
+//
+//    }
     
     func getFilmesDaAPI(completion: @escaping () -> Void){
         servicosDeAPI.loadFilmes { filmes in
             self.filmes = filmes
-            self.filmeDestaque = filmes[1]
+            self.filmeDestaque = filmes[2]
             completion()
         }
+    }
+    
+    // ta funcionando só quando clica no botão "saiba mais"
+    func getPosterFilmeDestaqueDaApi(){
+        guard let poster = filmeDestaque?.cover_url else { return }
+        guard let url = URL(string: poster) else { return }
+        
+        let dataTask = URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data else { return }
+            DispatchQueue.main.async {
+                print(data)
+                let coverImagem = UIImage(data: data)
+                guard let coverImagem = coverImagem else { return }
+                self.delegate?.configuraPosterFilmeDestaque(imagem: coverImagem)
+            }
+        }
+        dataTask.resume()
     }
 }
 
