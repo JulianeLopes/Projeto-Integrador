@@ -38,7 +38,7 @@ class FanzometroViewModel {
     private func fanzometroPorcentagem(listaDeFavoritos: [Filme]) -> Double{
         
         let quantidadeDeFavoritos = Double(listaDeFavoritos.count)
-        let quantidadeDeFilmes = Double(servicoDeAPI.getQuantidadeDeFilmes())
+        let quantidadeDeFilmes = Double(servicoDeAPI.quantidadeDeFilmes)
         
         let porcentagemFanzometro = (quantidadeDeFavoritos / quantidadeDeFilmes)*100
 

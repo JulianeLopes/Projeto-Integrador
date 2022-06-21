@@ -11,11 +11,12 @@ import UIKit
 
 class HomeViewModel {
     
-    private let servicosDeAPI = MovieAPI()
 //    private let servico = Servico()
+    private let servicosDeAPI = MovieAPI()
     
-    private var filmeSelecionado: Filme?
-    
+    var filmeSelecionado: Filme?
+    var filmeDestaque: Filme?
+    var filmes: [Filme] = []
     // usuario logado
     private var usuarioLogado: Usuario? {
         return SessionManager.shared.usuarioLogado
@@ -29,12 +30,12 @@ class HomeViewModel {
     
     // quantidade de filmes
     func numeroDeFilmesEmdestaques() -> Int {
-        return servicosDeAPI.getQuantidadeDeFilmes()
+        return servicosDeAPI.quantidadeDeFilmes
     }
     
     // envia dados do filme selecionado para a celula
     func getCellViewModel(posicao: Int) -> FilmeViewModel {
-        let filme = servicosDeAPI.getListaDeFilme()[posicao]
+        let filme = servicosDeAPI.filmesFromData[posicao]
         let cellViewModel = FilmeViewModel(filme: filme)
         return cellViewModel
     }
@@ -42,7 +43,7 @@ class HomeViewModel {
     // pega o filme selecionado da lista de filmes
     func getFilme(posicao: Int) -> Filme? {
        
-        let filmeSelecionado = servicosDeAPI.getListaDeFilme()[posicao]
+        let filmeSelecionado = filmes[posicao]
         return filmeSelecionado
     }
     
@@ -62,17 +63,22 @@ class HomeViewModel {
     
     // configura o filme de destaque
     func aplicarFilmePadrao() {
-        selecionarFilme(filme: servicosDeAPI.getFilmeDestaque())
+        guard let filmeDestaque = filmeDestaque else { return }
+        selecionarFilme(filme: filmeDestaque)
     }
     
     // configura o poster do filme
     func getPosterFilmeDestaque() -> UIImage? {
-        let filmeDestaque = servicosDeAPI.getFilmeDestaque()
+        
         return nil
     }
     
-    func getFilmes(){
-        servicosDeAPI.loadFilmes()
+    func getFilmesDaAPI(completion: @escaping () -> Void){
+        servicosDeAPI.loadFilmes { filmes in
+            self.filmes = filmes
+            self.filmeDestaque = filmes[1]
+            completion()
+        }
     }
 }
 

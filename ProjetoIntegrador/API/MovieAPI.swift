@@ -7,23 +7,20 @@
 
 import Foundation
 
+protocol MovieAPIDelegate {
+    func atualizaDados(filmes: [Filme])
+}
+
 class MovieAPI {
-    
-    private var filmesFromData: [Filme] = []
-    private var quantidadeDeFilmes: Int = 0
+    var delegate: MovieAPIDelegate?
+     var filmesFromData: [Filme] = []
+     var quantidadeDeFilmes: Int = 0
+     var filmeDestaque: Filme?
     
     let session = URLSession.shared
     let decoder = JSONDecoder()
     
-    
-//    func getDataFromUrl(url:NSURL, completion: ((data: NSData?, response: NSURLResponse?, error: NSError? ) -> Void)) {
-//            NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
-//                completion(data: data, response: response, error: error)
-//                }.resume()
-//        }
-
-    
-    func loadFilmes(){
+    func loadFilmes(completion: @escaping (([Filme])-> Void)){
         let url = URL(string: "https://mcuapi.herokuapp.com/api/v1/movies?page=1&limit=1000&columns=title%2Crelease_date%2Cphase%2Cpost_credit_scenes%2Ccover_url%2Csaga%2Cdirected_by%2Coverview&order=chronology%2CDESC")!
         let task = session.dataTask(with: url) { data, _, error in
             
@@ -39,6 +36,9 @@ class MovieAPI {
                     print("api: \(filmes.data.count)")
                     self.quantidadeDeFilmes = filmes.data.count
                     self.filmesFromData = filmes.data
+                    self.filmeDestaque = filmes.data[1]
+                    self.delegate?.atualizaDados(filmes: self.filmesFromData)
+                    completion(self.filmesFromData)
                 }
             } catch {
                 print(error)
@@ -46,33 +46,6 @@ class MovieAPI {
         }
         task.resume()
     }
-    
-    func getQuantidadeDeFilmes() -> Int{
-        return quantidadeDeFilmes
-    }
-    
-    func getFilme(posicao: Int) -> Filme {
-        return filmesFromData[posicao]
-    }
-    
-    func getListaDeFilme() -> [Filme]{
-        return filmesFromData
-    }
-    
-    func getFilmeDestaque() -> Filme?{
-        return nil
-    }
-//    func downloadImage(url: URL) -> UIImage {
-//
-//            getDataFromUrl(url) { (data, response, error)  in
-//                dispatch_async(dispatch_get_main_queue()) { () -> Void in
-//                    guard let data = data where error == nil else { return }
-//
-//                    let image:UIImage = UIImage(data: data)!
-//
-//                    return image
-//                }
-//            }
-//        }
+
 }
 

@@ -20,7 +20,7 @@ class PesquisaViewModel {
 
     // recebe a lista de filmes
     func getListaDeFilme() -> [Filme] {
-        listaDeFilme = servicodeAPI.getListaDeFilme()
+        listaDeFilme = servicodeAPI.filmesFromData
         return listaDeFilme
     }
     

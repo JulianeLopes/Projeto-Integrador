@@ -7,11 +7,10 @@
 
 import UIKit
 
-struct Data: Codable{
-    
-    var data:[Filme]
-    
+struct Data: Codable {
+    var data: [Filme]
 }
+
 struct Filme: Codable {
     var title: String
     var release_date: String?

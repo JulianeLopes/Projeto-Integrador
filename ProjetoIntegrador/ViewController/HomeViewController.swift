@@ -15,11 +15,13 @@ class HomeViewController: UIViewController {
     let viewModel = HomeViewModel()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        viewModel.getFilmes()
+        viewModel.getFilmesDaAPI {
+            DispatchQueue.main.async {
+                self.filmesDestaqueCollectionView.reloadData()
+            }
+        }
         filmesDestaqueCollectionView.dataSource = self
         filmesDestaqueCollectionView.delegate = self
-        
         configuraTela()
     }
     
@@ -38,9 +40,7 @@ class HomeViewController: UIViewController {
     
     //demostra o nome do usuário logado e o cumprimenta e configura poster de filme em destaque
     func configuraTela(){
-        DispatchQueue.main.async {
-            self.viewModel.aplicarFilmePadrao()
-        }
+        viewModel.aplicarFilmePadrao()
         nomeLabel.text = "Olá, \(viewModel.getNomeUsuario())"
 //        filmeDestaqueImage.image = viewModel.getPosterFilmeDestaque()
     }
@@ -69,3 +69,5 @@ extension HomeViewController: UICollectionViewDelegate {
         performSegue(withIdentifier: "saibaMaisSegue", sender: nil)
     }
 }
+
+
