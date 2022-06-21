@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.aplicarFilmePadrao()
+        viewModel.getFilmes()
         filmesDestaqueCollectionView.dataSource = self
         filmesDestaqueCollectionView.delegate = self
         
@@ -32,14 +32,17 @@ class HomeViewController: UIViewController {
     
     //visualizar os detalhes do filme em destaque
     @IBAction func filmeDestaqueSaibaMais(_ sender: Any) {
-        viewModel.aplicarFilmePadrao()
+//        viewModel.aplicarFilmePadrao()
         performSegue(withIdentifier: "saibaMaisSegue", sender: nil)
     }
     
     //demostra o nome do usuário logado e o cumprimenta e configura poster de filme em destaque
     func configuraTela(){
+        DispatchQueue.main.async {
+            self.viewModel.aplicarFilmePadrao()
+        }
         nomeLabel.text = "Olá, \(viewModel.getNomeUsuario())"
-        filmeDestaqueImage.image = viewModel.getPosterFilmeDestaque()
+//        filmeDestaqueImage.image = viewModel.getPosterFilmeDestaque()
     }
 }
 

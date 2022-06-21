@@ -17,14 +17,14 @@ class FilmeViewModel {
         self.filme = filme
     }
     
-    func getPoster() -> UIImage? {
-        guard let image = filme.poster else {
-            return nil
-        }
-        return image
-    }
+//    func getPoster() -> UIImage? {
+//        guard let image = filme.poster else {
+//            return nil
+//        }
+//        return image
+//    }
     
     func getTitulo() -> String {
-        return filme.titulo
+        return filme.title
     }
 }

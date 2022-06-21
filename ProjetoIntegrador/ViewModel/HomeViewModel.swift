@@ -11,7 +11,8 @@ import UIKit
 
 class HomeViewModel {
     
-    private let servico = Servico()
+    private let servicosDeAPI = MovieAPI()
+//    private let servico = Servico()
     
     private var filmeSelecionado: Filme?
     
@@ -28,12 +29,12 @@ class HomeViewModel {
     
     // quantidade de filmes
     func numeroDeFilmesEmdestaques() -> Int {
-        return Servico.shared.listaDeFilmeEmDestaques.count
+        return servicosDeAPI.getQuantidadeDeFilmes()
     }
     
     // envia dados do filme selecionado para a celula
     func getCellViewModel(posicao: Int) -> FilmeViewModel {
-        let filme = servico.listaDeFilmeEmDestaques[posicao]
+        let filme = servicosDeAPI.getListaDeFilme()[posicao]
         let cellViewModel = FilmeViewModel(filme: filme)
         return cellViewModel
     }
@@ -41,7 +42,7 @@ class HomeViewModel {
     // pega o filme selecionado da lista de filmes
     func getFilme(posicao: Int) -> Filme? {
        
-        let filmeSelecionado = servico.listaDeFilmeEmDestaques[posicao]
+        let filmeSelecionado = servicosDeAPI.getListaDeFilme()[posicao]
         return filmeSelecionado
     }
     
@@ -61,12 +62,17 @@ class HomeViewModel {
     
     // configura o filme de destaque
     func aplicarFilmePadrao() {
-        selecionarFilme(filme: Servico.shared.filmeEmDestaque)
+        selecionarFilme(filme: servicosDeAPI.getFilmeDestaque())
     }
     
     // configura o poster do filme
     func getPosterFilmeDestaque() -> UIImage? {
-        Servico.shared.filmeEmDestaque.poster
+        let filmeDestaque = servicosDeAPI.getFilmeDestaque()
+        return nil
+    }
+    
+    func getFilmes(){
+        servicosDeAPI.loadFilmes()
     }
 }
 

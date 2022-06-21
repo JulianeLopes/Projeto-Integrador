@@ -20,8 +20,10 @@ class SpoilerViewController: UIViewController {
     }
     
     func configuraTexto(){
-        textoSpoiler.text = filmeDestaque?.spoiler
-        textoCenaPósCrédito.text = filmeDestaque?.cenaPosCredito
+//        textoSpoiler.text = filmeDestaque?.spoiler
+        guard let cenasPosCreditos = filmeDestaque?.post_credit_scenes else {return}
+    
+        textoCenaPósCrédito.text = String(cenasPosCreditos)
     }
     
     @IBAction func fecharTelaBotao(_ sender: Any) {

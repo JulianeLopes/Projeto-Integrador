@@ -7,25 +7,19 @@
 
 import UIKit
 
-class Filme {
-    var titulo: String
-    var elenco: String
-    var direcao: String
-    var descricao: String
-    var indicacaoDeFilmes: [Filme]
-    var poster: UIImage?
-    var spoiler: String
-    var cenaPosCredito: String
+struct Data: Codable{
     
+    var data:[Filme]
     
-    init(titulo: String, elenco: String, direcao: String, descricao: String, indicacaoDeFilmes: [Filme], poster: UIImage?, spoiler: String, cenaPosCredito: String){
-        self.titulo = titulo
-        self.elenco = elenco
-        self.direcao = direcao
-        self.descricao = descricao
-        self.indicacaoDeFilmes = indicacaoDeFilmes
-        self.poster = poster
-        self.spoiler = spoiler
-        self.cenaPosCredito = cenaPosCredito
-    }
+}
+struct Filme: Codable {
+    var title: String
+    var release_date: String?
+    var overview: String?
+    var cover_url: String?
+    var directed_by: String?
+    var phase: Int?
+    var saga: String?
+    var post_credit_scenes: Int?
+
 }

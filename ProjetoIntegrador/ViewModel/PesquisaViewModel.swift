@@ -12,20 +12,22 @@ protocol PesquisaViewModelDelegate {
 }
 
 class PesquisaViewModel {
+    
+    var servicodeAPI = MovieAPI()
     var delegate: PesquisaViewModelDelegate?
     var listaDeFilme: [Filme] = []
     var filmeSelecionado: Filme?
 
     // recebe a lista de filmes
     func getListaDeFilme() -> [Filme] {
-        listaDeFilme = Servico.shared.listaDeFilmes
+        listaDeFilme = servicodeAPI.getListaDeFilme()
         return listaDeFilme
     }
     
     // função de pesquisar o filme no textfield
     func pesquisarFilme(filmePesquisado: String?){
         let resultado = getListaDeFilme().filter ({ filme in
-            return filme.titulo.lowercased().contains(filmePesquisado?.lowercased() ?? "")
+            return filme.title.lowercased().contains(filmePesquisado?.lowercased() ?? "")
         })
         if filmePesquisado != nil && filmePesquisado != ""{
             listaDeFilme = resultado

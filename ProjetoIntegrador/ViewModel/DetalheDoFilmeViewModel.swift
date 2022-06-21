@@ -15,7 +15,7 @@ protocol FilmesViewModelDelegate {
 
 class DetalheDoFilmeViewModel {
     var delegate: FilmesViewModelDelegate?
-    var servico = Servico()
+//    var servico = Servico()
     
     // usuario logado
     private var usuarioLogado: Usuario? {

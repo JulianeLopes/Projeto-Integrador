@@ -11,7 +11,7 @@ class FilmesEmDestaquesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var posterImage: UIImageView!
     
     func configuraCelula(viewModel: FilmeViewModel) {
-        posterImage.image = viewModel.getPoster()
+//        posterImage.image = viewModel.getPoster()
         posterImage.layer.cornerRadius = 20
     }
 }

@@ -31,12 +31,13 @@ class FilmesDetalhesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        posterImage.image = filmeDestaque?.poster
-        posterImage.layer.cornerRadius = 20
-        tituloLabel.text = filmeDestaque?.titulo
-        elencoLabel.text = filmeDestaque?.elenco
-        direcaoLabel.text = filmeDestaque?.direcao
-        descricaoLabel.text = filmeDestaque?.descricao
+//        posterImage.image = filmeDestaque?.poster
+//        posterImage.layer.cornerRadius = 20
+        tituloLabel.text = filmeDestaque?.title
+//        elencoLabel.text = filmeDestaque?.elenco
+        direcaoLabel.text = filmeDestaque?.directed_by
+        descricaoLabel.text = filmeDestaque?.overview
+        
         //colocar indicação
         
     }

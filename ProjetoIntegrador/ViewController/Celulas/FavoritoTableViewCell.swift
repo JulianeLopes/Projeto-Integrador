@@ -14,8 +14,8 @@ class FavoritoTableViewCell: UITableViewCell {
     @IBOutlet weak var nomeFilmeLabel: UILabel!
     
     func customizaCelula(filme: Filme) {
-        filmeImagem.image = filme.poster
-        nomeFilmeLabel.text = filme.titulo
+//        filmeImagem.image = filme.cover_url
+        nomeFilmeLabel.text = filme.title
         filmeImagem.layer.cornerRadius = 20
     }
 }
