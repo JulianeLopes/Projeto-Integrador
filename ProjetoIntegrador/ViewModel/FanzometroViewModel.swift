@@ -13,6 +13,8 @@ class FanzometroViewModel {
     var servicoDeAPI = MovieAPI()
     let service = ServicoDeUsuario()
     
+    var filmes: [Filme] = []
+    
     // usuario logado
     private var usuarioLogado: Usuario? {
         return SessionManager.shared.usuarioLogado
@@ -35,10 +37,10 @@ class FanzometroViewModel {
     }
     
     // calcula o nivel de fanzometro
-    private func fanzometroPorcentagem(listaDeFavoritos: [Filme]) -> Double{
+    private func fanzometroPorcentagem(listaDeFavoritos: [Filme]) -> Double {
         
         let quantidadeDeFavoritos = Double(listaDeFavoritos.count)
-        let quantidadeDeFilmes = Double(servicoDeAPI.quantidadeDeFilmes)
+        let quantidadeDeFilmes = Double(filmes.count)
         
         let porcentagemFanzometro = (quantidadeDeFavoritos / quantidadeDeFilmes)*100
 
@@ -57,5 +59,12 @@ class FanzometroViewModel {
             // verificar o !
         let cellViewModel = FilmeViewModel(filme: filme!)
         return cellViewModel
+    }
+    
+    func getFilmesDaApi(completion: @escaping ()-> Void){
+        servicoDeAPI.loadFilmes { filmes in
+            self.filmes = filmes
+            completion()
+        }
     }
 }

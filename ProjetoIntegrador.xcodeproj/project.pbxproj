@@ -263,7 +263,6 @@
 			isa = PBXGroup;
 			children = (
 				3357B1AA28442858007D611C /* Data.swift */,
-				FBDBE27F28443AC100C897A4 /*  ServicoDeUsuario.swift */,
 				1642540528442A86006F92A4 /* Servico.swift */,
 				1642540328442A7D006F92A4 /* Usuario.swift */,
 			);
@@ -282,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				5EABB815285011EC00250EF6 /* SessionManager.swift */,
+				FBDBE27F28443AC100C897A4 /*  ServicoDeUsuario.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
