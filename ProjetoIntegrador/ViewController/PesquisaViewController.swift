@@ -13,17 +13,20 @@ class PesquisaViewController: UIViewController {
     @IBOutlet weak var pesquisaTextField: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var filmeProcurado: String?
-    var filmeSelecionado: Filme?
-    
     let viewModel = PesquisaViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
         collectionView.dataSource = self
         collectionView.delegate = self
-       
-        viewModel.getListaDeFilme()
+        
+        viewModel.getFilmesDaAPI {
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
+        }
+        
     }
     // ação de pesquisar dinamicamente, conforme a ação do usuario
     @IBAction func buscarAction(_ sender: Any) {
@@ -66,6 +69,8 @@ extension PesquisaViewController: UICollectionViewDataSource{
 
 extension PesquisaViewController: PesquisaViewModelDelegate {
     func atualizalista() {
-        collectionView.reloadData()
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
     }
 }

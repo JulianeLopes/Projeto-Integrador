@@ -25,18 +25,21 @@ class FilmesDetalhesViewController: UIViewController {
     
    var filmeDestaque: Filme?
     
-    var viewModel: DetalheDoFilmeViewModel?
+    var viewModel = DetalheDoFilmeViewModel()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        posterImage.image = filmeDestaque?.poster
+        viewModel.getPoster(filme: filmeDestaque) { image in
+            self.posterImage.image = image
+        }
         posterImage.layer.cornerRadius = 20
-        tituloLabel.text = filmeDestaque?.titulo
-        elencoLabel.text = filmeDestaque?.elenco
-        direcaoLabel.text = filmeDestaque?.direcao
-        descricaoLabel.text = filmeDestaque?.descricao
+        tituloLabel.text = filmeDestaque?.title
+//        elencoLabel.text = filmeDestaque?.elenco
+        direcaoLabel.text = filmeDestaque?.directed_by
+        descricaoLabel.text = filmeDestaque?.overview
+        
         //colocar indicação
         
     }
@@ -49,7 +52,7 @@ class FilmesDetalhesViewController: UIViewController {
     
     @IBAction func favoritarAction(_ sender: Any) {
         favoritarButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-        viewModel?.favorita(filme: filmeDestaque)
+        viewModel.favorita(filme: filmeDestaque)
         
     }
     

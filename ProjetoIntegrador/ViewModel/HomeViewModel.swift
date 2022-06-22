@@ -8,12 +8,20 @@
 import Foundation
 import UIKit
 
+protocol HomeViewModelDelegate {
+    func configuraPosterFilmeDestaque(imagem: UIImage)
+}
 
 class HomeViewModel {
     
-    private let servico = Servico()
+//    private let servico = Servico()
+    private let servicosDeAPI = MovieAPI()
     
-    private var filmeSelecionado: Filme?
+    var delegate: HomeViewModelDelegate?
+    var filmeSelecionado: Filme?
+    var filmeDestaque: Filme?
+    var filmeDestaquePoster: UIImage?
+    var filmes: [Filme] = []
     
     // usuario logado
     private var usuarioLogado: Usuario? {
@@ -28,12 +36,12 @@ class HomeViewModel {
     
     // quantidade de filmes
     func numeroDeFilmesEmdestaques() -> Int {
-        return Servico.shared.listaDeFilmeEmDestaques.count
+        return servicosDeAPI.quantidadeDeFilmes
     }
     
     // envia dados do filme selecionado para a celula
     func getCellViewModel(posicao: Int) -> FilmeViewModel {
-        let filme = servico.listaDeFilmeEmDestaques[posicao]
+        let filme = servicosDeAPI.filmesFromData[posicao]
         let cellViewModel = FilmeViewModel(filme: filme)
         return cellViewModel
     }
@@ -41,7 +49,7 @@ class HomeViewModel {
     // pega o filme selecionado da lista de filmes
     func getFilme(posicao: Int) -> Filme? {
        
-        let filmeSelecionado = servico.listaDeFilmeEmDestaques[posicao]
+        let filmeSelecionado = filmes[posicao]
         return filmeSelecionado
     }
     
@@ -61,12 +69,40 @@ class HomeViewModel {
     
     // configura o filme de destaque
     func aplicarFilmePadrao() {
-        selecionarFilme(filme: Servico.shared.filmeEmDestaque)
+        getFilmesDaAPI {
+            self.filmeDestaque = self.filmes[2]
+            self.getPosterFilmeDestaqueDaApi()
+            self.selecionarFilme(filme: self.filmes[2])
+        }
     }
     
-    // configura o poster do filme
-    func getPosterFilmeDestaque() -> UIImage? {
-        Servico.shared.filmeEmDestaque.poster
+     //configura o poster do filme
+//    func getPosterFilmeDestaque() -> UIImage? {
+//
+//    }
+    
+    func getFilmesDaAPI(completion: @escaping () -> Void){
+        servicosDeAPI.loadFilmes { filmes in
+            self.filmes = filmes
+            self.filmeDestaque = filmes[2]
+            completion()
+        }
+    }
+    
+    func getPosterFilmeDestaqueDaApi(){
+        guard let poster = filmeDestaque?.cover_url else { return }
+        guard let url = URL(string: poster) else { return }
+        
+        let dataTask = URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data else { return }
+            DispatchQueue.main.async {
+                print(data)
+                let coverImagem = UIImage(data: data)
+                guard let coverImagem = coverImagem else { return }
+                self.delegate?.configuraPosterFilmeDestaque(imagem: coverImagem)
+            }
+        }
+        dataTask.resume()
     }
 }
 

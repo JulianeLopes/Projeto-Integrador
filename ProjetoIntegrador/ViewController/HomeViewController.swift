@@ -15,12 +15,16 @@ class HomeViewController: UIViewController {
     let viewModel = HomeViewModel()
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        viewModel.aplicarFilmePadrao()
+        viewModel.delegate = self
+        viewModel.getFilmesDaAPI {
+            DispatchQueue.main.async {
+                self.filmesDestaqueCollectionView.reloadData()
+            }
+        }
         filmesDestaqueCollectionView.dataSource = self
         filmesDestaqueCollectionView.delegate = self
-        
         configuraTela()
+        viewModel.aplicarFilmePadrao()
     }
     
 //visualizar os detalhes do filme selecionado
@@ -32,14 +36,15 @@ class HomeViewController: UIViewController {
     
     //visualizar os detalhes do filme em destaque
     @IBAction func filmeDestaqueSaibaMais(_ sender: Any) {
-        viewModel.aplicarFilmePadrao()
+//       viewModel.aplicarFilmePadrao()
         performSegue(withIdentifier: "saibaMaisSegue", sender: nil)
     }
     
     //demostra o nome do usuário logado e o cumprimenta e configura poster de filme em destaque
     func configuraTela(){
+        viewModel.aplicarFilmePadrao()
         nomeLabel.text = "Olá, \(viewModel.getNomeUsuario())"
-        filmeDestaqueImage.image = viewModel.getPosterFilmeDestaque()
+//        filmeDestaqueImage.image = viewModel.getPosterFilmeDestaque()
     }
 }
 
@@ -65,4 +70,11 @@ extension HomeViewController: UICollectionViewDelegate {
         viewModel.selecionarFilme(posicao: indexPath.row)
         performSegue(withIdentifier: "saibaMaisSegue", sender: nil)
     }
+}
+
+extension HomeViewController: HomeViewModelDelegate {
+    func configuraPosterFilmeDestaque(imagem: UIImage) {
+        filmeDestaqueImage.image = imagem
+    }
+
 }
