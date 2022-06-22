@@ -36,7 +36,7 @@ class HomeViewController: UIViewController {
     
     //visualizar os detalhes do filme em destaque
     @IBAction func filmeDestaqueSaibaMais(_ sender: Any) {
-//       viewModel.aplicarFilmePadrao()
+      viewModel.aplicarFilmePadrao()
         performSegue(withIdentifier: "saibaMaisSegue", sender: nil)
     }
     
