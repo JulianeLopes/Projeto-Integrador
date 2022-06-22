@@ -14,12 +14,19 @@ protocol FilmesViewModelDelegate {
 }
 
 class DetalheDoFilmeViewModel {
+    var servicoDeApi = MovieAPI()
+    
     var delegate: FilmesViewModelDelegate?
-    var servico = Servico()
+//    var servico = Servico()
     
     // usuario logado
     private var usuarioLogado: Usuario? {
         return SessionManager.shared.usuarioLogado
+    }
+    
+    func getPoster(filme: Filme?, completion: @escaping (UIImage?) -> Void) {
+        servicoDeApi.getPosterFilmeDestaqueDaApi(url: filme?.cover_url, completion: completion)
+        
     }
     
     // função de favoritar filmes

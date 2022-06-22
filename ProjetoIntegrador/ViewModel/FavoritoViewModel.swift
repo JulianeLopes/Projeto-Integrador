@@ -25,5 +25,10 @@ class FavoritoViewModel {
         return (usuarioLogado?.filmesFavoritos[row])!
         
     }
+    func getCellViewModel(posicao: Int) -> FilmeViewModel {
+            let filme = usuarioLogado?.filmesFavoritos[posicao]
+            let cellViewModel = FilmeViewModel(filme: filme!)
+            return cellViewModel
+        }
     
 }

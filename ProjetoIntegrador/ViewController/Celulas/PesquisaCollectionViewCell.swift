@@ -13,7 +13,11 @@ class PesquisaCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titulo: UILabel!
     
     func configuraCelula(viewModel: FilmeViewModel){
-        imagem.image = viewModel.getPoster()
+        viewModel.getPoster(completion: { image in
+            DispatchQueue.main.async {
+                self.imagem.image = image
+            }
+        })
         titulo.text = viewModel.getTitulo()
         imagem.layer.cornerRadius = 20
     }
