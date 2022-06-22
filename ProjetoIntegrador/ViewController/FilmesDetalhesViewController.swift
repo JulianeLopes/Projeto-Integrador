@@ -31,8 +31,10 @@ class FilmesDetalhesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-//        posterImage.image = filmeDestaque?.poster
-//        posterImage.layer.cornerRadius = 20
+        viewModel.getPoster(filme: filmeDestaque) { image in
+            self.posterImage.image = image
+        }
+        posterImage.layer.cornerRadius = 20
         tituloLabel.text = filmeDestaque?.title
 //        elencoLabel.text = filmeDestaque?.elenco
         direcaoLabel.text = filmeDestaque?.directed_by

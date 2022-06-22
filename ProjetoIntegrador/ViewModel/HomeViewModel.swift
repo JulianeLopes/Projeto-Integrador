@@ -69,10 +69,11 @@ class HomeViewModel {
     
     // configura o filme de destaque
     func aplicarFilmePadrao() {
-        guard let filmeDestaque = filmeDestaque else { return }
-        getPosterFilmeDestaqueDaApi()
-
-        selecionarFilme(filme: filmeDestaque)
+        getFilmesDaAPI {
+            self.filmeDestaque = self.filmes[2]
+            self.getPosterFilmeDestaqueDaApi()
+            self.selecionarFilme(filme: self.filmes[2])
+        }
     }
     
      //configura o poster do filme
@@ -88,7 +89,6 @@ class HomeViewModel {
         }
     }
     
-    // ta funcionando só quando clica no botão "saiba mais"
     func getPosterFilmeDestaqueDaApi(){
         guard let poster = filmeDestaque?.cover_url else { return }
         guard let url = URL(string: poster) else { return }
