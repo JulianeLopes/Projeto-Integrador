@@ -45,8 +45,10 @@ extension FavoritoViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier:"favoritoCell", for:  indexPath) as? FavoritoTableViewCell
-        cell?.customizaCelula(filme: (usuarioLogado?.filmesFavoritos[indexPath.item])!)
+        
+        let cell =  tableView.dequeueReusableCell(withIdentifier:"favoritoCell", for:  indexPath) as? FavoritoTableViewCell
+        let viewModelcell = viewModel.getCellViewModel(posicao: indexPath.item)
+        cell?.customizaCelula(viewModel: viewModelcell)
         return cell ??  UITableViewCell()
     }
 }
