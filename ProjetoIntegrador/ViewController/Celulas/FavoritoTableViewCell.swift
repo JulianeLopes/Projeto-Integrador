@@ -18,5 +18,6 @@ class FavoritoTableViewCell: UITableViewCell {
                 self.filmeImagem.image = image
     }
         filmeImagem.layer.cornerRadius = 20
+        nomeFilmeLabel.text = viewModel.getTitulo()
     }
 }
