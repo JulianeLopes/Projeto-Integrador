@@ -26,14 +26,16 @@ class PesquisaViewModel {
     // função de pesquisar o filme no textfield
     func pesquisarFilme(filmePesquisado: String?){
 
-        let resultado = listaDeFilme.filter ({ filme in
+        let resultado = servicoDeAPI.filmesFromData.filter ({ filme in
             return filme.title.lowercased().contains(filmePesquisado?.lowercased() ?? "")
         })
+        
         if filmePesquisado != nil && filmePesquisado != ""{
             listaDeFilme = resultado
         } else {
             listaDeFilme = servicoDeAPI.filmesFromData
         }
+        
         delegate?.atualizalista()
     }
     
