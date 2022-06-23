@@ -38,23 +38,24 @@ class FanzometroViewModel {
     }
     
     // calcula o nivel de fanzometro
-    private func fanzometroPorcentagem(listaDeFavoritos: [Filme]) -> String {
+    private func fanzometroPorcentagem(listaDeFavoritos: [Filme], completion: @escaping (String) -> Void) {
         getFilmesDaApi {
-            self.filmes
-                let quantidadeDeFavoritos = Int(listaDeFavoritos.count)
-                let quantidadeDeFilmes = Int(self.filmes.count)
-                let porcentagemFanzometro = (100 * quantidadeDeFavoritos) / quantidadeDeFilmes
-            self.porcentagem = "\(porcentagemFanzometro)"
+            let quantidadeDeFavoritos = Int(listaDeFavoritos.count)
+            let quantidadeDeFilmes = Int(self.filmes.count)
+            let porcentagemFanzometro = (100 * quantidadeDeFavoritos) / quantidadeDeFilmes
+            DispatchQueue.main.async {
+                completion("\(porcentagemFanzometro) %")
+            }
         }
-        
-        return porcentagem
-       
     }
     
     // retorna a porcentagem de fã do usuario
-    func getFanzometroDoUsuario() -> String {
-        guard let usuarioLogado = usuarioLogado else { return "" }
-        return fanzometroPorcentagem(listaDeFavoritos: usuarioLogado.filmesFavoritos)
+    func getFanzometroDoUsuario(completion: @escaping (String) -> Void) {
+        guard let lista = usuarioLogado?.filmesFavoritos else {
+            completion("0 %")
+            return
+        }
+       fanzometroPorcentagem(listaDeFavoritos: lista, completion: completion)
     }
     
     // envia os dados do filme para a celula

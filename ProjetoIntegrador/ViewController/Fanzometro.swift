@@ -24,7 +24,6 @@ class Fanzometro: UIViewController {
     
     // função para configurar a foto do usuário na tela
     private func configuraTela() {
-        porcentagemLabel.text = " \(viewModel.getFanzometroDoUsuario())% "
         userImageView.image = UIImage(named: viewModel.getFotoUsuario())
         userImageView.layer.cornerRadius = 150
         userImageView.layer.borderWidth = 4
@@ -35,8 +34,10 @@ class Fanzometro: UIViewController {
     // para atualizar a lista de filmes favoritos toda vez que o usuario abre a tela pelo tabbar
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        porcentagemLabel.text = " \(viewModel.getFanzometroDoUsuario())% "
         favoritosCollectionView.reloadData()
+        viewModel.getFanzometroDoUsuario { porcentagem in
+            self.porcentagemLabel.text = porcentagem
+        }
     }
     
 }
