@@ -31,6 +31,7 @@ class HomeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detalhesVC = segue.destination as? FilmesDetalhesViewController {
             detalhesVC.filmeDestaque = viewModel.getFilmeSelecionado()
+            detalhesVC.spoiler = viewModel.getSpoilerFilmeSelecionado()
         }
     }
     
@@ -44,7 +45,6 @@ class HomeViewController: UIViewController {
     func configuraTela(){
         viewModel.aplicarFilmePadrao()
         nomeLabel.text = "Olá, \(viewModel.getNomeUsuario())"
-//        filmeDestaqueImage.image = viewModel.getPosterFilmeDestaque()
     }
 }
 

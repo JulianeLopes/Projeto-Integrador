@@ -16,9 +16,11 @@ class HomeViewModel {
     
 //    private let servico = Servico()
     private let servicosDeAPI = MovieAPI()
+    private let servicoDeSpoiler = ServicoDeSpoiler()
     
     var delegate: HomeViewModelDelegate?
     var filmeSelecionado: Filme?
+    var spoiler: Spoiler?
     var filmeDestaque: Filme?
     var filmeDestaquePoster: UIImage?
     var filmes: [Filme] = []
@@ -53,18 +55,29 @@ class HomeViewModel {
         return filmeSelecionado
     }
     
+    func getSpoiler(posicao: Int) -> Spoiler {
+        let spoilerFilmeSelecionado = servicoDeSpoiler.listaDeFilmesSpoiler[posicao]
+        return spoilerFilmeSelecionado
+        
+    }
     // pega o posição do filme selecionado na lista
     func selecionarFilme(posicao: Int) {
         filmeSelecionado = getFilme(posicao: posicao)
+        spoiler = getSpoiler(posicao: posicao)
     }
 
     private func selecionarFilme(filme: Filme) {
         filmeSelecionado = filme
+        
     }
     
     // envia o filme selecionado para outra tela
     func getFilmeSelecionado() -> Filme? {
         return filmeSelecionado
+    }
+    
+    func getSpoilerFilmeSelecionado() -> Spoiler? {
+        return spoiler
     }
     
     // configura o filme de destaque
@@ -76,10 +89,6 @@ class HomeViewModel {
         }
     }
     
-     //configura o poster do filme
-//    func getPosterFilmeDestaque() -> UIImage? {
-//
-//    }
     
     func getFilmesDaAPI(completion: @escaping () -> Void){
         servicosDeAPI.loadFilmes { filmes in

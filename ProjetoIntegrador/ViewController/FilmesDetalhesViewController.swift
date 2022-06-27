@@ -26,7 +26,7 @@ class FilmesDetalhesViewController: UIViewController {
    var filmeDestaque: Filme?
     
     var viewModel = DetalheDoFilmeViewModel()
-    
+    var spoiler: Spoiler?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +36,7 @@ class FilmesDetalhesViewController: UIViewController {
         }
         posterImage.layer.cornerRadius = 20
         tituloLabel.text = filmeDestaque?.title
-        viewModel.getElenco(filme: filmeDestaque, completion: { elenco in
-            self.elencoLabel.text = elenco
-        })
+        elencoLabel.text = spoiler?.elenco
         direcaoLabel.text = filmeDestaque?.directed_by
         descricaoLabel.text = filmeDestaque?.overview
         

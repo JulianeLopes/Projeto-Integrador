@@ -38,12 +38,4 @@ class DetalheDoFilmeViewModel {
         print(usuarioLogado?.filmesFavoritos)
         delegate?.atualizaFavorito()
     }
-    
-    func getElenco(filme: Filme?, completion : @escaping(String?) -> Void) {
-        guard let filme = filme else { return }
-        for filmeComparado in spoiler.listaDeFilmesSpoiler {
-            filmeComparado.title == filme.title
-            completion(filmeComparado.elenco)
-        }
-    }
 }
