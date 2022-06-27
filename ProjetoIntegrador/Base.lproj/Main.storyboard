@@ -495,10 +495,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Dgd-oz-16q">
-                                <rect key="frame" x="103" y="410" width="208" height="142"/>
+                                <rect key="frame" x="16" y="410" width="382" height="142"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meu nivel de fã marvel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJy-eq-pXN">
-                                        <rect key="frame" x="0.0" y="0.0" width="208" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meu nivel de fã marvel:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJy-eq-pXN">
+                                        <rect key="frame" x="84.5" y="0.0" width="213.5" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="gPA-OI-w4N"/>
                                             <constraint firstAttribute="height" constant="30" id="p7P-wt-GOG"/>
@@ -508,7 +508,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10%" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gh3-Gp-Lub">
-                                        <rect key="frame" x="60.5" y="32" width="87.5" height="110"/>
+                                        <rect key="frame" x="147.5" y="32" width="87.5" height="110"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="110" id="aaA-Co-p6F"/>
                                         </constraints>
@@ -587,7 +587,7 @@
                             <constraint firstItem="Di5-rK-Igl" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="uOA-kr-JZe" secondAttribute="trailing" symbolic="YES" id="79w-H9-ymr"/>
                             <constraint firstItem="uOA-kr-JZe" firstAttribute="top" secondItem="Dgd-oz-16q" secondAttribute="bottom" constant="10" id="8dm-7V-geA"/>
                             <constraint firstItem="PLf-YU-dHO" firstAttribute="centerX" secondItem="Gkv-GQ-ZUF" secondAttribute="centerX" id="8hY-ls-fsf"/>
-                            <constraint firstItem="Dgd-oz-16q" firstAttribute="leading" secondItem="Di5-rK-Igl" secondAttribute="leading" constant="103" id="D2F-hr-wCU"/>
+                            <constraint firstItem="Dgd-oz-16q" firstAttribute="leading" secondItem="Di5-rK-Igl" secondAttribute="leading" constant="16" id="D2F-hr-wCU"/>
                             <constraint firstItem="Gkv-GQ-ZUF" firstAttribute="trailing" secondItem="Di5-rK-Igl" secondAttribute="trailing" id="FEG-LN-81n"/>
                             <constraint firstItem="PLf-YU-dHO" firstAttribute="centerX" secondItem="Dgd-oz-16q" secondAttribute="centerX" id="Fwd-Cj-4ov"/>
                             <constraint firstItem="JrN-bf-EHE" firstAttribute="top" secondItem="Di5-rK-Igl" secondAttribute="top" constant="10" id="LsF-SW-hRD"/>
@@ -595,7 +595,7 @@
                             <constraint firstItem="PLf-YU-dHO" firstAttribute="top" secondItem="JrN-bf-EHE" secondAttribute="bottom" constant="10" id="XBs-nD-whP"/>
                             <constraint firstItem="Di5-rK-Igl" firstAttribute="bottom" secondItem="Gkv-GQ-ZUF" secondAttribute="bottom" constant="26" id="YNK-1O-gxH"/>
                             <constraint firstItem="PLf-YU-dHO" firstAttribute="centerX" secondItem="JrN-bf-EHE" secondAttribute="centerX" id="i8R-So-r8s"/>
-                            <constraint firstItem="Di5-rK-Igl" firstAttribute="trailing" secondItem="Dgd-oz-16q" secondAttribute="trailing" constant="103" id="imJ-wa-Yuc"/>
+                            <constraint firstItem="Di5-rK-Igl" firstAttribute="trailing" secondItem="Dgd-oz-16q" secondAttribute="trailing" constant="16" id="imJ-wa-Yuc"/>
                             <constraint firstItem="Gkv-GQ-ZUF" firstAttribute="top" secondItem="uOA-kr-JZe" secondAttribute="bottom" constant="15" id="jQx-j8-OGL"/>
                             <constraint firstItem="Dgd-oz-16q" firstAttribute="top" secondItem="PLf-YU-dHO" secondAttribute="bottom" constant="10" id="p9h-fb-6Dy"/>
                         </constraints>
@@ -852,7 +852,7 @@
         <!--Filmes Detalhes View Controller-->
         <scene sceneID="Iss-cv-adc">
             <objects>
-                <viewController id="mWI-Zi-r8U" customClass="FilmesDetalhesViewController" customModule="ProjetoIntegrador" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="pageSheet" id="mWI-Zi-r8U" customClass="FilmesDetalhesViewController" customModule="ProjetoIntegrador" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZyJ-Mc-y55">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -861,7 +861,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="R4o-jw-d5Q">
-                                        <rect key="frame" x="24" y="84" width="366" height="745.5"/>
+                                        <rect key="frame" x="24" y="84" width="366" height="918"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qdw-mP-VZJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="401"/>
@@ -876,42 +876,44 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="JXV-TX-AZY">
-                                                <rect key="frame" x="0.0" y="408" width="366" height="31"/>
+                                                <rect key="frame" x="0.0" y="408" width="366" height="28.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="ZCi-f8-CCk">
-                                                        <rect key="frame" x="0.0" y="0.0" width="143.5" height="31"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="303.5" height="28.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xo5-pi-Ve5">
-                                                                <rect key="frame" x="0.0" y="0.0" width="45.5" height="31"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="92.5" height="28.5"/>
                                                                 <color key="tintColor" name="Vermelho Marvel"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
+                                                                <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system" subtitle="favoritar"/>
                                                                 <connections>
                                                                     <action selector="favoritarAction:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="Oni-cz-5aL"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0R-aZ-XKM">
-                                                                <rect key="frame" x="58.5" y="0.0" width="51" height="31"/>
+                                                                <rect key="frame" x="105.5" y="0.0" width="92.5" height="28.5"/>
                                                                 <color key="tintColor" name="Vermelho Marvel"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="tv" catalog="system"/>
+                                                                <buttonConfiguration key="configuration" style="plain" image="tv" catalog="system" subtitle="assistir depois"/>
                                                                 <connections>
                                                                     <action selector="favoritarAction:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="g4p-rX-C7R"/>
                                                                 </connections>
                                                             </button>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paperplane" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="23a-88-hr8">
-                                                                <rect key="frame" x="122.5" y="0.5" width="21" height="30.5"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pye-2p-Bjq">
+                                                                <rect key="frame" x="211" y="0.0" width="92.5" height="28.5"/>
                                                                 <color key="tintColor" name="Vermelho Marvel"/>
-                                                            </imageView>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain" image="play.square" catalog="system" subtitle="assistido"/>
+                                                            </button>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="p8c-0C-nuz">
-                                                <rect key="frame" x="0.0" y="446" width="366" height="178"/>
+                                                <rect key="frame" x="0.0" y="443.5" width="366" height="353"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Uoa-am-tN6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="366" height="141.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="366" height="353"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo Filme" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Day-EE-sws">
                                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="24"/>
@@ -919,42 +921,88 @@
                                                                 <color key="textColor" name="Vermelho Marvel"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direção" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPj-9Y-hxr">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSX-PR-aqA">
                                                                 <rect key="frame" x="0.0" y="32" width="366" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elenco" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrp-Ee-Mia">
-                                                                <rect key="frame" x="0.0" y="60.5" width="366" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSX-PR-aqA">
-                                                                <rect key="frame" x="0.0" y="89" width="366" height="20.5"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BO-06-RuY">
-                                                                <rect key="frame" x="0.0" y="117.5" width="366" height="24"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elenco:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvf-kC-nbg">
+                                                                <rect key="frame" x="0.0" y="60.5" width="366" height="24"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                                                <color key="textColor" name="Vermelho Marvel"/>
+                                                                <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elenco" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrp-Ee-Mia">
+                                                                <rect key="frame" x="0.0" y="92.5" width="366" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direção:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sCX-8F-1Bv">
+                                                                <rect key="frame" x="0.0" y="121" width="366" height="24"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Direção" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPj-9Y-hxr">
+                                                                <rect key="frame" x="0.0" y="153" width="366" height="20.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indicações de filmes para assistir antes:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TA3-Re-4C6">
+                                                                <rect key="frame" x="0.0" y="181.5" width="366" height="21.5"/>
+                                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zBW-1M-EhX">
+                                                                <rect key="frame" x="0.0" y="211" width="366" height="142"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="Avh-q6-AvN">
+                                                                    <size key="itemSize" width="106" height="152"/>
+                                                                    <size key="estimatedItemSize" width="116" height="162"/>
+                                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                                </collectionViewFlowLayout>
+                                                                <cells>
+                                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="7sk-Jd-JYm">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="106" height="152"/>
+                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9c2-Ln-Rva">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="106" height="152"/>
+                                                                            <autoresizingMask key="autoresizingMask"/>
+                                                                            <subviews>
+                                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster" translatesAutoresizingMaskIntoConstraints="NO" id="lpi-fg-hSG">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="106" height="152"/>
+                                                                                    <constraints>
+                                                                                        <constraint firstAttribute="width" constant="106" id="uEL-YJ-hE5"/>
+                                                                                        <constraint firstAttribute="height" constant="152" id="wBs-o5-Xo3"/>
+                                                                                    </constraints>
+                                                                                </imageView>
+                                                                            </subviews>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="bottom" secondItem="lpi-fg-hSG" secondAttribute="bottom" id="6ah-66-2dl"/>
+                                                                                <constraint firstItem="lpi-fg-hSG" firstAttribute="leading" secondItem="9c2-Ln-Rva" secondAttribute="leading" id="LKV-H3-nFV"/>
+                                                                                <constraint firstItem="lpi-fg-hSG" firstAttribute="top" secondItem="9c2-Ln-Rva" secondAttribute="top" id="aqV-Fv-vSA"/>
+                                                                                <constraint firstAttribute="trailing" secondItem="lpi-fg-hSG" secondAttribute="trailing" id="fJk-m4-9qD"/>
+                                                                            </constraints>
+                                                                        </collectionViewCellContentView>
+                                                                        <size key="customSize" width="106" height="152"/>
+                                                                    </collectionViewCell>
+                                                                </cells>
+                                                            </collectionView>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="zBW-1M-EhX" firstAttribute="centerX" secondItem="Uoa-am-tN6" secondAttribute="centerX" id="BzZ-Pv-Spd"/>
+                                                        </constraints>
                                                     </stackView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Indicação de filmes para assistir antes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TA3-Re-4C6">
-                                                        <rect key="frame" x="0.0" y="157.5" width="366" height="20.5"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dM7-Og-tEo">
-                                                <rect key="frame" x="0.0" y="631" width="366" height="114.5"/>
+                                                <rect key="frame" x="0.0" y="803.5" width="366" height="114.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SR-Du-0TQ">
                                                         <rect key="frame" x="148.5" y="0.0" width="69.5" height="31"/>
@@ -1030,6 +1078,9 @@
                                                 </subviews>
                                             </stackView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="918" id="YIC-NB-Fhg"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                                 <constraints>
@@ -1179,7 +1230,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lyi-mc-ALf"/>
+        <segue reference="kEu-Pf-PAy"/>
         <segue reference="xIL-BC-kis"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -1189,7 +1240,7 @@
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="logoMarvel" width="2560" height="1029"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="paperplane" catalog="system" width="128" height="118"/>
+        <image name="play.square" catalog="system" width="128" height="114"/>
         <image name="poster" width="2480" height="3508"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="tv" catalog="system" width="128" height="97"/>
