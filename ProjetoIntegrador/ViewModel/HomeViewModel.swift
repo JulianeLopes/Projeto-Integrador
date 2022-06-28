@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 protocol HomeViewModelDelegate {
     func configuraPosterFilmeDestaque(imagem: UIImage)
@@ -17,6 +18,7 @@ class HomeViewModel {
 //    private let servico = Servico()
     private let servicosDeAPI = MovieAPI()
     private let servicoDeSpoiler = ServicoDeSpoiler()
+    private let filmeCoreData = FilmeService()
     
     var delegate: HomeViewModelDelegate?
     var filmeSelecionado: Filme?
@@ -24,6 +26,7 @@ class HomeViewModel {
     var filmeDestaque: Filme?
     var filmeDestaquePoster: UIImage?
     var filmes: [Filme] = []
+    var filmesCoreData: [Filme] = []
     
     // usuario logado
     private var usuarioLogado: Usuario? {
@@ -95,6 +98,7 @@ class HomeViewModel {
             self.filmes = filmes
             self.filmeDestaque = filmes[2]
             completion()
+            
         }
     }
     
@@ -113,6 +117,30 @@ class HomeViewModel {
         }
         dataTask.resume()
     }
+    
+    func saveLocation(model: [FilmesEntities], id: String) 
+        let novoFilme = NSEntityDescription.insertNewObject(forEntityName: "", into: <#T##NSManagedObjectContext#>)
+    }
 }
 
-    
+/*
+ 
+ func saveLocation(model: [HomeModel],id: String){
+ 
+ let newUser = NSEntityDescription.insertNewObject(forEntityName: "HomeLocationModel", into: context)
+
+ do{
+     var dictArray = [[String: Any]]()
+     for i in 0..<model.count{
+         let dict = model[i].dictionaryRepresentation()
+         dictArray.append(dict)
+     }
+     let data = NSKeyedArchiver.archivedData(withRootObject: dictArray)
+     newUser.setValue(data, forKey: "locations")
+     newUser.setValue(id, forKey: "id")
+     try context.save()
+ }catch {
+    print("failure")
+ }
+
+}
