@@ -47,7 +47,7 @@ class DetalheDoFilmeViewModel {
         
         if exists {
             do {
-                try filmeEntityService.remove(filme: filme)
+             //   try filmeEntityService.remove(filme: filme)
                 print("filme removido")
             }catch {
                 print(error)
