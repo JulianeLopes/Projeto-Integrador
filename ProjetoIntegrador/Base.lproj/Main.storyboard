@@ -396,7 +396,6 @@
                         <outlet property="filmesDestaqueCollectionView" destination="Wuc-87-Al6" id="HcS-1N-TD3"/>
                         <outlet property="nomeLabel" destination="9aJ-FU-91D" id="J47-Vg-yvi"/>
                         <segue destination="mWI-Zi-r8U" kind="presentation" identifier="saibaMaisSegue" id="kEu-Pf-PAy"/>
-                        <segue destination="IgN-dP-P9f" kind="show" identifier="procurarSegue" id="76X-0U-tRS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oA4-rh-NFQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -408,7 +407,7 @@
             <objects>
                 <tableViewController id="IgN-dP-P9f" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="smk-lJ-4b4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -1230,7 +1229,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kEu-Pf-PAy"/>
+        <segue reference="6JO-gK-PZS"/>
         <segue reference="xIL-BC-kis"/>
     </inferredMetricsTieBreakers>
     <resources>

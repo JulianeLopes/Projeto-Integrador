@@ -12,6 +12,7 @@ class FanzometroViewModel {
     
     var servicoDeAPI = MovieAPI()
     let service = ServicoDeUsuario()
+    let filmeEntityService = FilmeEntityService()
     
     var porcentagem: String = ""
     var filmes: [Filme] = []
@@ -23,11 +24,7 @@ class FanzometroViewModel {
     
     // quantidade filmes favoritos do usuario
     func numeroDeFilmesFavoritos() -> Int {
-        guard let usuarioLogado = usuarioLogado else {
-            return 0
-        }
-
-        return usuarioLogado.filmesFavoritos.count
+        return ((try? filmeEntityService.favoritos()) ?? []).count
         
     }
     
@@ -51,19 +48,15 @@ class FanzometroViewModel {
     
     // retorna a porcentagem de fã do usuario
     func getFanzometroDoUsuario(completion: @escaping (String) -> Void) {
-        guard let lista = usuarioLogado?.filmesFavoritos else {
-            completion("0 %")
-            return
-        }
-       fanzometroPorcentagem(listaDeFavoritos: lista, completion: completion)
+        let favoritos = (try? filmeEntityService.favoritos()) ?? []
+       fanzometroPorcentagem(listaDeFavoritos: favoritos, completion: completion)
     }
     
     // envia os dados do filme para a celula
     func getViewModel(posicao: Int) -> FilmeViewModel {
-        // faz guard let e no return chama uma celula com a tratativa de erro, tratativa de erro no servico 
-        let filme = usuarioLogado?.filmesFavoritos[posicao]
-            // verificar o !
-        let cellViewModel = FilmeViewModel(filme: filme!)
+        let filmes = (try? filmeEntityService.favoritos()) ?? []
+        let filme = filmes[posicao]
+        let cellViewModel = FilmeViewModel(filme: filme)
         return cellViewModel
     }
     

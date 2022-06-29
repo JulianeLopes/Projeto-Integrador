@@ -18,7 +18,6 @@ class HomeViewModel {
 //    private let servico = Servico()
     private let servicosDeAPI = MovieAPI()
     private let servicoDeSpoiler = ServicoDeSpoiler()
-    private let filmeCoreData = FilmeService()
     
     var delegate: HomeViewModelDelegate?
     var filmeSelecionado: Filme?
@@ -118,29 +117,9 @@ class HomeViewModel {
         dataTask.resume()
     }
     
-    func saveLocation(model: [FilmesEntities], id: String) 
-        let novoFilme = NSEntityDescription.insertNewObject(forEntityName: "", into: <#T##NSManagedObjectContext#>)
-    }
+//    func saveLocation(model: [FilmesEntities], id: String)
+//        let novoFilme = NSEntityDescription.insertNewObject(forEntityName: "", into: <#T##NSManagedObjectContext#>)
+//    }
 }
 
-/*
- 
- func saveLocation(model: [HomeModel],id: String){
- 
- let newUser = NSEntityDescription.insertNewObject(forEntityName: "HomeLocationModel", into: context)
 
- do{
-     var dictArray = [[String: Any]]()
-     for i in 0..<model.count{
-         let dict = model[i].dictionaryRepresentation()
-         dictArray.append(dict)
-     }
-     let data = NSKeyedArchiver.archivedData(withRootObject: dictArray)
-     newUser.setValue(data, forKey: "locations")
-     newUser.setValue(id, forKey: "id")
-     try context.save()
- }catch {
-    print("failure")
- }
-
-}

@@ -27,7 +27,7 @@ class PesquisaViewModel {
     func pesquisarFilme(filmePesquisado: String?){
 
         let resultado = servicoDeAPI.filmesFromData.filter ({ filme in
-            return filme.title.lowercased().contains(filmePesquisado?.lowercased() ?? "")
+            return filme.title?.lowercased().contains(filmePesquisado?.lowercased() ?? "") ?? false
         })
         
         if filmePesquisado != nil && filmePesquisado != ""{

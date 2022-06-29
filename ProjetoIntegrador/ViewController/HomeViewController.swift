@@ -24,7 +24,6 @@ class HomeViewController: UIViewController {
         filmesDestaqueCollectionView.dataSource = self
         filmesDestaqueCollectionView.delegate = self
         configuraTela()
-        viewModel.aplicarFilmePadrao()
     }
     
 //visualizar os detalhes do filme selecionado
@@ -64,7 +63,7 @@ extension HomeViewController: UICollectionViewDataSource {
 }
 
 
-// segue para tela de detalhes do filme em mvvm - OBS: usamos o nil no sender pois temos doi locais de perform segue com listas diferentes de filmes nessa tela
+// segue para tela de detalhes do filme em mvvm - OBS: usamos o nil no sender pois temos dois locais de perform segue com listas diferentes de filmes nessa tela
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.selecionarFilme(posicao: indexPath.row)

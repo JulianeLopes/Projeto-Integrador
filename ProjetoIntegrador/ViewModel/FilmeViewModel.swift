@@ -24,7 +24,7 @@ class FilmeViewModel {
         
     }
     
-    func getTitulo() -> String {
+    func getTitulo() -> String? {
         return filme.title
     }
     

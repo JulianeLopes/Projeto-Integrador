@@ -18,7 +18,13 @@ class DetalheDoFilmeViewModel {
     var spoiler = ServicoDeSpoiler()
     
     var delegate: FilmesViewModelDelegate?
-//    var servico = Servico()
+    
+    var favoritos: [Filme] {
+        return (try? filmeEntityService.favoritos()) ?? []
+    }
+    
+    
+    private let filmeEntityService = FilmeEntityService()
     
     // usuario logado
     private var usuarioLogado: Usuario? {
@@ -34,8 +40,21 @@ class DetalheDoFilmeViewModel {
     // ver o pq não chega aqui
     func favorita(filme: Filme?){
         guard let filme = filme else { return }
-        usuarioLogado?.filmesFavoritos.append(filme)
-        print(usuarioLogado?.filmesFavoritos)
+        
+        let exists = favoritos.contains { favorito in
+            return favorito.title == filme.title
+        }
+        
+        if exists {
+            return 
+        }
+        
+        do {
+            try filmeEntityService.favoritar(filme: filme)
+        } catch {
+            print(error)
+        }
+        
         delegate?.atualizaFavorito()
     }
 }

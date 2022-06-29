@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		161E92C6286B9DEB005EF165 /* FilmesEntities+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161E92C4286B9DEB005EF165 /* FilmesEntities+CoreDataClass.swift */; };
 		161E92C7286B9DEB005EF165 /* FilmesEntities+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161E92C5286B9DEB005EF165 /* FilmesEntities+CoreDataProperties.swift */; };
-		161E92CB286BA143005EF165 /* FilmeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161E92CA286BA143005EF165 /* FilmeService.swift */; };
+		161E92CB286BA143005EF165 /* FilmeEntityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161E92CA286BA143005EF165 /* FilmeEntityService.swift */; };
 		1629ED2B28417271009F9D2C /* Main Tela Cadastro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1629ED2A28417271009F9D2C /* Main Tela Cadastro.storyboard */; };
 		163CF01528512565005E4476 /* FilmesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163CF01428512565005E4476 /* FilmesViewModel.swift */; };
 		1642540428442A7D006F92A4 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1642540328442A7D006F92A4 /* Usuario.swift */; };
@@ -79,7 +79,7 @@
 /* Begin PBXFileReference section */
 		161E92C4286B9DEB005EF165 /* FilmesEntities+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilmesEntities+CoreDataClass.swift"; sourceTree = "<group>"; };
 		161E92C5286B9DEB005EF165 /* FilmesEntities+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilmesEntities+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		161E92CA286BA143005EF165 /* FilmeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeService.swift; sourceTree = "<group>"; };
+		161E92CA286BA143005EF165 /* FilmeEntityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeEntityService.swift; sourceTree = "<group>"; };
 		1629ED2A28417271009F9D2C /* Main Tela Cadastro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Main Tela Cadastro.storyboard"; sourceTree = "<group>"; };
 		163CF01428512565005E4476 /* FilmesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesViewModel.swift; sourceTree = "<group>"; };
 		1642540328442A7D006F92A4 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 		161E92C9286BA12A005EF165 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				161E92CA286BA143005EF165 /* FilmeService.swift */,
+				161E92CA286BA143005EF165 /* FilmeEntityService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -543,7 +543,7 @@
 				FBDBE28028443AC100C897A4 /*  ServicoDeUsuario.swift in Sources */,
 				FBDBE28228443D7B00C897A4 /* Fanzometro.swift in Sources */,
 				5E8A070028593BD900F09A5D /* MovieAPI.swift in Sources */,
-				161E92CB286BA143005EF165 /* FilmeService.swift in Sources */,
+				161E92CB286BA143005EF165 /* FilmeEntityService.swift in Sources */,
 				330B982F2844554500313B85 /* FavoritoViewController.swift in Sources */,
 				336A38D12856987D00814CA3 /* DetalheDoFilmeViewModel.swift in Sources */,
 				FBDBE2862844437C00C897A4 /* FanzometroCollectionViewCell.swift in Sources */,
