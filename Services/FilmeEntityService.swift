@@ -15,6 +15,8 @@ class FilmeEntityService {
     private lazy var container = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
     private lazy var context = container.viewContext
     
+    private let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
+    
     // MARK: - Public Methods
     
     func favoritar(filme: Filme) throws {
@@ -34,7 +36,17 @@ class FilmeEntityService {
     }
     
     
-    func remove(filme: Filme) {
-   // implementar mais tarde
+    func remove(filme: Filme, completion: ([Filme]) -> Void) {
+        let filmeConvertido = FilmesEntities(filme: filme, context: context)
+        context.delete(filmeConvertido)
+        do {
+            try context.save()
+           // completion(context.fetch(FilmesEntities.fetchRequest()))
+            print("sucesso ao remover")
+        } catch  {
+            print("erro ao remover")
+        }
     }
+          
 }
+

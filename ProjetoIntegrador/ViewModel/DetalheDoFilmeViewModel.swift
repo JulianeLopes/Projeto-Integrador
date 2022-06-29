@@ -46,15 +46,19 @@ class DetalheDoFilmeViewModel {
         }
         
         if exists {
-            return 
+            do {
+                try filmeEntityService.remove(filme: filme)
+                print("filme removido")
+            }catch {
+                print(error)
+            }
+       } else {
+            do {
+                try filmeEntityService.favoritar(filme: filme)
+            } catch {
+                print(error)
+            }
         }
-        
-        do {
-            try filmeEntityService.favoritar(filme: filme)
-        } catch {
-            print(error)
-        }
-        
         delegate?.atualizaFavorito()
     }
 }
