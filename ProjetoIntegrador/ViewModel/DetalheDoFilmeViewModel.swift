@@ -8,23 +8,31 @@
 import Foundation
 import UIKit
 
-protocol FilmesViewModelDelegate {
-    func atualizaFavorito()
-    
-}
+//protocol FilmesViewModelDelegate {
+//    func atualizaFavorito()
+//
+//}
 
 class DetalheDoFilmeViewModel {
     var servicoDeApi = MovieAPI()
     var spoiler = ServicoDeSpoiler()
-    
-    var delegate: FilmesViewModelDelegate?
+    var listaDefavoritos: [Filme] = []
+    //var delegate: FilmesViewModelDelegate?
     
     var favoritos: [Filme] {
         return (try? filmeEntityService.favoritos()) ?? []
     }
     
+    func loadFavoritos(){
+        do {
+        try listaDefavoritos = filmeEntityService.favoritos()
+        } catch {
+            print(error)
+        }
+    }
     
     private let filmeEntityService = FilmeEntityService()
+    private lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     // usuario logado
     private var usuarioLogado: Usuario? {
@@ -46,19 +54,16 @@ class DetalheDoFilmeViewModel {
         }
         
         if exists {
-            do {
-             //   try filmeEntityService.remove(filme: filme)
-                print("filme removido")
-            }catch {
-                print(error)
-            }
+            try? filmeEntityService.remove(filme: filme)
+            loadFavoritos()
+            print("filme removido")
        } else {
             do {
                 try filmeEntityService.favoritar(filme: filme)
+                loadFavoritos()
             } catch {
                 print(error)
             }
         }
-        delegate?.atualizaFavorito()
     }
 }
