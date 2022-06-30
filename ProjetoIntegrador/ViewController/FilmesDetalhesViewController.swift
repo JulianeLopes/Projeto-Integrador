@@ -23,14 +23,15 @@ class FilmesDetalhesViewController: UIViewController {
     @IBOutlet weak var indicacaoLabel: UILabel!
     @IBOutlet weak var favoritarButton: UIButton!
     
-   var filmeDestaque: Filme?
+    var filmeDestaque: Filme?
     
     var viewModel = DetalheDoFilmeViewModel()
     var spoiler: Spoiler?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        viewModel.filme = filmeDestaque
+        
         viewModel.getPoster(filme: filmeDestaque) { image in
             self.posterImage.image = image
         }
@@ -39,11 +40,21 @@ class FilmesDetalhesViewController: UIViewController {
         elencoLabel.text = spoiler?.elenco
         direcaoLabel.text = filmeDestaque?.directed_by
         descricaoLabel.text = filmeDestaque?.overview
-        
+        vereficarFavorito()
         //colocar indicação
         
     }
    
+    private func vereficarFavorito(){
+        var imageName = "heart"
+        
+        if viewModel.isFavorite {
+           imageName = "heart.fill"
+        }
+        
+        favoritarButton.setImage(UIImage(systemName: imageName), for: .normal)
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let spoilerVC = segue.destination as? SpoilerViewController {
             spoilerVC.filmeDestaque = filmeDestaque

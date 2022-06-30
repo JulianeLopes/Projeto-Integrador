@@ -17,10 +17,19 @@ class DetalheDoFilmeViewModel {
     var servicoDeApi = MovieAPI()
     var spoiler = ServicoDeSpoiler()
     var listaDefavoritos: [Filme] = []
+    
+    var filme: Filme?
+    
     //var delegate: FilmesViewModelDelegate?
     
     var favoritos: [Filme] {
         return (try? filmeEntityService.favoritos()) ?? []
+    }
+    
+    var isFavorite: Bool {
+        return favoritos.contains { favorito in
+            return favorito.title == filme?.title
+        }
     }
     
     func loadFavoritos(){
@@ -50,6 +59,7 @@ class DetalheDoFilmeViewModel {
         guard let filme = filme else { return }
         
         let exists = favoritos.contains { favorito in
+            
             return favorito.title == filme.title
         }
         
