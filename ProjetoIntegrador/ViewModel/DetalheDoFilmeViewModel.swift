@@ -76,4 +76,13 @@ class DetalheDoFilmeViewModel {
             }
         }
     }
+    
+    func getFavoritoButtonTitle() -> String {
+        if isFavorite {
+            return "desfavoritar"
+        } else {
+            return "favoritar"
+        }
+    }
+    
 }

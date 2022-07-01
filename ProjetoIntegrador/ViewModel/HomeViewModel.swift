@@ -83,11 +83,12 @@ class HomeViewModel {
     }
     
     // configura o filme de destaque
-    func aplicarFilmePadrao() {
+    func aplicarFilmePadrao(completion: @escaping () -> Void) {
         getFilmesDaAPI {
             self.filmeDestaque = self.filmes[2]
             self.getPosterFilmeDestaqueDaApi()
             self.selecionarFilme(filme: self.filmes[2])
+            completion()
         }
     }
     

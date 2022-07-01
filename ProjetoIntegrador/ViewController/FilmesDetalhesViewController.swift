@@ -47,11 +47,11 @@ class FilmesDetalhesViewController: UIViewController {
    
     private func vereficarFavorito(){
         var imageName = "heart"
-        
+
         if viewModel.isFavorite {
-           imageName = "heart.fill"
+            imageName = "heart.fill"
+            
         }
-        
         favoritarButton.setImage(UIImage(systemName: imageName), for: .normal)
     }
     

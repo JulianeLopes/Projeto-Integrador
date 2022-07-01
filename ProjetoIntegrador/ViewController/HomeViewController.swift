@@ -36,13 +36,14 @@ class HomeViewController: UIViewController {
     
     //visualizar os detalhes do filme em destaque
     @IBAction func filmeDestaqueSaibaMais(_ sender: Any) {
-      viewModel.aplicarFilmePadrao()
-        performSegue(withIdentifier: "saibaMaisSegue", sender: nil)
+        viewModel.aplicarFilmePadrao {
+            self.performSegue(withIdentifier: "saibaMaisSegue", sender: nil)
+        }
     }
     
     //demostra o nome do usuário logado e o cumprimenta e configura poster de filme em destaque
     func configuraTela(){
-        viewModel.aplicarFilmePadrao()
+        viewModel.aplicarFilmePadrao{}
         nomeLabel.text = "Olá, \(viewModel.getNomeUsuario())"
     }
 }

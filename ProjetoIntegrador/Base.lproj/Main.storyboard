@@ -875,44 +875,47 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="JXV-TX-AZY">
-                                                <rect key="frame" x="0.0" y="408" width="366" height="28.5"/>
+                                                <rect key="frame" x="0.0" y="408" width="366" height="31"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="ZCi-f8-CCk">
-                                                        <rect key="frame" x="0.0" y="0.0" width="303.5" height="28.5"/>
+                                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZCi-f8-CCk">
+                                                        <rect key="frame" x="0.0" y="0.0" width="306.5" height="31"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xo5-pi-Ve5">
-                                                                <rect key="frame" x="0.0" y="0.0" width="92.5" height="28.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="89.5" height="31"/>
                                                                 <color key="tintColor" name="Vermelho Marvel"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system" subtitle="favoritar"/>
+                                                                <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system" title="favoritar">
+                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                                </buttonConfiguration>
                                                                 <connections>
                                                                     <action selector="favoritarAction:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="Oni-cz-5aL"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0R-aZ-XKM">
-                                                                <rect key="frame" x="105.5" y="0.0" width="92.5" height="28.5"/>
+                                                                <rect key="frame" x="97.5" y="0.0" width="115.5" height="31"/>
                                                                 <color key="tintColor" name="Vermelho Marvel"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="tv" catalog="system" subtitle="assistir depois"/>
-                                                                <connections>
-                                                                    <action selector="favoritarAction:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="g4p-rX-C7R"/>
-                                                                </connections>
+                                                                <buttonConfiguration key="configuration" style="plain" image="tv" catalog="system" title="assistir depois">
+                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                                                </buttonConfiguration>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pye-2p-Bjq">
-                                                                <rect key="frame" x="211" y="0.0" width="92.5" height="28.5"/>
+                                                                <rect key="frame" x="221" y="0.0" width="85.5" height="31"/>
                                                                 <color key="tintColor" name="Vermelho Marvel"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="play.square" catalog="system" subtitle="assistido"/>
+                                                                <buttonConfiguration key="configuration" style="plain" image="play.square" catalog="system" title="assistido">
+                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                                                </buttonConfiguration>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="p8c-0C-nuz">
-                                                <rect key="frame" x="0.0" y="443.5" width="366" height="353"/>
+                                                <rect key="frame" x="0.0" y="446" width="366" height="350.5"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Uoa-am-tN6">
-                                                        <rect key="frame" x="0.0" y="0.0" width="366" height="353"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="366" height="350.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo Filme" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Day-EE-sws">
                                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="24"/>
@@ -957,7 +960,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zBW-1M-EhX">
-                                                                <rect key="frame" x="0.0" y="211" width="366" height="142"/>
+                                                                <rect key="frame" x="0.0" y="211" width="366" height="139.5"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="Avh-q6-AvN">
                                                                     <size key="itemSize" width="106" height="152"/>
