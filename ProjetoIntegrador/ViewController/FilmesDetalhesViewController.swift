@@ -31,7 +31,7 @@ class FilmesDetalhesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.filme = filmeDestaque
-        
+        viewModel.delegate = self
         viewModel.getPoster(filme: filmeDestaque) { image in
             self.posterImage.image = image
         }
@@ -40,21 +40,13 @@ class FilmesDetalhesViewController: UIViewController {
         elencoLabel.text = spoiler?.elenco
         direcaoLabel.text = filmeDestaque?.directed_by
         descricaoLabel.text = filmeDestaque?.overview
-        vereficarFavorito()
+        viewModel.getFavoritoButtonTitle()
+
         //colocar indicação
         
     }
    
-    private func vereficarFavorito(){
-        var imageName = "heart"
 
-        if viewModel.isFavorite {
-            imageName = "heart.fill"
-            
-        }
-        favoritarButton.setImage(UIImage(systemName: imageName), for: .normal)
-    }
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let spoilerVC = segue.destination as? SpoilerViewController {
             spoilerVC.filmeDestaque = filmeDestaque
@@ -62,8 +54,9 @@ class FilmesDetalhesViewController: UIViewController {
     }
     
     @IBAction func favoritarAction(_ sender: Any) {
-        favoritarButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+
         viewModel.favorita(filme: filmeDestaque)
+        viewModel.getFavoritoButtonTitle()
         
     }
     
@@ -131,4 +124,17 @@ class FilmesDetalhesViewController: UIViewController {
     
 }
 
+extension FilmesDetalhesViewController: FilmesViewModelDelegate {
+    func atualizaButtonFavoritado() {
+        favoritarButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        favoritarButton.setTitle("desfavoritar", for: .normal)
+    }
+    
+    func atualizaButtonDesfavoritado() {
+        favoritarButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        favoritarButton.setTitle("favoritar", for: .normal)
+    }
+    
+    
+}
 

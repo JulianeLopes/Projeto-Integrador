@@ -8,12 +8,7 @@
 import Foundation
 import UIKit
 
-protocol MovieAPIDelegate {
-    func atualizaDados(filmes: [Filme])
-}
-
 class MovieAPI {
-    var delegate: MovieAPIDelegate?
      var filmesFromData: [Filme] = []
      var quantidadeDeFilmes: Int = 0
      var filmeDestaque: Filme?
@@ -37,7 +32,6 @@ class MovieAPI {
                     self.quantidadeDeFilmes = filmes.data.count
                     self.filmesFromData = filmes.data
                     self.filmeDestaque = filmes.data[2]
-                    self.delegate?.atualizaDados(filmes: self.filmesFromData)
                     completion(self.filmesFromData)
                 }
             } catch {
@@ -62,7 +56,6 @@ class MovieAPI {
         let dataTask = URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data else { return }
             DispatchQueue.main.async {
-                print(data)
                 let coverImagem = UIImage(data: data)
                 completion(coverImagem)
             }

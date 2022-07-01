@@ -31,13 +31,13 @@ class FilmeEntityService {
     }
     
     func favoritos() throws -> [Filme] {
-        let favoritos = try context.fetch(FilmesEntities.fetchRequest())
-        var filmes: [Filme] = []
-        favoritos.forEach { filmeEntity in
-            let filme = Filme(filme: filmeEntity)
-            filmes.append(filme)
-        }
-        return filmes
+            let favoritos = try context.fetch(FilmesEntities.fetchRequest())
+            var filmes: [Filme] = []
+            favoritos.forEach { filmeEntity in
+                let filme = Filme(filme: filmeEntity)
+                filmes.append(filme)
+            }
+            return filmes
     }
     
     

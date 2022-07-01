@@ -8,10 +8,11 @@
 import Foundation
 import UIKit
 
-//protocol FilmesViewModelDelegate {
-//    func atualizaFavorito()
-//
-//}
+protocol FilmesViewModelDelegate {
+    func atualizaButtonFavoritado()
+    func atualizaButtonDesfavoritado()
+
+}
 
 class DetalheDoFilmeViewModel {
     var servicoDeApi = MovieAPI()
@@ -20,7 +21,7 @@ class DetalheDoFilmeViewModel {
     
     var filme: Filme?
     
-    //var delegate: FilmesViewModelDelegate?
+    var delegate: FilmesViewModelDelegate?
     
     var favoritos: [Filme] {
         return (try? filmeEntityService.favoritos()) ?? []
@@ -29,6 +30,12 @@ class DetalheDoFilmeViewModel {
     var isFavorite: Bool {
         return favoritos.contains { favorito in
             return favorito.title == filme?.title
+        }
+    }
+    
+    func verificaSeEFavorito()->Bool {
+        favoritos.contains { favorito in
+            favorito.title == filme?.title
         }
     }
     
@@ -53,8 +60,7 @@ class DetalheDoFilmeViewModel {
         
     }
     
-    // função de favoritar filmes
-    // ver o pq não chega aqui
+    // função de favoritar filmes e salvar no coredata
     func favorita(filme: Filme?){
         guard let filme = filme else { return }
         
@@ -77,11 +83,15 @@ class DetalheDoFilmeViewModel {
         }
     }
     
-    func getFavoritoButtonTitle() -> String {
+    func getFavoritoButtonTitle() {
         if isFavorite {
-            return "desfavoritar"
+            DispatchQueue.main.async {
+                self.delegate?.atualizaButtonFavoritado()
+            }
         } else {
-            return "favoritar"
+            DispatchQueue.main.async {
+                self.delegate?.atualizaButtonDesfavoritado()
+            }
         }
     }
     
