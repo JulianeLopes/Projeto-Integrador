@@ -50,6 +50,7 @@ class FilmesDetalhesViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let spoilerVC = segue.destination as? SpoilerViewController {
             spoilerVC.filmeDestaque = filmeDestaque
+            spoilerVC.spoiler = spoiler
         }
     }
     

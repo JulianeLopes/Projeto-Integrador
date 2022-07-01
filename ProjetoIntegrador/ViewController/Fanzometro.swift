@@ -26,7 +26,7 @@ class Fanzometro: UIViewController {
     private func configuraTela() {
         userImageView.image = UIImage(named: viewModel.getFotoUsuario())
         userImageView.layer.cornerRadius = 150
-        userImageView.layer.borderWidth = 4
+        userImageView.layer.borderWidth = 10
         userImageView.layer.borderColor = UIColor.red.cgColor
         favoritosCollectionView.dataSource = self
     }

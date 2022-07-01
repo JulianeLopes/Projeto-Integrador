@@ -10,20 +10,24 @@ import UIKit
 class SpoilerViewController: UIViewController {
 
     @IBOutlet weak var textoSpoiler: UILabel!
-    @IBOutlet weak var textoCenaPósCrédito: UILabel!
+    @IBOutlet weak var textoQuantidadeCenasPosCredito: UILabel!
+    @IBOutlet weak var textoSpoilerCenasPosCredito: UILabel!
     
     var filmeDestaque: Filme?
-    
+    var spoiler: Spoiler?
+    var viewModel = SpoilerViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        configuraTexto()
+        viewModel.filme = filmeDestaque
+        viewModel.spoiler = spoiler
+        textoSpoiler.text = viewModel.getTextSpoiler()
+        textoQuantidadeCenasPosCredito.text = "\(viewModel.getQuantidadeDeCenasPosCredito())"
+        textoSpoilerCenasPosCredito.text = ""
+        
     }
     
-    func configuraTexto(){
-//        textoSpoiler.text = filmeDestaque?.spoiler
-        guard let cenasPosCreditos = filmeDestaque?.post_credit_scenes else {return}
-    
-        textoCenaPósCrédito.text = String(cenasPosCreditos)
+    @IBAction func lerSpoilerCenasPosCredito(_ sender: Any) {
+        textoSpoilerCenasPosCredito.text = viewModel.getTextDescricaoSpoiler()
     }
     
     @IBAction func fecharTelaBotao(_ sender: Any) {

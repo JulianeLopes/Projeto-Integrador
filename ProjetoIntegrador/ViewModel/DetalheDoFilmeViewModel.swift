@@ -59,7 +59,7 @@ class DetalheDoFilmeViewModel {
         servicoDeApi.getPosterFilmeDestaqueDaApi(url: filme?.cover_url, completion: completion)
         
     }
-    
+
     // função de favoritar filmes e salvar no coredata
     func favorita(filme: Filme?){
         guard let filme = filme else { return }
@@ -82,6 +82,7 @@ class DetalheDoFilmeViewModel {
             }
         }
     }
+    
     
     func getFavoritoButtonTitle() {
         if isFavorite {

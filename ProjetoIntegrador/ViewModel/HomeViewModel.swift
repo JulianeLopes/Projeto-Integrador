@@ -14,8 +14,6 @@ protocol HomeViewModelDelegate {
 }
 
 class HomeViewModel {
-    
-//    private let servico = Servico()
     private let servicosDeAPI = MovieAPI()
     private let servicoDeSpoiler = ServicoDeSpoiler()
     
@@ -117,10 +115,6 @@ class HomeViewModel {
         }
         dataTask.resume()
     }
-    
-//    func saveLocation(model: [FilmesEntities], id: String)
-//        let novoFilme = NSEntityDescription.insertNewObject(forEntityName: "", into: <#T##NSManagedObjectContext#>)
-//    }
 }
 
 
