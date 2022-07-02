@@ -37,6 +37,7 @@ class PesquisaViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detalheVC = segue.destination as? FilmesDetalhesViewController {
             detalheVC.filmeDestaque = viewModel.getFilmeSelecionado()
+            detalheVC.spoiler = viewModel.getSpoiler()
         }
     }
 }

@@ -12,12 +12,16 @@ protocol PesquisaViewModelDelegate {
 }
 
 class PesquisaViewModel {
-    
+    // MARK: - Carregando filmes da API
     var servicoDeAPI = MovieAPI()
     var delegate: PesquisaViewModelDelegate?
     var listaDeFilme: [Filme] = []
     var filmeSelecionado: Filme?
-
+    
+    // MARK: - Spoilers
+    var servicoDeSpoiler = ServicoDeSpoiler()
+    var spoiler: Spoiler?
+    
     // recebe a lista de filmes
     func getListaDeFilme() -> [Filme] {
         return listaDeFilme
@@ -49,6 +53,7 @@ class PesquisaViewModel {
     // pega a posição do filme na lista
     func getFilme(posicao: Int) -> Filme? {
         let filmeSelecionado = listaDeFilme[posicao]
+        spoiler = servicoDeSpoiler.listaDeFilmesSpoiler[posicao]
         return filmeSelecionado
     }
     
@@ -68,5 +73,11 @@ class PesquisaViewModel {
             completion()
         }
     }
+    
+    func getSpoiler() -> Spoiler? {
+        return spoiler
+    }
+    
+    
     
 }
