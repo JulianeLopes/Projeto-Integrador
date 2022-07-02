@@ -1,4 +1,4 @@
-
+olhar lines das stacks detalhesViewController e srowView spoiler
 
 mudar o botao de compartilhar da tela detalhes filmes para a tela de fanzometro
 
