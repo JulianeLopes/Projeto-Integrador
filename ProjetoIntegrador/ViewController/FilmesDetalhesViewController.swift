@@ -15,13 +15,17 @@ class FilmesDetalhesViewController: UIViewController {
     @IBOutlet weak var estrelaQuatroButton: UIButton!
     @IBOutlet weak var estrelaCincoButton: UIButton!
     
+    @IBOutlet weak var favoritarButton: UIButton!
+    @IBOutlet weak var assistirDepoisButton: UIButton!
+    @IBOutlet weak var assistidoBotton: UIButton!
+    
     @IBOutlet weak var posterImage: UIImageView!
+    
     @IBOutlet weak var tituloLabel: UILabel!
     @IBOutlet weak var elencoLabel: UILabel!
     @IBOutlet weak var direcaoLabel: UILabel!
     @IBOutlet weak var descricaoLabel: UILabel!
     @IBOutlet weak var indicacaoLabel: UILabel!
-    @IBOutlet weak var favoritarButton: UIButton!
     
     var filmeDestaque: Filme?
     
@@ -41,12 +45,13 @@ class FilmesDetalhesViewController: UIViewController {
         direcaoLabel.text = filmeDestaque?.directed_by
         descricaoLabel.text = filmeDestaque?.overview
         viewModel.getFavoritoButtonTitle()
+        
+        viewModel.getFilmesParaAssistirButtonTitle()
 
         //colocar indicação
         
     }
    
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let spoilerVC = segue.destination as? SpoilerViewController {
             spoilerVC.filmeDestaque = filmeDestaque
@@ -58,6 +63,18 @@ class FilmesDetalhesViewController: UIViewController {
 
         viewModel.favorita(filme: filmeDestaque)
         viewModel.getFavoritoButtonTitle()
+        
+    }
+    
+    @IBAction func assistirDepoisAction(_ sender: Any) {
+        
+        viewModel.assistirMaisTarde(filme: filmeDestaque)
+        viewModel.getFilmesParaAssistirButtonTitle()
+        
+    }
+    
+    @IBAction func assistidoAction(_ sender: Any) {
+        
         
     }
     
@@ -126,6 +143,16 @@ class FilmesDetalhesViewController: UIViewController {
 }
 
 extension FilmesDetalhesViewController: FilmesViewModelDelegate {
+    func atualizaButtonAssistido() {
+        assistirDepoisButton.setImage(UIImage(systemName: "tv.fill"), for: .normal)
+        assistirDepoisButton.setTitle("adicionado a lista", for: .normal)
+    }
+    
+    func atualizaButtonParaAssistir() {
+        assistirDepoisButton.setImage(UIImage(systemName: "tv"), for: .normal)
+        assistirDepoisButton.setTitle("assistir depois", for: .normal)
+    }
+    
     func atualizaButtonFavoritado() {
         favoritarButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
         favoritarButton.setTitle("desfavoritar", for: .normal)
@@ -138,4 +165,6 @@ extension FilmesDetalhesViewController: FilmesViewModelDelegate {
     
     
 }
+
+
 

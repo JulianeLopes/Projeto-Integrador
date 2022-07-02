@@ -789,6 +789,9 @@
                                                                 <buttonConfiguration key="configuration" style="plain" image="tv" catalog="system" title="assistir depois">
                                                                     <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                                                 </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="assistirDepoisAction:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="XGP-Zo-UoI"/>
+                                                                </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pye-2p-Bjq">
                                                                 <rect key="frame" x="221" y="0.0" width="85.5" height="31"/>
@@ -797,6 +800,9 @@
                                                                 <buttonConfiguration key="configuration" style="plain" image="play.square" catalog="system" title="assistido">
                                                                     <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
                                                                 </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="assistidoAction:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="rSL-le-4Cc"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
@@ -997,6 +1003,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="zDG-Me-h7X"/>
                     <connections>
+                        <outlet property="assistidoBotton" destination="pye-2p-Bjq" id="hSi-iK-IQq"/>
+                        <outlet property="assistirDepoisButton" destination="p0R-aZ-XKM" id="Lub-r3-vAT"/>
                         <outlet property="descricaoLabel" destination="jSX-PR-aqA" id="JNC-MT-R1c"/>
                         <outlet property="direcaoLabel" destination="MPj-9Y-hxr" id="X9Y-IJ-Kpl"/>
                         <outlet property="elencoLabel" destination="wrp-Ee-Mia" id="jpd-aC-FOB"/>

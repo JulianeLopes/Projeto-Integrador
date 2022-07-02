@@ -28,6 +28,8 @@
 		169B6CDF2852D6D7006C44A5 /* AFazer.md in Resources */ = {isa = PBXBuildFile; fileRef = 169B6CDE2852D6D7006C44A5 /* AFazer.md */; };
 		16D749EB284981F200ECD9DB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D749EA284981F200ECD9DB /* LoginViewController.swift */; };
 		16D749ED2849829400ECD9DB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16D749EC2849829400ECD9DB /* LoginViewModel.swift */; };
+		1F6FABDC286FD23500F7E7D1 /* FilmesParaAssistir+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6FABDA286FD23500F7E7D1 /* FilmesParaAssistir+CoreDataClass.swift */; };
+		1F6FABDD286FD23500F7E7D1 /* FilmesParaAssistir+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F6FABDB286FD23500F7E7D1 /* FilmesParaAssistir+CoreDataProperties.swift */; };
 		330B982F2844554500313B85 /* FavoritoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330B982E2844554500313B85 /* FavoritoViewController.swift */; };
 		330B9831284455DF00313B85 /* FavoritoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330B9830284455DF00313B85 /* FavoritoTableViewCell.swift */; };
 		331CF45A284EDA3400A32933 /* ConfiguracaoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CF459284EDA3400A32933 /* ConfiguracaoTableViewCell.swift */; };
@@ -103,6 +105,8 @@
 		169B6CDE2852D6D7006C44A5 /* AFazer.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AFazer.md; sourceTree = "<group>"; };
 		16D749EA284981F200ECD9DB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		16D749EC2849829400ECD9DB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		1F6FABDA286FD23500F7E7D1 /* FilmesParaAssistir+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilmesParaAssistir+CoreDataClass.swift"; sourceTree = "<group>"; };
+		1F6FABDB286FD23500F7E7D1 /* FilmesParaAssistir+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilmesParaAssistir+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2A283DAF1B45491C38FBBCEE /* Pods_ProjetoIntegradorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjetoIntegradorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		330B982E2844554500313B85 /* FavoritoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritoViewController.swift; sourceTree = "<group>"; };
 		330B9830284455DF00313B85 /* FavoritoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritoTableViewCell.swift; sourceTree = "<group>"; };
@@ -183,6 +187,8 @@
 		1675305C283EB9F700D7CE3A = {
 			isa = PBXGroup;
 			children = (
+				1F6FABDA286FD23500F7E7D1 /* FilmesParaAssistir+CoreDataClass.swift */,
+				1F6FABDB286FD23500F7E7D1 /* FilmesParaAssistir+CoreDataProperties.swift */,
 				161E92C9286BA12A005EF165 /* Services */,
 				161E92C8286B9E95005EF165 /* Entities */,
 				16753067283EB9F700D7CE3A /* ProjetoIntegrador */,
@@ -522,12 +528,14 @@
 				EE118C382844E6D6005852F7 /* PesquisaViewController.swift in Sources */,
 				EE118C3628446054005852F7 /* FilmesDetalhesViewController.swift in Sources */,
 				1675306D283EB9F700D7CE3A /* ViewController.swift in Sources */,
+				1F6FABDC286FD23500F7E7D1 /* FilmesParaAssistir+CoreDataClass.swift in Sources */,
 				1642540428442A7D006F92A4 /* Usuario.swift in Sources */,
 				EE1020A12852A94900D39141 /* NovoUsuarioViewModel.swift in Sources */,
 				1699316C284E9D9F00AF1014 /* PesquisaCollectionViewCell.swift in Sources */,
 				EE118C3228445AB2005852F7 /* HomeViewModel.swift in Sources */,
 				5ECB49D32865361E00F19206 /* ServicoDeSpoiler.swift in Sources */,
 				5E5B68CC2846519800AF6A6C /* DadosPessoaisViewController.swift in Sources */,
+				1F6FABDD286FD23500F7E7D1 /* FilmesParaAssistir+CoreDataProperties.swift in Sources */,
 				EE118C30284459BA005852F7 /* FilmesEmDestaquesCollectionViewCell.swift in Sources */,
 				161E92C7286B9DEB005EF165 /* FilmesEntities+CoreDataProperties.swift in Sources */,
 				3357B1AB28442858007D611C /* Data.swift in Sources */,

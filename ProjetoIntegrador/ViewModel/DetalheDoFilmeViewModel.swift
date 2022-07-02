@@ -11,6 +11,8 @@ import UIKit
 protocol FilmesViewModelDelegate {
     func atualizaButtonFavoritado()
     func atualizaButtonDesfavoritado()
+    func atualizaButtonAssistido()
+    func atualizaButtonParaAssistir()
 
 }
 
@@ -18,6 +20,7 @@ class DetalheDoFilmeViewModel {
     var servicoDeApi = MovieAPI()
     var spoiler = ServicoDeSpoiler()
     var listaDefavoritos: [Filme] = []
+    var listaParaAssistirMaisTarde: [Filme] = []
     
     var filme: Filme?
     
@@ -27,9 +30,19 @@ class DetalheDoFilmeViewModel {
         return (try? filmeEntityService.favoritos()) ?? []
     }
     
+    var assistirMaisTarde: [Filme] {
+        return (try? filmeEntityService.assistirMaisTarde()) ?? []
+    }
+    
     var isFavorite: Bool {
         return favoritos.contains { favorito in
             return favorito.title == filme?.title
+        }
+    }
+    
+    var isParaAssitir: Bool {
+        return assistirMaisTarde.contains { filmeAssistido in
+            return filmeAssistido.title == filme?.title
         }
     }
     
@@ -42,6 +55,14 @@ class DetalheDoFilmeViewModel {
     func loadFavoritos(){
         do {
         try listaDefavoritos = filmeEntityService.favoritos()
+        } catch {
+            print(error)
+        }
+    }
+    
+    func loadAssistirMaisTarde(){
+        do {
+        try listaParaAssistirMaisTarde = filmeEntityService.assistirMaisTarde()
         } catch {
             print(error)
         }
@@ -72,7 +93,6 @@ class DetalheDoFilmeViewModel {
         if exists {
             try? filmeEntityService.remove(filme: filme)
             loadFavoritos()
-            print("filme removido")
        } else {
             do {
                 try filmeEntityService.favoritar(filme: filme)
@@ -83,6 +103,27 @@ class DetalheDoFilmeViewModel {
         }
     }
     
+    // função de adicionar filmes assistir mais tarde
+    func assistirMaisTarde(filme: Filme?){
+        guard let filme = filme else { return }
+        
+        let exists = assistirMaisTarde.contains { filmeAssistido in
+            
+            return filmeAssistido.title == filme.title
+        }
+        
+        if exists {
+            try? filmeEntityService.removeFilmeAssistido(filme: filme)
+            loadAssistirMaisTarde()
+       } else {
+            do {
+                try filmeEntityService.assistirMaisTarde(filme: filme)
+                loadAssistirMaisTarde()
+            } catch {
+                print(error)
+            }
+        }
+    }
     
     func getFavoritoButtonTitle() {
         if isFavorite {
@@ -95,5 +136,18 @@ class DetalheDoFilmeViewModel {
             }
         }
     }
+    
+    func getFilmesParaAssistirButtonTitle() {
+        if isParaAssitir {
+            DispatchQueue.main.async {
+                self.delegate?.atualizaButtonAssistido()
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.delegate?.atualizaButtonParaAssistir()
+            }
+        }
+    }
+    
     
 }

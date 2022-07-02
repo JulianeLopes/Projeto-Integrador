@@ -30,11 +30,28 @@ class FilmeEntityService {
         try context.save()
     }
     
+    func assistirMaisTarde(filme: Filme) throws {
+        _ = FilmesParaAssistir(filme: filme, context: context)
+       
+        try context.save()
+    }
+    
     func favoritos() throws -> [Filme] {
             let favoritos = try context.fetch(FilmesEntities.fetchRequest())
             var filmes: [Filme] = []
             favoritos.forEach { filmeEntity in
                 let filme = Filme(filme: filmeEntity)
+                filmes.append(filme)
+            }
+            return filmes
+    }
+    
+    
+    func assistirMaisTarde() throws -> [Filme] {
+            let assistirMaisTarde = try context.fetch(FilmesParaAssistir.fetchRequest())
+            var filmes: [Filme] = []
+        assistirMaisTarde.forEach { filmeEntity in
+                let filme = Filme(filmeParaAssistir: filmeEntity)
                 filmes.append(filme)
             }
             return filmes
@@ -47,6 +64,19 @@ class FilmeEntityService {
         if let filme = favoritos.first(where: { favorito in
             
             return favorito.title == filme.title
+            
+        }) {
+            context.delete(filme)
+            saveContext()
+        }
+    }
+    
+    func removeFilmeAssistido(filme: Filme) throws {
+        let assistirMaisTarde = try context.fetch(FilmesParaAssistir.fetchRequest())
+        
+        if let filme = assistirMaisTarde.first(where: { filmeAssistido in
+            
+            return filmeAssistido.title == filme.title
             
         }) {
             context.delete(filme)
