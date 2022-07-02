@@ -132,46 +132,14 @@
                                                         <constraint firstAttribute="width" constant="116" id="uUU-FG-lBV"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Avaliação" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lF8-ZL-yQX">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Direção" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lF8-ZL-yQX">
                                                     <rect key="frame" x="130" y="108.5" width="258" height="24.5"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                     <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JaU-bF-ZQP">
-                                                    <rect key="frame" x="130" y="149" width="278" height="20"/>
-                                                    <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="b5t-xw-moD">
-                                                            <rect key="frame" x="0.0" y="-0.5" width="39.5" height="20"/>
-                                                        </imageView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0Hs-Ao-PHZ">
-                                                            <rect key="frame" x="59.5" y="-0.5" width="39.5" height="20"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="32" id="hAo-Ej-Pjo"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="k4b-cn-R6D">
-                                                            <rect key="frame" x="119" y="-0.5" width="40" height="20"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="32" id="Kh3-5t-sUq"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NqL-pE-FX1">
-                                                            <rect key="frame" x="179" y="-0.5" width="39.5" height="20"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="32" id="rKF-Ah-Ima"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="y0G-Ap-ehl">
-                                                            <rect key="frame" x="238.5" y="-0.5" width="39.5" height="20"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="32" id="5u3-2Q-VNH"/>
-                                                            </constraints>
-                                                        </imageView>
-                                                    </subviews>
-                                                </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo do Filme" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDq-hU-yMq">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Titulo do Filme" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FDq-hU-yMq">
                                                     <rect key="frame" x="130" y="54.5" width="258" height="24"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                     <nil key="textColor"/>
@@ -181,15 +149,11 @@
                                             <color key="tintColor" name="Vermelho Marvel"/>
                                             <constraints>
                                                 <constraint firstItem="lF8-ZL-yQX" firstAttribute="top" secondItem="FDq-hU-yMq" secondAttribute="bottom" constant="30" id="L8v-Lc-PNt"/>
-                                                <constraint firstAttribute="trailing" secondItem="JaU-bF-ZQP" secondAttribute="trailing" constant="6" id="NFB-8X-zHG"/>
                                                 <constraint firstItem="r9F-tB-hOg" firstAttribute="top" secondItem="Wii-Xz-vaE" secondAttribute="top" constant="8" id="NFf-6q-Ox3"/>
-                                                <constraint firstAttribute="bottom" secondItem="JaU-bF-ZQP" secondAttribute="bottom" constant="10" id="SRp-QI-fXT"/>
-                                                <constraint firstItem="JaU-bF-ZQP" firstAttribute="leading" secondItem="r9F-tB-hOg" secondAttribute="trailing" constant="6" id="SUO-NK-tAK"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="lF8-ZL-yQX" secondAttribute="trailing" constant="6" id="UqA-zp-UMn"/>
                                                 <constraint firstItem="FDq-hU-yMq" firstAttribute="leading" secondItem="r9F-tB-hOg" secondAttribute="trailing" constant="6" id="g6B-V0-3SL"/>
                                                 <constraint firstItem="r9F-tB-hOg" firstAttribute="leading" secondItem="Wii-Xz-vaE" secondAttribute="leading" constant="8" id="iJk-b5-CBQ"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="FDq-hU-yMq" secondAttribute="trailing" constant="6" id="lfN-ZD-LzQ"/>
-                                                <constraint firstItem="JaU-bF-ZQP" firstAttribute="top" secondItem="lF8-ZL-yQX" secondAttribute="bottom" constant="16" id="nbC-57-xxJ"/>
                                                 <constraint firstAttribute="bottom" secondItem="r9F-tB-hOg" secondAttribute="bottom" constant="8" id="vIC-62-Yeu"/>
                                                 <constraint firstItem="lF8-ZL-yQX" firstAttribute="leading" secondItem="r9F-tB-hOg" secondAttribute="trailing" constant="6" id="ygZ-ZZ-Yr3"/>
                                             </constraints>
@@ -843,6 +807,9 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo Filme" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Day-EE-sws">
                                                         <rect key="frame" x="0.0" y="0.0" width="366" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="24" id="nnq-jX-PhA"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                         <color key="textColor" name="Vermelho Marvel"/>
                                                         <nil key="highlightedColor"/>
@@ -855,12 +822,18 @@
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elenco:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvf-kC-nbg">
                                                         <rect key="frame" x="0.0" y="76.5" width="366" height="24"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="24" id="E1H-Ae-LtC"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Elenco" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrp-Ee-Mia">
                                                         <rect key="frame" x="0.0" y="116.5" width="366" height="20.5"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20.5" id="Rtb-mi-cg5"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1019,7 +992,6 @@
                             <constraint firstAttribute="bottom" secondItem="fe9-bw-hWs" secondAttribute="bottom" id="Zph-Ev-QPI"/>
                             <constraint firstItem="fe9-bw-hWs" firstAttribute="top" secondItem="ZyJ-Mc-y55" secondAttribute="top" id="lyX-9O-bgn"/>
                             <constraint firstItem="R4o-jw-d5Q" firstAttribute="centerX" secondItem="Fz0-i7-izl" secondAttribute="centerX" id="pni-R7-kBf"/>
-                            <constraint firstItem="R4o-jw-d5Q" firstAttribute="centerY" secondItem="Fz0-i7-izl" secondAttribute="centerY" priority="750" id="uVa-M3-UH5"/>
                             <constraint firstAttribute="trailing" secondItem="fe9-bw-hWs" secondAttribute="trailing" id="v2m-O9-fSp"/>
                         </constraints>
                     </view>
@@ -1057,26 +1029,26 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Swa-gJ-Mr0">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="385"/>
+                                        <rect key="frame" x="16" y="0.0" width="382" height="385"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="2a3-Xo-yFl">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="385"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="382" height="385"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Spoiler do filme" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tMw-to-xor">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="48"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="texto spoiler do filme" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cyt-Nn-MSd">
-                                                        <rect key="frame" x="0.0" y="64" width="414" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="64" width="382" height="20.5"/>
                                                         <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yIg-7a-JyU">
-                                                        <rect key="frame" x="0.0" y="100.5" width="414" height="120"/>
+                                                        <rect key="frame" x="0.0" y="100.5" width="382" height="120"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cenas pós créditos" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kaz-BZ-3V1">
                                                                 <rect key="frame" x="0.0" y="0.0" width="231.5" height="120"/>
@@ -1085,22 +1057,22 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7jy-5J-GN0">
-                                                                <rect key="frame" x="239.5" y="0.0" width="174.5" height="120"/>
+                                                                <rect key="frame" x="239.5" y="0.0" width="142.5" height="120"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Esse filme possui" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oe0-XK-HEQ">
-                                                                        <rect key="frame" x="20.5" y="6" width="134" height="19.5"/>
+                                                                        <rect key="frame" x="4.5" y="6" width="134" height="19.5"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yx0-nc-VPX">
-                                                                        <rect key="frame" x="76" y="36" width="22.5" height="48"/>
+                                                                        <rect key="frame" x="60" y="36" width="22.5" height="48"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-BoldItalic" family="Helvetica Neue" pointSize="40"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cenas pós créditos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGq-sZ-ALS">
-                                                                        <rect key="frame" x="14.5" y="92.5" width="145.5" height="19.5"/>
+                                                                        <rect key="frame" x="-1.5" y="92.5" width="145.5" height="19.5"/>
                                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="16"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -1125,10 +1097,10 @@
                                                         </subviews>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lNh-1W-7mc">
-                                                        <rect key="frame" x="0.0" y="236.5" width="414" height="48"/>
+                                                        <rect key="frame" x="0.0" y="236.5" width="382" height="48"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DyS-jV-t22">
-                                                                <rect key="frame" x="34" y="0.0" width="346" height="48"/>
+                                                                <rect key="frame" x="34" y="0.0" width="314" height="48"/>
                                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="filled" title="Ler o spoiler das cenas pós crédito">
@@ -1148,16 +1120,16 @@
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AeH-Rs-NoD">
-                                                        <rect key="frame" x="0.0" y="300.5" width="414" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="300.5" width="382" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Szz-Ew-szl">
-                                                        <rect key="frame" x="0.0" y="337" width="414" height="48"/>
+                                                        <rect key="frame" x="0.0" y="337" width="382" height="48"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IlO-UC-rCy">
-                                                                <rect key="frame" x="34" y="0.0" width="346" height="48"/>
+                                                                <rect key="frame" x="34" y="0.0" width="314" height="48"/>
                                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <state key="normal" title="Button"/>
                                                                 <buttonConfiguration key="configuration" style="filled" title="Fechar spoilers">
@@ -1182,11 +1154,10 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Swa-gJ-Mr0" firstAttribute="trailing" secondItem="eZw-mB-ZG2" secondAttribute="trailing" id="Icg-q1-7R5"/>
+                                    <constraint firstItem="Swa-gJ-Mr0" firstAttribute="trailing" secondItem="eZw-mB-ZG2" secondAttribute="trailing" constant="16" id="Icg-q1-7R5"/>
                                     <constraint firstItem="Swa-gJ-Mr0" firstAttribute="bottom" secondItem="eZw-mB-ZG2" secondAttribute="bottom" id="Y0d-iu-S3b"/>
-                                    <constraint firstItem="Swa-gJ-Mr0" firstAttribute="width" secondItem="9Tr-CV-7wL" secondAttribute="width" id="cEK-Zt-bPv"/>
                                     <constraint firstItem="Swa-gJ-Mr0" firstAttribute="top" secondItem="eZw-mB-ZG2" secondAttribute="top" id="toK-zO-YnA"/>
-                                    <constraint firstItem="Swa-gJ-Mr0" firstAttribute="leading" secondItem="eZw-mB-ZG2" secondAttribute="leading" id="y8W-UN-5mE"/>
+                                    <constraint firstItem="Swa-gJ-Mr0" firstAttribute="leading" secondItem="eZw-mB-ZG2" secondAttribute="leading" constant="16" id="y8W-UN-5mE"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="eZw-mB-ZG2"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="9Tr-CV-7wL"/>
@@ -1194,6 +1165,9 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="IcZ-jS-U1p"/>
                         <color key="backgroundColor" name="Vermelho Marvel"/>
+                        <constraints>
+                            <constraint firstItem="Swa-gJ-Mr0" firstAttribute="centerX" secondItem="IcZ-jS-U1p" secondAttribute="centerX" id="kz8-pe-U6x"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="textoQuantidadeCenasPosCredito" destination="Yx0-nc-VPX" id="Zxx-CS-gFn"/>
@@ -1230,7 +1204,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kEu-Pf-PAy"/>
+        <segue reference="lyi-mc-ALf"/>
         <segue reference="xIL-BC-kis"/>
     </inferredMetricsTieBreakers>
     <resources>
