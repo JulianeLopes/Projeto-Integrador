@@ -13,13 +13,15 @@ class Spoiler {
     var spoiler: String?
     var elenco: String
     var descricaoCenasPosCreditos: String?
+    var filmesParaAssistirAntes: [String]
     
-    init (title: String, spoiler: String?, elenco: String, descricaoCenaPosCreditos: String?) {
+    init (title: String, spoiler: String?, elenco: String, descricaoCenaPosCreditos: String?, filmesParaAssistirAntes: [String]) {
         
         self.title = title
         self.spoiler = spoiler
         self.elenco = elenco
         self.descricaoCenasPosCreditos = descricaoCenaPosCreditos
+        self.filmesParaAssistirAntes = filmesParaAssistirAntes
     }
     
 }
