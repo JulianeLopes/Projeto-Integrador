@@ -172,6 +172,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="diretoresLabel" destination="X8u-LX-FCB" id="FcG-fa-MPu"/>
                                             <outlet property="filmeImagem" destination="r9F-tB-hOg" id="DZQ-0E-upI"/>
                                             <outlet property="nomeFilmeLabel" destination="FDq-hU-yMq" id="Und-GD-GUB"/>
                                         </connections>

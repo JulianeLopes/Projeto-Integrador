@@ -28,5 +28,7 @@ class FilmeViewModel {
         return filme.title
     }
     
-    
+    func getDirecao() -> String {
+        return filme.directed_by ?? ""
+    }
 }
