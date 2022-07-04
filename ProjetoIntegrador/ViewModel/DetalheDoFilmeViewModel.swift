@@ -13,14 +13,20 @@ protocol FilmesViewModelDelegate {
     func atualizaButtonDesfavoritado()
     func atualizaButtonAssistido()
     func atualizaButtonParaAssistir()
+    func atualizaButtonFilmeJaAssistido()
+    func atualizaButtonFilmeAssistir()
+    
 
 }
+
 
 class DetalheDoFilmeViewModel {
     var servicoDeApi = MovieAPI()
     var spoiler = ServicoDeSpoiler()
     var listaDefavoritos: [Filme] = []
     var listaParaAssistirMaisTarde: [Filme] = []
+    var servicoUserDefault = UserDefaultsService()
+    var assistidos:[String] = []
     
     var filme: Filme?
     
@@ -37,6 +43,12 @@ class DetalheDoFilmeViewModel {
     var isFavorite: Bool {
         return favoritos.contains { favorito in
             return favorito.title == filme?.title
+        }
+    }
+    
+    var isAssistido: Bool {
+        return assistidos.contains { assistido in
+            return assistido == filme?.title
         }
     }
     
@@ -146,6 +158,45 @@ class DetalheDoFilmeViewModel {
             DispatchQueue.main.async {
                 self.delegate?.atualizaButtonParaAssistir()
             }
+        }
+    }
+    
+    func getFilmesAssistidosButtonTitle() {
+        if isAssistido {
+            DispatchQueue.main.async {
+                self.delegate?.atualizaButtonFilmeJaAssistido()
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.delegate?.atualizaButtonFilmeAssistir()
+            }
+        }
+    }
+    
+    func loadFilmesAssistidos(){
+        servicoUserDefault.loadDefaults { listaDeAssistidos in
+            self.assistidos = listaDeAssistidos }
+        
+    }
+    
+    func assistido(filme: String?){
+        
+        guard let filme = filme else { return }
+        
+        let exists = assistidos.contains { filmeAssistido in
+            
+            return filmeAssistido == filme
+        }
+        
+        if exists {
+            delegate?.atualizaButtonFilmeJaAssistido()
+            loadFilmesAssistidos()
+        } else {
+            
+            delegate?.atualizaButtonFilmeAssistir()
+            servicoUserDefault.addNovoNome(filme)
+            loadFilmesAssistidos()
+            
         }
     }
     

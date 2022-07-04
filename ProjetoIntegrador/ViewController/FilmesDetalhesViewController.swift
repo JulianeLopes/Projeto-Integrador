@@ -45,6 +45,8 @@ class FilmesDetalhesViewController: UIViewController {
         direcaoLabel.text = filmeDestaque?.directed_by
         descricaoLabel.text = filmeDestaque?.overview
         viewModel.getFavoritoButtonTitle()
+        viewModel.getFilmesAssistidosButtonTitle()
+        
         
         viewModel.getFilmesParaAssistirButtonTitle()
 
@@ -74,6 +76,10 @@ class FilmesDetalhesViewController: UIViewController {
     }
     
     @IBAction func assistidoAction(_ sender: Any) {
+        
+        viewModel.assistido(filme: filmeDestaque?.title)
+        viewModel.getFilmesAssistidosButtonTitle()
+        
         
         
     }
@@ -143,6 +149,16 @@ class FilmesDetalhesViewController: UIViewController {
 }
 
 extension FilmesDetalhesViewController: FilmesViewModelDelegate {
+    func atualizaButtonFilmeJaAssistido() {
+        assistidoBotton.setImage(UIImage(systemName: "play.square.fill"), for: .normal)
+        assistidoBotton.setTitle("Assistido", for: .normal)
+    }
+    
+    func atualizaButtonFilmeAssistir() {
+        assistidoBotton.setImage(UIImage(systemName: "play.square"), for: .normal)
+        assistidoBotton.setTitle("Não Assistido", for: .normal)
+    }
+    
     func atualizaButtonAssistido() {
         assistirDepoisButton.setImage(UIImage(systemName: "tv.fill"), for: .normal)
         assistirDepoisButton.setTitle("adicionado a lista", for: .normal)

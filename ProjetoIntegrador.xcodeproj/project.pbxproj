@@ -60,6 +60,7 @@
 		FBDBE28228443D7B00C897A4 /* Fanzometro.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE28128443D7B00C897A4 /* Fanzometro.swift */; };
 		FBDBE28428443F5600C897A4 /* FanzometroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE28328443F5600C897A4 /* FanzometroViewModel.swift */; };
 		FBDBE2862844437C00C897A4 /* FanzometroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE2852844437C00C897A4 /* FanzometroCollectionViewCell.swift */; };
+		FBEAD0A5287374AD00C9029D /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEAD0A4287374AD00C9029D /* UserDefaultsService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +139,7 @@
 		FBDBE28128443D7B00C897A4 /* Fanzometro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fanzometro.swift; sourceTree = "<group>"; };
 		FBDBE28328443F5600C897A4 /* FanzometroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanzometroViewModel.swift; sourceTree = "<group>"; };
 		FBDBE2852844437C00C897A4 /* FanzometroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanzometroCollectionViewCell.swift; sourceTree = "<group>"; };
+		FBEAD0A4287374AD00C9029D /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				161E92CA286BA143005EF165 /* FilmeEntityService.swift */,
+				FBEAD0A4287374AD00C9029D /* UserDefaultsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 				EE118C3628446054005852F7 /* FilmesDetalhesViewController.swift in Sources */,
 				1675306D283EB9F700D7CE3A /* ViewController.swift in Sources */,
 				1F6FABDC286FD23500F7E7D1 /* FilmesParaAssistir+CoreDataClass.swift in Sources */,
+				FBEAD0A5287374AD00C9029D /* UserDefaultsService.swift in Sources */,
 				1642540428442A7D006F92A4 /* Usuario.swift in Sources */,
 				EE1020A12852A94900D39141 /* NovoUsuarioViewModel.swift in Sources */,
 				1699316C284E9D9F00AF1014 /* PesquisaCollectionViewCell.swift in Sources */,
