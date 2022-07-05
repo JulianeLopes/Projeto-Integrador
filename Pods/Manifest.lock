@@ -1,0 +1,16 @@
+PODS:
+  - ToastViewSwift (1.0.6)
+
+DEPENDENCIES:
+  - ToastViewSwift
+
+SPEC REPOS:
+  trunk:
+    - ToastViewSwift
+
+SPEC CHECKSUMS:
+  ToastViewSwift: 6fd3aea7fb1156fced78716aedc07a0037fb4135
+
+PODFILE CHECKSUM: 8188f29b3eddb2002549831443a223cad2acbd03
+
+COCOAPODS: 1.11.3

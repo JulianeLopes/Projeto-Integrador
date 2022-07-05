@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ToastViewSwift
 
 class FilmesDetalhesViewController: UIViewController {
     
@@ -47,7 +48,7 @@ class FilmesDetalhesViewController: UIViewController {
         viewModel.getFavoritoButtonTitle()
         viewModel.getFilmesAssistidosButtonTitle()
         viewModel.getFilmesParaAssistirButtonTitle()
-
+        viewModel.loadFilmesAssistidos()
         //colocar indicação
         
     }
@@ -63,6 +64,7 @@ class FilmesDetalhesViewController: UIViewController {
 
         viewModel.favorita(filme: filmeDestaque)
         viewModel.getFavoritoButtonTitle()
+        // melhorar layout
         
     }
     
@@ -147,39 +149,56 @@ class FilmesDetalhesViewController: UIViewController {
 }
 
 extension FilmesDetalhesViewController: FilmesViewModelDelegate {
+    func snackBarDesfavoritado() {
+        let toast = Toast.default(
+            image: UIImage(systemName: "heart")!,
+            title: "Filme desfavoritado"
+        )
+        toast.show()
+    }
+    
+    func snackBarFavoritado() {
+        let toast = Toast.default(
+            image: UIImage(systemName: "heart.fill")!,
+            title: "Filme favoritado"
+            
+        )
+        toast.show()
+    }
+    
     func atualizaButtonFilmeJaAssistido() {
         assistidoBotton.setImage(UIImage(systemName: "play.square.fill"), for: .normal)
-//        assistidoBotton.setTitle("Assistido", for: .normal)
+
 
     }
     
     func atualizaButtonFilmeAssistir() {
         assistidoBotton.setImage(UIImage(systemName: "play.square"), for: .normal)
-//        assistidoBotton.setTitle("Não Assistido", for: .normal)
+
 
     }
     
     func atualizaButtonAssistido() {
         assistirDepoisButton.setImage(UIImage(systemName: "text.badge.minus"), for: .normal)
-//        assistirDepoisButton.setTitle("adicionado a lista", for: .normal)
+
 
     }
     
     func atualizaButtonParaAssistir() {
         assistirDepoisButton.setImage(UIImage(systemName: "text.badge.plus"), for: .normal)
-//        assistirDepoisButton.setTitle("assistir depois", for: .normal)
+
 
     }
     
     func atualizaButtonFavoritado() {
         favoritarButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-//        favoritarButton.setTitle("desfavoritar", for: .normal)
+
  
     }
     
     func atualizaButtonDesfavoritado() {
         favoritarButton.setImage(UIImage(systemName: "heart"), for: .normal)
-//        favoritarButton.setTitle("favoritar", for: .normal)
+
 
     }
     

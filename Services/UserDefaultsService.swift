@@ -8,24 +8,28 @@
 import Foundation
 
 class UserDefaultsService {
+    static var shared = UserDefaultsService()
     
-    let userDefaults = UserDefaults.standard
-    var tituloFilmes: [String] = []
+    private let userDefaults = UserDefaults.standard
+    
+    private var titulosFilmes: [String]{
+        userDefaults.object(forKey: "tituloFilmes") as? [String] ?? []
+    }
     
     func loadDefaults(completion: ([String]) ->Void){
-        tituloFilmes = userDefaults.object(forKey: "tituloFilmes") as? [String] ?? []
-        userDefaults.set(tituloFilmes, forKey: "tituloFilmes")
-        completion(tituloFilmes)
+        completion(titulosFilmes)
     }
     
     func addNovoNome(_ titulo: String){
-        tituloFilmes.append(titulo)
-        userDefaults.set(tituloFilmes, forKey: "tituloFilmes")
+        var filmes = titulosFilmes
+        filmes.append(titulo)
+        userDefaults.set(filmes, forKey: "tituloFilmes")
     }
     
     func remove(row: Int){
-        tituloFilmes.remove(at: row)
-        userDefaults.set(tituloFilmes, forKey: "tituloFilmes")
+        var filmes = titulosFilmes
+        filmes.remove(at: row)
+        userDefaults.set(filmes, forKey: "tituloFilmes")
     }
     
 

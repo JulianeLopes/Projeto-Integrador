@@ -15,6 +15,8 @@ protocol FilmesViewModelDelegate {
     func atualizaButtonParaAssistir()
     func atualizaButtonFilmeJaAssistido()
     func atualizaButtonFilmeAssistir()
+    func snackBarDesfavoritado()
+    func snackBarFavoritado()
     
 
 }
@@ -25,7 +27,7 @@ class DetalheDoFilmeViewModel {
     var spoiler = ServicoDeSpoiler()
     var listaDefavoritos: [Filme] = []
     var listaParaAssistirMaisTarde: [Filme] = []
-    var servicoUserDefault = UserDefaultsService()
+    var servicoUserDefault = UserDefaultsService.shared
     var assistidos:[String] = []
     
     var filme: Filme?
@@ -104,10 +106,12 @@ class DetalheDoFilmeViewModel {
         
         if exists {
             try? filmeEntityService.remove(filme: filme)
+            delegate?.snackBarDesfavoritado()
             loadFavoritos()
        } else {
             do {
                 try filmeEntityService.favoritar(filme: filme)
+                delegate?.snackBarFavoritado()
                 loadFavoritos()
             } catch {
                 print(error)
@@ -190,11 +194,6 @@ class DetalheDoFilmeViewModel {
         }
         
         if exists {
-            do {
-                try filmeEntityService.removeFilmeAssistido(filme: filme)
-            } catch {
-                print(error)
-            }
             
             delegate?.atualizaButtonFilmeJaAssistido()
             loadFilmesAssistidos()
