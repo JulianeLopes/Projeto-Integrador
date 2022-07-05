@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RQv-ZR-wKF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RQv-ZR-wKF">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -205,7 +206,7 @@
                             <constraint firstItem="VMC-CT-UKr" firstAttribute="top" secondItem="h2Z-ZV-LWu" secondAttribute="bottom" constant="8" id="ucu-Ka-jJZ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Minha lista" image="tv" catalog="system" selectedImage="tv.fill" id="Gja-Nz-tpd"/>
+                    <tabBarItem key="tabBarItem" title="Minha lista" image="list.star" catalog="system" selectedImage="list.star" id="Gja-Nz-tpd"/>
                     <navigationItem key="navigationItem" id="YJY-ea-F38"/>
                     <connections>
                         <outlet property="listaFavoritoTableView" destination="VMC-CT-UKr" id="vSR-tQ-2Uu"/>
@@ -765,7 +766,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="R4o-jw-d5Q">
-                                        <rect key="frame" x="24" y="40" width="366" height="918"/>
+                                        <rect key="frame" x="24" y="84" width="366" height="958"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qdw-mP-VZJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="401"/>
@@ -780,50 +781,65 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="JXV-TX-AZY">
-                                                <rect key="frame" x="0.0" y="408" width="366" height="31"/>
+                                                <rect key="frame" x="0.0" y="408" width="366" height="71"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleAspectFit" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZCi-f8-CCk">
-                                                        <rect key="frame" x="0.0" y="0.0" width="301.5" height="31"/>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WIY-RG-ZFm">
+                                                        <rect key="frame" x="0.0" y="0.0" width="366" height="71"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xo5-pi-Ve5">
-                                                                <rect key="frame" x="0.0" y="0.0" width="88.5" height="31"/>
+                                                                <rect key="frame" x="107" y="16.5" width="48.5" height="38"/>
                                                                 <color key="tintColor" name="Vermelho Marvel"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system" title="favoritar">
-                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                                                <buttonConfiguration key="configuration" style="plain" imagePadding="0.0">
+                                                                    <imageReference key="image" image="heart" catalog="system" symbolScale="default"/>
+                                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
                                                                 </buttonConfiguration>
                                                                 <connections>
                                                                     <action selector="favoritarAction:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="Oni-cz-5aL"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p0R-aZ-XKM">
-                                                                <rect key="frame" x="96.5" y="0.0" width="113.5" height="31"/>
+                                                                <rect key="frame" x="155.5" y="16.5" width="55.5" height="38"/>
                                                                 <color key="tintColor" name="Vermelho Marvel"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="tv" catalog="system" title="assistir depois">
-                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                                                <buttonConfiguration key="configuration" style="plain" image="text.badge.minus" catalog="system">
+                                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
                                                                 </buttonConfiguration>
                                                                 <connections>
                                                                     <action selector="assistirDepoisAction:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="XGP-Zo-UoI"/>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pye-2p-Bjq">
-                                                                <rect key="frame" x="218" y="0.0" width="83.5" height="31"/>
+                                                                <rect key="frame" x="217" y="16.5" width="53" height="38"/>
                                                                 <color key="tintColor" name="Vermelho Marvel"/>
                                                                 <state key="normal" title="Button"/>
-                                                                <buttonConfiguration key="configuration" style="plain" image="play.square" catalog="system" title="assistido">
-                                                                    <fontDescription key="titleFontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                                                <buttonConfiguration key="configuration" style="plain" image="play.square" catalog="system">
+                                                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="20"/>
                                                                 </buttonConfiguration>
                                                                 <connections>
                                                                     <action selector="assistidoAction:" destination="mWI-Zi-r8U" eventType="touchUpInside" id="rSL-le-4Cc"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                    </stackView>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="Xo5-pi-Ve5" firstAttribute="centerY" secondItem="WIY-RG-ZFm" secondAttribute="centerY" id="4hN-0n-0EN"/>
+                                                            <constraint firstAttribute="width" constant="366" id="6gr-cF-PUS"/>
+                                                            <constraint firstItem="p0R-aZ-XKM" firstAttribute="centerX" secondItem="WIY-RG-ZFm" secondAttribute="centerX" id="8Nb-uF-3Jh"/>
+                                                            <constraint firstItem="p0R-aZ-XKM" firstAttribute="centerY" secondItem="WIY-RG-ZFm" secondAttribute="centerY" id="MpS-3j-Vxe"/>
+                                                            <constraint firstItem="pye-2p-Bjq" firstAttribute="centerY" secondItem="WIY-RG-ZFm" secondAttribute="centerY" id="P4q-BB-sxc"/>
+                                                            <constraint firstAttribute="height" constant="71" id="R31-1q-nb4"/>
+                                                            <constraint firstItem="pye-2p-Bjq" firstAttribute="leading" secondItem="p0R-aZ-XKM" secondAttribute="trailing" constant="6" id="YQm-Rx-pvu"/>
+                                                            <constraint firstItem="p0R-aZ-XKM" firstAttribute="leading" secondItem="Xo5-pi-Ve5" secondAttribute="trailing" id="nGB-mn-RMM"/>
+                                                        </constraints>
+                                                    </view>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="WIY-RG-ZFm" firstAttribute="centerX" secondItem="JXV-TX-AZY" secondAttribute="centerX" id="qBW-IG-PYG"/>
+                                                </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="p8c-0C-nuz">
-                                                <rect key="frame" x="0.0" y="446" width="366" height="350.5"/>
+                                                <rect key="frame" x="0.0" y="486" width="366" height="350.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titulo Filme" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Day-EE-sws">
                                                         <rect key="frame" x="0.0" y="0.0" width="366" height="24"/>
@@ -919,7 +935,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="dM7-Og-tEo">
-                                                <rect key="frame" x="0.0" y="803.5" width="366" height="114.5"/>
+                                                <rect key="frame" x="0.0" y="843.5" width="366" height="114.5"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0SR-Du-0TQ">
                                                         <rect key="frame" x="148.5" y="0.0" width="69.5" height="31"/>
@@ -1234,13 +1250,13 @@
         <image name="gearshape.fill" catalog="system" width="128" height="121"/>
         <image name="heart" catalog="system" width="128" height="109"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
+        <image name="list.star" catalog="system" width="128" height="94"/>
         <image name="logoMarvel" width="2560" height="1029"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="play.square" catalog="system" width="128" height="114"/>
         <image name="poster" width="2480" height="3508"/>
         <image name="star" catalog="system" width="128" height="116"/>
-        <image name="tv" catalog="system" width="128" height="97"/>
-        <image name="tv.fill" catalog="system" width="128" height="97"/>
+        <image name="text.badge.minus" catalog="system" width="128" height="109"/>
         <image name="vingadores" width="757" height="1080"/>
         <namedColor name="Vermelho Marvel">
             <color red="0.85500001907348633" green="0.024000000208616257" blue="0.024000000208616257" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

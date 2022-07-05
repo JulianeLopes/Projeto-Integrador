@@ -28,17 +28,6 @@ class UserDefaultsService {
         userDefaults.set(tituloFilmes, forKey: "tituloFilmes")
     }
     
-//    func remove(filme: String?) throws {
-//        
-//        if let filme = tituloFilmes.first(where: { filmeAssistido in
-//            
-//            return filmeAssistido == filme
-//            
-//        }) {
-//           
-//            tituloFilmes.remove(at: <#T##Int#>)
-//            
-//        }
-//    }
+
     
 }

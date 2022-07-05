@@ -175,26 +175,32 @@ class DetalheDoFilmeViewModel {
     
     func loadFilmesAssistidos(){
         servicoUserDefault.loadDefaults { listaDeAssistidos in
-            self.assistidos = listaDeAssistidos }
-        
+            self.assistidos = listaDeAssistidos
+            
+        }
     }
     
-    func assistido(filme: String?){
+    func assistido(filme: Filme?){
         
         guard let filme = filme else { return }
         
         let exists = assistidos.contains { filmeAssistido in
             
-            return filmeAssistido == filme
+            return filmeAssistido == filme.title
         }
         
         if exists {
+            do {
+                try filmeEntityService.removeFilmeAssistido(filme: filme)
+            } catch {
+                print(error)
+            }
+            
             delegate?.atualizaButtonFilmeJaAssistido()
             loadFilmesAssistidos()
         } else {
-            
             delegate?.atualizaButtonFilmeAssistir()
-            servicoUserDefault.addNovoNome(filme)
+            servicoUserDefault.addNovoNome(filme.title!)
             loadFilmesAssistidos()
             
         }
