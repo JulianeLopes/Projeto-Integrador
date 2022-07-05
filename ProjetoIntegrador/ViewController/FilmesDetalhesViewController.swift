@@ -49,6 +49,7 @@ class FilmesDetalhesViewController: UIViewController {
         viewModel.getFilmesAssistidosButtonTitle()
         viewModel.getFilmesParaAssistirButtonTitle()
         viewModel.loadFilmesAssistidos()
+    
         //colocar indicação
         
     }
@@ -165,6 +166,23 @@ extension FilmesDetalhesViewController: FilmesViewModelDelegate {
         )
         toast.show()
     }
+    func snackBarAssistido() {
+        let toast = Toast.default(
+            image: UIImage(systemName: "text.badge.minus")!,
+            title: "Filme retirado da lista"
+        )
+        toast.show()
+    }
+    
+    func snackBarAssistirMaisTarde() {
+        let toast = Toast.default(
+            image: UIImage(systemName: "text.badge.plus")!,
+            title: "Filme adicionado na lista"
+            
+        )
+        toast.show()
+    }
+    
     
     func atualizaButtonFilmeJaAssistido() {
         assistidoBotton.setImage(UIImage(systemName: "play.square.fill"), for: .normal)
@@ -201,6 +219,8 @@ extension FilmesDetalhesViewController: FilmesViewModelDelegate {
 
 
     }
+    
+    
     
     
 }

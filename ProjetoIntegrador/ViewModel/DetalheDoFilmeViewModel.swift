@@ -17,6 +17,8 @@ protocol FilmesViewModelDelegate {
     func atualizaButtonFilmeAssistir()
     func snackBarDesfavoritado()
     func snackBarFavoritado()
+    func snackBarAssistido()
+    func snackBarAssistirMaisTarde()
     
 
 }
@@ -130,10 +132,12 @@ class DetalheDoFilmeViewModel {
         
         if exists {
             try? filmeEntityService.removeFilmeAssistido(filme: filme)
+            delegate?.snackBarAssistido()
             loadAssistirMaisTarde()
        } else {
             do {
                 try filmeEntityService.assistirMaisTarde(filme: filme)
+                delegate?.snackBarAssistirMaisTarde()
                 loadAssistirMaisTarde()
             } catch {
                 print(error)
