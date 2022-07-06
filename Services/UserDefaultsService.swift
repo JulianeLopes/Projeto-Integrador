@@ -38,7 +38,4 @@ class UserDefaultsService {
         filmes.remove(at: row)
         userDefaults.set(filmes, forKey: "tituloFilmes")
     }
-    
-
-    
 }

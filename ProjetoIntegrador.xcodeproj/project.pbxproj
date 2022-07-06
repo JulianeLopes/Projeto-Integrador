@@ -11,7 +11,6 @@
 		161E92C7286B9DEB005EF165 /* FilmesEntities+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161E92C5286B9DEB005EF165 /* FilmesEntities+CoreDataProperties.swift */; };
 		161E92CB286BA143005EF165 /* FilmeEntityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161E92CA286BA143005EF165 /* FilmeEntityService.swift */; };
 		1629ED2B28417271009F9D2C /* Main Tela Cadastro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1629ED2A28417271009F9D2C /* Main Tela Cadastro.storyboard */; };
-		163CF01528512565005E4476 /* FilmesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163CF01428512565005E4476 /* FilmesViewModel.swift */; };
 		1642540428442A7D006F92A4 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1642540328442A7D006F92A4 /* Usuario.swift */; };
 		16753069283EB9F700D7CE3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16753068283EB9F700D7CE3A /* AppDelegate.swift */; };
 		1675306B283EB9F700D7CE3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1675306A283EB9F700D7CE3A /* SceneDelegate.swift */; };
@@ -87,7 +86,6 @@
 		161E92C5286B9DEB005EF165 /* FilmesEntities+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilmesEntities+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		161E92CA286BA143005EF165 /* FilmeEntityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeEntityService.swift; sourceTree = "<group>"; };
 		1629ED2A28417271009F9D2C /* Main Tela Cadastro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Main Tela Cadastro.storyboard"; sourceTree = "<group>"; };
-		163CF01428512565005E4476 /* FilmesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesViewModel.swift; sourceTree = "<group>"; };
 		1642540328442A7D006F92A4 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		16753065283EB9F700D7CE3A /* ProjetoIntegrador.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetoIntegrador.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16753068283EB9F700D7CE3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +178,8 @@
 		161E92C8286B9E95005EF165 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				1F6FABDA286FD23500F7E7D1 /* FilmesParaAssistir+CoreDataClass.swift */,
+				1F6FABDB286FD23500F7E7D1 /* FilmesParaAssistir+CoreDataProperties.swift */,
 				161E92C4286B9DEB005EF165 /* FilmesEntities+CoreDataClass.swift */,
 				161E92C5286B9DEB005EF165 /* FilmesEntities+CoreDataProperties.swift */,
 			);
@@ -198,8 +198,6 @@
 		1675305C283EB9F700D7CE3A = {
 			isa = PBXGroup;
 			children = (
-				1F6FABDA286FD23500F7E7D1 /* FilmesParaAssistir+CoreDataClass.swift */,
-				1F6FABDB286FD23500F7E7D1 /* FilmesParaAssistir+CoreDataProperties.swift */,
 				161E92C9286BA12A005EF165 /* Services */,
 				161E92C8286B9E95005EF165 /* Entities */,
 				16753067283EB9F700D7CE3A /* ProjetoIntegrador */,
@@ -300,7 +298,6 @@
 				EE2D484A284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift */,
 				EE53C4BA2851087B005DB3AC /* FavoritoViewModel.swift */,
 				EEC71A37286F735D001116E7 /* SpoilerViewModel.swift */,
-				163CF01428512565005E4476 /* FilmesViewModel.swift */,
 				336A38CE2856916C00814CA3 /* FilmeViewModel.swift */,
 				EE4ABEBD285BE8B1002A5AC7 /* DadosPessoaisViewModel.swift */,
 			);
@@ -345,7 +342,6 @@
 				6E1D4897F9C2BAF7AE22CC3E /* Pods-ProjetoIntegradorTests.debug.xcconfig */,
 				BC1839B83CDFF177A8AFD7F3 /* Pods-ProjetoIntegradorTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -627,7 +623,6 @@
 				3357B1AB28442858007D611C /* Data.swift in Sources */,
 				16753069283EB9F700D7CE3A /* AppDelegate.swift in Sources */,
 				EE118C2E28445906005852F7 /* HomeViewController.swift in Sources */,
-				163CF01528512565005E4476 /* FilmesViewModel.swift in Sources */,
 				EE4ABEBE285BE8B1002A5AC7 /* DadosPessoaisViewModel.swift in Sources */,
 				330B9831284455DF00313B85 /* FavoritoTableViewCell.swift in Sources */,
 				EE53C4BD28510B3C005DB3AC /* SpoilerViewController.swift in Sources */,
