@@ -39,6 +39,9 @@ class FilmesDetalhesViewController: UIViewController {
         viewModel.delegate = self
         viewModel.getPoster(filme: filmeDestaque) { image in
             self.posterImage.image = image
+            if image == nil {
+                self.posterImage.image = UIImage(named: "default_poster")
+            }
         }
         posterImage.layer.cornerRadius = 20
         tituloLabel.text = filmeDestaque?.title

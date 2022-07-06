@@ -26,6 +26,8 @@ class UserDefaultsService {
         if filmes.contains(where: { tituloDoFilme in
             tituloDoFilme == titulo
         }) {
+            return
+        } else {
             filmes.append(titulo)
             userDefaults.set(filmes, forKey: "tituloFilmes")
         }

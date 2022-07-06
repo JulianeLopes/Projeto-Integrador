@@ -16,6 +16,9 @@ class PesquisaCollectionViewCell: UICollectionViewCell {
         viewModel.getPoster(completion: { image in
             DispatchQueue.main.async {
                 self.imagem.image = image
+                if image == nil {
+                    self.imagem.image = UIImage(named: "default_poster")
+                }
             }
         })
         titulo.text = viewModel.getTitulo()

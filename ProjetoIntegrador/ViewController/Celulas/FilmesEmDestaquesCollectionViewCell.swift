@@ -15,6 +15,9 @@ class FilmesEmDestaquesCollectionViewCell: UICollectionViewCell {
         viewModel.getPoster { image in
             DispatchQueue.main.async {
                 self.posterImage.image = image
+                if image == nil {
+                    self.posterImage.image = UIImage(named: "default_poster")
+                }
             }
         }
         
