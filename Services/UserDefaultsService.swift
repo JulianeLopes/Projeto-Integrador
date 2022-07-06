@@ -16,14 +16,19 @@ class UserDefaultsService {
         userDefaults.object(forKey: "tituloFilmes") as? [String] ?? []
     }
     
-    func loadDefaults(completion: ([String]) ->Void){
-        completion(titulosFilmes)
+    func loadDefaults() -> [String]{
+        return titulosFilmes
     }
     
     func addNovoNome(_ titulo: String){
         var filmes = titulosFilmes
-        filmes.append(titulo)
-        userDefaults.set(filmes, forKey: "tituloFilmes")
+        
+        if filmes.contains(where: { tituloDoFilme in
+            tituloDoFilme == titulo
+        }) {
+            filmes.append(titulo)
+            userDefaults.set(filmes, forKey: "tituloFilmes")
+        }
     }
     
     func remove(row: Int){

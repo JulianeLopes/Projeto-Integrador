@@ -20,8 +20,6 @@ protocol FilmesViewModelDelegate {
     func snackBarAssistido()
     func snackBarAssistirMaisTarde()
     func snackBarFilmeAssistido()
-        
-
 }
 
 
@@ -29,43 +27,23 @@ class DetalheDoFilmeViewModel {
     var servicoDeApi = MovieAPI()
     var spoiler = ServicoDeSpoiler()
     var listaDefavoritos: [Filme] = []
+    var listaDeFilmesAssistidos: [String] = []
     var listaParaAssistirMaisTarde: [Filme] = []
     var servicoUserDefault = UserDefaultsService.shared
-    var assistidos:[String] = []
+    private let filmeEntityService = FilmeEntityService()
     
     var filme: Filme?
     
     var delegate: FilmesViewModelDelegate?
     
+    // MARK: - Botão Favoritar
     var favoritos: [Filme] {
         return (try? filmeEntityService.favoritos()) ?? []
-    }
-    
-    var assistirMaisTarde: [Filme] {
-        return (try? filmeEntityService.assistirMaisTarde()) ?? []
     }
     
     var isFavorite: Bool {
         return favoritos.contains { favorito in
             return favorito.title == filme?.title
-        }
-    }
-    
-    var isAssistido: Bool {
-        return assistidos.contains { assistido in
-            return assistido == filme?.title
-        }
-    }
-    
-    var isParaAssitir: Bool {
-        return assistirMaisTarde.contains { filmeAssistido in
-            return filmeAssistido.title == filme?.title
-        }
-    }
-    
-    func verificaSeEFavorito()->Bool {
-        favoritos.contains { favorito in
-            favorito.title == filme?.title
         }
     }
     
@@ -77,27 +55,6 @@ class DetalheDoFilmeViewModel {
         }
     }
     
-    func loadAssistirMaisTarde(){
-        do {
-        try listaParaAssistirMaisTarde = filmeEntityService.assistirMaisTarde()
-        } catch {
-            print(error)
-        }
-    }
-    
-    private let filmeEntityService = FilmeEntityService()
-    private lazy var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
-    // usuario logado
-    private var usuarioLogado: Usuario? {
-        return SessionManager.shared.usuarioLogado
-    }
-    
-    func getPoster(filme: Filme?, completion: @escaping (UIImage?) -> Void) {
-        servicoDeApi.getPosterFilmeDestaqueDaApi(url: filme?.cover_url, completion: completion)
-        
-    }
-
     // função de favoritar filmes e salvar no coredata
     func favorita(filme: Filme?){
         guard let filme = filme else { return }
@@ -119,6 +76,38 @@ class DetalheDoFilmeViewModel {
             } catch {
                 print(error)
             }
+        }
+    }
+    
+    func getFavoritoButtonTitle() {
+        if isFavorite {
+            DispatchQueue.main.async {
+                self.delegate?.atualizaButtonFavoritado()
+            }
+        } else {
+            DispatchQueue.main.async {
+                self.delegate?.atualizaButtonDesfavoritado()
+            }
+        }
+    }
+    
+    
+    // MARK: - Botão assistir mais tarde
+    var assistirMaisTarde: [Filme] {
+        return (try? filmeEntityService.assistirMaisTarde()) ?? []
+    }
+    
+    var isParaAssitir: Bool {
+        return assistirMaisTarde.contains { filmeAssistido in
+            return filmeAssistido.title == filme?.title
+        }
+    }
+    
+    func loadAssistirMaisTarde(){
+        do {
+        try listaParaAssistirMaisTarde = filmeEntityService.assistirMaisTarde()
+        } catch {
+            print(error)
         }
     }
     
@@ -146,18 +135,6 @@ class DetalheDoFilmeViewModel {
         }
     }
     
-    func getFavoritoButtonTitle() {
-        if isFavorite {
-            DispatchQueue.main.async {
-                self.delegate?.atualizaButtonFavoritado()
-            }
-        } else {
-            DispatchQueue.main.async {
-                self.delegate?.atualizaButtonDesfavoritado()
-            }
-        }
-    }
-    
     func getFilmesParaAssistirButtonTitle() {
         if isParaAssitir {
             DispatchQueue.main.async {
@@ -167,6 +144,44 @@ class DetalheDoFilmeViewModel {
             DispatchQueue.main.async {
                 self.delegate?.atualizaButtonParaAssistir()
             }
+        }
+    }
+    
+    // MARK: - Botão Assitido
+    var assistidos: [String] {
+        return servicoUserDefault.loadDefaults()
+    }
+    
+    var isAssistido: Bool {
+        return assistidos.contains { assistido in
+            return assistido == filme?.title
+        }
+    }
+    
+    func loadFilmesAssistidos(){
+        listaDeFilmesAssistidos = servicoUserDefault.loadDefaults()
+    }
+
+    func assistido(filme: Filme?){
+        
+        guard let filme = filme else { return }
+        
+        let exists = assistidos.contains { filmeAssistido in
+            
+            return filmeAssistido == filme.title
+        }
+        
+        if exists {
+            
+            delegate?.atualizaButtonFilmeJaAssistido()
+            loadFilmesAssistidos()
+            
+        } else {
+            delegate?.atualizaButtonFilmeAssistir()
+            delegate?.snackBarFilmeAssistido()
+            servicoUserDefault.addNovoNome(filme.title!)
+            loadFilmesAssistidos()
+            
         }
     }
     
@@ -181,35 +196,12 @@ class DetalheDoFilmeViewModel {
             }
         }
     }
+
+    // MARK: - API
     
-    func loadFilmesAssistidos(){
-        servicoUserDefault.loadDefaults { listaDeAssistidos in
-            self.assistidos = listaDeAssistidos
-            
-        }
+    func getPoster(filme: Filme?, completion: @escaping (UIImage?) -> Void) {
+        servicoDeApi.getPosterFilmeDestaqueDaApi(url: filme?.cover_url, completion: completion)
     }
-    
-    func assistido(filme: Filme?){
-        
-        guard let filme = filme else { return }
-        
-        let exists = assistidos.contains { filmeAssistido in
-            
-            return filmeAssistido == filme.title
-        }
-        
-        if exists {
-            delegate?.atualizaButtonFilmeJaAssistido()
-            loadFilmesAssistidos()
-            
-        } else {
-            delegate?.atualizaButtonFilmeAssistir()
-            delegate?.snackBarFilmeAssistido()
-            servicoUserDefault.addNovoNome(filme.title!)
-            loadFilmesAssistidos()
-            
-        }
-    }
-    
-    
+
+
 }
