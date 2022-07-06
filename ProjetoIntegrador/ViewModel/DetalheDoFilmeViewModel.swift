@@ -19,7 +19,8 @@ protocol FilmesViewModelDelegate {
     func snackBarFavoritado()
     func snackBarAssistido()
     func snackBarAssistirMaisTarde()
-    
+    func snackBarFilmeAssistido()
+        
 
 }
 
@@ -198,11 +199,12 @@ class DetalheDoFilmeViewModel {
         }
         
         if exists {
-            
             delegate?.atualizaButtonFilmeJaAssistido()
             loadFilmesAssistidos()
+            
         } else {
             delegate?.atualizaButtonFilmeAssistir()
+            delegate?.snackBarFilmeAssistido()
             servicoUserDefault.addNovoNome(filme.title!)
             loadFilmesAssistidos()
             

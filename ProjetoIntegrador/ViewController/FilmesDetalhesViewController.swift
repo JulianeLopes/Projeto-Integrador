@@ -183,6 +183,15 @@ extension FilmesDetalhesViewController: FilmesViewModelDelegate {
         toast.show()
     }
     
+    func snackBarFilmeAssistido() {
+        let toast = Toast.default(
+            image: UIImage(systemName: "play.square.fill")!,
+            title: "Filme assistido"
+            
+        )
+        toast.show()
+    }
+    
     
     func atualizaButtonFilmeJaAssistido() {
         assistidoBotton.setImage(UIImage(systemName: "play.square.fill"), for: .normal)
