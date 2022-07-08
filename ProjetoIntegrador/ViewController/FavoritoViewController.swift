@@ -25,12 +25,15 @@ class FavoritoViewController: UIViewController {
         listaFavoritoTableView.dataSource = self
         listaFavoritoTableView.delegate = self
         
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         listaFavoritoTableView.reloadData()
     }
+    
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detalhesFilmeVC = segue.destination as? FilmesDetalhesViewController {

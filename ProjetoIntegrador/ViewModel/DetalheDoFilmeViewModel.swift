@@ -35,6 +35,7 @@ class DetalheDoFilmeViewModel {
     var filme: Filme?
     
     var delegate: FilmesViewModelDelegate?
+
     
     // MARK: - Botão Favoritar
     var favoritos: [Filme] {

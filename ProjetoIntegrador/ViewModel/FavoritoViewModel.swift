@@ -9,27 +9,35 @@ import Foundation
 
 class FavoritoViewModel {
     
-
     let service = ServicoDeUsuario()
     let serviceCoreData = FilmeEntityService()
+    
+    func atualizaView(){
+        
+    }
+    
+    var filmes: [Filme] {
+        try! serviceCoreData.assistirMaisTarde()
+    }
     
     private var usuarioLogado: Usuario? {
         return SessionManager.shared.usuarioLogado
     }
     
     func numeroDeFilmesFavoritos() -> Int {
-        return ((try? serviceCoreData.assistirMaisTarde()) ?? []).count
+        return filmes.count
 
     }
     
     func getItem(row: Int) -> Filme {
-        return ((try? serviceCoreData.assistirMaisTarde())!)[row]
+        return filmes[row]
     
     }
+    
     func getCellViewModel(posicao: Int) -> FilmeViewModel {
-            let filme = ((try? serviceCoreData.assistirMaisTarde())!)[posicao]
-            let cellViewModel = FilmeViewModel(filme: filme)
-            return cellViewModel
-        }
+        let filme = filmes[posicao]
+        let cellViewModel = FilmeViewModel(filme: filme)
+        return cellViewModel
+    }
     
 }
