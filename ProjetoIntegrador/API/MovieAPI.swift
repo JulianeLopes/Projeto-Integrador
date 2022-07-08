@@ -17,7 +17,11 @@ class MovieAPI {
     let decoder = JSONDecoder()
     
     func loadFilmes(completion: @escaping (([Filme])-> Void)){
-        let url = URL(string: "https://mcuapi.herokuapp.com/api/v1/movies?page=1&limit=1000&columns=title%2Crelease_date%2Cphase%2Cpost_credit_scenes%2Ccover_url%2Csaga%2Cdirected_by%2Coverview&order=chronology%2CDESC")!
+        guard let url = URL(string: "https://mcuapi.herokuapp.com/api/v1/movies?page=1&limit=1000&columns=title%2Crelease_date%2Cphase%2Cpost_credit_scenes%2Ccover_url%2Csaga%2Cdirected_by%2Coverview&order=chronology%2CDESC") else {
+            completion([])
+            return
+        }
+        
         let task = session.dataTask(with: url) { data, _, error in
             
             if let error = error {
@@ -43,21 +47,23 @@ class MovieAPI {
 
     func getPosterFilmeDestaqueDaApi(url: String?, completion: @escaping (UIImage?) -> Void) {
         guard let poster = url else {
-            completion(nil)
+            completion(UIImage(named: "default_poster"))
             return
             
         }
         guard let url = URL(string: poster) else {
-            completion(nil)
+            completion(UIImage(named: "default_poster"))
             return
             
         }
         
         let dataTask = URLSession.shared.dataTask(with: url) { data, _, error in
-            guard let data = data else { return }
             DispatchQueue.main.async {
-                let coverImagem = UIImage(data: data)
-                completion(coverImagem)
+                guard let data = data else {
+                    completion(UIImage(named: "default_poster"))
+                    return
+                }
+                completion(UIImage(data: data))
             }
             
         }

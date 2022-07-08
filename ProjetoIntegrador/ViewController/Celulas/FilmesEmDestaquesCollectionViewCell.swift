@@ -13,12 +13,7 @@ class FilmesEmDestaquesCollectionViewCell: UICollectionViewCell {
     func configuraCelula(viewModel: FilmeViewModel) {
 
         viewModel.getPoster { image in
-            DispatchQueue.main.async {
-                self.posterImage.image = image
-                if image == nil {
-                    self.posterImage.image = UIImage(named: "default_poster")
-                }
-            }
+            self.posterImage.image = image
         }
         
         posterImage.layer.cornerRadius = 20

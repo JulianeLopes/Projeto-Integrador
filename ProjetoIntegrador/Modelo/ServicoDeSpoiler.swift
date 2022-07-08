@@ -74,6 +74,7 @@ class ServicoDeSpoiler {
                ),
         Spoiler(title: "Captain America: The First Avenger", spoiler: "", elenco: "Chris Evans, Tommy Lee Jones, Hugo Weaving, Hayley Atwell, Sebastian Stan, Dominic Cooper, Neal McDonough, Derek Luke, Stanley Tucci", descricaoCenaPosCreditos: "Nesta cena, é possível ver mais prenúncios para o primeiro filme dos Vingadores, que lançou um ano depois. Steve Rodgers está fazendo seu treino usual de explodir sacos de pancadas com os punhos quando Nick Fury aparece e pede ajuda para salvar o mundo.", filmesParaAssistirAntes: []
                )
+        // usar firebase para consumir dados de filme relacionados
         
     ]
     

@@ -13,5 +13,6 @@ scroll view no fanzometro
 estrelinhas do filme
 collection view dos filmes para assistir antes
 
+spoiler - usando closure para consumir dados do firebase futuramente 
 
 
