@@ -9,6 +9,15 @@ import UIKit
 
 class IndicacoesCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var posterImage: UIView!
+
+    @IBOutlet weak var posterImage: UIImageView!
     
+    
+    func configuraCell(viewModel: FilmeViewModel){
+        viewModel.getPoster { poster in
+            self.posterImage.image = poster
+        }
+        posterImage.layer.cornerRadius = 20
+        
+    }
 }

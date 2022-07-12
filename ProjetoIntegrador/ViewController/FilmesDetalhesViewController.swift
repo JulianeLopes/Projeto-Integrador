@@ -38,6 +38,7 @@ class FilmesDetalhesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.filme = filmeDestaque
+        viewModel.spoilerFilme = spoiler
         viewModel.delegate = self
         viewModel.getPoster(filme: filmeDestaque) { image in
             self.posterImage.image = image
@@ -54,8 +55,12 @@ class FilmesDetalhesViewController: UIViewController {
         viewModel.getFilmesAssistidosButtonTitle()
         viewModel.getFilmesParaAssistirButtonTitle()
         viewModel.loadFilmesAssistidos()
-    
-        //colocar indicação
+        
+        //indicação
+        indicacaoFilmesCollectionView.dataSource = self
+        viewModel.getFilmesApi {
+            self.indicacaoFilmesCollectionView.reloadData()
+        }
         
     }
    
@@ -154,6 +159,23 @@ class FilmesDetalhesViewController: UIViewController {
     
 }
 
+extension FilmesDetalhesViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        viewModel.getQuantidadeDeFilmesIndicados()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "indicacoes", for: indexPath) as? IndicacoesCollectionViewCell
+        let cellViewModel = viewModel.getCellViewModel(posicao: indexPath.row)
+        cell?.configuraCell(viewModel: cellViewModel)
+        
+        return cell ?? UICollectionViewCell()
+    }
+    
+    
+}
+
 extension FilmesDetalhesViewController: FilmesViewModelDelegate {
     func snackBarDesfavoritado() {
         let toast = Toast.default(
@@ -233,9 +255,6 @@ extension FilmesDetalhesViewController: FilmesViewModelDelegate {
 
 
     }
-    
-    
-    
     
 }
 

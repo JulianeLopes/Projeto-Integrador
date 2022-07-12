@@ -29,10 +29,12 @@ class DetalheDoFilmeViewModel {
     var listaDefavoritos: [Filme] = []
     var listaDeFilmesAssistidos: [String] = []
     var listaParaAssistirMaisTarde: [Filme] = []
+    var listaDeFilmesApi: [Filme] = []
     var servicoUserDefault = UserDefaultsService.shared
     private let filmeEntityService = FilmeEntityService()
     
     var filme: Filme?
+    var spoilerFilme: Spoiler?
     
     var delegate: FilmesViewModelDelegate?
 
@@ -202,6 +204,40 @@ class DetalheDoFilmeViewModel {
     
     func getPoster(filme: Filme?, completion: @escaping (UIImage?) -> Void) {
         servicoDeApi.getPosterFilmeDestaqueDaApi(url: filme?.cover_url, completion: completion)
+    }
+    
+    func getFilmesApi(completion: @escaping()->Void){
+        servicoDeApi.loadFilmes { filmes in
+            self.listaDeFilmesApi = filmes
+            completion()
+        }
+    }
+    
+    //MARK: - Collection View de indicações de filmes
+    
+    func getQuantidadeDeFilmesIndicados() -> Int {
+        return getFilmesIndicados(spoilerDoFilme: spoilerFilme!).count
+    }
+    
+    private func getFilmesIndicados(spoilerDoFilme: Spoiler) -> [Filme] {
+        var filmes: [Filme] = []
+        
+        for filme in listaDeFilmesApi {
+            let filmeEIndicado = spoilerDoFilme.filmesParaAssistirAntes.contains { filmeTitulo in
+                filme.title == filmeTitulo
+            }
+            if filmeEIndicado {
+                filmes.append(filme)
+            }
+        }
+        return filmes
+    }
+    
+    func getCellViewModel(posicao: Int) -> FilmeViewModel {
+
+        let filme = getFilmesIndicados(spoilerDoFilme: spoilerFilme!)[posicao]
+        let cellViewModel = FilmeViewModel(filme: filme)
+        return cellViewModel
     }
 
 
