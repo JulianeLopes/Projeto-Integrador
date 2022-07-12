@@ -28,6 +28,8 @@ class FilmesDetalhesViewController: UIViewController {
     @IBOutlet weak var descricaoLabel: UILabel!
     @IBOutlet weak var indicacaoLabel: UILabel!
     
+    @IBOutlet weak var indicacaoFilmesCollectionView: UICollectionView!
+    
     var filmeDestaque: Filme?
     
     var viewModel = DetalheDoFilmeViewModel()
