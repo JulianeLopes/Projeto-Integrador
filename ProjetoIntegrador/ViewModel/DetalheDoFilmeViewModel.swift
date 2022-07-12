@@ -216,7 +216,8 @@ class DetalheDoFilmeViewModel {
     //MARK: - Collection View de indicações de filmes
     
     func getQuantidadeDeFilmesIndicados() -> Int {
-        return getFilmesIndicados(spoilerDoFilme: spoilerFilme!).count
+        guard let spoilerFilme = spoilerFilme else { return 0 }
+        return getFilmesIndicados(spoilerDoFilme: spoilerFilme).count
     }
     
     private func getFilmesIndicados(spoilerDoFilme: Spoiler) -> [Filme] {

@@ -8,6 +8,11 @@
 import UIKit
 import ToastViewSwift
 
+protocol FilmesDetalhesViewControllerDelegate {
+    func viewWillDisappear()
+}
+
+
 class FilmesDetalhesViewController: UIViewController {
     
     @IBOutlet weak var estrelaUmButton: UIButton!
@@ -31,7 +36,7 @@ class FilmesDetalhesViewController: UIViewController {
     @IBOutlet weak var indicacaoFilmesCollectionView: UICollectionView!
     
     var filmeDestaque: Filme?
-    
+    var delegate: FilmesDetalhesViewControllerDelegate?
     var viewModel = DetalheDoFilmeViewModel()
     var spoiler: Spoiler?
     
@@ -62,6 +67,11 @@ class FilmesDetalhesViewController: UIViewController {
             self.indicacaoFilmesCollectionView.reloadData()
         }
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        delegate?.viewWillDisappear()
     }
    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

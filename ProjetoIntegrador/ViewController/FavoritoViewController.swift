@@ -18,6 +18,7 @@ class FavoritoViewController: UIViewController {
     
     let viewModel = FavoritoViewModel()
     var filmeSelecionado: Filme?
+    var spoiler: Spoiler?
 
     
     override func viewDidLoad() {
@@ -38,6 +39,8 @@ class FavoritoViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detalhesFilmeVC = segue.destination as? FilmesDetalhesViewController {
             detalhesFilmeVC.filmeDestaque = filmeSelecionado
+            detalhesFilmeVC.spoiler = spoiler
+            detalhesFilmeVC.delegate = self
         }
     }
 }
@@ -59,7 +62,14 @@ extension FavoritoViewController: UITableViewDataSource {
 extension FavoritoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         filmeSelecionado = viewModel.getItem(row: indexPath.row)
+        spoiler = viewModel.getSpoiler(posicao: indexPath.row)
         performSegue(withIdentifier: "favoritoDetalhesFilmeSegue", sender: filmeSelecionado)
+    }
+}
+
+extension FavoritoViewController: FilmesDetalhesViewControllerDelegate {
+    func viewWillDisappear() {
+        listaFavoritoTableView.reloadData()
     }
 }
 

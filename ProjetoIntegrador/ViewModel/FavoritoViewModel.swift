@@ -11,6 +11,11 @@ class FavoritoViewModel {
     
     let service = ServicoDeUsuario()
     let serviceCoreData = FilmeEntityService()
+    let servicoDeSpoiler = ServicoDeSpoiler()
+    
+    var filmeSelecionado: Filme?
+    var spoilerFilmeSelecionado: Spoiler?
+    
     
     func atualizaView(){
         
@@ -39,5 +44,16 @@ class FavoritoViewModel {
         let cellViewModel = FilmeViewModel(filme: filme)
         return cellViewModel
     }
+    
+    func getSpoiler(posicao: Int) -> Spoiler {
+        let spoilerDoFilme = servicoDeSpoiler.listaDeFilmesSpoiler[posicao]
+        return spoilerDoFilme
+    }
+    
+    func selecionarFilme(posicao: Int){
+        spoilerFilmeSelecionado = getSpoiler(posicao: posicao)
+        filmeSelecionado = getItem(row: posicao)
+    }
+    
     
 }
