@@ -231,7 +231,7 @@ class DetalheDoFilmeViewModel {
                 filmes.append(filme)
             }
         }
-        return filmes
+        return filmes.reversed()
     }
     
     func getCellViewModel(posicao: Int) -> FilmeViewModel {
