@@ -60,6 +60,7 @@ class PesquisaViewModel {
     // pega a posição do filme selecionado
     func selecionarFilme(posicao: Int) {
         filmeSelecionado = getFilme(posicao: posicao)
+        spoiler = getSpoiler(filme: filmeSelecionado)
     }
     
     // recebe o filme selecionado e envia para outra tela
@@ -78,6 +79,15 @@ class PesquisaViewModel {
         return spoiler
     }
     
-    
+    func getSpoiler(filme: Filme?) -> Spoiler? {
+
+
+        let spoilerExist = servicoDeSpoiler.listaDeFilmesSpoiler.first { tituloDoFilmeNoSpoiler in
+            tituloDoFilmeNoSpoiler.title == filme?.title
+        }
+        spoiler = spoilerExist
+
+        return spoiler
+    }
     
 }

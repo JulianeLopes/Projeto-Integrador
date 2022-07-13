@@ -45,14 +45,21 @@ class FavoritoViewModel {
         return cellViewModel
     }
     
-    func getSpoiler(posicao: Int) -> Spoiler {
-        let spoilerDoFilme = servicoDeSpoiler.listaDeFilmesSpoiler[posicao]
-        return spoilerDoFilme
+
+    
+    func getSpoiler(filme: Filme?) -> Spoiler? {
+  
+        
+        let spoilerExist = servicoDeSpoiler.listaDeFilmesSpoiler.first { tituloDoFilmeNoSpoiler in
+            tituloDoFilmeNoSpoiler.title == filme?.title
+        }
+        
+        return spoilerExist
     }
     
     func selecionarFilme(posicao: Int){
-        spoilerFilmeSelecionado = getSpoiler(posicao: posicao)
         filmeSelecionado = getItem(row: posicao)
+        spoilerFilmeSelecionado = getSpoiler(filme: filmeSelecionado)
     }
     
     

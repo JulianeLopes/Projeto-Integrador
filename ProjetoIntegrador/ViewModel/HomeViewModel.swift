@@ -55,16 +55,20 @@ class HomeViewModel {
         return filmeSelecionado
     }
     
-    func getSpoiler(posicao: Int) -> Spoiler {
-        let spoilerFilmeSelecionado = servicoDeSpoiler.listaDeFilmesSpoiler[posicao]
-        return spoilerFilmeSelecionado
-        
+    func getSpoiler(filme: Filme?) -> Spoiler? {
+        let spoilerExist = servicoDeSpoiler.listaDeFilmesSpoiler.first { tituloDoFilmeNoSpoiler in
+               tituloDoFilmeNoSpoiler.title == filme?.title
+           }
+        spoiler = spoilerExist
+            return spoiler
     }
     // pega o posição do filme selecionado na lista
     func selecionarFilme(posicao: Int) {
         filmeSelecionado = getFilme(posicao: posicao)
-        spoiler = getSpoiler(posicao: posicao)
+        spoiler = getSpoiler(filme: filmeSelecionado)
     }
+    
+    
 
     private func selecionarFilme(filme: Filme) {
         filmeSelecionado = filme

@@ -62,7 +62,7 @@ extension FavoritoViewController: UITableViewDataSource {
 extension FavoritoViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         filmeSelecionado = viewModel.getItem(row: indexPath.row)
-        spoiler = viewModel.getSpoiler(posicao: indexPath.row)
+        spoiler = viewModel.getSpoiler(filme: filmeSelecionado)
         performSegue(withIdentifier: "favoritoDetalhesFilmeSegue", sender: filmeSelecionado)
     }
 }
