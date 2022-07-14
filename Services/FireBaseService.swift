@@ -13,10 +13,7 @@ import FirebaseAuth
 
 class FireBaseService {
     
-    let login = HomeViewController()
-    
-    
-    func loginGoogle(completion: @escaping (GIDGoogleUser?) -> Void) {
+    func loginGoogle(presenter: UIViewController, completion: @escaping (GIDGoogleUser?) -> Void) {
     
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
         
@@ -24,7 +21,7 @@ class FireBaseService {
         let config = GIDConfiguration(clientID: clientID)
         
         // Start the sign in flow!
-        GIDSignIn.sharedInstance.signIn(with: config, presenting: login) { [unowned self] user, error in
+        GIDSignIn.sharedInstance.signIn(with: config, presenting: presenter) { [unowned self] user, error in
             
             if let error = error {
                 // ...

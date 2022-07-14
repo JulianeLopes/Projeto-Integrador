@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginGoogleButtom(_ sender: Any) {
-        viewModel.loginGoogle()
+        viewModel.loginGoogle(presenter: self)
     }
     
     

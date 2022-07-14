@@ -44,8 +44,8 @@ class LoginViewModel {
         }
     }
     
-    func loginGoogle() {
-        fireBaseService.loginGoogle { usuario in
+    func loginGoogle(presenter: UIViewController) {
+        fireBaseService.loginGoogle(presenter: presenter) { usuario in
             self.usuarioGoogle = usuario
         }
     }
