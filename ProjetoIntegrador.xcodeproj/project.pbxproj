@@ -35,7 +35,6 @@
 		3357B1AB28442858007D611C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357B1AA28442858007D611C /* Data.swift */; };
 		336A38CF2856916C00814CA3 /* FilmeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A38CE2856916C00814CA3 /* FilmeViewModel.swift */; };
 		336A38D12856987D00814CA3 /* DetalheDoFilmeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A38D02856987D00814CA3 /* DetalheDoFilmeViewModel.swift */; };
-		33F3FB2F287F9F4100FC76C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33F3FB2E287F9F4100FC76C2 /* GoogleService-Info.plist */; };
 		33F3FB31287FA1F700FC76C2 /* FireBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F3FB30287FA1F700FC76C2 /* FireBaseService.swift */; };
 		54BC2B22D649BB6C83821C3C /* Pods_ProjetoIntegradorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A283DAF1B45491C38FBBCEE /* Pods_ProjetoIntegradorTests.framework */; };
 		5947F00A7D8BEEC0CBED7425 /* Pods_ProjetoIntegrador_ProjetoIntegradorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F53FC665A2528476EA2994BE /* Pods_ProjetoIntegrador_ProjetoIntegradorUITests.framework */; };
@@ -59,6 +58,7 @@
 		EE53C4BB2851087B005DB3AC /* FavoritoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE53C4BA2851087B005DB3AC /* FavoritoViewModel.swift */; };
 		EE53C4BD28510B3C005DB3AC /* SpoilerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE53C4BC28510B3C005DB3AC /* SpoilerViewController.swift */; };
 		EEC71A38286F735D001116E7 /* SpoilerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC71A37286F735D001116E7 /* SpoilerViewModel.swift */; };
+		FB64D92A2880E3FD00D7C509 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB64D9292880E3FD00D7C509 /* GoogleService-Info.plist */; };
 		FBDBE28028443AC100C897A4 /*  ServicoDeUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE27F28443AC100C897A4 /*  ServicoDeUsuario.swift */; };
 		FBDBE28228443D7B00C897A4 /* Fanzometro.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE28128443D7B00C897A4 /* Fanzometro.swift */; };
 		FBDBE28428443F5600C897A4 /* FanzometroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE28328443F5600C897A4 /* FanzometroViewModel.swift */; };
@@ -146,6 +146,7 @@
 		EE53C4BC28510B3C005DB3AC /* SpoilerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoilerViewController.swift; sourceTree = "<group>"; };
 		EEC71A37286F735D001116E7 /* SpoilerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoilerViewModel.swift; sourceTree = "<group>"; };
 		F53FC665A2528476EA2994BE /* Pods_ProjetoIntegrador_ProjetoIntegradorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjetoIntegrador_ProjetoIntegradorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB64D9292880E3FD00D7C509 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FBDBE27F28443AC100C897A4 /*  ServicoDeUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " ServicoDeUsuario.swift"; sourceTree = "<group>"; };
 		FBDBE28128443D7B00C897A4 /* Fanzometro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fanzometro.swift; sourceTree = "<group>"; };
 		FBDBE28328443F5600C897A4 /* FanzometroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanzometroViewModel.swift; sourceTree = "<group>"; };
@@ -205,6 +206,7 @@
 		1675305C283EB9F700D7CE3A = {
 			isa = PBXGroup;
 			children = (
+				FB64D9292880E3FD00D7C509 /* GoogleService-Info.plist */,
 				161E92C9286BA12A005EF165 /* Services */,
 				161E92C8286B9E95005EF165 /* Entities */,
 				16753067283EB9F700D7CE3A /* ProjetoIntegrador */,
@@ -480,7 +482,7 @@
 				16753078283EB9F800D7CE3A /* LaunchScreen.storyboard in Resources */,
 				16753075283EB9F800D7CE3A /* Assets.xcassets in Resources */,
 				16753070283EB9F700D7CE3A /* Main.storyboard in Resources */,
-				33F3FB2F287F9F4100FC76C2 /* GoogleService-Info.plist in Resources */,
+				FB64D92A2880E3FD00D7C509 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -830,7 +832,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X26TH89CCX;
+				DEVELOPMENT_TEAM = HUSK72RPC6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ProjetoIntegrador/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Permissão para acessar a camera";
@@ -860,7 +862,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = X26TH89CCX;
+				DEVELOPMENT_TEAM = HUSK72RPC6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ProjetoIntegrador/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Permissão para acessar a camera";
