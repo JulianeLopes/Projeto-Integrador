@@ -35,6 +35,8 @@
 		3357B1AB28442858007D611C /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3357B1AA28442858007D611C /* Data.swift */; };
 		336A38CF2856916C00814CA3 /* FilmeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A38CE2856916C00814CA3 /* FilmeViewModel.swift */; };
 		336A38D12856987D00814CA3 /* DetalheDoFilmeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 336A38D02856987D00814CA3 /* DetalheDoFilmeViewModel.swift */; };
+		33F3FB2F287F9F4100FC76C2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 33F3FB2E287F9F4100FC76C2 /* GoogleService-Info.plist */; };
+		33F3FB31287FA1F700FC76C2 /* FireBaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F3FB30287FA1F700FC76C2 /* FireBaseService.swift */; };
 		54BC2B22D649BB6C83821C3C /* Pods_ProjetoIntegradorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A283DAF1B45491C38FBBCEE /* Pods_ProjetoIntegradorTests.framework */; };
 		5947F00A7D8BEEC0CBED7425 /* Pods_ProjetoIntegrador_ProjetoIntegradorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F53FC665A2528476EA2994BE /* Pods_ProjetoIntegrador_ProjetoIntegradorUITests.framework */; };
 		5DA412CD8E1121E64E8A3425 /* Pods_ProjetoIntegrador.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE2BDC3F79A7042ED402856 /* Pods_ProjetoIntegrador.framework */; };
@@ -117,6 +119,8 @@
 		3357B1AA28442858007D611C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		336A38CE2856916C00814CA3 /* FilmeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeViewModel.swift; sourceTree = "<group>"; };
 		336A38D02856987D00814CA3 /* DetalheDoFilmeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalheDoFilmeViewModel.swift; sourceTree = "<group>"; };
+		33F3FB2E287F9F4100FC76C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		33F3FB30287FA1F700FC76C2 /* FireBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseService.swift; sourceTree = "<group>"; };
 		48ECC4ED4689C094A34A207C /* Pods-ProjetoIntegrador.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjetoIntegrador.release.xcconfig"; path = "Target Support Files/Pods-ProjetoIntegrador/Pods-ProjetoIntegrador.release.xcconfig"; sourceTree = "<group>"; };
 		4EE2BDC3F79A7042ED402856 /* Pods_ProjetoIntegrador.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjetoIntegrador.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E5B68C928464F6D00AF6A6C /* ConfiguracoesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracoesViewController.swift; sourceTree = "<group>"; };
@@ -193,6 +197,7 @@
 			children = (
 				161E92CA286BA143005EF165 /* FilmeEntityService.swift */,
 				FBEAD0A4287374AD00C9029D /* UserDefaultsService.swift */,
+				33F3FB30287FA1F700FC76C2 /* FireBaseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 				16753074283EB9F800D7CE3A /* Assets.xcassets */,
 				16753076283EB9F800D7CE3A /* LaunchScreen.storyboard */,
 				16753079283EB9F800D7CE3A /* Info.plist */,
+				33F3FB2E287F9F4100FC76C2 /* GoogleService-Info.plist */,
 				16753071283EB9F700D7CE3A /* ProjetoIntegrador.xcdatamodeld */,
 				169B6CDE2852D6D7006C44A5 /* AFazer.md */,
 			);
@@ -474,6 +480,7 @@
 				16753078283EB9F800D7CE3A /* LaunchScreen.storyboard in Resources */,
 				16753075283EB9F800D7CE3A /* Assets.xcassets in Resources */,
 				16753070283EB9F700D7CE3A /* Main.storyboard in Resources */,
+				33F3FB2F287F9F4100FC76C2 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,6 +641,7 @@
 				331CF45A284EDA3400A32933 /* ConfiguracaoTableViewCell.swift in Sources */,
 				5ECB49D12865349800F19206 /* Spoiler.swift in Sources */,
 				1675306B283EB9F700D7CE3A /* SceneDelegate.swift in Sources */,
+				33F3FB31287FA1F700FC76C2 /* FireBaseService.swift in Sources */,
 				EE53C4BB2851087B005DB3AC /* FavoritoViewModel.swift in Sources */,
 				EE3823B2287DE57400206A87 /* IndicacoesCollectionViewCell.swift in Sources */,
 				FBDBE28028443AC100C897A4 /*  ServicoDeUsuario.swift in Sources */,
@@ -825,6 +833,7 @@
 				DEVELOPMENT_TEAM = X26TH89CCX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ProjetoIntegrador/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Permissão para acessar a camera";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "Main Tela Cadastro";
@@ -854,6 +863,7 @@
 				DEVELOPMENT_TEAM = X26TH89CCX;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ProjetoIntegrador/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Permissão para acessar a camera";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "Main Tela Cadastro";

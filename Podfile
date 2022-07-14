@@ -7,6 +7,8 @@ target 'ProjetoIntegrador' do
 
   # Pods for ProjetoIntegrador
   pod 'ToastViewSwift'
+  pod 'FirebaseAuth'
+  pod 'GoogleSignIn'
 
   target 'ProjetoIntegradorTests' do
     inherit! :search_paths

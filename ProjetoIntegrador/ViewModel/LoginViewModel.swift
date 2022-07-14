@@ -6,6 +6,9 @@
 //
 
 import Foundation
+import FirebaseCore
+import GoogleSignIn
+import FirebaseAuth
 
 protocol LoginViewModelDelegate {
     func apresentaAlerta()
@@ -15,6 +18,8 @@ class LoginViewModel {
     
     var delegate: LoginViewModelDelegate?
     var usuarioEnviado: Usuario?
+    var fireBaseService = FireBaseService()
+    var usuarioGoogle: GIDGoogleUser?
     
     // função para conferir se o usuário existe na base
     func confereUsuario(usuarioDig: String?, senhaDigitada: String?) -> Bool {
@@ -36,6 +41,12 @@ class LoginViewModel {
             delegate?.segue()
         } else {
             delegate?.apresentaAlerta()
+        }
+    }
+    
+    func loginGoogle() {
+        fireBaseService.loginGoogle { usuario in
+            self.usuarioGoogle = usuario
         }
     }
 }

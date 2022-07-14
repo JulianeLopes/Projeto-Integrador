@@ -21,6 +21,15 @@ class LoginViewController: UIViewController {
         viewModel.delegate = self
     }
     
+    @IBAction func loginGoogleButtom(_ sender: Any) {
+        viewModel.loginGoogle()
+    }
+    
+    
+    @IBAction func loginFacebookButtom(_ sender: Any) {
+    }
+    
+    
 // quando o usuario clicar no botão de login ele é direcionado para a tela home
     @IBAction func loginAction(_ sender: Any) {
         viewModel.mudarDeTela(usuario: viewModel.confereUsuario(usuarioDig: usuarioTextField.text, senhaDigitada: senhaTextField.text))
