@@ -119,7 +119,6 @@
 		3357B1AA28442858007D611C /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		336A38CE2856916C00814CA3 /* FilmeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeViewModel.swift; sourceTree = "<group>"; };
 		336A38D02856987D00814CA3 /* DetalheDoFilmeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalheDoFilmeViewModel.swift; sourceTree = "<group>"; };
-		33F3FB2E287F9F4100FC76C2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		33F3FB30287FA1F700FC76C2 /* FireBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseService.swift; sourceTree = "<group>"; };
 		48ECC4ED4689C094A34A207C /* Pods-ProjetoIntegrador.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjetoIntegrador.release.xcconfig"; path = "Target Support Files/Pods-ProjetoIntegrador/Pods-ProjetoIntegrador.release.xcconfig"; sourceTree = "<group>"; };
 		4EE2BDC3F79A7042ED402856 /* Pods_ProjetoIntegrador.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjetoIntegrador.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,7 +205,6 @@
 		1675305C283EB9F700D7CE3A = {
 			isa = PBXGroup;
 			children = (
-				FB64D9292880E3FD00D7C509 /* GoogleService-Info.plist */,
 				161E92C9286BA12A005EF165 /* Services */,
 				161E92C8286B9E95005EF165 /* Entities */,
 				16753067283EB9F700D7CE3A /* ProjetoIntegrador */,
@@ -243,8 +241,8 @@
 				1629ED2A28417271009F9D2C /* Main Tela Cadastro.storyboard */,
 				16753074283EB9F800D7CE3A /* Assets.xcassets */,
 				16753076283EB9F800D7CE3A /* LaunchScreen.storyboard */,
+				FB64D9292880E3FD00D7C509 /* GoogleService-Info.plist */,
 				16753079283EB9F800D7CE3A /* Info.plist */,
-				33F3FB2E287F9F4100FC76C2 /* GoogleService-Info.plist */,
 				16753071283EB9F700D7CE3A /* ProjetoIntegrador.xcdatamodeld */,
 				169B6CDE2852D6D7006C44A5 /* AFazer.md */,
 			);
