@@ -9,6 +9,8 @@ import Foundation
 import FirebaseCore
 import GoogleSignIn
 import FirebaseAuth
+import FacebookCore
+import FacebookLogin
 
 protocol LoginViewModelDelegate {
     func apresentaAlerta()
@@ -49,6 +51,11 @@ class LoginViewModel {
             self.usuarioGoogle = usuario
         }
     }
+    
+    func tratarLoginFacebook(result: LoginManagerLoginResult?, error: Error?){
+            
+            fireBaseService.tratarLoginFacebook(result: result, error: error)
+        }
 }
 
 

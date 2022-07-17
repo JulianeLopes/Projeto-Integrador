@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import GoogleSignIn
+import FacebookLogin
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
@@ -19,10 +22,22 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
+        
+        
+        let loginButton = FBLoginButton(
+                    frame: .zero,
+                    permissions: [.publicProfile]
+                )
+        
+        loginButton.delegate = self
+        
+                loginButton.center = view.center
+                view.addSubview(loginButton)
     }
     
     @IBAction func loginGoogleButtom(_ sender: Any) {
         viewModel.loginGoogle(presenter: self)
+    
     }
     
     
@@ -52,5 +67,21 @@ extension LoginViewController: LoginViewModelDelegate {
     // se o usuario for encontrado é direcionado para a tela home
     func segue() {
         performSegue(withIdentifier: "appSegueIndentifier", sender: nil)
+    }
+}
+
+extension LoginViewController: LoginButtonDelegate {
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+        viewModel.tratarLoginFacebook(result: result, error: error)
+        }
+   
+    
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+          print("Error signing out: %@", signOutError)
+        }
     }
 }

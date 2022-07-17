@@ -10,6 +10,8 @@ import UIKit
 import FirebaseCore
 import GoogleSignIn
 import FirebaseAuth
+import FacebookCore
+import FacebookLogin
 
 class FireBaseService {
     
@@ -48,7 +50,32 @@ class FireBaseService {
         }
     }
     
- 
+    func tratarLoginFacebook(result: LoginManagerLoginResult?, error: Error?) {
+            switch result {
+                
+            case .none:
+                print("erro no login")
+            case .some(let loginResult):
+                guard let token = loginResult.token?.tokenString else {
+                    return
+                }
+                
+                let credential = pegarConfiguracaoFacebook(token: token)
+                salvarNoFireBase(com: credential)
+            }
+        }
+        func pegarConfiguracaoFacebook(token: String) -> AuthCredential {
+            return FacebookAuthProvider.credential(withAccessToken: token)
+        }
+        func salvarNoFireBase(com credential: AuthCredential){
+            Auth.auth().signIn(with: credential) { AuthResult, error in
+                if let error = error {
+                    print(error)
+                }
+                
+                return
+            }
+        }
     
 }
 
