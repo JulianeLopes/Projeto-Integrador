@@ -32,5 +32,23 @@
 			</array>
 		</dict>
 	</dict>
+    
+    
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+      <key>CFBundleURLSchemes</key>
+      <array>
+        <string>fb1540400086375038</string>
+      </array>
+      </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>1540400086375038</string>
+    <key>FacebookClientToken</key>
+    <string>b534b98169d5d437a0a7d1a22ef69261</string>
+    <key>FacebookDisplayName</key>
+    <string>APP Marvel</string>
+    
 </dict>
 </plist>
