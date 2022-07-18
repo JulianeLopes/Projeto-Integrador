@@ -5,22 +5,19 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>fb1540400086375038</string>
-			</array>
-		</dict>
-		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
-			<key>CFBundleURLSchemes</key>
-			<array>
 				<string>com.googleusercontent.apps.603857485806-18mo2dbt9kj1fppi90nuiun1k1pj1flu</string>
 			</array>
 		</dict>
 	</array>
+	<key>FacebookAppID</key>
+	<string>1540400086375038</string>
+	<key>FacebookClientToken</key>
+	<string>b534b98169d5d437a0a7d1a22ef69261</string>
+	<key>FacebookDisplayName</key>
+	<string>Marvel</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
