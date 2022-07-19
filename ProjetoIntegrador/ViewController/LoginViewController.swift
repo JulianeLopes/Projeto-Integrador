@@ -12,7 +12,6 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
-    
     @IBOutlet weak var usuarioTextField: UITextField!
     @IBOutlet weak var senhaTextField: UITextField!
     
@@ -22,7 +21,6 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        
         
         let loginButton = FBLoginButton(
                     frame: .zero,
