@@ -18,16 +18,18 @@ class LoginViewController: UIViewController {
     let service = ServicoDeUsuario()
     let viewModel = LoginViewModel()
   
+    let loginButton = FBLoginButton(
+                frame: .zero,
+                permissions: [.publicProfile]
+            )
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
         
-        let loginButton = FBLoginButton(
-                    frame: .zero,
-                    permissions: [.publicProfile]
-                )
         
-     //   loginButton.isHidden = true
+        
+        loginButton.isHidden = true
         
         loginButton.delegate = self
         
@@ -43,7 +45,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginFacebookButtom(_ sender: Any) {
         
-     //   loginButton.sendActions(for: .touchUpInside)
+        loginButton.sendActions(for: .touchUpInside)
     }
     
     
