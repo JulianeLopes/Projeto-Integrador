@@ -30,12 +30,22 @@ class ServiceCoreData {
         usuario.nivelDeFa = 0.0
         usuario.filmesentities = []
         usuario.filmesParaAssistir = []
+        if verificaUsuarioCoreData(usuario: usuario) {
+           return
+        }else {
         saveContext()
+        }
     }
     
     func fetchUsuario() throws -> [UsuarioEntities] {
         let usuarios = try context.fetch(UsuarioEntities.fetchRequest())
         return usuarios
+    }
+    
+    func verificaUsuarioCoreData(usuario: UsuarioEntities) -> Bool {
+        let usuarios = try! context.fetch(UsuarioEntities.fetchRequest())
+        let usuarioExiste = usuarios.contains(usuario)
+        return usuarioExiste
     }
     
 }
