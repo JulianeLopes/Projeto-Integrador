@@ -6,77 +6,82 @@
 //
 
 import UIKit
+import GoogleSignIn
+import FacebookLogin
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     
     
     @IBOutlet weak var usuarioTextField: UITextField!
-    
     @IBOutlet weak var senhaTextField: UITextField!
     
     let service = ServicoDeUsuario()
-    var usuarioEnviado: Usuario?
     let viewModel = LoginViewModel()
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
         
+        
+        let loginButton = FBLoginButton(
+                    frame: .zero,
+                    permissions: [.publicProfile]
+                )
+        
+        loginButton.delegate = self
+        
+                loginButton.center = view.center
+                view.addSubview(loginButton)
     }
     
-
+    @IBAction func loginGoogleButtom(_ sender: Any) {
+        viewModel.loginGoogle(presenter: self)
+    
+    }
+    
+    
+    @IBAction func loginFacebookButtom(_ sender: Any) {
+    }
+    
+    
+// quando o usuario clicar no botão de login ele é direcionado para a tela home
     @IBAction func loginAction(_ sender: Any) {
-        mudarDeTela(usuario: confereUsuario())
+        viewModel.mudarDeTela(usuario: viewModel.confereUsuario(usuarioDig: usuarioTextField.text, senhaDigitada: senhaTextField.text))
     }
-    
+// caso seja o primeiro acesso do usuário, ao clicar no botão "Não tem conta? Cadastre-se aqui" será direcionado a tela de cadastro
     @IBAction func cadastrarNovoUsuarioButton(_ sender: Any) {
         performSegue(withIdentifier: "novoCadastro", sender: nil)
     }
-    func apresentaAlerta() {
-        
+}
+
+// delegates para capiturar as ações do usuário na tela
+extension LoginViewController: LoginViewModelDelegate {
+    // apresenta alerta se o usuario não for encontrado na base
+    func apresentaAlerta(){
         let alerta = UIAlertController(title: "Usuário ou senha inválido", message: "Tente novamente", preferredStyle: UIAlertController.Style.alert)
-                
-                
                 let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
-                
                 alerta.addAction(ok)
-                
                 self.present(alerta, animated: true, completion: nil)
-        
     }
-
-
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? HomeViewController {
-            destination.usuarioEnviado = usuarioEnviado
-        }
-    }
-    
-    // conferir se o usuario existe
-    
-    func confereUsuario() -> Bool {
-        var isSameUsuario: Bool = false
-        let usuarioDig = usuarioTextField.text
-        let senhaDigitada = senhaTextField.text
-        
-        for usuario in service.listaDeUsuario{
-            if usuarioDig == usuario.email {
-                if senhaDigitada == usuario.senha {
-                      usuarioEnviado = usuario
-                    isSameUsuario = true
-                }
-            }
-        }
-        
-        return isSameUsuario
-    }
-        
-    func mudarDeTela(usuario: Bool){
-        if usuario == true {
-            performSegue(withIdentifier: "appSegueIndentifier", sender: usuarioEnviado)
-        } else {
-            
-            apresentaAlerta()
-        }
+    // se o usuario for encontrado é direcionado para a tela home
+    func segue() {
+        performSegue(withIdentifier: "appSegueIndentifier", sender: nil)
     }
 }
 
+extension LoginViewController: LoginButtonDelegate {
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+        viewModel.tratarLoginFacebook(result: result, error: error)
+        }
+   
+    
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+          print("Error signing out: %@", signOutError)
+        }
+    }
+}

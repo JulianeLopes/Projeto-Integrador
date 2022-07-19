@@ -6,45 +6,57 @@
 //
 
 import Foundation
+import FirebaseCore
+import GoogleSignIn
+import FirebaseAuth
+import FacebookCore
+import FacebookLogin
 
 protocol LoginViewModelDelegate {
-    func getDados()
+    func apresentaAlerta()
+    func segue()
 }
 class LoginViewModel {
     
     var delegate: LoginViewModelDelegate?
-    // pegar string ? da textfield e transformar para string concreta
+    var usuarioEnviado: Usuario?
+    var fireBaseService = FireBaseService()
+    var usuarioGoogle: GIDGoogleUser?
     
-    
-    func converteTextField(email: String?, senha: String?) -> Bool {
-        if let email = email, email != "" {
-            if email.contains("@"){
-                return true
-            }else {
-                return false
+    // função para conferir se o usuário existe na base
+    func confereUsuario(usuarioDig: String?, senhaDigitada: String?) -> Bool {
+        var isSameUsuario: Bool = false
+        
+        for usuario in ServicoDeUsuario.listaDeUsuario {
+            if usuarioDig == usuario.email && senhaDigitada == usuario.senha {
+                    usuarioEnviado = usuario
+                    isSameUsuario = true
             }
         }
-            if let senha = senha {
-                if senha.count == 6 {
-                    return true
-                } else {
-                    return false
-                }
-            }
-        
-        return false
+        return isSameUsuario
     }
+    
+    // se o usuário existe é direcionado para outra tela atraves do delegate
+    func mudarDeTela(usuario: Bool){
+        if usuario == true {
+            SessionManager.shared.usuarioLogado = usuarioEnviado
+            delegate?.segue()
+        } else {
+            delegate?.apresentaAlerta()
+        }
+    }
+    
+    func loginGoogle(presenter: UIViewController) {
+        fireBaseService.loginGoogle(presenter: presenter) { usuario in
+            self.usuarioGoogle = usuario
+        }
+    }
+    
+    func tratarLoginFacebook(result: LoginManagerLoginResult?, error: Error?){
+            
+            fireBaseService.tratarLoginFacebook(result: result, error: error)
+        }
 }
-
-
-
-
-
-
-// array usuario para testar e verificar se existe o usuario
-// se nao tiver aparecer borda vermelho
-// email tem que conter @
-// verificar se a senha contem 6 caracteres
 
 
 

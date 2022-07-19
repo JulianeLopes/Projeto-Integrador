@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="true" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="FilmesEntities" representedClassName="FilmesEntities" syncable="YES">
+        <attribute name="cover_url" optional="YES" attributeType="String"/>
+        <attribute name="directed_by" optional="YES" attributeType="String"/>
+        <attribute name="overview" optional="YES" attributeType="String"/>
+        <attribute name="phase" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="post_credit_scenes" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="release_date" optional="YES" attributeType="String"/>
+        <attribute name="saga" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="FilmesParaAssistir" representedClassName="FilmesParaAssistir" syncable="YES">
+        <attribute name="cover_url" optional="YES" attributeType="String"/>
+        <attribute name="directed_by" optional="YES" attributeType="String"/>
+        <attribute name="overview" optional="YES" attributeType="String"/>
+        <attribute name="phase" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="post_credit_scenes" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="release_date" optional="YES" attributeType="String"/>
+        <attribute name="saga" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="FilmesEntities" positionX="-63" positionY="-18" width="128" height="149"/>
+        <element name="FilmesParaAssistir" positionX="-63" positionY="45" width="128" height="149"/>
+    </elements>
 </model>

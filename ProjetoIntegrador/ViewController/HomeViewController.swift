@@ -10,44 +10,42 @@ import UIKit
 class HomeViewController: UIViewController {
     @IBOutlet weak var filmeDestaqueImage: UIImageView!
     @IBOutlet weak var nomeLabel: UILabel!
-    @IBOutlet weak var pesquisaTextField: UITextField!
     @IBOutlet weak var filmesDestaqueCollectionView: UICollectionView!
     
-    
     let viewModel = HomeViewModel()
-    var filmeDestaque: Filme?
-    var filmeProcurado: String?
-    var usuarioEnviado: Usuario?
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        filmeDestaque = Servico.filmeEmDestaque
+        viewModel.delegate = self
+        viewModel.getFilmesDaAPI {
+            DispatchQueue.main.async {
+                self.filmesDestaqueCollectionView.reloadData()
+            }
+        }
         filmesDestaqueCollectionView.dataSource = self
         filmesDestaqueCollectionView.delegate = self
-        filmeDestaqueImage.image = Servico.filmeEmDestaque.poster
-        filmeProcurado = ""
-        nomeLabel.text = "Ola, \(usuarioEnviado?.nome)"
+        configuraTela()
     }
     
+//visualizar os detalhes do filme selecionado
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detalhesVC = segue.destination as? FilmesDetalhesViewController {
-            detalhesVC.filmeDestaque = filmeDestaque
-        }
-        if let pesquisaVC = segue.destination as? PesquisaViewController {
-            pesquisaVC.filmeProcurado = filmeProcurado
+            detalhesVC.filmeDestaque = viewModel.getFilmeSelecionado()
+            detalhesVC.spoiler = viewModel.getSpoilerFilmeSelecionado()
         }
     }
     
+    //visualizar os detalhes do filme em destaque
     @IBAction func filmeDestaqueSaibaMais(_ sender: Any) {
-        filmeDestaque = Servico.filmeEmDestaque
-        performSegue(withIdentifier: "saibaMaisSegue", sender: filmeDestaque)
+        viewModel.aplicarFilmePadrao {
+            self.performSegue(withIdentifier: "saibaMaisSegue", sender: nil)
+        }
     }
     
-    @IBAction func pesquisaButton(_ sender: Any) {
-        filmeProcurado = pesquisaTextField.text
-        performSegue(withIdentifier: "procurarSegue", sender: filmeProcurado)
+    //demostra o nome do usuário logado e o cumprimenta e configura poster de filme em destaque
+    func configuraTela(){
+        viewModel.aplicarFilmePadrao{}
+        nomeLabel.text = "Olá, \(viewModel.getNomeUsuario())"
     }
-    
 }
 
 extension HomeViewController: UICollectionViewDataSource {
@@ -56,22 +54,27 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        let filme = Servico.listaDeFilmeEmDestaques[indexPath.item]
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "destaquesCell", for: indexPath) as? FilmesEmDestaquesCollectionViewCell
-        cell?.configuraCelula(filme)
         
+        let cellViewModel = viewModel.getCellViewModel(posicao: indexPath.row)
+        
+        cell?.configuraCelula(viewModel: cellViewModel)
         return cell ?? UICollectionViewCell()
     }
 }
 
+
+// segue para tela de detalhes do filme em mvvm - OBS: usamos o nil no sender pois temos dois locais de perform segue com listas diferentes de filmes nessa tela
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let filme = Servico.listaDeFilmeEmDestaques[indexPath.item]
-        
-        filmeDestaque = filme
-        
-        performSegue(withIdentifier: "saibaMaisSegue", sender: filmeDestaque)
-        
+        viewModel.selecionarFilme(posicao: indexPath.row)
+        performSegue(withIdentifier: "saibaMaisSegue", sender: nil)
     }
+}
+
+extension HomeViewController: HomeViewModelDelegate {
+    func configuraPosterFilmeDestaque(imagem: UIImage) {
+        filmeDestaqueImage.image = imagem
+    }
+
 }

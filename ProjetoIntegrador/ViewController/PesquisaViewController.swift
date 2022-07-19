@@ -8,58 +8,70 @@
 import UIKit
 
 class PesquisaViewController: UIViewController {
-    var filmeProcurado: String?
+
     
     @IBOutlet weak var pesquisaTextField: UITextField!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var listaDeFilme: [Filme] = []
-    var filmeSelecionado: Filme?
+    let viewModel = PesquisaViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
         collectionView.dataSource = self
         collectionView.delegate = self
-       
-        listaDeFilme = Servico.listaDeFilmes
-    }
-    
-    @IBAction func buscarAction(_ sender: Any) {
-        let resultado = Servico.listaDeFilmes.filter ({ filme in
-            return filme.titulo.lowercased().contains(pesquisaTextField.text?.lowercased() ?? "")
-        })
-        if pesquisaTextField.hasText{
-            listaDeFilme = resultado
-        } else {
-            listaDeFilme = Servico.listaDeFilmes
+        
+        viewModel.getFilmesDaAPI {
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+            }
         }
-        collectionView.reloadData()
+        
     }
+    // ação de pesquisar dinamicamente, conforme a ação do usuario
+    @IBAction func buscarAction(_ sender: Any) {
+        viewModel.pesquisarFilme(filmePesquisado: pesquisaTextField.text)
+
+    }
+    // transição de dados entre telas em MVVM
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let detalheVC = segue.destination as? FilmesDetalhesViewController {
-            detalheVC.filmeDestaque = filmeSelecionado
+            detalheVC.filmeDestaque = viewModel.getFilmeSelecionado()
+            detalheVC.spoiler = viewModel.getSpoiler()
         }
     }
 }
-
+// ação de selecionar o filme em MVVM
 extension PesquisaViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        filmeSelecionado = listaDeFilme[indexPath.item]
-        performSegue(withIdentifier: "detalhesCell", sender: filmeSelecionado)
+        viewModel.selecionarFilme(posicao: indexPath.row)
+        performSegue(withIdentifier: "detalhesCell", sender: nil)
     }
 }
 
 extension PesquisaViewController: UICollectionViewDataSource{
+    // quantidade de itens na lista - funcionando dinamicamente conforme a pesquisa do usuario
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return listaDeFilme.count
+        return viewModel.listaDeFilme.count
     }
     
+    // celula customizada em MVVM
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let celula = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as? PesquisaCollectionViewCell
         
-        celula?.configuraCelula(filme: listaDeFilme[indexPath.item])
+        let celulaViewModel = viewModel.getCellViewModel(posicao: indexPath.row)
+        
+        celula?.configuraCelula(viewModel: celulaViewModel)
         
         return  celula ?? UICollectionViewCell()
     }
    
+}
+
+extension PesquisaViewController: PesquisaViewModelDelegate {
+    func atualizalista() {
+        DispatchQueue.main.async {
+            self.collectionView.reloadData()
+        }
+    }
 }

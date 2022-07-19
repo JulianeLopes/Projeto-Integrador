@@ -12,29 +12,35 @@ class NovoUsuarioViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var senhaTextField: UITextField!
     
-    let service = ServicoDeUsuario()
-    var novoUsuarioCriado: Usuario = Usuario(nome: "", email: "", senha: "", foto: "", nivelDeFa: 0.0, filmesFavoritos: [])
+    let viewModel = NovoUsuarioViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        viewModel.delegate = self
     }
     
+    // cadastrar usuario
     @IBAction func cadastrarButton(_ sender: Any) {
-        service.listaDeUsuario.append(novoUsuario())
+       viewModel.adicionaUsuario(nome: nomeTextField.text, email: emailTextField.text, senha: senhaTextField.text)
+    }
+}
+
+// capta todas as acoes do usuario na tela
+extension NovoUsuarioViewController: NovoUsuarioViewModelDelegate {
+    //  cadastro efetuado corretamente e redireciona para a tela de login
+    func cadastroEfetuado() {
         dismiss(animated: true) {
-            self.performSegue(withIdentifier: "voltarIndetifier", sender: nil)
+            self.performSegue(withIdentifier: "voltarIdentifier", sender: self.viewModel.novoUsuarioCriado)
         }
     }
     
-    func novoUsuario() -> Usuario {
-        if let nome = nomeTextField.text, let email = emailTextField.text, let senha = senhaTextField.text {
-            
-            novoUsuarioCriado = Usuario(nome: nome, email: email, senha: senha, foto: "", nivelDeFa: 0.0, filmesFavoritos: [])
-            
-            return novoUsuarioCriado
-        }
-        return novoUsuarioCriado
+    // alerta de dados incorretos
+    func alertaDadosDeCadastroIncorretos() {
+        let alerta = UIAlertController(title: "Dados Incorretos", message: "Insira um email válido e uma senha de 6 caracteres", preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        
+        alerta.addAction(ok)
+        present(alerta, animated: true)
     }
-    
 }
