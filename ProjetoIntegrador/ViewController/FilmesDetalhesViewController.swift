@@ -60,6 +60,8 @@ class FilmesDetalhesViewController: UIViewController {
         viewModel.getFilmesAssistidosButtonTitle()
         viewModel.getFilmesParaAssistirButtonTitle()
         viewModel.loadFilmesAssistidos()
+        viewModel.loadAvaliados()
+        viewModel.getAvaliacao()
         
         //indicação
         indicacaoFilmesCollectionView.dataSource = self
@@ -85,7 +87,6 @@ class FilmesDetalhesViewController: UIViewController {
 
         viewModel.favorita(filme: filmeDestaque)
         viewModel.getFavoritoButtonTitle()
-        // melhorar layout
         
     }
     
@@ -125,45 +126,25 @@ class FilmesDetalhesViewController: UIViewController {
     }
     
     @IBAction func pintarPrimeiraEstrela(_ sender: Any) {
-        estrelaUmButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        estrelaDoisButton.setImage(UIImage(systemName: "star"), for: .normal)
-        estrelaTresButton.setImage(UIImage(systemName: "star"), for: .normal)
-        estrelaQuatroButton.setImage(UIImage(systemName: "star"), for: .normal)
-        estrelaCincoButton.setImage(UIImage(systemName: "star"), for: .normal)
+        viewModel.avaliaFilme(filme: filmeDestaque, avaliacao: 1)
         
     }
     
     @IBAction func pintarSegundaEstrela(_ sender: Any) {
-        estrelaUmButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        estrelaDoisButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        estrelaTresButton.setImage(UIImage(systemName: "star"), for: .normal)
-        estrelaQuatroButton.setImage(UIImage(systemName: "star"), for: .normal)
-        estrelaCincoButton.setImage(UIImage(systemName: "star"), for: .normal)
+        viewModel.avaliaFilme(filme: filmeDestaque, avaliacao: 2)
     }
     
     @IBAction func pintarTerceiraEstrela(_ sender: Any) {
-        estrelaUmButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        estrelaDoisButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        estrelaTresButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        estrelaQuatroButton.setImage(UIImage(systemName: "star"), for: .normal)
-        estrelaCincoButton.setImage(UIImage(systemName: "star"), for: .normal)
+        viewModel.avaliaFilme(filme: filmeDestaque, avaliacao: 3)
         
     }
     
     @IBAction func pintarQuartaEstrela(_ sender: Any) {
-        estrelaUmButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        estrelaDoisButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        estrelaTresButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        estrelaQuatroButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        estrelaCincoButton.setImage(UIImage(systemName: "star"), for: .normal)
+        viewModel.avaliaFilme(filme: filmeDestaque, avaliacao: 4)
     }
     
     @IBAction func pintarQuintaEstrela(_ sender: Any) {
-        estrelaUmButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        estrelaDoisButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        estrelaTresButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        estrelaQuatroButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
-        estrelaCincoButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        viewModel.avaliaFilme(filme: filmeDestaque, avaliacao: 5)
     }
     
     
@@ -187,6 +168,54 @@ extension FilmesDetalhesViewController: UICollectionViewDataSource {
 }
 
 extension FilmesDetalhesViewController: FilmesViewModelDelegate {
+    func avaliaFilmeZero() {
+        estrelaUmButton.setImage(UIImage(systemName: "star"), for: .normal)
+        estrelaDoisButton.setImage(UIImage(systemName: "star"), for: .normal)
+        estrelaTresButton.setImage(UIImage(systemName: "star"), for: .normal)
+        estrelaQuatroButton.setImage(UIImage(systemName: "star"), for: .normal)
+        estrelaCincoButton.setImage(UIImage(systemName: "star"), for: .normal)
+    }
+    
+    func avaliaFilmeUm() {
+        estrelaUmButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaDoisButton.setImage(UIImage(systemName: "star"), for: .normal)
+        estrelaTresButton.setImage(UIImage(systemName: "star"), for: .normal)
+        estrelaQuatroButton.setImage(UIImage(systemName: "star"), for: .normal)
+        estrelaCincoButton.setImage(UIImage(systemName: "star"), for: .normal)
+    }
+    
+    func avaliaFilmeDois() {
+        estrelaUmButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaDoisButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaTresButton.setImage(UIImage(systemName: "star"), for: .normal)
+        estrelaQuatroButton.setImage(UIImage(systemName: "star"), for: .normal)
+        estrelaCincoButton.setImage(UIImage(systemName: "star"), for: .normal)
+    }
+    
+    func avaliaFilmeTres() {
+        estrelaUmButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaDoisButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaTresButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaQuatroButton.setImage(UIImage(systemName: "star"), for: .normal)
+        estrelaCincoButton.setImage(UIImage(systemName: "star"), for: .normal)
+    }
+    
+    func avaliaFilmeQuatro() {
+        estrelaUmButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaDoisButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaTresButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaQuatroButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaCincoButton.setImage(UIImage(systemName: "star"), for: .normal)
+    }
+    
+    func avaliaFilmeCinco() {
+        estrelaUmButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaDoisButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaTresButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaQuatroButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+        estrelaCincoButton.setImage(UIImage(systemName: "star.fill"), for: .normal)
+    }
+    
     func snackBarDesfavoritado() {
         let toast = Toast.default(
             image: UIImage(systemName: "heart")!,

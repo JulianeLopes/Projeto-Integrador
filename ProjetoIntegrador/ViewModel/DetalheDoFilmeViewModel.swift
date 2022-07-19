@@ -20,6 +20,12 @@ protocol FilmesViewModelDelegate {
     func snackBarAssistido()
     func snackBarAssistirMaisTarde()
     func snackBarFilmeAssistido()
+    func avaliaFilmeZero()
+    func avaliaFilmeUm()
+    func avaliaFilmeDois()
+    func avaliaFilmeTres()
+    func avaliaFilmeQuatro()
+    func avaliaFilmeCinco()
 }
 
 
@@ -30,6 +36,7 @@ class DetalheDoFilmeViewModel {
     var listaDeFilmesAssistidos: [String] = []
     var listaParaAssistirMaisTarde: [Filme] = []
     var listaDeFilmesApi: [Filme] = []
+    var listaDeFilmesAvaliados: [String: Int] = [:]
     var servicoUserDefault = UserDefaultsService.shared
     private let filmeEntityService = FilmeEntityService()
     
@@ -241,5 +248,57 @@ class DetalheDoFilmeViewModel {
         return cellViewModel
     }
 
+    //MARK: - avaliação de filmes salvando no userdefaults
+    
+    var avaliados: [String: Int]{
+        return servicoUserDefault.loadAvaliacao()
+    }
+    
+    var foiAvaliado: Bool {
+        listaDeFilmesAvaliados.contains { (titulo, avaliacao) in
+            filme?.title == titulo
+        }
+    }
+    
+    func loadAvaliados(){
+        listaDeFilmesAvaliados = servicoUserDefault.loadAvaliacao()
+    }
+    
+    
+    func avaliaFilme(filme: Filme?, avaliacao: Int) {
+        guard let filme = filme else { return }
+        
+        servicoUserDefault.addNovaAvaliacao(titulo: filme.title!, avaliacao: avaliacao)
+        getButtonAvalicao(avaliacao: avaliacao)
+    }
+    
+    func getButtonAvalicao(avaliacao: Int){
+        switch avaliacao {
+        case 0:
+            delegate?.avaliaFilmeZero()
+        case 1:
+            delegate?.avaliaFilmeUm()
+        case 2:
+            delegate?.avaliaFilmeDois()
+        case 3:
+            delegate?.avaliaFilmeTres()
+        case 4:
+            delegate?.avaliaFilmeQuatro()
+        case 5:
+            delegate?.avaliaFilmeCinco()
+        default:
+            break
+        }
+    }
+    
+    func getAvaliacao(){
+        guard let filme = filme else { return }
+
+        let avaliado = listaDeFilmesAvaliados.first { $0.key.contains(filme.title!)
+        }
+        guard let avaliado = avaliado else { return }
+
+        getButtonAvalicao(avaliacao: avaliado.value)
+    }
 
 }

@@ -16,8 +16,16 @@ class UserDefaultsService {
         userDefaults.object(forKey: "tituloFilmes") as? [String] ?? []
     }
     
+    private var avaliacaoFilmes: [String: Int]{
+        userDefaults.object(forKey: "avaliacaoFilmes") as? [String: Int] ?? [:]
+    }
+    
     func loadDefaults() -> [String]{
         return titulosFilmes
+    }
+    
+    func loadAvaliacao() -> [String: Int]{
+        return avaliacaoFilmes
     }
     
     func addNovoNome(_ titulo: String){
@@ -31,6 +39,12 @@ class UserDefaultsService {
             filmes.append(titulo)
             userDefaults.set(filmes, forKey: "tituloFilmes")
         }
+    }
+    
+    func addNovaAvaliacao(titulo: String, avaliacao: Int){
+        var avaliacoes = avaliacaoFilmes
+        avaliacoes[titulo] = avaliacao
+        userDefaults.set(avaliacoes, forKey: "avaliacaoFilmes")
     }
     
     func remove(row: Int){
