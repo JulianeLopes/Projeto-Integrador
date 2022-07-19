@@ -22,6 +22,7 @@ class LoginViewModel {
     var usuarioEnviado: Usuario?
     var fireBaseService = FireBaseService()
     var usuarioGoogle: GIDGoogleUser?
+    var servicoCoreData = ServiceCoreData()
     
     // função para conferir se o usuário existe na base
     func confereUsuario(usuarioDig: String?, senhaDigitada: String?) -> Bool {
@@ -66,9 +67,25 @@ class LoginViewModel {
                     self.delegate?.apresentaAlerta()
                 } else {
                     self.delegate?.segue()
+                    self.getUsuario(email: email, password: password)
                 }
             }
         }
+    
+    private var usuarios: [UsuarioEntities] {
+        try! servicoCoreData.fetchUsuario()
+    }
+    
+    func getUsuario(email: String, password: String) -> UsuarioEntities? {
+        if let usuario = usuarios.first(where: {
+            return $0.email == email && $0.senha == password
+        }) {
+            return usuario
+        }
+        return nil
+    }
+    
+    
     
 }
 

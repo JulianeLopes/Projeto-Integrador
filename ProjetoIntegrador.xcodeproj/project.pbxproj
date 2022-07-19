@@ -39,10 +39,13 @@
 		54BC2B22D649BB6C83821C3C /* Pods_ProjetoIntegradorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A283DAF1B45491C38FBBCEE /* Pods_ProjetoIntegradorTests.framework */; };
 		5947F00A7D8BEEC0CBED7425 /* Pods_ProjetoIntegrador_ProjetoIntegradorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F53FC665A2528476EA2994BE /* Pods_ProjetoIntegrador_ProjetoIntegradorUITests.framework */; };
 		5DA412CD8E1121E64E8A3425 /* Pods_ProjetoIntegrador.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE2BDC3F79A7042ED402856 /* Pods_ProjetoIntegrador.framework */; };
+		5E2BD6DC28875A3A00558557 /* ServiceCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2BD6DB28875A3A00558557 /* ServiceCoreData.swift */; };
 		5E5B68CA28464F6D00AF6A6C /* ConfiguracoesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B68C928464F6D00AF6A6C /* ConfiguracoesViewController.swift */; };
 		5E5B68CC2846519800AF6A6C /* DadosPessoaisViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B68CB2846519800AF6A6C /* DadosPessoaisViewController.swift */; };
 		5E8A070028593BD900F09A5D /* MovieAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8A06FF28593BD900F09A5D /* MovieAPI.swift */; };
 		5EABB816285011EC00250EF6 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EABB815285011EC00250EF6 /* SessionManager.swift */; };
+		5EC5866528874F5C00F03204 /* UsuarioEntities+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC5866428874F5C00F03204 /* UsuarioEntities+CoreDataProperties.swift */; };
+		5EC586672887500400F03204 /* UsuarioEntities+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC586662887500400F03204 /* UsuarioEntities+CoreDataClass.swift */; };
 		5ECB49D12865349800F19206 /* Spoiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB49D02865349800F19206 /* Spoiler.swift */; };
 		5ECB49D32865361E00F19206 /* ServicoDeSpoiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB49D22865361E00F19206 /* ServicoDeSpoiler.swift */; };
 		EE1020A12852A94900D39141 /* NovoUsuarioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1020A02852A94900D39141 /* NovoUsuarioViewModel.swift */; };
@@ -122,10 +125,13 @@
 		33F3FB30287FA1F700FC76C2 /* FireBaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FireBaseService.swift; sourceTree = "<group>"; };
 		48ECC4ED4689C094A34A207C /* Pods-ProjetoIntegrador.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjetoIntegrador.release.xcconfig"; path = "Target Support Files/Pods-ProjetoIntegrador/Pods-ProjetoIntegrador.release.xcconfig"; sourceTree = "<group>"; };
 		4EE2BDC3F79A7042ED402856 /* Pods_ProjetoIntegrador.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjetoIntegrador.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E2BD6DB28875A3A00558557 /* ServiceCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceCoreData.swift; sourceTree = "<group>"; };
 		5E5B68C928464F6D00AF6A6C /* ConfiguracoesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracoesViewController.swift; sourceTree = "<group>"; };
 		5E5B68CB2846519800AF6A6C /* DadosPessoaisViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadosPessoaisViewController.swift; sourceTree = "<group>"; };
 		5E8A06FF28593BD900F09A5D /* MovieAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPI.swift; sourceTree = "<group>"; };
 		5EABB815285011EC00250EF6 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		5EC5866428874F5C00F03204 /* UsuarioEntities+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UsuarioEntities+CoreDataProperties.swift"; path = "/Users/Macbook/Projeto-Integrador/Entities/UsuarioEntities+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		5EC586662887500400F03204 /* UsuarioEntities+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UsuarioEntities+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5ECB49D02865349800F19206 /* Spoiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spoiler.swift; sourceTree = "<group>"; };
 		5ECB49D22865361E00F19206 /* ServicoDeSpoiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicoDeSpoiler.swift; sourceTree = "<group>"; };
 		683884787664D271617361E1 /* Pods-ProjetoIntegrador.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjetoIntegrador.debug.xcconfig"; path = "Target Support Files/Pods-ProjetoIntegrador/Pods-ProjetoIntegrador.debug.xcconfig"; sourceTree = "<group>"; };
@@ -184,6 +190,8 @@
 		161E92C8286B9E95005EF165 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				5EC586662887500400F03204 /* UsuarioEntities+CoreDataClass.swift */,
+				5EC5866428874F5C00F03204 /* UsuarioEntities+CoreDataProperties.swift */,
 				1F6FABDA286FD23500F7E7D1 /* FilmesParaAssistir+CoreDataClass.swift */,
 				1F6FABDB286FD23500F7E7D1 /* FilmesParaAssistir+CoreDataProperties.swift */,
 				161E92C4286B9DEB005EF165 /* FilmesEntities+CoreDataClass.swift */,
@@ -198,6 +206,7 @@
 				161E92CA286BA143005EF165 /* FilmeEntityService.swift */,
 				FBEAD0A4287374AD00C9029D /* UserDefaultsService.swift */,
 				33F3FB30287FA1F700FC76C2 /* FireBaseService.swift */,
+				5E2BD6DB28875A3A00558557 /* ServiceCoreData.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -612,9 +621,11 @@
 				16D749EB284981F200ECD9DB /* LoginViewController.swift in Sources */,
 				16753073283EB9F700D7CE3A /* ProjetoIntegrador.xcdatamodeld in Sources */,
 				16D749ED2849829400ECD9DB /* LoginViewModel.swift in Sources */,
+				5E2BD6DC28875A3A00558557 /* ServiceCoreData.swift in Sources */,
 				5E5B68CA28464F6D00AF6A6C /* ConfiguracoesViewController.swift in Sources */,
 				336A38CF2856916C00814CA3 /* FilmeViewModel.swift in Sources */,
 				EE2D484B284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift in Sources */,
+				5EC586672887500400F03204 /* UsuarioEntities+CoreDataClass.swift in Sources */,
 				5EABB816285011EC00250EF6 /* SessionManager.swift in Sources */,
 				EE118C382844E6D6005852F7 /* PesquisaViewController.swift in Sources */,
 				EE118C3628446054005852F7 /* FilmesDetalhesViewController.swift in Sources */,
@@ -643,6 +654,7 @@
 				1675306B283EB9F700D7CE3A /* SceneDelegate.swift in Sources */,
 				33F3FB31287FA1F700FC76C2 /* FireBaseService.swift in Sources */,
 				EE53C4BB2851087B005DB3AC /* FavoritoViewModel.swift in Sources */,
+				5EC5866528874F5C00F03204 /* UsuarioEntities+CoreDataProperties.swift in Sources */,
 				EE3823B2287DE57400206A87 /* IndicacoesCollectionViewCell.swift in Sources */,
 				FBDBE28028443AC100C897A4 /*  ServicoDeUsuario.swift in Sources */,
 				FBDBE28228443D7B00C897A4 /* Fanzometro.swift in Sources */,

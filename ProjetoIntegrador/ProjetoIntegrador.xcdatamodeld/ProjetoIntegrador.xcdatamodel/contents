@@ -9,6 +9,7 @@
         <attribute name="release_date" optional="YES" attributeType="String"/>
         <attribute name="saga" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="parenteUsuario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UsuarioEntities" inverseName="filmesentities" inverseEntity="UsuarioEntities"/>
     </entity>
     <entity name="FilmesParaAssistir" representedClassName="FilmesParaAssistir" syncable="YES">
         <attribute name="cover_url" optional="YES" attributeType="String"/>
@@ -19,9 +20,20 @@
         <attribute name="release_date" optional="YES" attributeType="String"/>
         <attribute name="saga" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="parenteUsuario" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UsuarioEntities" inverseName="filmesParaAssistir" inverseEntity="UsuarioEntities"/>
+    </entity>
+    <entity name="UsuarioEntities" representedClassName="UsuarioEntities" syncable="YES">
+        <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="foto" optional="YES" attributeType="String"/>
+        <attribute name="nivelDeFa" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <attribute name="senha" optional="YES" attributeType="String"/>
+        <relationship name="filmesentities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FilmesEntities" inverseName="parenteUsuario" inverseEntity="FilmesEntities"/>
+        <relationship name="filmesParaAssistir" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FilmesParaAssistir" inverseName="parenteUsuario" inverseEntity="FilmesParaAssistir"/>
     </entity>
     <elements>
-        <element name="FilmesEntities" positionX="-63" positionY="-18" width="128" height="149"/>
-        <element name="FilmesParaAssistir" positionX="-63" positionY="45" width="128" height="149"/>
+        <element name="FilmesEntities" positionX="-63" positionY="-18" width="128" height="164"/>
+        <element name="FilmesParaAssistir" positionX="-63" positionY="45" width="128" height="164"/>
+        <element name="UsuarioEntities" positionX="-63" positionY="72" width="128" height="134"/>
     </elements>
 </model>

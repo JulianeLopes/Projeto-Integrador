@@ -24,6 +24,7 @@ extension FilmesEntities {
     @NSManaged public var phase: Int16
     @NSManaged public var saga: String?
     @NSManaged public var post_credit_scenes: Int16
+    @NSManaged public var parenteUsuario: UsuarioEntities?
     
     convenience init(filme: Filme, context: NSManagedObjectContext) {
         self.init(context: context)
@@ -38,7 +39,11 @@ extension FilmesEntities {
         
         
     }
+    public var wrappedTitle: String{
+        title ?? ""
+    }
 
+    
 }
 
 extension FilmesEntities : Identifiable {

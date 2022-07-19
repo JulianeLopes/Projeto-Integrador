@@ -27,6 +27,8 @@ class LoginViewController: UIViewController {
                     permissions: [.publicProfile]
                 )
         
+     //   loginButton.isHidden = true
+        
         loginButton.delegate = self
         
                 loginButton.center = view.center
@@ -40,6 +42,8 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func loginFacebookButtom(_ sender: Any) {
+        
+     //   loginButton.sendActions(for: .touchUpInside)
     }
     
     

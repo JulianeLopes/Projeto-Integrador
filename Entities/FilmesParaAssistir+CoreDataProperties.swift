@@ -24,6 +24,7 @@ extension FilmesParaAssistir {
     @NSManaged public var overview: String?
     @NSManaged public var directed_by: String?
     @NSManaged public var cover_url: String?
+    @NSManaged public var parenteUsuario: UsuarioEntities?
 
     convenience init(filme: Filme, context: NSManagedObjectContext) {
         self.init(context: context)
@@ -37,6 +38,10 @@ extension FilmesParaAssistir {
         self.post_credit_scenes = Int16(filme.post_credit_scenes ?? 0)
         
         
+    }
+    
+    public var wrappedTitle: String{
+        title ?? ""
     }
 
 }

@@ -16,7 +16,8 @@ protocol NovoUsuarioViewModelDelegate {
 }
 
 class NovoUsuarioViewModel {
-   var delegate: NovoUsuarioViewModelDelegate?
+    var delegate: NovoUsuarioViewModelDelegate?
+    var serviceCoreData: ServiceCoreData = .init()
     
     // criando um usuário universal vazio para preencher
     var novoUsuarioCriado: Usuario = Usuario(nome: "", email: "", senha: "", foto: "", nivelDeFa: 0.0, filmesFavoritos: [])
@@ -40,14 +41,14 @@ class NovoUsuarioViewModel {
         ServicoDeUsuario.listaDeUsuario.append(novoUsuario(nome: nome, email: email, senha: senha))
     }
     
-    func registrarUsuario(email: String?, senha: String?){
-            guard let email = email, let senha = senha else { return }
+    func registrarUsuario(email: String?, senha: String?, nome: String?){
+            guard let email = email, let senha = senha, let nome = nome else { return }
             Auth.auth().createUser(withEmail: email, password: senha) { authResult, error in
                 
                 if let error = error {
                     print(error.localizedDescription)
                 } else {
-                    
+                    self.serviceCoreData.saveUsuario(nome: nome, email: email, foto: "")
                     self.delegate?.usuarioCadastrado()
                 }
                 
