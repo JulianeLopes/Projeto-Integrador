@@ -8,7 +8,6 @@ tela conta - manual de fanzometro
 perguntar no colearning: 
 
 scroll view no fanzometro
-estrelinhas do filme
 
 spoiler - usando closure para consumir dados do firebase futuramente 
 
