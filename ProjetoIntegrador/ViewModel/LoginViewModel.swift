@@ -56,6 +56,20 @@ class LoginViewModel {
             
             fireBaseService.tratarLoginFacebook(result: result, error: error)
         }
+    
+    func verifyUser(email: String?, password: String?){
+            guard let email = email, let password = password else { return }
+            
+            Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+                if let error = error {
+                    print(error.localizedDescription)
+                    self.delegate?.apresentaAlerta()
+                } else {
+                    self.delegate?.segue()
+                }
+            }
+        }
+    
 }
 
 

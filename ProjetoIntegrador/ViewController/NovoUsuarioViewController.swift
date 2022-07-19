@@ -21,12 +21,16 @@ class NovoUsuarioViewController: UIViewController {
     
     // cadastrar usuario
     @IBAction func cadastrarButton(_ sender: Any) {
-       viewModel.adicionaUsuario(nome: nomeTextField.text, email: emailTextField.text, senha: senhaTextField.text)
+        viewModel.registrarUsuario(email: emailTextField.text, senha: senhaTextField.text)
     }
 }
 
 // capta todas as acoes do usuario na tela
 extension NovoUsuarioViewController: NovoUsuarioViewModelDelegate {
+    func usuarioCadastrado() {
+        performSegue(withIdentifier: "usuarioCadastradoSegue", sender: nil)
+    }
+    
     //  cadastro efetuado corretamente e redireciona para a tela de login
     func cadastroEfetuado() {
         dismiss(animated: true) {

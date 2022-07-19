@@ -45,7 +45,7 @@ class LoginViewController: UIViewController {
     
 // quando o usuario clicar no botão de login ele é direcionado para a tela home
     @IBAction func loginAction(_ sender: Any) {
-        viewModel.mudarDeTela(usuario: viewModel.confereUsuario(usuarioDig: usuarioTextField.text, senhaDigitada: senhaTextField.text))
+        viewModel.verifyUser(email: usuarioTextField.text, password: senhaTextField.text)
     }
 // caso seja o primeiro acesso do usuário, ao clicar no botão "Não tem conta? Cadastre-se aqui" será direcionado a tela de cadastro
     @IBAction func cadastrarNovoUsuarioButton(_ sender: Any) {

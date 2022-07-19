@@ -216,6 +216,7 @@
                         <outlet property="nomeTextField" destination="jnB-zI-qDf" id="kwL-hk-AL4"/>
                         <outlet property="senhaTextField" destination="CcD-1O-00D" id="IHK-pO-gFv"/>
                         <segue destination="cMu-Lh-r6K" kind="show" identifier="voltarIdentifier" id="rra-xs-p7Q"/>
+                        <segue destination="GSi-nI-jT9" kind="show" identifier="usuarioCadastradoSegue" id="jrX-Oa-T5G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5p-lD-6aB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -258,7 +259,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vOh-dE-qSS"/>
+        <segue reference="jrX-Oa-T5G"/>
         <segue reference="rra-xs-p7Q"/>
     </inferredMetricsTieBreakers>
     <resources>

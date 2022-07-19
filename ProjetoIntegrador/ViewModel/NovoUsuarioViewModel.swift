@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 protocol NovoUsuarioViewModelDelegate {
     func alertaDadosDeCadastroIncorretos()
     func cadastroEfetuado()
+    func usuarioCadastrado()
     
 }
 
@@ -37,4 +39,20 @@ class NovoUsuarioViewModel {
     func adicionaUsuario(nome: String?, email: String?, senha: String?){
         ServicoDeUsuario.listaDeUsuario.append(novoUsuario(nome: nome, email: email, senha: senha))
     }
+    
+    func registrarUsuario(email: String?, senha: String?){
+            guard let email = email, let senha = senha else { return }
+            Auth.auth().createUser(withEmail: email, password: senha) { authResult, error in
+                
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    
+                    self.delegate?.usuarioCadastrado()
+                }
+                
+                
+                
+            }
+        }
  }
