@@ -29,7 +29,7 @@
         <attribute name="nome" optional="YES" attributeType="String"/>
         <attribute name="senha" optional="YES" attributeType="String"/>
         <relationship name="filmesentities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FilmesEntities" inverseName="parenteUsuario" inverseEntity="FilmesEntities"/>
-        <relationship name="filmesParaAssistir" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FilmesParaAssistir" inverseName="parenteUsuario" inverseEntity="FilmesParaAssistir"/>
+        <relationship name="filmesParaAssistir" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FilmesParaAssistir" inverseName="parenteUsuario" inverseEntity="FilmesParaAssistir"/>
     </entity>
     <elements>
         <element name="FilmesEntities" positionX="-63" positionY="-18" width="128" height="164"/>

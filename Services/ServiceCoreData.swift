@@ -23,17 +23,18 @@ class ServiceCoreData {
     }
     
     func saveUsuario(nome: String, email: String, foto: String?) {
-        let usuario = UsuarioEntities(context: context)
-        usuario.nome = nome
-        usuario.email = email
-        usuario.foto = foto
-        usuario.nivelDeFa = 0.0
-        usuario.filmesentities = []
-        usuario.filmesParaAssistir = []
-        if verificaUsuarioCoreData(usuario: usuario) {
+
+        if verificaUsuarioCoreData(nome: nome, email: email) {
            return
         }else {
-        saveContext()
+            let usuario = UsuarioEntities(context: context)
+            usuario.nome = nome
+            usuario.email = email
+            usuario.foto = foto
+            usuario.nivelDeFa = 0.0
+            usuario.filmesentities = []
+            usuario.filmesParaAssistir = []
+            saveContext()
         }
     }
     
@@ -42,9 +43,11 @@ class ServiceCoreData {
         return usuarios
     }
     
-    func verificaUsuarioCoreData(usuario: UsuarioEntities) -> Bool {
+    func verificaUsuarioCoreData(nome: String, email: String) -> Bool {
         let usuarios = try! context.fetch(UsuarioEntities.fetchRequest())
-        let usuarioExiste = usuarios.contains(usuario)
+        let usuarioExiste = usuarios.contains { usuario in
+            usuario.nome == nome && usuario.email == email
+        }
         return usuarioExiste
     }
     

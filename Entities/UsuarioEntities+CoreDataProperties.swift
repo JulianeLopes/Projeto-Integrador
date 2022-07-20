@@ -41,7 +41,7 @@ extension UsuarioEntities {
     }
     
     public var wrappedNivelDeFa: Double {
-        nivelDeFa ?? 0.0
+        nivelDeFa
     }
     
     public var wrappedFilmesentities: [FilmesEntities] {
