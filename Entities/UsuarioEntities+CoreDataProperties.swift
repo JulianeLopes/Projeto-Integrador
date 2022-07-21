@@ -75,4 +75,8 @@ extension UsuarioEntities {
     @objc(removeFilmesentities:)
     @NSManaged public func removeFromFilmesentities(_ values: NSSet)
 
+    func converterParaUsuario() -> Usuario {
+        return Usuario(nome: wrappedNome, email: wrappedEmail, senha: wrappedSenha, foto: wrappedFoto, nivelDeFa: nivelDeFa, filmesFavoritos: [])
+    }
+    
 }

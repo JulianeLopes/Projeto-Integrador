@@ -26,7 +26,7 @@ class ServiceCoreData {
 
         if verificaUsuarioCoreData(nome: nome, email: email) {
            return
-        }else {
+        } else {
             let usuario = UsuarioEntities(context: context)
             usuario.nome = nome
             usuario.email = email
@@ -38,7 +38,14 @@ class ServiceCoreData {
         }
     }
     
-    func fetchUsuario() throws -> [UsuarioEntities] {
+    func getUsuario(email: String) throws -> UsuarioEntities? {
+        let usuarios = try fetchUsuarios()
+        return usuarios.first { usuario in
+            return usuario.email == email
+        }
+    }
+    
+    func fetchUsuarios() throws -> [UsuarioEntities] {
         let usuarios = try context.fetch(UsuarioEntities.fetchRequest())
         return usuarios
     }

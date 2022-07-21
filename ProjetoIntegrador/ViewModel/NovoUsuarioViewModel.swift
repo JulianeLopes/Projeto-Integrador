@@ -19,6 +19,8 @@ class NovoUsuarioViewModel {
     var delegate: NovoUsuarioViewModelDelegate?
     var serviceCoreData: ServiceCoreData = .init()
     
+    let sessionManager = SessionManager.shared
+    
     // criando um usuário universal vazio para preencher
     var novoUsuarioCriado: Usuario = Usuario(nome: "", email: "", senha: "", foto: "", nivelDeFa: 0.0, filmesFavoritos: [])
     
@@ -49,10 +51,18 @@ class NovoUsuarioViewModel {
                     print(error.localizedDescription)
                 } else {
                     self.serviceCoreData.saveUsuario(nome: nome, email: email, foto: "")
+                    do {
+                        let usuarioLogado = try self.serviceCoreData.getUsuario(email: email)?.converterParaUsuario()
+                        self.sessionManager.usuarioLogado = usuarioLogado
+                        
+                        
+                    } catch {
+                        print(error)
+                    }
                     self.delegate?.usuarioCadastrado()
                 }
                 
-                
+        
                 
             }
         }

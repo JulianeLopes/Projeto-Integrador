@@ -64,15 +64,17 @@ class FireBaseService {
                 salvarNoFireBase(com: credential)
             }
         }
+    
         func pegarConfiguracaoFacebook(token: String) -> AuthCredential {
             return FacebookAuthProvider.credential(withAccessToken: token)
         }
+    
         func salvarNoFireBase(com credential: AuthCredential){
             Auth.auth().signIn(with: credential) { AuthResult, error in
                 if let error = error {
                     print(error)
                 }
-                
+                print(AuthResult?.user.email)
                 return
             }
         }
