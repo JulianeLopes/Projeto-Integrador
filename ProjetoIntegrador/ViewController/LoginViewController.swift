@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
   
     let loginButton = FBLoginButton(
                 frame: .zero,
-                permissions: [.publicProfile]
+                permissions: [.publicProfile])
             
     
     override func viewDidLoad() {
