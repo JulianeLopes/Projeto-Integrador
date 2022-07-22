@@ -15,6 +15,8 @@ import FacebookLogin
 
 class FireBaseService {
     
+    var usuarioLogado: String?
+    
     func loginGoogle(presenter: UIViewController, completion: @escaping (GIDGoogleUser?) -> Void) {
     
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
@@ -76,11 +78,13 @@ class FireBaseService {
                     // debugar para ver o que chega no erro
                     print(error)
                 }
-                print(AuthResult?.user.email)
+                self.usuarioLogado = AuthResult?.user.email
                 return
+            
             }
         }
-    
+        
+        
 }
 
 

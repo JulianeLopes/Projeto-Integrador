@@ -842,7 +842,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = N34W3XSZ62;
+				DEVELOPMENT_TEAM = HUSK72RPC6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ProjetoIntegrador/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Permissão para acessar a camera";
@@ -856,7 +856,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = daniellenogawa.com.DH.ProjetoIntegrador.Marvel;
+				PRODUCT_BUNDLE_IDENTIFIER = Giselle.com.DH.ProjetoIntegrador.Marvel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -872,7 +872,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = N34W3XSZ62;
+				DEVELOPMENT_TEAM = HUSK72RPC6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ProjetoIntegrador/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Permissão para acessar a camera";
@@ -886,7 +886,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = daniellenogawa.com.DH.ProjetoIntegrador.Marvel;
+				PRODUCT_BUNDLE_IDENTIFIER = Giselle.com.DH.ProjetoIntegrador.Marvel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

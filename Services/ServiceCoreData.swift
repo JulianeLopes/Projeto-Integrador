@@ -58,4 +58,12 @@ class ServiceCoreData {
         return usuarioExiste
     }
     
+    func verificaEmailCoreData(email: String) -> Bool {
+        let usuarios = try! context.fetch(UsuarioEntities.fetchRequest())
+        let emailExiste = usuarios.contains { usuario in
+            usuario.email == email
+        }
+        return emailExiste
+    }
+    
 }

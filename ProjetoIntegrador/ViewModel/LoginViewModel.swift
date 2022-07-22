@@ -55,8 +55,19 @@ class LoginViewModel {
     }
     
     func tratarLoginFacebook(result: LoginManagerLoginResult?, error: Error?){
+        
+        fireBaseService.tratarLoginFacebook(result: result, error: error)
+           
+           
+        guard let email = fireBaseService.usuarioLogado else {return}
+        if servicoCoreData.verificaEmailCoreData(email: email) {
+            //Se o usuário existir no CoreData, fazer a transição de tela com o usuário.
             
-            fireBaseService.tratarLoginFacebook(result: result, error: error)
+        } else {
+            //Se não, cadastrar o usuário no CoreData e fazer a transição de tela com o usuário.
+            
+        }
+            
         }
     
     func verifyUser(email: String?, password: String?){
