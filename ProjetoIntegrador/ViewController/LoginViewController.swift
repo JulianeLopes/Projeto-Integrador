@@ -34,6 +34,7 @@ class LoginViewController: UIViewController {
         view.addSubview(loginButton)
     }
     
+    
     @IBAction func loginGoogleButtom(_ sender: Any) {
         viewModel.loginGoogle(presenter: self)
     

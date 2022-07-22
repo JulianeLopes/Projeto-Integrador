@@ -15,7 +15,6 @@ import FacebookLogin
 
 class FireBaseService {
     
-    var usuarioLogado: String?
     
     func loginGoogle(presenter: UIViewController, completion: @escaping (GIDGoogleUser?) -> Void) {
     
@@ -71,14 +70,19 @@ class FireBaseService {
             return FacebookAuthProvider.credential(withAccessToken: token)
         }
     
+    func getAuthResult(credential: AuthCredential) -> AuthDataResult? {
+        var result: AuthDataResult?
+        Auth.auth().signIn(with: credential) { AuthResult, _ in
+            result = AuthResult
+        }
+        return result
+    }
+    
         func salvarNoFireBase(com credential: AuthCredential){
-            // debugar parar ver o que chega na credential
             Auth.auth().signIn(with: credential) { AuthResult, error in
                 if let error = error {
-                    // debugar para ver o que chega no erro
                     print(error)
                 }
-                self.usuarioLogado = AuthResult?.user.email
                 return
             
             }
