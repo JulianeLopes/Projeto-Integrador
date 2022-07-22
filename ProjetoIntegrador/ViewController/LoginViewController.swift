@@ -17,7 +17,8 @@ class LoginViewController: UIViewController {
     
     let service = ServicoDeUsuario()
     let viewModel = LoginViewModel()
-  
+    let sessionManager = SessionManager.shared
+    
     let loginButton = FBLoginButton(
                 frame: .zero,
                 permissions: [.publicProfile])
@@ -85,6 +86,13 @@ extension LoginViewController: UITextFieldDelegate {
 }
 
 extension LoginViewController: LoginButtonDelegate {
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if sessionManager.usuarioLogado != nil {
+            return true
+        } else {
+            return false
+        }
+    }
     func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
         viewModel.tratarLoginFacebook(result: result, error: error)
         }

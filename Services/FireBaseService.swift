@@ -17,7 +17,7 @@ class FireBaseService {
     
     
     func loginGoogle(presenter: UIViewController, completion: @escaping (GIDGoogleUser?) -> Void) {
-    
+        
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
         
         // Create Google Sign In configuration object.
@@ -43,7 +43,7 @@ class FireBaseService {
             
             Auth.auth().signIn(with: credential) { authResult, error in
                 if let error = error {
-                  
+                    
                 }
                 completion(user)
                 return
@@ -51,44 +51,53 @@ class FireBaseService {
         }
     }
     
+    
+    
     func tratarLoginFacebook(result: LoginManagerLoginResult?, error: Error?) {
-            switch result {
-                
-            case .none:
-                print("erro no login")
-            case .some(let loginResult):
-                guard let token = loginResult.token?.tokenString else {
-                    return
-                }
-                
-                let credential = pegarConfiguracaoFacebook(token: token)
-                salvarNoFireBase(com: credential)
+        switch result {
+            
+        case .none:
+            print("erro no login")
+        case .some(let loginResult):
+            guard let token = loginResult.token?.tokenString else {
+                return
             }
+            
+            let credential = pegarConfiguracaoFacebook(token: token)
+            salvarNoFireBase(com: credential)
         }
-    
-        func pegarConfiguracaoFacebook(token: String) -> AuthCredential {
-            return FacebookAuthProvider.credential(withAccessToken: token)
-        }
-    
-    func getAuthResult(credential: AuthCredential) -> AuthDataResult? {
-        var result: AuthDataResult?
-        Auth.auth().signIn(with: credential) { AuthResult, _ in
-            result = AuthResult
-        }
-        return result
     }
     
-        func salvarNoFireBase(com credential: AuthCredential){
-            Auth.auth().signIn(with: credential) { AuthResult, error in
-                if let error = error {
-                    print(error)
-                }
-                return
-            
-            }
+    func pegarConfiguracaoFacebook(token: String) -> AuthCredential {
+        return FacebookAuthProvider.credential(withAccessToken: token)
+    }
+    
+    func pegarUsuario(completion:@escaping (User) -> Void) {
+        let user = Auth.auth().currentUser
+        if let user = user {
+            completion(user)
         }
-        
-        
+    }
+    
+//    func getAuthResult(credential: AuthCredential) -> AuthDataResult? {
+//        var result: AuthDataResult?
+//        Auth.auth().signIn(with: credential) { AuthResult, _ in
+//            result = AuthResult
+//        }
+//        return result
+//    }
+    
+    func salvarNoFireBase(com credential: AuthCredential){
+        Auth.auth().signIn(with: credential) { AuthResult, error in
+            if let error = error {
+                print(error)
+            }
+            return
+            
+        }
+    }
+    
+    
 }
 
 
