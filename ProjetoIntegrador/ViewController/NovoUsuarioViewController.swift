@@ -17,6 +17,9 @@ class NovoUsuarioViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
+        nomeTextField.delegate = self
+        emailTextField.delegate = self
+        senhaTextField.delegate = self
     }
     
     // cadastrar usuario
@@ -25,6 +28,15 @@ class NovoUsuarioViewController: UIViewController {
     }
 }
 
+extension NovoUsuarioViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+}
 // capta todas as acoes do usuario na tela
 extension NovoUsuarioViewController: NovoUsuarioViewModelDelegate {
     func usuarioCadastrado() {

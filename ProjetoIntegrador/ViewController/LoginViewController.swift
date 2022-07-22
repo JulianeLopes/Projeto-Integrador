@@ -26,15 +26,12 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        
-        
-        
+        senhaTextField.delegate = self
+        usuarioTextField.delegate = self
         loginButton.isHidden = true
-        
         loginButton.delegate = self
-        
-                loginButton.center = view.center
-                view.addSubview(loginButton)
+        loginButton.center = view.center
+        view.addSubview(loginButton)
     }
     
     @IBAction func loginGoogleButtom(_ sender: Any) {
@@ -57,6 +54,7 @@ class LoginViewController: UIViewController {
     @IBAction func cadastrarNovoUsuarioButton(_ sender: Any) {
         performSegue(withIdentifier: "novoCadastro", sender: nil)
     }
+    
 }
 
 // delegates para capiturar as ações do usuário na tela
@@ -71,6 +69,17 @@ extension LoginViewController: LoginViewModelDelegate {
     // se o usuario for encontrado é direcionado para a tela home
     func segue() {
         performSegue(withIdentifier: "appSegueIndentifier", sender: nil)
+    }
+    
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 }
 

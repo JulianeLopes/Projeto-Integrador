@@ -70,8 +70,10 @@ class FireBaseService {
         }
     
         func salvarNoFireBase(com credential: AuthCredential){
+            // debugar parar ver o que chega na credential
             Auth.auth().signIn(with: credential) { AuthResult, error in
                 if let error = error {
+                    // debugar para ver o que chega no erro
                     print(error)
                 }
                 print(AuthResult?.user.email)
