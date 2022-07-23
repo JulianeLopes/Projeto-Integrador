@@ -22,6 +22,7 @@ class LoginViewModel {
     var usuarioEnviado: Usuario?
     var fireBaseService = FireBaseService()
     var usuarioGoogle: GIDGoogleUser?
+    var usuarioFace: User?
     var servicoCoreData = ServiceCoreData()
     let sessionManager = SessionManager.shared
     
@@ -56,41 +57,23 @@ class LoginViewModel {
     
     func tratarLoginFacebook(result: LoginManagerLoginResult?, error: Error?){
         
-        fireBaseService.tratarLoginFacebook(result: result, error: error)
-        
-        fireBaseService.pegarUsuario { user in
-            guard let nome = user.displayName, let email = user.email else { return }
-            self.servicoCoreData.saveUsuario(nome: nome, email: email , foto: user.photoURL?.absoluteString)
+        fireBaseService.tratarLoginFacebook(result: result, error: error) { userLogadoFace in
+            self.usuarioFace = userLogadoFace
+            
+            guard let nome = userLogadoFace.displayName, let email = userLogadoFace.email else { return }
+            
+            self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: userLogadoFace.photoURL?.absoluteString)
             do {
                 let usuario = try self.servicoCoreData.getUsuario(email: email)?.converterParaUsuario()
                 self.sessionManager.usuarioLogado = usuario
+                self.delegate?.segue()
             } catch {
                 print(error)
             }
+            
         }
         
     }
-        
-//        guard let token = result?.token?.tokenString else { return }
-//        let credential = fireBaseService.pegarConfiguracaoFacebook(token: token)
-//        let usuario = fireBaseService.getAuthResult(credential: credential)
-//
-//        guard let email = usuario?.user.email, let nome = usuario?.user.displayName else {return}
-//        if servicoCoreData.verificaEmailCoreData(email: email) {
-////            Se o usuário existir no CoreData, fazer a transição de tela com o usuário.
-//            self.delegate?.segue()
-//            do {
-//                let usuarioLogado = try self.servicoCoreData.getUsuario(email: email)?.converterParaUsuario()
-//                self.sessionManager.usuarioLogado = usuarioLogado
-//            } catch {
-//                print(error)
-//            }
-//        } else {
-//            servicoCoreData.saveUsuario(nome: nome, email: email, foto: usuario?.user.photoURL?.absoluteString)
-//                self.delegate?.segue()
-//        }
-        
-    
     func verifyUser(email: String?, password: String?){
             guard let email = email, let password = password else { return }
             
@@ -112,21 +95,7 @@ class LoginViewModel {
                 }
             }
         }
-    
-    private var usuarios: [UsuarioEntities] {
-        (try? servicoCoreData.fetchUsuarios()) ?? []
-    }
-    
-    func getUsuario(email: String, password: String) -> UsuarioEntities? {
-        if let usuario = usuarios.first(where: {
-            return $0.email == email && $0.senha == password
-        }) {
-            return usuario
-        }
-        return nil
-    }
-    
-    
+   
     
 }
 

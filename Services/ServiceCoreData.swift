@@ -15,8 +15,6 @@ class ServiceCoreData {
     private lazy var context = container.viewContext
     
     
-    // MARK: - Public Methods
-    
     func saveContext(){
         let appDelegate = (UIApplication.shared.delegate as! AppDelegate)
         appDelegate.saveContext()
@@ -50,7 +48,7 @@ class ServiceCoreData {
         return usuarios
     }
     
-    func verificaUsuarioCoreData(nome: String, email: String) -> Bool {
+    private func verificaUsuarioCoreData(nome: String, email: String) -> Bool {
         let usuarios = try! context.fetch(UsuarioEntities.fetchRequest())
         let usuarioExiste = usuarios.contains { usuario in
             usuario.nome == nome && usuario.email == email

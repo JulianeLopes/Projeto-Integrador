@@ -15,19 +15,15 @@ import FacebookLogin
 
 class FireBaseService {
     
-    
+    //MARK: Login com o google
     func loginGoogle(presenter: UIViewController, completion: @escaping (GIDGoogleUser?) -> Void) {
-        
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
         
-        // Create Google Sign In configuration object.
         let config = GIDConfiguration(clientID: clientID)
         
-        // Start the sign in flow!
         GIDSignIn.sharedInstance.signIn(with: config, presenting: presenter) { [unowned self] user, error in
-            
             if let error = error {
-                // ...
+                print(error)
                 return
             }
             
@@ -43,7 +39,7 @@ class FireBaseService {
             
             Auth.auth().signIn(with: credential) { authResult, error in
                 if let error = error {
-                    
+                    print(error)
                 }
                 completion(user)
                 return
@@ -52,19 +48,20 @@ class FireBaseService {
     }
     
     
-    
-    func tratarLoginFacebook(result: LoginManagerLoginResult?, error: Error?) {
+    // MARK: Login com o facebook
+    func tratarLoginFacebook(result: LoginManagerLoginResult?, error: Error?, completion: @escaping (User) -> Void) {
         switch result {
             
         case .none:
             print("erro no login")
         case .some(let loginResult):
-            guard let token = loginResult.token?.tokenString else {
-                return
-            }
+            guard let token = loginResult.token?.tokenString else { return }
             
             let credential = pegarConfiguracaoFacebook(token: token)
             salvarNoFireBase(com: credential)
+            pegarUsuario(credential: credential) { user in
+                completion(user)
+            }
         }
     }
     
@@ -72,21 +69,14 @@ class FireBaseService {
         return FacebookAuthProvider.credential(withAccessToken: token)
     }
     
-    func pegarUsuario(completion:@escaping (User) -> Void) {
-        let user = Auth.auth().currentUser
-        if let user = user {
+    func pegarUsuario(credential: AuthCredential, completion:@escaping (User) -> Void) {
+        Auth.auth().signIn(with: credential) { result, error in
+            guard let user = result?.user else { return }
             completion(user)
         }
     }
     
-//    func getAuthResult(credential: AuthCredential) -> AuthDataResult? {
-//        var result: AuthDataResult?
-//        Auth.auth().signIn(with: credential) { AuthResult, _ in
-//            result = AuthResult
-//        }
-//        return result
-//    }
-    
+    // MARK: Salvando no Firebase
     func salvarNoFireBase(com credential: AuthCredential){
         Auth.auth().signIn(with: credential) { AuthResult, error in
             if let error = error {
@@ -94,6 +84,17 @@ class FireBaseService {
             }
             return
             
+        }
+    }
+    
+    //MARK: Logout
+    
+    func logOut(){
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
         }
     }
     

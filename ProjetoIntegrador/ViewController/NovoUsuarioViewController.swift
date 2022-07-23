@@ -39,15 +39,9 @@ extension NovoUsuarioViewController: UITextFieldDelegate {
 }
 // capta todas as acoes do usuario na tela
 extension NovoUsuarioViewController: NovoUsuarioViewModelDelegate {
+    //  cadastro efetuado corretamente e redireciona para a tela home
     func usuarioCadastrado() {
         performSegue(withIdentifier: "usuarioCadastradoSegue", sender: nil)
-    }
-    
-    //  cadastro efetuado corretamente e redireciona para a tela de login
-    func cadastroEfetuado() {
-        dismiss(animated: true) {
-            self.performSegue(withIdentifier: "voltarIdentifier", sender: self.viewModel.novoUsuarioCriado)
-        }
     }
     
     // alerta de dados incorretos

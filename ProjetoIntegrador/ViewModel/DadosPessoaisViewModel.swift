@@ -8,7 +8,6 @@
 import Foundation
 
 class DadosPessoaisViewModel {
-    
     // usuario logado
     private var usuarioLogado: Usuario? {
         return SessionManager.shared.usuarioLogado
@@ -25,5 +24,5 @@ class DadosPessoaisViewModel {
         guard let usuarioLogado = usuarioLogado else { return "" }
         return usuarioLogado.foto
     }
-    
+
 }
