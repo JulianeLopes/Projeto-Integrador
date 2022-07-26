@@ -52,7 +52,18 @@ class LoginViewModel {
     func loginGoogle(presenter: UIViewController) {
         fireBaseService.loginGoogle(presenter: presenter) { usuario in
             self.usuarioGoogle = usuario
+            guard let nome = usuario?.profile?.name, let email = usuario?.profile?.email else { return }
+            
+            self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: usuario?.profile?.imageURL(withDimension: 150)?.absoluteString)
+            do {
+                let usuario = try self.servicoCoreData.getUsuario(email: email)?.converterParaUsuario()
+                self.sessionManager.usuarioLogado = usuario
+                self.delegate?.segue()
+            } catch {
+                print(error)
+            }
         }
+        
     }
     
     func tratarLoginFacebook(result: LoginManagerLoginResult?, error: Error?){
