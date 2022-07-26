@@ -12,6 +12,7 @@ import GoogleSignIn
 import FirebaseAuth
 import FacebookCore
 import FacebookLogin
+import FBSDKLoginKit
 
 class FireBaseService {
     
@@ -87,12 +88,13 @@ class FireBaseService {
         }
     }
     
-    //MARK: Logout
+    //MARK: - Logout
     
     func logOut(){
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
+            AccessToken.current = nil
         } catch let signOutError as NSError {
             print("Error signing out: %@", signOutError)
         }
