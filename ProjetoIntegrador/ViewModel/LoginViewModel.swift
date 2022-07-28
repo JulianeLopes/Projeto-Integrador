@@ -95,9 +95,13 @@ class LoginViewModel {
                 } else {
                     self.delegate?.segue()
                     do {
+                        guard let nome = Auth.auth().currentUser?.displayName,
+                        let  email = Auth.auth().currentUser?.email,
+                        let foto = Auth.auth().currentUser?.photoURL?.absoluteString else { return }
+                        self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: foto)
+                        
                         let usuarioLogado = try self.servicoCoreData.getUsuario(email: email)?.converterParaUsuario()
                         self.sessionManager.usuarioLogado = usuarioLogado
-            
                         
                     } catch {
                         print(error)
