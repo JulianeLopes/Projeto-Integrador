@@ -22,7 +22,7 @@ class LoginViewModel {
     var usuarioEnviado: Usuario?
     var fireBaseService = FireBaseService()
     var usuarioGoogle: GIDGoogleUser?
-    var usuarioFace: User?
+    var usuario: User?
     var servicoCoreData = ServiceCoreData()
     let sessionManager = SessionManager.shared
     
@@ -69,7 +69,7 @@ class LoginViewModel {
     func tratarLoginFacebook(result: LoginManagerLoginResult?, error: Error?){
         
         fireBaseService.tratarLoginFacebook(result: result, error: error) { userLogadoFace in
-            self.usuarioFace = userLogadoFace
+            self.usuario = userLogadoFace
             
             guard let nome = userLogadoFace.displayName, let email = userLogadoFace.email else { return }
             
@@ -85,31 +85,49 @@ class LoginViewModel {
         }
         
     }
+//    func verifyUser(email: String?, password: String?){
+//            guard let email = email, let password = password else { return }
+//
+//            Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+//                if let error = error {
+//                    print(error.localizedDescription)
+//                    self.delegate?.apresentaAlerta()
+//                } else {
+//                    self.delegate?.segue()
+//                    do {
+//                        guard let nome = Auth.auth().currentUser?.displayName,
+//                        let  email = Auth.auth().currentUser?.email,
+//                        let foto = Auth.auth().currentUser?.photoURL?.absoluteString else { return }
+//                        self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: foto)
+//
+//                        let usuarioLogado = try self.servicoCoreData.getUsuario(email: email)?.converterParaUsuario()
+//                        self.sessionManager.usuarioLogado = usuarioLogado
+//
+//                    } catch {
+//                        print(error)
+//                    }
+//
+//                }
+//            }
+//        }
     func verifyUser(email: String?, password: String?){
-            guard let email = email, let password = password else { return }
+        fireBaseService.tratarLoginEmailSenha(email: email, senha: password) { user in
+            self.usuario = user
             
-            Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-                if let error = error {
-                    print(error.localizedDescription)
-                    self.delegate?.apresentaAlerta()
-                } else {
-                    self.delegate?.segue()
-                    do {
-                        guard let nome = Auth.auth().currentUser?.displayName,
-                        let  email = Auth.auth().currentUser?.email,
-                        let foto = Auth.auth().currentUser?.photoURL?.absoluteString else { return }
-                        self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: foto)
-                        
-                        let usuarioLogado = try self.servicoCoreData.getUsuario(email: email)?.converterParaUsuario()
-                        self.sessionManager.usuarioLogado = usuarioLogado
-                        
-                    } catch {
-                        print(error)
-                    }
-                    
-                }
+            guard let nome = user?.displayName, let email = user?.email else { return }
+            
+            self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: user?.photoURL?.absoluteString)
+            do {
+                let usuario = try self.servicoCoreData.getUsuario(email: email)?.converterParaUsuario()
+                self.sessionManager.usuarioLogado = usuario
+                self.delegate?.segue()
+            } catch {
+                print(error.localizedDescription)
             }
+            
         }
+    }
+    
    
     
 }

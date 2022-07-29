@@ -66,6 +66,20 @@ class FireBaseService {
         }
     }
     
+    // salvar nome e foto no Database do firebase
+    func tratarLoginEmailSenha(email: String?, senha: String?, completion: @escaping (User?)->Void){
+        guard let email = email, let senha = senha else {
+            return
+        }
+        Auth.auth().signIn(withEmail: email, password: senha) { result, error in
+            if let error = error{
+                print(error)
+            }
+            let user = result?.user
+            completion(user)
+        }
+    }
+    
     func pegarConfiguracaoFacebook(token: String) -> AuthCredential {
         return FacebookAuthProvider.credential(withAccessToken: token)
     }
