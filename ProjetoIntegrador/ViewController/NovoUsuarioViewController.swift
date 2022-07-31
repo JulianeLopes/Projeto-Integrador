@@ -11,8 +11,10 @@ class NovoUsuarioViewController: UIViewController {
     @IBOutlet weak var nomeTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var senhaTextField: UITextField!
+    @IBOutlet weak var addFotoButton: UIButton!
     
     let viewModel = NovoUsuarioViewModel()
+    private var userImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,44 @@ class NovoUsuarioViewController: UIViewController {
     
     // cadastrar usuario
     @IBAction func cadastrarButton(_ sender: Any) {
-        viewModel.registrarUsuario(email: emailTextField.text, senha: senhaTextField.text, nome: nomeTextField.text)
+//        viewModel.registrarUsuario(email: emailTextField.text, senha: senhaTextField.text, nome: nomeTextField.text)
+        viewModel.registrarUsuario(nome: nomeTextField.text, senha: senhaTextField.text, email: emailTextField.text, fotoUsuario: userImage)
+    
+    }
+    
+    // cadastrar foto do usuario
+    
+    @IBAction func fotoUsuarioButton(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        
+        present(imagePicker, animated: true)
+        viewWillAppear(true)
+    }
+    
+}
+extension NovoUsuarioViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.originalImage] as? UIImage {
+            
+            self.addFotoButton.setImage(image.withRenderingMode(.alwaysOriginal), for: .normal)
+            self.userImage = image
+            addFotoButton.layer.masksToBounds = true
+            addFotoButton.layer.borderWidth = 4
+            addFotoButton.layer.cornerRadius = 150/2
+            addFotoButton.layer.borderColor = UIColor.red.cgColor
+            addFotoButton.imageView?.contentMode = .scaleAspectFit
+            addFotoButton.imageView?.clipsToBounds = true
+
+            
+            
+        }
+        dismiss(animated: true)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
     }
 }
 

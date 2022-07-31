@@ -14,7 +14,7 @@ A Swift Toast view - iOS 14 style - built with UIKit. 🍞
 You can use The Swift Package Manager to install Toast-Swift by adding the description to your Package.swift file:
 ```swift
 dependencies: [
-    .package(url: "https://github.com/BastiaanJansen/toast-swift", from: "1.0.6")
+    .package(url: "https://github.com/BastiaanJansen/toast-swift", from: "1.1.0")
 ]
 ```
 
@@ -63,18 +63,20 @@ toast.show(haptic: .success, after: 1)
 
 ### Configuration options    
 The `text`, `default` and `custom` methods support custom configuration options. The following options are available:
+
 | Name            | Description                                                                                         | Type           | Default |
 |-----------------|-----------------------------------------------------------------------------------------------------|----------------|---------|
 | `autoHide`      | When set to true, the toast will automatically close itself after display time has elapsed.         | `Bool`         | `true`  |
+| `enablePanToClose`      | When set to true, the toast will be able to close by swiping up.         | `Bool`         | `true`  |
 | `displayTime`   | The duration the toast will be displayed before it will close when autoHide set to true in seconds. | `TimeInterval` | `4`     |
 | `animationTime` | Duration of the show and close animation in seconds.                                                | `TimeInterval` | `0.2`   |
 | `attachTo`      | The view which the toast view will be attached to.                                                  | `UIView`       | `nil`   |
 
 
-
 ```swift
 let config = ToastConfiguration(
     autoHide: true,
+    enablePanToClose: true,
     displayTime: 5,
     animationTime: 0.2
 )

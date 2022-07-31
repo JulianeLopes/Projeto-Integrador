@@ -10,7 +10,10 @@ target 'ProjetoIntegrador' do
   	pod 'GoogleSignIn'
   	pod 'FacebookCore'
   	pod 'FacebookLogin'
-
+	pod 'FirebaseFirestore'
+	pod 'FirebaseDatabase'
+	pod 'FirebaseCore'
+	pod 'FirebaseStorage'
 
   target 'ProjetoIntegradorTests' do
     inherit! :search_paths
