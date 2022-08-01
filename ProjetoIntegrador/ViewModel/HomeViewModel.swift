@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import CoreData
+import FirebaseAuth
 
 protocol HomeViewModelDelegate {
     func configuraPosterFilmeDestaque(imagem: UIImage)
@@ -16,6 +17,7 @@ protocol HomeViewModelDelegate {
 class HomeViewModel {
     private let servicosDeAPI = MovieAPI()
     private let servicoDeSpoiler = ServicoDeSpoiler()
+    private let firebaseService = FireBaseService()
     
     var delegate: HomeViewModelDelegate?
     var filmeSelecionado: Filme?
@@ -29,6 +31,13 @@ class HomeViewModel {
     private var usuarioLogado: Usuario? {
         return SessionManager.shared.usuarioLogado
     }
+    
+//    func fetchUsuario(){
+//        let uid = Auth.auth().currentUser?.uid
+//        firebaseService.fetchUser(uid: uid) { <#UsuarioFirebase#> in
+//            <#code#>
+//        }
+//    }
     
     // recebe o nome do usuario logado
     func getNomeUsuario() -> String {
@@ -54,6 +63,8 @@ class HomeViewModel {
         let filmeSelecionado = filmes[posicao]
         return filmeSelecionado
     }
+    
+    
     
     func getSpoiler(filme: Filme?) -> Spoiler? {
         let spoilerExist = servicoDeSpoiler.listaDeFilmesSpoiler.first { tituloDoFilmeNoSpoiler in

@@ -7,6 +7,7 @@
 
 import UIKit
 import FacebookCore
+import FirebaseAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
@@ -17,13 +18,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         // analizar se existe o usuario logado, se sim chamar tela Main caso contrario Main Tela Cadastro
-        
-        let controller = UIStoryboard(name: "Main Tela Cadastro", bundle: nil).instantiateInitialViewController()
-        
-        let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = controller
-        window.makeKeyAndVisible()
-        self.window = window
+        if Auth.auth().currentUser != nil {
+            let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+            
+            let window = UIWindow(windowScene: windowScene)
+            window.rootViewController = controller
+            window.makeKeyAndVisible()
+            self.window = window
+        } else {
+            let controller = UIStoryboard(name: "Main Tela Cadastro", bundle: nil).instantiateInitialViewController()
+            
+            let window = UIWindow(windowScene: windowScene)
+            window.rootViewController = controller
+            window.makeKeyAndVisible()
+            self.window = window
+        }
+
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {

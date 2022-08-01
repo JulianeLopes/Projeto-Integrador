@@ -106,7 +106,7 @@ class LoginViewModel {
         }
     }
     
-    private func fetchUser(uid: String, completion: @escaping (UsuarioFirebase)->Void) {
+    func fetchUser(uid: String, completion: @escaping (UsuarioFirebase)->Void) {
         usersREF.child(uid).observe(.value) { snapshot in
             guard let dicionario = snapshot.value as? [String: AnyObject] else { return }
             let user = UsuarioFirebase(uid: uid, dicionario: dicionario)

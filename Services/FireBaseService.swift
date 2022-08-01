@@ -48,6 +48,14 @@ class FireBaseService {
         }
     }
     
+    func fetchUser(uid: String, completion: @escaping (UsuarioFirebase)->Void) {
+        usersREF.child(uid).observe(.value) { snapshot in
+            guard let dicionario = snapshot.value as? [String: AnyObject] else { return }
+            let user = UsuarioFirebase(uid: uid, dicionario: dicionario)
+            completion(user)
+        }
+    }
+    
     
     // MARK: Login com o facebook
     func tratarLoginFacebook(result: LoginManagerLoginResult?, error: Error?, completion: @escaping (User) -> Void) {
@@ -65,6 +73,7 @@ class FireBaseService {
             }
         }
     }
+    
     
     // salvar nome e foto no Database do firebase
     func tratarLoginEmailSenha(email: String?, senha: String?, completion: @escaping (User?)->Void){

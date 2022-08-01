@@ -33,6 +33,8 @@ class LoginViewController: UIViewController {
         loginButton.delegate = self
         loginButton.center = view.center
         view.addSubview(loginButton)
+
+        
     }
     
     @IBAction func loginGoogleButtom(_ sender: Any) {
@@ -55,6 +57,8 @@ class LoginViewController: UIViewController {
     @IBAction func cadastrarNovoUsuarioButton(_ sender: Any) {
         performSegue(withIdentifier: "novoCadastro", sender: nil)
     }
+    
+
     
 }
 
