@@ -26,7 +26,6 @@ class NovoUsuarioViewController: UIViewController {
     
     // cadastrar usuario
     @IBAction func cadastrarButton(_ sender: Any) {
-//        viewModel.registrarUsuario(email: emailTextField.text, senha: senhaTextField.text, nome: nomeTextField.text)
         viewModel.registrarUsuario(nome: nomeTextField.text, senha: senhaTextField.text, email: emailTextField.text, fotoUsuario: userImage)
     
     }

@@ -85,49 +85,34 @@ class LoginViewModel {
         }
         
     }
-//    func verifyUser(email: String?, password: String?){
-//            guard let email = email, let password = password else { return }
-//
-//            Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-//                if let error = error {
-//                    print(error.localizedDescription)
-//                    self.delegate?.apresentaAlerta()
-//                } else {
-//                    self.delegate?.segue()
-//                    do {
-//                        guard let nome = Auth.auth().currentUser?.displayName,
-//                        let  email = Auth.auth().currentUser?.email,
-//                        let foto = Auth.auth().currentUser?.photoURL?.absoluteString else { return }
-//                        self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: foto)
-//
-//                        let usuarioLogado = try self.servicoCoreData.getUsuario(email: email)?.converterParaUsuario()
-//                        self.sessionManager.usuarioLogado = usuarioLogado
-//
-//                    } catch {
-//                        print(error)
-//                    }
-//
-//                }
-//            }
-//        }
     func verifyUser(email: String?, password: String?){
         fireBaseService.tratarLoginEmailSenha(email: email, senha: password) { user in
+            guard let uid = user?.uid else { return }
             self.usuario = user
             
-            guard let nome = user?.displayName, let email = user?.email else { return }
-            
-            self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: user?.photoURL?.absoluteString)
-            do {
-                let usuario = try self.servicoCoreData.getUsuario(email: email)?.converterParaUsuario()
-                self.sessionManager.usuarioLogado = usuario
-                self.delegate?.segue()
-            } catch {
-                print(error.localizedDescription)
+            self.fetchUser(uid: uid) { usuarioFirebase in
+                let nome = usuarioFirebase.nome
+                let email = usuarioFirebase.email
+                self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: usuarioFirebase.foto?.absoluteString)
+                do {
+                    let usuario = try self.servicoCoreData.getUsuario(email: email)?.converterParaUsuario()
+                    self.sessionManager.usuarioLogado = usuario
+                    self.delegate?.segue()
+                } catch {
+                    print(error.localizedDescription)
+                }
             }
             
         }
     }
     
+    private func fetchUser(uid: String, completion: @escaping (UsuarioFirebase)->Void) {
+        usersREF.child(uid).observe(.value) { snapshot in
+            guard let dicionario = snapshot.value as? [String: AnyObject] else { return }
+            let user = UsuarioFirebase(uid: uid, dicionario: dicionario)
+            completion(user)
+        }
+    }
    
     
 }

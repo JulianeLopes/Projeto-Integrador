@@ -57,6 +57,7 @@
 		EE2D484B284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2D484A284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift */; };
 		EE3823B2287DE57400206A87 /* IndicacoesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3823B1287DE57400206A87 /* IndicacoesCollectionViewCell.swift */; };
 		EE4ABEBE285BE8B1002A5AC7 /* DadosPessoaisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4ABEBD285BE8B1002A5AC7 /* DadosPessoaisViewModel.swift */; };
+		EE503F5228974BB6001508BD /* UsuarioFirebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE503F5128974BB6001508BD /* UsuarioFirebase.swift */; };
 		EE53C4B9284FEC20005DB3AC /* NovoUsuarioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE53C4B8284FEC20005DB3AC /* NovoUsuarioViewController.swift */; };
 		EE53C4BB2851087B005DB3AC /* FavoritoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE53C4BA2851087B005DB3AC /* FavoritoViewModel.swift */; };
 		EE53C4BD28510B3C005DB3AC /* SpoilerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE53C4BC28510B3C005DB3AC /* SpoilerViewController.swift */; };
@@ -147,6 +148,7 @@
 		EE2D484A284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracaoViewModel.swift; sourceTree = "<group>"; };
 		EE3823B1287DE57400206A87 /* IndicacoesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicacoesCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE4ABEBD285BE8B1002A5AC7 /* DadosPessoaisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadosPessoaisViewModel.swift; sourceTree = "<group>"; };
+		EE503F5128974BB6001508BD /* UsuarioFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsuarioFirebase.swift; sourceTree = "<group>"; };
 		EE53C4B8284FEC20005DB3AC /* NovoUsuarioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovoUsuarioViewController.swift; sourceTree = "<group>"; };
 		EE53C4BA2851087B005DB3AC /* FavoritoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritoViewModel.swift; sourceTree = "<group>"; };
 		EE53C4BC28510B3C005DB3AC /* SpoilerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoilerViewController.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 			isa = PBXGroup;
 			children = (
 				3357B1AA28442858007D611C /* Data.swift */,
+				EE503F5128974BB6001508BD /* UsuarioFirebase.swift */,
 				1642540328442A7D006F92A4 /* Usuario.swift */,
 				5ECB49D02865349800F19206 /* Spoiler.swift */,
 				5ECB49D22865361E00F19206 /* ServicoDeSpoiler.swift */,
@@ -657,6 +660,7 @@
 				331CF45A284EDA3400A32933 /* ConfiguracaoTableViewCell.swift in Sources */,
 				5ECB49D12865349800F19206 /* Spoiler.swift in Sources */,
 				1675306B283EB9F700D7CE3A /* SceneDelegate.swift in Sources */,
+				EE503F5228974BB6001508BD /* UsuarioFirebase.swift in Sources */,
 				33F3FB31287FA1F700FC76C2 /* FireBaseService.swift in Sources */,
 				EE53C4BB2851087B005DB3AC /* FavoritoViewModel.swift in Sources */,
 				EE3823B2287DE57400206A87 /* IndicacoesCollectionViewCell.swift in Sources */,
