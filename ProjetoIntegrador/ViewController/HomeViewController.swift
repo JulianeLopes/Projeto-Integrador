@@ -25,6 +25,11 @@ class HomeViewController: UIViewController {
         filmesDestaqueCollectionView.delegate = self
         configuraTela()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+       // viewModel.fetchUsuario()
+    }
     
 //visualizar os detalhes do filme selecionado
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

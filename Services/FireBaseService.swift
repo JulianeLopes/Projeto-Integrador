@@ -13,6 +13,8 @@ import FirebaseAuth
 import FacebookCore
 import FacebookLogin
 import FBSDKLoginKit
+import FirebaseDatabase
+import FirebaseStorage
 
 class FireBaseService {
     
@@ -48,12 +50,43 @@ class FireBaseService {
         }
     }
     
+    
+    // encontrando o usuario no database
     func fetchUser(uid: String, completion: @escaping (UsuarioFirebase)->Void) {
         usersREF.child(uid).observe(.value) { snapshot in
             guard let dicionario = snapshot.value as? [String: AnyObject] else { return }
             let user = UsuarioFirebase(uid: uid, dicionario: dicionario)
             completion(user)
         }
+    }
+    
+    // salvando o usuario logado pelo facebook no database
+    
+    func salvarUsuarioNoDataBase(user: User){
+        let fileName = NSUUID().uuidString
+        let storageReference = storageProfileImages.child(fileName)
+        guard let profileImageData = user.photoURL?.dataRepresentation, let profileImageUrlString = user.photoURL?.absoluteString else { return }
+        
+        storageReference.putData(profileImageData, metadata: nil) { meta, error in
+            if let error = error {
+                print("erro ao salvar imagem do usuario no database \(error.localizedDescription)")
+            }
+        }
+        
+        let uid = user.uid
+        guard let nome = user.displayName, let email = user.email else { return }
+        
+        let valores = ["email": email,
+                       "nome": nome,
+                       "foto": profileImageUrlString]
+        
+        usersREF.child(uid).updateChildValues(valores) { error, databaseReference in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+        
+        
     }
     
     

@@ -57,11 +57,9 @@ class NovoUsuarioViewModel {
         guard let profileImageData = fotoUsuario?.jpegData(compressionQuality: 0.3) else {
             print("sem foto")
             return }
-        
+        // refatorar para utilizar em outros lugares
         let fileName = NSUUID().uuidString
         let storageReference = storageProfileImages.child(fileName)
-        
-        //cai no erro aqui
         
         storageReference.putData(profileImageData, metadata: nil) { meta, error in
             if let error = error {

@@ -18,6 +18,8 @@ class HomeViewModel {
     private let servicosDeAPI = MovieAPI()
     private let servicoDeSpoiler = ServicoDeSpoiler()
     private let firebaseService = FireBaseService()
+    private let servicoCoreData = ServiceCoreData()
+    let sessionManager = SessionManager.shared
     
     var delegate: HomeViewModelDelegate?
     var filmeSelecionado: Filme?
@@ -27,15 +29,23 @@ class HomeViewModel {
     var filmes: [Filme] = []
     var filmesCoreData: [Filme] = []
     
+    
     // usuario logado
     private var usuarioLogado: Usuario? {
         return SessionManager.shared.usuarioLogado
     }
     
 //    func fetchUsuario(){
-//        let uid = Auth.auth().currentUser?.uid
-//        firebaseService.fetchUser(uid: uid) { <#UsuarioFirebase#> in
-//            <#code#>
+//
+//            guard let uid = Auth.auth().currentUser?.uid else { return }
+//            firebaseService.fetchUser(uid: uid) { usuarioFirebase in
+//                do {
+//                    let usuario = try self.servicoCoreData.getUsuario(email: usuarioFirebase.email)?.converterParaUsuario()
+//                    self.sessionManager.usuarioLogado = usuario
+//                } catch {
+//                    print(error.localizedDescription)
+//                
+//            }
 //        }
 //    }
     
