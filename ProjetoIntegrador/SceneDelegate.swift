@@ -17,21 +17,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
+        var controller = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
+        let window = UIWindow(windowScene: windowScene)
+        window.rootViewController = controller
+        window.makeKeyAndVisible()
+        self.window = window
+        
         // analizar se existe o usuario logado, se sim chamar tela Main caso contrario Main Tela Cadastro
         if Auth.auth().currentUser != nil {
-            let controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+            SessionManager.shared.fetchUsuario { error in
+                if error == nil {
+                    controller = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+                } else {
+                    controller = UIStoryboard(name: "Main Tela Cadastro", bundle: nil).instantiateInitialViewController()
+                }
+                window.rootViewController = controller
+            }
             
-            let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = controller
-            window.makeKeyAndVisible()
-            self.window = window
         } else {
-            let controller = UIStoryboard(name: "Main Tela Cadastro", bundle: nil).instantiateInitialViewController()
-            
-            let window = UIWindow(windowScene: windowScene)
+            controller = UIStoryboard(name: "Main Tela Cadastro", bundle: nil).instantiateInitialViewController()
             window.rootViewController = controller
-            window.makeKeyAndVisible()
-            self.window = window
         }
 
     }

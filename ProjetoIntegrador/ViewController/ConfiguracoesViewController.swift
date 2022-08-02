@@ -18,7 +18,6 @@ class ConfiguracoesViewController: UIViewController {
         super.viewDidLoad()
         listaOpcoesTableView.dataSource = self
         fotoImageView.layer.cornerRadius = 20
-        
     }
 }
 
