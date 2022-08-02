@@ -27,14 +27,6 @@ class Fanzometro: UIViewController {
        
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        UIView.animate(withDuration: 10.0) {
-        self.progressView.value = 70
-        }
-    
-    }
-    
-    
     
     // função para configurar a foto do usuário na tela
     private func configuraTela() {
@@ -47,12 +39,23 @@ class Fanzometro: UIViewController {
     // para atualizar a lista de filmes favoritos toda vez que o usuario abre a tela pelo tabbar
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    
+    // configuração e animação progressbar
+        DispatchQueue.main.async { //[.repeat, .curveEaseOut, .autoreverse]
+        UIView.animate(withDuration: 0.5, delay: 0.3, options: [.curveLinear], animations: {
+            self.progressView.value = 60
+        }, completion: nil)
+        }
+    
         favoritosCollectionView.reloadData()
         viewModel.getFanzometroDoUsuario { porcentagem in
             self.porcentagemLabel.text = porcentagem
+            
+            
+            
         }
     }
-    
+
 }
 
 // collection view dos filmes favoritos
