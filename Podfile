@@ -14,6 +14,8 @@ target 'ProjetoIntegrador' do
 	pod 'FirebaseDatabase'
 	pod 'FirebaseCore'
 	pod 'FirebaseStorage'
+	pod 'KDCircularProgress'
+	pod "MBCircularProgressBar"
 
   target 'ProjetoIntegradorTests' do
     inherit! :search_paths

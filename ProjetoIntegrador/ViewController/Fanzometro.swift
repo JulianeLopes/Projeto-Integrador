@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import MBCircularProgressBar
 
 class Fanzometro: UIViewController {
     
@@ -13,6 +14,7 @@ class Fanzometro: UIViewController {
     @IBOutlet weak var userImageView: UIImageView!
     @IBOutlet weak var favoritosCollectionView: UICollectionView!
     @IBOutlet weak var porcentagemLabel: UILabel!
+    @IBOutlet weak var progressView: MBCircularProgressBarView!
     
     let viewModel = FanzometroViewModel()
 
@@ -20,14 +22,25 @@ class Fanzometro: UIViewController {
     override func viewDidLoad(){
         super.viewDidLoad()
         configuraTela()
+        
+        self.progressView.value = 0
+       
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        UIView.animate(withDuration: 10.0) {
+        self.progressView.value = 70
+        }
+    
+    }
+    
+    
     
     // função para configurar a foto do usuário na tela
     private func configuraTela() {
         userImageView.image = UIImage(named: viewModel.getFotoUsuario())
-        userImageView.layer.cornerRadius = 150
-        userImageView.layer.borderWidth = 10
-        userImageView.layer.borderColor = UIColor.red.cgColor
+        userImageView.layer.cornerRadius = 130
+        //userImageView.layer.borderWidth = 1
         favoritosCollectionView.dataSource = self
     }
     
@@ -42,7 +55,7 @@ class Fanzometro: UIViewController {
     
 }
 
-// collection view dos filmes favoritos 
+// collection view dos filmes favoritos
 extension Fanzometro: UICollectionViewDataSource {
 func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return viewModel.numeroDeFilmesFavoritos()
