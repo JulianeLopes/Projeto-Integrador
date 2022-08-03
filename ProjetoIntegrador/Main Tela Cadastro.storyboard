@@ -156,7 +156,7 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="nome" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jnB-zI-qDf">
-                                <rect key="frame" x="20" y="294" width="374" height="34"/>
+                                <rect key="frame" x="20" y="278" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="namePhonePad" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
@@ -164,17 +164,17 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cgf-e9-sPJ">
-                                <rect key="frame" x="20" y="353" width="374" height="34"/>
+                                <rect key="frame" x="20" y="337" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CcD-1O-00D">
-                                <rect key="frame" x="20" y="412" width="374" height="34"/>
+                                <rect key="frame" x="20" y="396" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="namePhonePad" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8t-IF-p0w">
-                                <rect key="frame" x="20" y="471" width="374" height="31"/>
+                                <rect key="frame" x="20" y="455" width="374" height="31"/>
                                 <color key="backgroundColor" red="0.85490196939999996" green="0.21960783" blue="0.19607841970000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="419-zv-1Cq"/>
@@ -189,32 +189,49 @@
                                     <action selector="cadastrarButton:" destination="C98-jh-gdW" eventType="touchUpInside" id="VRg-99-eNd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FdA-WV-j6u">
-                                <rect key="frame" x="132" y="128" width="150" height="150"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rec-pE-AMb">
+                                <rect key="frame" x="132" y="120" width="150" height="150"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.crop.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5a7-eJ-GwC">
+                                        <rect key="frame" x="0.0" y="0.5" width="150" height="149"/>
+                                        <color key="tintColor" name="Vermelho Marvel"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FdA-WV-j6u">
+                                        <rect key="frame" x="0.0" y="20" width="150" height="110"/>
+                                        <color key="tintColor" name="Vermelho Marvel"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="fotoUsuarioButton:" destination="C98-jh-gdW" eventType="touchUpInside" id="Qkb-04-v1f"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="ZkG-0M-deM"/>
-                                    <constraint firstAttribute="width" constant="150" id="ofT-4Q-XTg"/>
+                                    <constraint firstItem="5a7-eJ-GwC" firstAttribute="leading" secondItem="rec-pE-AMb" secondAttribute="leading" id="1jK-ER-fiF"/>
+                                    <constraint firstAttribute="trailing" secondItem="FdA-WV-j6u" secondAttribute="trailing" id="BnM-vt-grG"/>
+                                    <constraint firstItem="5a7-eJ-GwC" firstAttribute="top" secondItem="rec-pE-AMb" secondAttribute="top" id="Bvg-uD-oYm"/>
+                                    <constraint firstAttribute="width" constant="150" id="EcT-Jx-TBn"/>
+                                    <constraint firstItem="FdA-WV-j6u" firstAttribute="top" secondItem="rec-pE-AMb" secondAttribute="top" constant="20" symbolic="YES" id="Zj4-55-aTJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="5a7-eJ-GwC" secondAttribute="trailing" id="brw-Y3-l4Z"/>
+                                    <constraint firstAttribute="height" constant="150" id="gQv-r0-DrB"/>
+                                    <constraint firstAttribute="bottom" secondItem="FdA-WV-j6u" secondAttribute="bottom" constant="20" symbolic="YES" id="saa-4X-xc2"/>
+                                    <constraint firstItem="FdA-WV-j6u" firstAttribute="leading" secondItem="rec-pE-AMb" secondAttribute="leading" id="wW1-mY-J73"/>
+                                    <constraint firstAttribute="bottom" secondItem="5a7-eJ-GwC" secondAttribute="bottom" id="zhk-u3-gbQ"/>
                                 </constraints>
-                                <color key="tintColor" name="Vermelho Marvel"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="person.crop.circle.fill" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="100"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="fotoUsuarioButton:" destination="C98-jh-gdW" eventType="touchUpInside" id="Qkb-04-v1f"/>
-                                </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="f65-RE-8Np"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="n8t-IF-p0w" firstAttribute="leading" secondItem="f65-RE-8Np" secondAttribute="leading" constant="20" id="2kE-e7-c10"/>
                             <constraint firstItem="n8t-IF-p0w" firstAttribute="top" secondItem="CcD-1O-00D" secondAttribute="bottom" constant="25" id="50o-GD-KXJ"/>
+                            <constraint firstItem="rec-pE-AMb" firstAttribute="top" secondItem="FVw-oh-9xz" secondAttribute="bottom" constant="8" id="5zV-4n-Q5o"/>
                             <constraint firstItem="f65-RE-8Np" firstAttribute="trailing" secondItem="FVw-oh-9xz" secondAttribute="trailing" constant="87" id="6ql-OP-vbR"/>
-                            <constraint firstItem="FdA-WV-j6u" firstAttribute="top" secondItem="FVw-oh-9xz" secondAttribute="bottom" constant="16" id="9q1-hV-1pB"/>
                             <constraint firstItem="Cgf-e9-sPJ" firstAttribute="top" secondItem="jnB-zI-qDf" secondAttribute="bottom" constant="25" id="AKI-eY-8dt"/>
-                            <constraint firstItem="jnB-zI-qDf" firstAttribute="top" secondItem="FdA-WV-j6u" secondAttribute="bottom" constant="16" id="B2H-lY-pEh"/>
                             <constraint firstItem="FVw-oh-9xz" firstAttribute="top" secondItem="f65-RE-8Np" secondAttribute="top" constant="18" id="JNq-CD-P6V"/>
+                            <constraint firstItem="jnB-zI-qDf" firstAttribute="top" secondItem="rec-pE-AMb" secondAttribute="bottom" constant="8" id="M9x-r2-aA5"/>
+                            <constraint firstItem="rec-pE-AMb" firstAttribute="centerX" secondItem="Jpn-3D-d2G" secondAttribute="centerX" id="Sxp-Db-RpJ"/>
                             <constraint firstItem="f65-RE-8Np" firstAttribute="trailing" secondItem="Cgf-e9-sPJ" secondAttribute="trailing" constant="20" id="UAg-oz-caX"/>
                             <constraint firstItem="Cgf-e9-sPJ" firstAttribute="leading" secondItem="f65-RE-8Np" secondAttribute="leading" constant="20" id="aOO-CV-1Uk"/>
                             <constraint firstItem="f65-RE-8Np" firstAttribute="trailing" secondItem="CcD-1O-00D" secondAttribute="trailing" constant="20" id="dAo-9d-dyT"/>
@@ -223,7 +240,6 @@
                             <constraint firstItem="FVw-oh-9xz" firstAttribute="leading" secondItem="f65-RE-8Np" secondAttribute="leading" constant="87" id="jfA-jS-gAp"/>
                             <constraint firstItem="f65-RE-8Np" firstAttribute="trailing" secondItem="jnB-zI-qDf" secondAttribute="trailing" constant="20" id="o4M-zU-AoI"/>
                             <constraint firstItem="jnB-zI-qDf" firstAttribute="leading" secondItem="f65-RE-8Np" secondAttribute="leading" constant="20" id="rnC-y5-rvF"/>
-                            <constraint firstItem="FdA-WV-j6u" firstAttribute="centerX" secondItem="Jpn-3D-d2G" secondAttribute="centerX" id="yLs-ld-7bd"/>
                             <constraint firstItem="CcD-1O-00D" firstAttribute="top" secondItem="Cgf-e9-sPJ" secondAttribute="bottom" constant="25" id="zfb-Xt-tVJ"/>
                         </constraints>
                     </view>
@@ -231,6 +247,7 @@
                     <connections>
                         <outlet property="addFotoButton" destination="FdA-WV-j6u" id="PH0-ih-rL6"/>
                         <outlet property="emailTextField" destination="Cgf-e9-sPJ" id="hjn-Fl-Ic2"/>
+                        <outlet property="fotoUser" destination="5a7-eJ-GwC" id="fLl-Yj-cwr"/>
                         <outlet property="nomeTextField" destination="jnB-zI-qDf" id="kwL-hk-AL4"/>
                         <outlet property="senhaTextField" destination="CcD-1O-00D" id="IHK-pO-gFv"/>
                         <segue destination="cMu-Lh-r6K" kind="show" identifier="voltarIdentifier" id="rra-xs-p7Q"/>
@@ -240,7 +257,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p5p-lD-6aB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="ehK-Ed-4SG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3432" y="258"/>
+            <point key="canvasLocation" x="3431.884057971015" y="257.8125"/>
         </scene>
         <!--Main-->
         <scene sceneID="zwI-eL-CsU">

@@ -12,6 +12,7 @@ class NovoUsuarioViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var senhaTextField: UITextField!
     @IBOutlet weak var addFotoButton: UIButton!
+    @IBOutlet weak var fotoUser: UIImageView!
     
     let viewModel = NovoUsuarioViewModel()
     private var userImage: UIImage?
@@ -22,6 +23,18 @@ class NovoUsuarioViewController: UIViewController {
         nomeTextField.delegate = self
         emailTextField.delegate = self
         senhaTextField.delegate = self
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addFotoButton.layer.masksToBounds = true
+        addFotoButton.layer.borderWidth = 4
+        addFotoButton.layer.cornerRadius = 150/2
+        addFotoButton.layer.borderColor = UIColor.red.cgColor
+        addFotoButton.imageView?.contentMode = .scaleAspectFit
+        addFotoButton.imageView?.clipsToBounds = true
+        
     }
     
     // cadastrar usuario
@@ -46,15 +59,9 @@ extension NovoUsuarioViewController: UIImagePickerControllerDelegate, UINavigati
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
             
-            self.addFotoButton.setImage(image.withRenderingMode(.alwaysOriginal), for: .normal)
+           
             self.userImage = image
-            addFotoButton.layer.masksToBounds = true
-            addFotoButton.layer.borderWidth = 4
-            addFotoButton.layer.cornerRadius = 150/2
-            addFotoButton.layer.borderColor = UIColor.red.cgColor
-            addFotoButton.imageView?.contentMode = .scaleAspectFit
-            addFotoButton.imageView?.clipsToBounds = true
-
+            self.addFotoButton.setImage(image, for: .normal)
             
             
         }
