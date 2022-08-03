@@ -25,7 +25,7 @@ class DadosPessoaisViewController: UIViewController {
     // configura a tela com dados do usuario
     private func configuraTela(){
         nomeLabel.text = "Olá \(viewModel.getNomeDoUsuario())"
-        fotoPerfil.image = UIImage(named: viewModel.getFotoDoUsuario())
+        fotoPerfil.image = viewModel.getFotoDoUsuario()
         fotoPerfil.layer.cornerRadius = 125
     }
     

@@ -29,4 +29,14 @@ class SessionManager {
         }
     }
     
+    func returnUsuarioEntities() -> UsuarioEntities? {
+        var usuario: UsuarioEntities?
+        guard let email =  usuarioLogado?.email else {return nil}
+        do {
+        usuario = try servicoCoreData.getUsuario(email: email)
+        } catch {
+            print(error)
+        }
+        return usuario
+    }
 }

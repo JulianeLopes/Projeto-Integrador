@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 
 extension UsuarioEntities {
@@ -19,7 +20,7 @@ extension UsuarioEntities {
     @NSManaged public var nome: String?
     @NSManaged public var email: String?
     @NSManaged public var senha: String?
-    @NSManaged public var foto: String?
+    @NSManaged public var foto: Foundation.Data?
     @NSManaged public var nivelDeFa: Double
     @NSManaged public var filmesentities: NSSet?
     @NSManaged public var filmesParaAssistir: NSSet?
@@ -36,8 +37,9 @@ extension UsuarioEntities {
         senha ?? ""
     }
     
-    public var wrappedFoto: String {
-        foto ?? ""
+    public var wrappedFoto: UIImage? {
+        guard let usuarioFoto = UIImage(data: foto as! Foundation.Data) else {return UIImage(named: "default_poster")}
+        return usuarioFoto
     }
     
     public var wrappedNivelDeFa: Double {

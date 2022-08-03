@@ -27,17 +27,17 @@ class LoginViewModel {
     let sessionManager = SessionManager.shared
     
     // função para conferir se o usuário existe na base
-    func confereUsuario(usuarioDig: String?, senhaDigitada: String?) -> Bool {
-        var isSameUsuario: Bool = false
-        
-        for usuario in ServicoDeUsuario.listaDeUsuario {
-            if usuarioDig == usuario.email && senhaDigitada == usuario.senha {
-                    usuarioEnviado = usuario
-                    isSameUsuario = true
-            }
-        }
-        return isSameUsuario
-    }
+//    func confereUsuario(usuarioDig: String?, senhaDigitada: String?) -> Bool {
+//        var isSameUsuario: Bool = false
+//        
+//        for usuario in ServicoDeUsuario.listaDeUsuario {
+//            if usuarioDig == usuario.email && senhaDigitada == usuario.senha {
+//                    usuarioEnviado = usuario
+//                    isSameUsuario = true
+//            }
+//        }
+//        return isSameUsuario
+//    }
     
     // se o usuário existe é direcionado para outra tela atraves do delegate
     func mudarDeTela(usuario: Bool){
@@ -61,7 +61,7 @@ class LoginViewModel {
                 self.fireBaseService.salvarUsuarioNoDataBase(user: user)
             }
             
-            self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: usuario?.profile?.imageURL(withDimension: 150)?.absoluteString)
+            self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: usuario?.profile?.imageURL(withDimension: 150)?.dataRepresentation)
             do {
                 let usuario = try self.servicoCoreData.getUsuario(email: email)?.converterParaUsuario()
                 self.sessionManager.usuarioLogado = usuario
@@ -85,7 +85,7 @@ class LoginViewModel {
             self.fireBaseService.fetchUser(uid: uid) { usuarioFirebase in
                 let nome = usuarioFirebase.nome
                 let email = usuarioFirebase.email
-                self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: usuarioFirebase.foto?.absoluteString)
+                self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: usuarioFirebase.foto?.dataRepresentation)
                 do {
                     let usuario = try self.servicoCoreData.getUsuario(email: email)?.converterParaUsuario()
                     self.sessionManager.usuarioLogado = usuario
@@ -106,7 +106,7 @@ class LoginViewModel {
             self.fireBaseService.fetchUser(uid: uid) { usuarioFirebase in
                 let nome = usuarioFirebase.nome
                 let email = usuarioFirebase.email
-                self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: usuarioFirebase.foto?.absoluteString)
+                self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: usuarioFirebase.foto?.dataRepresentation)
                 do {
                     let usuario = try self.servicoCoreData.getUsuario(email: email)?.converterParaUsuario()
                     self.sessionManager.usuarioLogado = usuario

@@ -20,7 +20,7 @@ class ServiceCoreData {
         appDelegate.saveContext()
     }
     
-    func saveUsuario(nome: String, email: String, foto: String?) {
+    func saveUsuario(nome: String, email: String, foto: Foundation.Data?) {
 
         if verificaUsuarioCoreData(nome: nome, email: email) {
            return
