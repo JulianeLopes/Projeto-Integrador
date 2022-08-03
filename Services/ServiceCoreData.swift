@@ -23,7 +23,8 @@ class ServiceCoreData {
     func saveUsuario(nome: String, email: String, foto: Foundation.Data?) {
 
         if verificaUsuarioCoreData(nome: nome, email: email) {
-           return
+            let usuario = try? getUsuario(email: email)
+            usuario?.foto = foto
         } else {
             let usuario = UsuarioEntities(context: context)
             usuario.nome = nome
@@ -32,8 +33,8 @@ class ServiceCoreData {
             usuario.nivelDeFa = 0.0
             usuario.filmesentities = []
             usuario.filmesParaAssistir = []
-            saveContext()
         }
+        saveContext()
     }
     
     func getUsuario(email: String) throws -> UsuarioEntities? {

@@ -60,8 +60,15 @@ class LoginViewModel {
                 guard let user = user else { return }
                 self.fireBaseService.salvarUsuarioNoDataBase(user: user)
             }
+            let imageURL = usuario?.profile?.imageURL(withDimension: 130)
+            var imageData: Foundation.Data?
             
-            self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: usuario?.profile?.imageURL(withDimension: 150)?.dataRepresentation)
+            if  let imageURL = imageURL,
+                let data = try? Foundation.Data(contentsOf: imageURL){
+                imageData = data
+            }
+            
+            self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: imageData)
             do {
                 let usuario = try self.servicoCoreData.getUsuario(email: email)?.converterParaUsuario()
                 self.sessionManager.usuarioLogado = usuario

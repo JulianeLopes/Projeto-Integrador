@@ -38,7 +38,10 @@ extension UsuarioEntities {
     }
     
     public var wrappedFoto: UIImage? {
-        guard let usuarioFoto = UIImage(data: foto as! Foundation.Data) else {return UIImage(named: "default_poster")}
+        guard let foto = foto,
+              let usuarioFoto = UIImage(data: foto) else {
+                  return UIImage(named: "default_poster")
+              }
         return usuarioFoto
     }
     
