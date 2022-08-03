@@ -15,24 +15,24 @@ class NovoUsuarioViewController: UIViewController {
     @IBOutlet weak var fotoUser: UIImageView!
     
     let viewModel = NovoUsuarioViewModel()
-    private var userImage: UIImageView?
+  //  private var userImage: UIImageView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addFotoButton.layer.masksToBounds = true
-        addFotoButton.layer.borderWidth = 4
-        addFotoButton.layer.cornerRadius = 150/2
-        addFotoButton.layer.borderColor = UIColor.red.cgColor
         viewModel.delegate = self
         nomeTextField.delegate = self
         emailTextField.delegate = self
         senhaTextField.delegate = self
+        fotoUser.layer.cornerRadius = 150/2
+        fotoUser.layer.borderWidth = 4
+        fotoUser.layer.borderColor = UIColor.red.cgColor
+        fotoUser.layer.masksToBounds = true
         
     }
     
     // cadastrar usuario
     @IBAction func cadastrarButton(_ sender: Any) {
-        let foto = userImage?.image
+        let foto = fotoUser?.image
         viewModel.registrarUsuario(nome: nomeTextField.text, senha: senhaTextField.text, email: emailTextField.text, fotoUsuario: foto)
     
     }
@@ -52,9 +52,7 @@ class NovoUsuarioViewController: UIViewController {
 extension NovoUsuarioViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
-            
-           
-            self.userImage?.image = image
+            fotoUser.image = image
          //   self.addFotoButton.setImage(image, for: .normal)
             
             
