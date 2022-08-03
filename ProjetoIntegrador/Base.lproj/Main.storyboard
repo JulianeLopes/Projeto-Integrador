@@ -293,7 +293,7 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="215" id="NCh-bX-AAn"/>
                                                         </constraints>
-                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="LnU-ro-d0Q">
+                                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="LnU-ro-d0Q">
                                                             <size key="itemSize" width="116" height="162"/>
                                                             <size key="estimatedItemSize" width="116" height="162"/>
                                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -312,15 +312,18 @@
                                                                             <rect key="frame" x="0.0" y="0.0" width="116" height="162"/>
                                                                             <color key="backgroundColor" red="0.4989868724" green="0.51231574449999995" blue="0.78172348479999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                             <constraints>
-                                                                                <constraint firstAttribute="height" constant="162" id="6bx-Ir-8z6"/>
-                                                                                <constraint firstAttribute="width" constant="116" id="bmK-UH-z1H"/>
+                                                                                <constraint firstAttribute="height" constant="152" id="RuL-zP-lgR"/>
+                                                                                <constraint firstAttribute="width" constant="116" id="iTQ-hm-vNO"/>
                                                                             </constraints>
                                                                         </imageView>
                                                                     </subviews>
                                                                     <constraints>
-                                                                        <constraint firstItem="mD4-o1-ESv" firstAttribute="leading" secondItem="Bn7-8X-ZZQ" secondAttribute="leading" id="NOA-gG-jX6"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="mD4-o1-ESv" secondAttribute="bottom" id="gFD-uw-R9J"/>
-                                                                        <constraint firstItem="mD4-o1-ESv" firstAttribute="top" secondItem="Bn7-8X-ZZQ" secondAttribute="top" id="mMo-dx-ocw"/>
+                                                                        <constraint firstItem="mD4-o1-ESv" firstAttribute="centerY" secondItem="Bn7-8X-ZZQ" secondAttribute="centerY" id="5NI-zB-rFI"/>
+                                                                        <constraint firstAttribute="bottom" secondItem="mD4-o1-ESv" secondAttribute="bottom" constant="5" id="M0j-pT-h8N"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="mD4-o1-ESv" secondAttribute="trailing" constant="5" id="Qqm-Nn-A9G"/>
+                                                                        <constraint firstItem="mD4-o1-ESv" firstAttribute="leading" secondItem="Bn7-8X-ZZQ" secondAttribute="leading" constant="5" id="Tso-PB-StL"/>
+                                                                        <constraint firstItem="mD4-o1-ESv" firstAttribute="top" secondItem="Bn7-8X-ZZQ" secondAttribute="top" constant="5" id="f4j-3B-yyY"/>
+                                                                        <constraint firstItem="mD4-o1-ESv" firstAttribute="centerX" secondItem="Bn7-8X-ZZQ" secondAttribute="centerX" id="xVj-wu-NX2"/>
                                                                     </constraints>
                                                                 </collectionViewCellContentView>
                                                                 <size key="customSize" width="116" height="162"/>
@@ -397,7 +400,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Dgd-oz-16q">
-                                <rect key="frame" x="16" y="454" width="382" height="142"/>
+                                <rect key="frame" x="16" y="454" width="382" height="92"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meu nivel de fã marvel:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJy-eq-pXN">
                                         <rect key="frame" x="84.5" y="0.0" width="213.5" height="30"/>
@@ -410,9 +413,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10%" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gh3-Gp-Lub">
-                                        <rect key="frame" x="147.5" y="32" width="87.5" height="110"/>
+                                        <rect key="frame" x="147.5" y="32" width="87.5" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="110" id="aaA-Co-p6F"/>
+                                            <constraint firstAttribute="height" constant="60" id="aaA-Co-p6F"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="45"/>
                                         <nil key="textColor"/>
@@ -421,9 +424,9 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Gkv-GQ-ZUF" customClass="Fa">
-                                <rect key="frame" x="0.0" y="645" width="414" height="142"/>
+                                <rect key="frame" x="0.0" y="595" width="414" height="192"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fPX-WG-gb0">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="fPX-WG-gb0">
                                     <size key="itemSize" width="116" height="162"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -431,27 +434,26 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="fanzometroCell" id="vuv-tF-mCo" customClass="FanzometroCollectionViewCell" customModule="ProjetoIntegrador" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-10" width="116" height="162"/>
+                                        <rect key="frame" x="0.0" y="15" width="116" height="162"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZcS-BA-M5G">
                                             <rect key="frame" x="0.0" y="0.0" width="116" height="162"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster" translatesAutoresizingMaskIntoConstraints="NO" id="PdF-4U-GrD">
-                                                    <rect key="frame" x="0.0" y="0.0" width="116" height="162"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="116" id="EjX-GU-7Gw"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="116" id="GAg-Fb-GKC"/>
-                                                        <constraint firstAttribute="height" constant="162" id="Mxz-sF-yhg"/>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="162" id="dgT-f3-IYG"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="5" y="5" width="106" height="152"/>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="PdF-4U-GrD" secondAttribute="trailing" id="1oQ-uK-9li"/>
-                                                <constraint firstItem="PdF-4U-GrD" firstAttribute="leading" secondItem="ZcS-BA-M5G" secondAttribute="leading" id="cyg-ME-fy6"/>
-                                                <constraint firstAttribute="bottom" secondItem="PdF-4U-GrD" secondAttribute="bottom" id="mSa-WL-ZCe"/>
-                                                <constraint firstItem="PdF-4U-GrD" firstAttribute="top" secondItem="ZcS-BA-M5G" secondAttribute="top" id="zb0-dA-aeF"/>
+                                                <constraint firstItem="PdF-4U-GrD" firstAttribute="height" secondItem="ZcS-BA-M5G" secondAttribute="height" multiplier="0.938272" id="GgE-J4-zOC"/>
+                                                <constraint firstItem="PdF-4U-GrD" firstAttribute="centerY" secondItem="ZcS-BA-M5G" secondAttribute="centerY" id="KtI-Oa-nER"/>
+                                                <constraint firstItem="PdF-4U-GrD" firstAttribute="centerX" secondItem="ZcS-BA-M5G" secondAttribute="centerX" id="MXb-La-nbR"/>
+                                                <constraint firstItem="PdF-4U-GrD" firstAttribute="top" secondItem="ZcS-BA-M5G" secondAttribute="top" constant="5" id="Q0J-t5-TV2"/>
+                                                <constraint firstAttribute="trailing" secondItem="PdF-4U-GrD" secondAttribute="trailing" constant="5" id="doB-eL-ccO"/>
+                                                <constraint firstItem="PdF-4U-GrD" firstAttribute="leading" secondItem="ZcS-BA-M5G" secondAttribute="leading" constant="5" id="fEd-Yv-6UW"/>
+                                                <constraint firstItem="PdF-4U-GrD" firstAttribute="leading" secondItem="ZcS-BA-M5G" secondAttribute="leading" constant="5" id="hNz-gG-1E2"/>
+                                                <constraint firstItem="PdF-4U-GrD" firstAttribute="width" secondItem="ZcS-BA-M5G" secondAttribute="width" multiplier="0.913793" id="s7J-ZY-D4f"/>
+                                                <constraint firstAttribute="bottom" secondItem="PdF-4U-GrD" secondAttribute="bottom" constant="5" id="sdC-u9-Res"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="116" height="162"/>
@@ -468,7 +470,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meus filmes favoritos:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOA-kr-JZe">
-                                <rect key="frame" x="10" y="606" width="207" height="24"/>
+                                <rect key="frame" x="10" y="556" width="207" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1280,7 +1282,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lyi-mc-ALf"/>
+        <segue reference="kEu-Pf-PAy"/>
         <segue reference="PFt-4h-bo4"/>
     </inferredMetricsTieBreakers>
     <resources>
