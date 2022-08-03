@@ -55,7 +55,7 @@ class FanzometroViewModel {
     }
     
     
-    // calcula o nivel de fanzometro Double
+    // calcula o nivel de fanzometro int
     public func fanzometroPorcentagemDouble(completion: @escaping (Int) -> Void) {
         getFilmesDaApi {
             
@@ -69,17 +69,10 @@ class FanzometroViewModel {
                 return
             }
             let porcentagemFanzometro = Int((100 * quantidadeDeAssistidos) / quantidadeDeFilmes)
-           // DispatchQueue.main.async {
                 completion(porcentagemFanzometro)
-      //      }
         }
     }
     
-//    // retorna a porcentagem de fã do usuario
-//    func getFanzometroDoUsuarioDouble(completion: @escaping (Double) -> Void) {
-//        let favoritos = (try? filmeEntityService.favoritos()) ?? []
-//       fanzometroPorcentagem(listaDeFavoritos: favoritos, completion: completion)
-//    }
     
     // envia os dados do filme para a celula
     func getViewModel(posicao: Int) -> FilmeViewModel {
