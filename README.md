@@ -30,16 +30,20 @@ Tela de Pesquisa | Tela de Pesquisa | Tela de Minha Lista de Filmes | Tela de Fa
 ## Para abrir o projeto:
 
 * Clonar o seguinte repositório
-$ git clone <https://github.com/JulianeLopes/Projeto-Integrador.git>
+
+      git clone <https://github.com/JulianeLopes/Projeto-Integrador.git>
 
 * Acesse a pasta do projeto no terminal/cmd
-$ cd AppMarvel
+
+      cd AppMarvel
 
 * Execute o comando *pod install* para iniciar o projeto com as libs necessárias
-$ pod install
+
+      pod install
 
 * Abra o projeto no XCode
-$ open AppMarvel.xcworkspace
+
+      open AppMarvel.xcworkspace
   
 
 ## Realização do projeto:
