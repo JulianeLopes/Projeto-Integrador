@@ -15,7 +15,7 @@ class NovoUsuarioViewController: UIViewController {
     @IBOutlet weak var fotoUser: UIImageView!
     
     let viewModel = NovoUsuarioViewModel()
-    private var userImage: UIImage?
+  //  private var userImage: UIImageView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,23 +23,17 @@ class NovoUsuarioViewController: UIViewController {
         nomeTextField.delegate = self
         emailTextField.delegate = self
         senhaTextField.delegate = self
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        addFotoButton.layer.masksToBounds = true
-        addFotoButton.layer.borderWidth = 4
-        addFotoButton.layer.cornerRadius = 150/2
-        addFotoButton.layer.borderColor = UIColor.red.cgColor
-        addFotoButton.imageView?.contentMode = .scaleAspectFit
-        addFotoButton.imageView?.clipsToBounds = true
+        fotoUser.layer.cornerRadius = 150/2
+        fotoUser.layer.borderWidth = 4
+        fotoUser.layer.borderColor = UIColor.red.cgColor
+        fotoUser.layer.masksToBounds = true
         
     }
     
     // cadastrar usuario
     @IBAction func cadastrarButton(_ sender: Any) {
-        viewModel.registrarUsuario(nome: nomeTextField.text, senha: senhaTextField.text, email: emailTextField.text, fotoUsuario: userImage)
+        let foto = fotoUser?.image
+        viewModel.registrarUsuario(nome: nomeTextField.text, senha: senhaTextField.text, email: emailTextField.text, fotoUsuario: foto)
     
     }
     
@@ -58,10 +52,8 @@ class NovoUsuarioViewController: UIViewController {
 extension NovoUsuarioViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
-            
-           
-            self.userImage = image
-            self.addFotoButton.setImage(image, for: .normal)
+            fotoUser.image = image
+         //   self.addFotoButton.setImage(image, for: .normal)
             
             
         }

@@ -35,8 +35,8 @@ class Fanzometro: UIViewController {
     
     // função para configurar a foto do usuário na tela
     private func configuraTela() {
-        userImageView.image = UIImage(named: viewModel.getFotoUsuario())
-        userImageView.layer.cornerRadius = 130
+        userImageView.image = viewModel.getFotoUsuario()
+        userImageView.layer.cornerRadius = 120
         //userImageView.layer.borderWidth = 1
         favoritosCollectionView.dataSource = self
     }

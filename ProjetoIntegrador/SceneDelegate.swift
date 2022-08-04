@@ -23,7 +23,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.makeKeyAndVisible()
         self.window = window
         
-        // analizar se existe o usuario logado, se sim chamar tela Main caso contrario Main Tela Cadastro
+        
+        
+     //    analizar se existe o usuario logado, se sim chamar tela Main caso contrario Main Tela Cadastro
         if Auth.auth().currentUser != nil {
             SessionManager.shared.fetchUsuario { error in
                 if error == nil {
@@ -31,9 +33,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 } else {
                     controller = UIStoryboard(name: "Main Tela Cadastro", bundle: nil).instantiateInitialViewController()
                 }
-                window.rootViewController = controller
+               window.rootViewController = controller
             }
-            
+
         } else {
             controller = UIStoryboard(name: "Main Tela Cadastro", bundle: nil).instantiateInitialViewController()
             window.rootViewController = controller

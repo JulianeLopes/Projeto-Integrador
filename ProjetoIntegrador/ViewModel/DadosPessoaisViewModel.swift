@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 class DadosPessoaisViewModel {
     // usuario logado
@@ -20,9 +21,8 @@ class DadosPessoaisViewModel {
     }
     
     // envia foto do usuario
-    func getFotoDoUsuario() -> String {
-        guard let usuarioLogado = usuarioLogado else { return "" }
-        return usuarioLogado.foto
+    func getFotoDoUsuario() -> UIImage? {
+        return SessionManager.shared.returnUsuarioEntities()?.wrappedFoto
     }
 
 }

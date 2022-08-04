@@ -15,7 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var usuarioTextField: UITextField!
     @IBOutlet weak var senhaTextField: UITextField!
     
-    let service = ServicoDeUsuario()
+//    let service = ServicoDeUsuario()
     let viewModel = LoginViewModel()
     let sessionManager = SessionManager.shared
     

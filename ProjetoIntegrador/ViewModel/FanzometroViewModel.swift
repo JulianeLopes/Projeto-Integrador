@@ -11,7 +11,7 @@ import UIKit
 class FanzometroViewModel {
     
     var servicoDeAPI = MovieAPI()
-    let service = ServicoDeUsuario()
+//    let service = ServicoDeUsuario()
     let filmeEntityService = FilmeEntityService()
     let userDefaults = UserDefaultsService()
     
@@ -31,9 +31,8 @@ class FanzometroViewModel {
     }
     
     // recebe a foto do usuario
-    func getFotoUsuario() -> String {
-        guard let usuarioLogado = usuarioLogado else { return "" }
-        return usuarioLogado.foto
+    func getFotoUsuario() -> UIImage? {
+        return SessionManager.shared.returnUsuarioEntities()?.wrappedFoto
     }
     
     // calcula o nivel de fanzometro

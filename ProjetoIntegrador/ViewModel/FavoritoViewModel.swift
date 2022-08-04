@@ -9,7 +9,7 @@ import Foundation
 
 class FavoritoViewModel {
     
-    let service = ServicoDeUsuario()
+//    let service = ServicoDeUsuario()
     let serviceCoreData = FilmeEntityService()
     let servicoDeSpoiler = ServicoDeSpoiler()
     
