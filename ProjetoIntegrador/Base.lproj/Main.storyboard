@@ -475,8 +475,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ObU-6y-Y9N">
-                                <rect key="frame" x="87" y="173" width="241" height="242"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ObU-6y-Y9N">
+                                <rect key="frame" x="86.5" y="173" width="241" height="242"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="241" id="l5s-iS-GVv"/>
+                                    <constraint firstAttribute="height" constant="242" id="oqP-ix-kA0"/>
+                                </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skt-op-LBY" customClass="MBCircularProgressBarView">
                                 <rect key="frame" x="57" y="142" width="300" height="304"/>
@@ -532,6 +536,7 @@
                             <constraint firstItem="Gkv-GQ-ZUF" firstAttribute="trailing" secondItem="Di5-rK-Igl" secondAttribute="trailing" id="FEG-LN-81n"/>
                             <constraint firstItem="JrN-bf-EHE" firstAttribute="top" secondItem="Di5-rK-Igl" secondAttribute="top" constant="10" id="LsF-SW-hRD"/>
                             <constraint firstItem="uOA-kr-JZe" firstAttribute="leading" secondItem="Di5-rK-Igl" secondAttribute="leading" constant="10" id="NMh-aa-3Jd"/>
+                            <constraint firstItem="ObU-6y-Y9N" firstAttribute="centerY" secondItem="skt-op-LBY" secondAttribute="centerY" id="NQT-Xe-l1a"/>
                             <constraint firstItem="Di5-rK-Igl" firstAttribute="bottom" secondItem="Gkv-GQ-ZUF" secondAttribute="bottom" constant="26" id="YNK-1O-gxH"/>
                             <constraint firstItem="Dgd-oz-16q" firstAttribute="top" secondItem="skt-op-LBY" secondAttribute="bottom" constant="8" symbolic="YES" id="Z5j-Pk-KFR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ObU-6y-Y9N" secondAttribute="trailing" constant="66" id="a7j-0C-oYW"/>
@@ -542,7 +547,16 @@
                             <constraint firstItem="Gkv-GQ-ZUF" firstAttribute="top" secondItem="uOA-kr-JZe" secondAttribute="bottom" constant="15" id="jQx-j8-OGL"/>
                             <constraint firstItem="Di5-rK-Igl" firstAttribute="trailing" secondItem="skt-op-LBY" secondAttribute="trailing" constant="57" id="k0u-21-NBc"/>
                             <constraint firstItem="skt-op-LBY" firstAttribute="top" secondItem="JrN-bf-EHE" secondAttribute="bottom" constant="8" symbolic="YES" id="mjz-37-IkK"/>
+                            <constraint firstItem="ObU-6y-Y9N" firstAttribute="centerX" secondItem="skt-op-LBY" secondAttribute="centerX" id="vWz-Uj-f7M"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="DkL-5o-Ygf"/>
+                                <exclude reference="a7j-0C-oYW"/>
+                                <exclude reference="f0Z-E0-1eK"/>
+                                <exclude reference="f6x-hw-5pa"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Fanzonmetro" image="chart.bar.fill" catalog="system" id="YF1-oh-F0K"/>
                     <navigationItem key="navigationItem" id="Xsa-TN-AxZ"/>
@@ -720,7 +734,7 @@
                                     <action selector="uploadFotoButton:" destination="IUN-CD-b0q" eventType="touchUpInside" id="6VC-dB-Jbv"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fkj-F8-LLa">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fkj-F8-LLa">
                                 <rect key="frame" x="82" y="308" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="Suq-jJ-D9q"/>

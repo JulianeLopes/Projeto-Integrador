@@ -60,13 +60,14 @@ class LoginViewModel {
                 guard let user = user else { return }
                 self.fireBaseService.salvarUsuarioNoDataBase(user: user)
             }
-            let imageURL = usuario?.profile?.imageURL(withDimension: 130)
-            var imageData: Foundation.Data?
-            
-            if  let imageURL = imageURL,
-                let data = try? Foundation.Data(contentsOf: imageURL){
-                imageData = data
-            }
+            let imageURL = usuario?.profile?.imageURL(withDimension: 150)
+//            var imageData: Foundation.Data?
+//
+//            if  let imageURL = imageURL,
+//                let data = try? Foundation.Data(contentsOf: imageURL){
+//                imageData = data
+//            }
+            let imageData = self.converteImagemPraData(imageUrl: imageURL)
             
             self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: imageData)
             do {
@@ -85,22 +86,31 @@ class LoginViewModel {
         fireBaseService.tratarLoginFacebook(result: result, error: error) { userLogadoFace in
             self.usuario = userLogadoFace
             
-            let uid = userLogadoFace.uid
-            
-            self.fireBaseService.salvarUsuarioNoDataBase(user: userLogadoFace)
-            
-            self.fireBaseService.fetchUser(uid: uid) { usuarioFirebase in
-                let nome = usuarioFirebase.nome
-                let email = usuarioFirebase.email
-                self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: usuarioFirebase.foto?.dataRepresentation)
-                do {
-                    let usuario = try self.servicoCoreData.getUsuario(email: email)?.converterParaUsuario()
-                    self.sessionManager.usuarioLogado = usuario
-                    self.delegate?.segue()
-                } catch {
-                    print(error.localizedDescription)
+            Auth.auth().addStateDidChangeListener { auth , user in
+                guard let user = user else { return }
+                self.fireBaseService.salvarUsuarioNoDataBase(user: user)
+                let imageURL = user.photoURL
+                let imageData = self.converteImagemPraData(imageUrl: imageURL)
+                let uid = userLogadoFace.uid
+                
+                self.fireBaseService.salvarUsuarioNoDataBase(user: userLogadoFace)
+                
+                self.fireBaseService.fetchUser(uid: uid) { usuarioFirebase in
+                    let nome = usuarioFirebase.nome
+                    let email = usuarioFirebase.email
+                    self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: imageData)
+                    do {
+                        let usuario = try self.servicoCoreData.getUsuario(email: email)?.converterParaUsuario()
+                        self.sessionManager.usuarioLogado = usuario
+                        self.delegate?.segue()
+                    } catch {
+                        print(error.localizedDescription)
+                    }
                 }
+                
             }
+            
+            
         }
         
     }
@@ -113,7 +123,9 @@ class LoginViewModel {
             self.fireBaseService.fetchUser(uid: uid) { usuarioFirebase in
                 let nome = usuarioFirebase.nome
                 let email = usuarioFirebase.email
-                self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: usuarioFirebase.foto?.dataRepresentation)
+                let imageURL = usuarioFirebase.foto
+                let imageData = self.converteImagemPraData(imageUrl: imageURL)
+                self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: imageData)
                 do {
                     let usuario = try self.servicoCoreData.getUsuario(email: email)?.converterParaUsuario()
                     self.sessionManager.usuarioLogado = usuario
@@ -126,6 +138,15 @@ class LoginViewModel {
         }
     }
     
+    func converteImagemPraData(imageUrl: URL?) -> Foundation.Data? {
+        var imageData: Foundation.Data?
+        
+        if  let imageURL = imageUrl,
+            let data = try? Foundation.Data(contentsOf: imageURL){
+            imageData = data
+        }
+        return imageData
+    }
 }
 
 
