@@ -80,8 +80,24 @@ extension UsuarioEntities {
     @objc(removeFilmesentities:)
     @NSManaged public func removeFromFilmesentities(_ values: NSSet)
 
+    
+    @objc(addFilmesParaAssistirObject:)
+    @NSManaged public func addToFilmesParaAssistir(_ value: FilmesParaAssistir)
+
+    @objc(removeFilmesParaAssistirObject:)
+    @NSManaged public func removeFromFilmesParaAssistir(_ value: FilmesParaAssistir)
+
+    @objc(addFilmesParaAssistir:)
+    @NSManaged public func addToFilmesParaAssistir(_ values: NSSet)
+
+    @objc(removeFilmesParaAssistir:)
+    @NSManaged public func removeFromFilmesParaAssistir(_ values: NSSet)
+    
+    
     func converterParaUsuario() -> Usuario {
         return Usuario(nome: wrappedNome, email: wrappedEmail, senha: wrappedSenha, foto: wrappedFoto, nivelDeFa: nivelDeFa, filmesFavoritos: [])
     }
+    
+    
     
 }
