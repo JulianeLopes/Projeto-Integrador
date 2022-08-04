@@ -65,15 +65,27 @@ class ServiceCoreData {
         return emailExiste
     }
     
-    func adicionarFilmesAosFavoritos(usuario: UsuarioEntities, filme: FilmesEntities) {
-        usuario.addToFilmesentities(filme)
-        saveContext()
+    func adicionarFilmesAosFavoritos(usuario: UsuarioEntities, filme: Filme) throws {
+        let favoritos = usuario.wrappedFilmesentities
+        if let filmeAAdicionar = favoritos.first(where: { favorito in
+            return favorito.title == filme.title
+        }){
+            usuario.addToFilmesentities(filmeAAdicionar)
+            saveContext()
+        }
+        
     }
     
-    func removerFilmesDosFavoritos(usuario: UsuarioEntities, filme: FilmesEntities) {
-        usuario.removeFromFilmesentities(filme)
-        saveContext()
+    func removerFilmesDosFavoritos(usuario: UsuarioEntities, filme: Filme) throws {
+        let favoritos = usuario.wrappedFilmesentities
+        if let filmeARemover = favoritos.first(where: { favorito in
+            return favorito.title == filme.title
+        }){
+            usuario.removeFromFilmesentities(filmeARemover)
+            saveContext()
+        }
     }
+    
     
     func adicionarFilmesAssistir(usuario: UsuarioEntities, filme: FilmesParaAssistir) {
         usuario.addToFilmesParaAssistir(filme)
@@ -94,4 +106,32 @@ class ServiceCoreData {
             return filmes
     }
     
+    func assistirMaisTarde(lista: [FilmesParaAssistir]) throws -> [Filme] {
+            var filmes: [Filme] = []
+            lista.forEach { filmeEntity in
+                let filme = Filme(filmeParaAssistir: filmeEntity)
+                filmes.append(filme)
+            }
+            return filmes
+    }
+    
+    func removerAssistirMaisTarde(usuario: UsuarioEntities, filme: Filme) throws {
+        let aAssistir = usuario.wrappedFilmesParaAssistir
+        if let filmeARemover = aAssistir.first(where: { assistir in
+            return assistir.title == filme.title
+        }){
+            usuario.removeFromFilmesParaAssistir(filmeARemover)
+            saveContext()
+        }
+    }
+    
+    func adicionarAssistirMaisTarde(usuario: UsuarioEntities, filme: Filme) throws {
+        let aAssistir = usuario.wrappedFilmesParaAssistir
+        if let filmeAAssistir = aAssistir.first(where: { assistir in
+            return assistir.title == filme.title
+        }){
+            usuario.addToFilmesParaAssistir(filmeAAssistir)
+            saveContext()
+        }
+    }
 }
