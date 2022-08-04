@@ -39,16 +39,33 @@ class DetalheDoFilmeViewModel {
     var listaDeFilmesAvaliados: [String: Int] = [:]
     var servicoUserDefault = UserDefaultsService.shared
     private let filmeEntityService = FilmeEntityService()
+    var servicoCoreData = ServiceCoreData()
     
     var filme: Filme?
     var spoilerFilme: Spoiler?
     
     var delegate: FilmesViewModelDelegate?
+    
+    private var usuarioLogado: Usuario? {
+        return SessionManager.shared.usuarioLogado
+    }
 
     
     // MARK: - Botão Favoritar
     var favoritos: [Filme] {
-        return (try? filmeEntityService.favoritos()) ?? []
+        guard let listaDeFavoritosUsuario = SessionManager.shared.returnUsuarioEntities()?.wrappedFilmesentities else { return []}
+        do {
+            return  try?servicoCoreData.favoritos(favoritos: listaDeFavoritosUsuario)?? []
+        } catch {
+       
+          print(error)
+        }
+            
+        
+        
+        
+        
+  //      return (try? filmeEntityService.favoritos()) ?? []
     }
     
     var isFavorite: Bool {

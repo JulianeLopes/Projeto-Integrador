@@ -65,4 +65,33 @@ class ServiceCoreData {
         return emailExiste
     }
     
+    func adicionarFilmesAosFavoritos(usuario: UsuarioEntities, filme: FilmesEntities) {
+        usuario.addToFilmesentities(filme)
+        saveContext()
+    }
+    
+    func removerFilmesDosFavoritos(usuario: UsuarioEntities, filme: FilmesEntities) {
+        usuario.removeFromFilmesentities(filme)
+        saveContext()
+    }
+    
+    func adicionarFilmesAssistir(usuario: UsuarioEntities, filme: FilmesParaAssistir) {
+        usuario.addToFilmesParaAssistir(filme)
+        saveContext()
+    }
+    
+    func removerFilmesAssistir(usuario: UsuarioEntities, filme: FilmesParaAssistir) {
+        usuario.removeFromFilmesParaAssistir(filme)
+        saveContext()
+    }
+    
+    func favoritos(favoritos: [FilmesEntities]) throws -> [Filme] {
+            var filmes: [Filme] = []
+            favoritos.forEach { filmeEntity in
+                let filme = Filme(filme: filmeEntity)
+                filmes.append(filme)
+            }
+            return filmes
+    }
+    
 }
