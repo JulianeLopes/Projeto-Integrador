@@ -50,6 +50,11 @@ class DetalheDoFilmeViewModel {
         return SessionManager.shared.usuarioLogado
     }
     
+    private var usuarioLogadoEntities: UsuarioEntities? {
+        return SessionManager.shared.usuarioEntities
+    }
+    
+    
     
     // MARK: - Botão Favoritar
     var favoritos: [Filme] {
@@ -62,7 +67,7 @@ class DetalheDoFilmeViewModel {
 //            print(error.localizedDescription)
 //        }
        
-        return usuarioLogado?.filmesFavoritos ?? []
+        return usuarioLogadoEntities?.listaDeFilmesFavoritos ?? []
         //      return (try? filmeEntityService.favoritos()) ?? []
     }
     

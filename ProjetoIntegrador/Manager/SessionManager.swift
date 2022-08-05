@@ -15,6 +15,10 @@ class SessionManager {
     static var shared = SessionManager()
     var usuarioLogado: Usuario?
     
+    var usuarioEntities: UsuarioEntities? {
+        returnUsuarioEntities()
+    }
+    
     func fetchUsuario(completion: @escaping (Error?)->Void){
         guard let uid = Auth.auth().currentUser?.uid else { return }
         firebaseService.fetchUser(uid: uid) { usuarioFirebase in
