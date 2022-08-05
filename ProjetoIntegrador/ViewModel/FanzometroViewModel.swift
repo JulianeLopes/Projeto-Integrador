@@ -23,10 +23,14 @@ class FanzometroViewModel {
     private var usuarioLogado: Usuario? {
         return SessionManager.shared.usuarioLogado
     }
+    private var usuarioLogadoEntities: UsuarioEntities? {
+        return SessionManager.shared.usuarioEntities
+    }
     
     // quantidade filmes favoritos do usuario
     func numeroDeFilmesFavoritos() -> Int {
-        return ((try? filmeEntityService.favoritos()) ?? []).count
+//        return ((try? filmeEntityService.favoritos()) ?? []).count
+        return usuarioLogadoEntities?.listaDeFilmesFavoritos.count ?? 0
         
     }
     
@@ -49,7 +53,8 @@ class FanzometroViewModel {
     
     // retorna a porcentagem de fã do usuario
     func getFanzometroDoUsuario(completion: @escaping (String) -> Void) {
-        let favoritos = (try? filmeEntityService.favoritos()) ?? []
+//        let favoritos = (try? filmeEntityService.favoritos()) ?? []
+        let favoritos = usuarioLogadoEntities?.listaDeFilmesFavoritos ?? []
        fanzometroPorcentagem(listaDeFavoritos: favoritos, completion: completion)
     }
     
@@ -75,7 +80,8 @@ class FanzometroViewModel {
     
     // envia os dados do filme para a celula
     func getViewModel(posicao: Int) -> FilmeViewModel {
-        let filmes = (try? filmeEntityService.favoritos()) ?? []
+//        let filmes = (try? filmeEntityService.favoritos()) ?? []
+        let filmes = usuarioLogadoEntities?.listaDeFilmesFavoritos ?? []
         let filme = filmes[posicao]
         let cellViewModel = FilmeViewModel(filme: filme)
         return cellViewModel

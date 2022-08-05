@@ -23,7 +23,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.makeKeyAndVisible()
         self.window = window
         
-        
+//        let firebaseAuth = Auth.auth()
+//        do {
+//            try firebaseAuth.signOut()
+//            AccessToken.current = nil
+//        } catch let signOutError as NSError {
+//            print("Error signing out: %@", signOutError)
+//        }
         
      //    analizar se existe o usuario logado, se sim chamar tela Main caso contrario Main Tela Cadastro
         if Auth.auth().currentUser != nil {

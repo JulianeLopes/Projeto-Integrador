@@ -35,20 +35,6 @@ class HomeViewModel {
         return SessionManager.shared.usuarioLogado
     }
     
-//    func fetchUsuario(){
-//
-//            guard let uid = Auth.auth().currentUser?.uid else { return }
-//            firebaseService.fetchUser(uid: uid) { usuarioFirebase in
-//                do {
-//                    let usuario = try self.servicoCoreData.getUsuario(email: usuarioFirebase.email)?.converterParaUsuario()
-//                    self.sessionManager.usuarioLogado = usuario
-//                } catch {
-//                    print(error.localizedDescription)
-//                
-//            }
-//        }
-//    }
-    
     // recebe o nome do usuario logado
     func getNomeUsuario() -> String {
         guard let usuarioLogado = usuarioLogado else  { return "" }
@@ -89,11 +75,8 @@ class HomeViewModel {
         spoiler = getSpoiler(filme: filmeSelecionado)
     }
     
-    
-
     private func selecionarFilme(filme: Filme) {
         filmeSelecionado = filme
-        
     }
     
     // envia o filme selecionado para outra tela
@@ -115,13 +98,11 @@ class HomeViewModel {
         }
     }
     
-    
     func getFilmesDaAPI(completion: @escaping () -> Void){
         servicosDeAPI.loadFilmes { filmes in
             self.filmes = filmes
             self.filmeDestaque = filmes[2]
             completion()
-            
         }
     }
     
