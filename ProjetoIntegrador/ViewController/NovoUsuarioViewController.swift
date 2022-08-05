@@ -53,9 +53,6 @@ extension NovoUsuarioViewController: UIImagePickerControllerDelegate, UINavigati
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[.originalImage] as? UIImage {
             fotoUser.image = image
-         //   self.addFotoButton.setImage(image, for: .normal)
-            
-            
         }
         dismiss(animated: true)
     }
