@@ -53,15 +53,16 @@ class DetalheDoFilmeViewModel {
     
     // MARK: - Botão Favoritar
     var favoritos: [Filme] {
-        guard let listaDeFavoritosUsuario = SessionManager.shared.returnUsuarioEntities()?.wrappedFilmesentities else { return [] }
-        var filmes: [Filme] = []
-        do {
-            filmes = try servicoCoreData.favoritos(favoritos: listaDeFavoritosUsuario)
-            
-        } catch {
-            print(error.localizedDescription)
-        }
-         return filmes
+//        guard let listaDeFavoritosUsuario = SessionManager.shared.returnUsuarioEntities()?.wrappedFilmesentities else { return [] }
+//        var filmes: [Filme] = []
+//        do {
+//            filmes = try servicoCoreData.favoritos(favoritos: listaDeFavoritosUsuario)
+//
+//        } catch {
+//            print(error.localizedDescription)
+//        }
+       
+        return usuarioLogado?.filmesFavoritos ?? []
         //      return (try? filmeEntityService.favoritos()) ?? []
     }
     
@@ -80,10 +81,10 @@ class DetalheDoFilmeViewModel {
             print(error.localizedDescription)
         }
          
-//        guard let
+
 //        do {
 //           // try listaDefavoritos = filmeEntityService.favoritos()
-//            try listaDefavoritos = usuarioLogado?.filmesFavoritos
+
 //        } catch {
 //            print(error)
 //        }

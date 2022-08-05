@@ -56,11 +56,29 @@ extension UsuarioEntities {
         }
     }
     
+    var listaDeFilmesFavoritos: [Filme] {
+        var filmes: [Filme] = []
+        wrappedFilmesentities.forEach { filme in
+            let filmeConvertido = Filme(filme: filme)
+            filmes.append(filmeConvertido)
+        }
+        return filmes
+    }
+    
     public var wrappedFilmesParaAssistir: [FilmesParaAssistir] {
         let filmes = filmesParaAssistir as? Set<FilmesParaAssistir> ?? []
         return filmes.sorted {
             $0.wrappedTitle < $1.wrappedTitle
         }
+    }
+    
+    var listaDeFilmesAssistirDepois: [Filme] {
+        var filmes: [Filme] = []
+        wrappedFilmesParaAssistir.forEach { filme in
+            let filmeConvertido = Filme(filmeParaAssistir: filme)
+            filmes.append(filmeConvertido)
+        }
+        return filmes
     }
     
 }
@@ -95,7 +113,7 @@ extension UsuarioEntities {
     
     
     func converterParaUsuario() -> Usuario {
-        return Usuario(nome: wrappedNome, email: wrappedEmail, senha: wrappedSenha, foto: wrappedFoto, nivelDeFa: nivelDeFa, filmesFavoritos: [])
+        return Usuario(nome: wrappedNome, email: wrappedEmail, senha: wrappedSenha, foto: wrappedFoto, nivelDeFa: nivelDeFa, filmesFavoritos: [], filmesAssistirDepois: [])
     }
     
     
