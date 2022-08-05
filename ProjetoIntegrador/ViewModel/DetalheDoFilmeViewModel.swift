@@ -58,17 +58,7 @@ class DetalheDoFilmeViewModel {
     
     // MARK: - Botão Favoritar
     var favoritos: [Filme] {
-//        guard let listaDeFavoritosUsuario = SessionManager.shared.returnUsuarioEntities()?.wrappedFilmesentities else { return [] }
-//        var filmes: [Filme] = []
-//        do {
-//            filmes = try servicoCoreData.favoritos(favoritos: listaDeFavoritosUsuario)
-//
-//        } catch {
-//            print(error.localizedDescription)
-//        }
-       
         return usuarioLogadoEntities?.listaDeFilmesFavoritos ?? []
-        //      return (try? filmeEntityService.favoritos()) ?? []
     }
     
     var isFavorite: Bool {
@@ -78,21 +68,13 @@ class DetalheDoFilmeViewModel {
     }
     
     func loadFavoritos() {
-        guard let listaDeFavoritosUsuario = SessionManager.shared.returnUsuarioEntities()?.wrappedFilmesentities else { return }
+        guard let listaDeFavoritosUsuario = usuarioLogadoEntities?.wrappedFilmesentities else { return }
         do {
             listaDefavoritos = try servicoCoreData.favoritos(favoritos: listaDeFavoritosUsuario)
             
         } catch {
             print(error.localizedDescription)
         }
-         
-
-//        do {
-//           // try listaDefavoritos = filmeEntityService.favoritos()
-
-//        } catch {
-//            print(error)
-//        }
     }
     
     // função de favoritar filmes e salvar no coredata

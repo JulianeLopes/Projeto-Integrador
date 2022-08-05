@@ -47,7 +47,6 @@
 		5EC586672887500400F03204 /* UsuarioEntities+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC586662887500400F03204 /* UsuarioEntities+CoreDataClass.swift */; };
 		5ECB49D12865349800F19206 /* Spoiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB49D02865349800F19206 /* Spoiler.swift */; };
 		5ECB49D32865361E00F19206 /* ServicoDeSpoiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ECB49D22865361E00F19206 /* ServicoDeSpoiler.swift */; };
-		EE08BC4B28876B8D007ED060 /* UsuarioEntities+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE08BC4A28876B8C007ED060 /* UsuarioEntities+CoreDataProperties.swift */; };
 		EE1020A12852A94900D39141 /* NovoUsuarioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1020A02852A94900D39141 /* NovoUsuarioViewModel.swift */; };
 		EE118C2E28445906005852F7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118C2D28445906005852F7 /* HomeViewController.swift */; };
 		EE118C30284459BA005852F7 /* FilmesEmDestaquesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118C2F284459BA005852F7 /* FilmesEmDestaquesCollectionViewCell.swift */; };
@@ -63,6 +62,7 @@
 		EE53C4BD28510B3C005DB3AC /* SpoilerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE53C4BC28510B3C005DB3AC /* SpoilerViewController.swift */; };
 		EE9C4B8B28973CB8008244FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C4B8A28973CB8008244FC /* Constants.swift */; };
 		EEC71A38286F735D001116E7 /* SpoilerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC71A37286F735D001116E7 /* SpoilerViewModel.swift */; };
+		EEDCFB86289CAD6A008F44A2 /* UsuarioEntities+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDCFB85289CAD6A008F44A2 /* UsuarioEntities+CoreDataProperties.swift */; };
 		FB64D92A2880E3FD00D7C509 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB64D9292880E3FD00D7C509 /* GoogleService-Info.plist */; };
 		FBDBE28028443AC100C897A4 /*  ServicoDeUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE27F28443AC100C897A4 /*  ServicoDeUsuario.swift */; };
 		FBDBE28228443D7B00C897A4 /* Fanzometro.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE28128443D7B00C897A4 /* Fanzometro.swift */; };
@@ -138,7 +138,6 @@
 		683884787664D271617361E1 /* Pods-ProjetoIntegrador.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjetoIntegrador.debug.xcconfig"; path = "Target Support Files/Pods-ProjetoIntegrador/Pods-ProjetoIntegrador.debug.xcconfig"; sourceTree = "<group>"; };
 		6E1D4897F9C2BAF7AE22CC3E /* Pods-ProjetoIntegradorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjetoIntegradorTests.debug.xcconfig"; path = "Target Support Files/Pods-ProjetoIntegradorTests/Pods-ProjetoIntegradorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BC1839B83CDFF177A8AFD7F3 /* Pods-ProjetoIntegradorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjetoIntegradorTests.release.xcconfig"; path = "Target Support Files/Pods-ProjetoIntegradorTests/Pods-ProjetoIntegradorTests.release.xcconfig"; sourceTree = "<group>"; };
-		EE08BC4A28876B8C007ED060 /* UsuarioEntities+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UsuarioEntities+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EE1020A02852A94900D39141 /* NovoUsuarioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovoUsuarioViewModel.swift; sourceTree = "<group>"; };
 		EE118C2D28445906005852F7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EE118C2F284459BA005852F7 /* FilmesEmDestaquesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesEmDestaquesCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -154,6 +153,7 @@
 		EE53C4BC28510B3C005DB3AC /* SpoilerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoilerViewController.swift; sourceTree = "<group>"; };
 		EE9C4B8A28973CB8008244FC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EEC71A37286F735D001116E7 /* SpoilerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoilerViewModel.swift; sourceTree = "<group>"; };
+		EEDCFB85289CAD6A008F44A2 /* UsuarioEntities+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UsuarioEntities+CoreDataProperties.swift"; path = "/Users/daniellenozakiogawa/Library/Mobile Documents/com~apple~CloudDocs/xcode/Projeto Integrador/Entities/UsuarioEntities+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		F53FC665A2528476EA2994BE /* Pods_ProjetoIntegrador_ProjetoIntegradorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjetoIntegrador_ProjetoIntegradorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB64D9292880E3FD00D7C509 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FBDBE27F28443AC100C897A4 /*  ServicoDeUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " ServicoDeUsuario.swift"; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				5EC586662887500400F03204 /* UsuarioEntities+CoreDataClass.swift */,
-				EE08BC4A28876B8C007ED060 /* UsuarioEntities+CoreDataProperties.swift */,
+				EEDCFB85289CAD6A008F44A2 /* UsuarioEntities+CoreDataProperties.swift */,
 				1F6FABDA286FD23500F7E7D1 /* FilmesParaAssistir+CoreDataClass.swift */,
 				1F6FABDB286FD23500F7E7D1 /* FilmesParaAssistir+CoreDataProperties.swift */,
 				161E92C4286B9DEB005EF165 /* FilmesEntities+CoreDataClass.swift */,
@@ -626,6 +626,7 @@
 				1699316A284E984F00AF1014 /* PesquisaViewModel.swift in Sources */,
 				16D749EB284981F200ECD9DB /* LoginViewController.swift in Sources */,
 				16753073283EB9F700D7CE3A /* ProjetoIntegrador.xcdatamodeld in Sources */,
+				EEDCFB86289CAD6A008F44A2 /* UsuarioEntities+CoreDataProperties.swift in Sources */,
 				16D749ED2849829400ECD9DB /* LoginViewModel.swift in Sources */,
 				5E2BD6DC28875A3A00558557 /* ServiceCoreData.swift in Sources */,
 				5E5B68CA28464F6D00AF6A6C /* ConfiguracoesViewController.swift in Sources */,
@@ -640,7 +641,6 @@
 				FBEAD0A5287374AD00C9029D /* UserDefaultsService.swift in Sources */,
 				1642540428442A7D006F92A4 /* Usuario.swift in Sources */,
 				EE1020A12852A94900D39141 /* NovoUsuarioViewModel.swift in Sources */,
-				EE08BC4B28876B8D007ED060 /* UsuarioEntities+CoreDataProperties.swift in Sources */,
 				1699316C284E9D9F00AF1014 /* PesquisaCollectionViewCell.swift in Sources */,
 				EE118C3228445AB2005852F7 /* HomeViewModel.swift in Sources */,
 				5ECB49D32865361E00F19206 /* ServicoDeSpoiler.swift in Sources */,

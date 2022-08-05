@@ -75,15 +75,19 @@ class ServiceCoreData {
         return emailExiste
     }
     
+    
+    //Adicionando filme na lista de favoritos do usuário
     func adicionarFilmesAosFavoritos(usuario: UsuarioEntities, filme: Filme) throws {
         let favoritos = usuario.wrappedFilmesentities
         if let filmeAAdicionar = favoritos.first(where: { favorito in
             return favorito.title == filme.title
         }){
-            usuario.addToFilmesentities(filmeAAdicionar)
+            print("filme existe na lista")
+        } else {
+            let filmeAdd = FilmesEntities(filme: filme, context: context)
+            usuario.addToFilmesentities(filmeAdd)
             saveContext()
         }
-        
     }
     
     func removerFilmesDosFavoritos(usuario: UsuarioEntities, filme: Filme) throws {
@@ -98,12 +102,26 @@ class ServiceCoreData {
     
     
     func adicionarFilmesAssistir(usuario: UsuarioEntities, filme: FilmesParaAssistir) {
-        usuario.addToFilmesParaAssistir(filme)
+        let lista = usuario.wrappedFilmesParaAssistir
+        
+        let filmeAAdicionar = lista.first { assistir in
+            return assistir.title == filme.title
+        }
+        
+        guard let filmeAAdicionar = filmeAAdicionar else { return }
+        usuario.addToFilmesParaAssistir(filmeAAdicionar)
         saveContext()
     }
     
     func removerFilmesAssistir(usuario: UsuarioEntities, filme: FilmesParaAssistir) {
-        usuario.removeFromFilmesParaAssistir(filme)
+        
+        let lista = usuario.wrappedFilmesParaAssistir
+        
+        let filmeArremover = lista.first { assistir in
+            return assistir.title == filme.title
+        }
+        guard let filmeArremover = filmeArremover else { return }
+        usuario.removeFromFilmesParaAssistir(filmeArremover)
         saveContext()
     }
     
