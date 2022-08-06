@@ -64,7 +64,6 @@
 		EE9C4B8B28973CB8008244FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C4B8A28973CB8008244FC /* Constants.swift */; };
 		EEC71A38286F735D001116E7 /* SpoilerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC71A37286F735D001116E7 /* SpoilerViewModel.swift */; };
 		FB64D92A2880E3FD00D7C509 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB64D9292880E3FD00D7C509 /* GoogleService-Info.plist */; };
-		FBDBE28028443AC100C897A4 /*  ServicoDeUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE27F28443AC100C897A4 /*  ServicoDeUsuario.swift */; };
 		FBDBE28228443D7B00C897A4 /* Fanzometro.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE28128443D7B00C897A4 /* Fanzometro.swift */; };
 		FBDBE28428443F5600C897A4 /* FanzometroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE28328443F5600C897A4 /* FanzometroViewModel.swift */; };
 		FBDBE2862844437C00C897A4 /* FanzometroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE2852844437C00C897A4 /* FanzometroCollectionViewCell.swift */; };
@@ -156,7 +155,6 @@
 		EEC71A37286F735D001116E7 /* SpoilerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoilerViewModel.swift; sourceTree = "<group>"; };
 		F53FC665A2528476EA2994BE /* Pods_ProjetoIntegrador_ProjetoIntegradorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjetoIntegrador_ProjetoIntegradorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB64D9292880E3FD00D7C509 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FBDBE27F28443AC100C897A4 /*  ServicoDeUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " ServicoDeUsuario.swift"; sourceTree = "<group>"; };
 		FBDBE28128443D7B00C897A4 /* Fanzometro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fanzometro.swift; sourceTree = "<group>"; };
 		FBDBE28328443F5600C897A4 /* FanzometroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanzometroViewModel.swift; sourceTree = "<group>"; };
 		FBDBE2852844437C00C897A4 /* FanzometroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanzometroCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -350,7 +348,6 @@
 			isa = PBXGroup;
 			children = (
 				5EABB815285011EC00250EF6 /* SessionManager.swift */,
-				FBDBE27F28443AC100C897A4 /*  ServicoDeUsuario.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -664,7 +661,6 @@
 				33F3FB31287FA1F700FC76C2 /* FireBaseService.swift in Sources */,
 				EE53C4BB2851087B005DB3AC /* FavoritoViewModel.swift in Sources */,
 				EE3823B2287DE57400206A87 /* IndicacoesCollectionViewCell.swift in Sources */,
-				FBDBE28028443AC100C897A4 /*  ServicoDeUsuario.swift in Sources */,
 				FBDBE28228443D7B00C897A4 /* Fanzometro.swift in Sources */,
 				5E8A070028593BD900F09A5D /* MovieAPI.swift in Sources */,
 				161E92CB286BA143005EF165 /* FilmeEntityService.swift in Sources */,
@@ -850,7 +846,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = HUSK72RPC6;
+				DEVELOPMENT_TEAM = N34W3XSZ62;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ProjetoIntegrador/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Permissão para acessar a camera";
@@ -879,7 +875,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = HUSK72RPC6;
+				DEVELOPMENT_TEAM = N34W3XSZ62;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ProjetoIntegrador/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Permissão para acessar a camera";
