@@ -117,15 +117,18 @@ class DetalheDoFilmeViewModel {
     
     // MARK: - Botão assistir mais tarde
     var assistirMaisTarde: [Filme] {
-        guard let listaDeAssistirMaisTarde = SessionManager.shared.returnUsuarioEntities()?.wrappedFilmesParaAssistir else { return [] }
-        var listaFilmesParaAssistir: [Filme] = []
-        do {
-            listaFilmesParaAssistir = try servicoCoreData.assistirMaisTarde(lista: listaDeAssistirMaisTarde)
-            
-        } catch {
-            print(error.localizedDescription)
-        }
-        return listaFilmesParaAssistir
+        return usuarioLogadoEntities?.listaDeFilmesAssistirDepois ?? []
+        
+        
+//        guard let listaDeAssistirMaisTarde = usuarioLogadoEntities?.wrappedFilmesParaAssistir else { return [] }
+//        var listaFilmesParaAssistir: [Filme] = []
+//        do {
+//            listaFilmesParaAssistir = try servicoCoreData.assistirMaisTarde(lista: listaDeAssistirMaisTarde)
+//
+//        } catch {
+//            print(error.localizedDescription)
+//        }
+//        return listaFilmesParaAssistir
        // return (try? filmeEntityService.assistirMaisTarde()) ?? []
     }
     
@@ -136,7 +139,7 @@ class DetalheDoFilmeViewModel {
     }
     
     func loadAssistirMaisTarde() {
-        guard let listaAssistirMaisTarde = SessionManager.shared.returnUsuarioEntities()?.wrappedFilmesParaAssistir else { return }
+        guard let listaAssistirMaisTarde = usuarioLogadoEntities?.wrappedFilmesParaAssistir else { return }
         do {
             listaParaAssistirMaisTarde = try servicoCoreData.assistirMaisTarde(lista: listaAssistirMaisTarde)
             
@@ -166,7 +169,7 @@ class DetalheDoFilmeViewModel {
             loadAssistirMaisTarde()
         } else {
             do {
-                try servicoCoreData.adicionarAssistirMaisTarde(usuario: usuario, filme: filme)
+                try? servicoCoreData.adicionarFilmesAssistir(usuario: usuario, filme: filme)
                 delegate?.snackBarAssistirMaisTarde()
                 loadAssistirMaisTarde()
             } catch {
