@@ -101,16 +101,18 @@ class ServiceCoreData {
     }
     
     
-    func adicionarFilmesAssistir(usuario: UsuarioEntities, filme: FilmesParaAssistir) {
+    func adicionarFilmesAssistir(usuario: UsuarioEntities, filme: Filme) {
         let lista = usuario.wrappedFilmesParaAssistir
         
-        let filmeAAdicionar = lista.first { assistir in
+        if let filmeAAdicional = lista.first(where: { assistir in
             return assistir.title == filme.title
+        }) {
+            print("filme existe na lista")
+        } else {
+            let filmeAdd = FilmesParaAssistir(filme: filme, context: context)
+            usuario.addToFilmesParaAssistir(filmeAdd)
+            saveContext()
         }
-        
-        guard let filmeAAdicionar = filmeAAdicionar else { return }
-        usuario.addToFilmesParaAssistir(filmeAAdicionar)
-        saveContext()
     }
     
     func removerFilmesAssistir(usuario: UsuarioEntities, filme: FilmesParaAssistir) {

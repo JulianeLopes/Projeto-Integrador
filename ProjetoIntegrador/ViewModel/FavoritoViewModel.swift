@@ -22,8 +22,16 @@ class FavoritoViewModel {
     }
     
     var filmes: [Filme] {
-        try! serviceCoreData.assistirMaisTarde()
+//        try! serviceCoreData.assistirMaisTarde()
+    
+        return usuarioLogadoEntities?.listaDeFilmesAssistirDepois ?? []
+        
     }
+    private var usuarioLogadoEntities: UsuarioEntities? {
+        return SessionManager.shared.usuarioEntities
+    }
+    
+    
     
     private var usuarioLogado: Usuario? {
         return SessionManager.shared.usuarioLogado
