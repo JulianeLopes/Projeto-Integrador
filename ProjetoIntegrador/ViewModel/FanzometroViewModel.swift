@@ -11,8 +11,6 @@ import UIKit
 class FanzometroViewModel {
     
     var servicoDeAPI = MovieAPI()
-//    let service = ServicoDeUsuario()
-    let filmeEntityService = FilmeEntityService()
     let userDefaults = UserDefaultsService()
     
     var quantidadeDeFilmes: Int?
@@ -29,14 +27,12 @@ class FanzometroViewModel {
     
     // quantidade filmes favoritos do usuario
     func numeroDeFilmesFavoritos() -> Int {
-//        return ((try? filmeEntityService.favoritos()) ?? []).count
         return usuarioLogadoEntities?.listaDeFilmesFavoritos.count ?? 0
-        
     }
     
     // recebe a foto do usuario
     func getFotoUsuario() -> UIImage? {
-        return SessionManager.shared.returnUsuarioEntities()?.wrappedFoto
+        return usuarioLogadoEntities?.wrappedFoto
     }
     
     // calcula o nivel de fanzometro
@@ -53,7 +49,6 @@ class FanzometroViewModel {
     
     // retorna a porcentagem de fã do usuario
     func getFanzometroDoUsuario(completion: @escaping (String) -> Void) {
-//        let favoritos = (try? filmeEntityService.favoritos()) ?? []
         let favoritos = usuarioLogadoEntities?.listaDeFilmesFavoritos ?? []
        fanzometroPorcentagem(listaDeFavoritos: favoritos, completion: completion)
     }
@@ -80,7 +75,6 @@ class FanzometroViewModel {
     
     // envia os dados do filme para a celula
     func getViewModel(posicao: Int) -> FilmeViewModel {
-//        let filmes = (try? filmeEntityService.favoritos()) ?? []
         let filmes = usuarioLogadoEntities?.listaDeFilmesFavoritos ?? []
         let filme = filmes[posicao]
         let cellViewModel = FilmeViewModel(filme: filme)

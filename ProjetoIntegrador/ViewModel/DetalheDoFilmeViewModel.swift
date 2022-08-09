@@ -38,7 +38,6 @@ class DetalheDoFilmeViewModel {
     var listaDeFilmesApi: [Filme] = []
     var listaDeFilmesAvaliados: [String: Int] = [:]
     var servicoUserDefault = UserDefaultsService.shared
-    private let filmeEntityService = FilmeEntityService()
     var servicoCoreData = ServiceCoreData()
     
     var filme: Filme?
@@ -86,7 +85,8 @@ class DetalheDoFilmeViewModel {
             return favorito.title == filme.title
         }
         
-        guard let usuario = SessionManager.shared.returnUsuarioEntities() else { return }
+       // guard let usuario = SessionManager.shared.returnUsuarioEntities() else { return }
+        guard let usuario = usuarioLogadoEntities else { return }
         if exists {
             try? servicoCoreData.removerFilmesDosFavoritos(usuario: usuario, filme: filme)
             delegate?.snackBarDesfavoritado()
@@ -118,18 +118,6 @@ class DetalheDoFilmeViewModel {
     // MARK: - Botão assistir mais tarde
     var assistirMaisTarde: [Filme] {
         return usuarioLogadoEntities?.listaDeFilmesAssistirDepois ?? []
-        
-        
-//        guard let listaDeAssistirMaisTarde = usuarioLogadoEntities?.wrappedFilmesParaAssistir else { return [] }
-//        var listaFilmesParaAssistir: [Filme] = []
-//        do {
-//            listaFilmesParaAssistir = try servicoCoreData.assistirMaisTarde(lista: listaDeAssistirMaisTarde)
-//
-//        } catch {
-//            print(error.localizedDescription)
-//        }
-//        return listaFilmesParaAssistir
-       // return (try? filmeEntityService.assistirMaisTarde()) ?? []
     }
     
     var isParaAssitir: Bool {
@@ -146,11 +134,6 @@ class DetalheDoFilmeViewModel {
         } catch {
             print(error.localizedDescription)
         }
-//        do {
-//            try listaParaAssistirMaisTarde = filmeEntityService.assistirMaisTarde()
-//        } catch {
-//            print(error)
-//        }
     }
     
     // função de adicionar filmes assistir mais tarde
@@ -162,7 +145,7 @@ class DetalheDoFilmeViewModel {
             return filmeAssistido.title == filme.title
         }
         
-        guard let usuario = SessionManager.shared.returnUsuarioEntities() else { return }
+        guard let usuario = usuarioLogadoEntities else { return }
         if exists {
             try? servicoCoreData.removerAssistirMaisTarde(usuario: usuario, filme: filme)
             delegate?.snackBarAssistido()

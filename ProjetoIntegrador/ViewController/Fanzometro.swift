@@ -39,8 +39,6 @@ class Fanzometro: UIViewController {
         userImageView.layer.cornerRadius = 120
         //userImageView.layer.borderWidth = 1
         favoritosCollectionView.dataSource = self
-        
-        
         configuraPorcentagem()
     
     }
@@ -48,7 +46,7 @@ class Fanzometro: UIViewController {
     // para atualizar a lista de filmes favoritos toda vez que o usuario abre a tela pelo tabbar
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        configuraTela()
         // configuração e animação progressbar
     configuraPorcentagem()
     }

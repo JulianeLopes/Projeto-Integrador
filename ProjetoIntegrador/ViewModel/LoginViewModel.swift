@@ -18,6 +18,8 @@ protocol LoginViewModelDelegate {
 }
 class LoginViewModel {
     
+    // MARK: - Propriedades publicas
+    
     var delegate: LoginViewModelDelegate?
     var usuarioEnviado: Usuario?
     var fireBaseService = FireBaseService()
@@ -25,19 +27,7 @@ class LoginViewModel {
     var usuario: User?
     var servicoCoreData = ServiceCoreData()
     let sessionManager = SessionManager.shared
-    
-    // função para conferir se o usuário existe na base
-//    func confereUsuario(usuarioDig: String?, senhaDigitada: String?) -> Bool {
-//        var isSameUsuario: Bool = false
-//        
-//        for usuario in ServicoDeUsuario.listaDeUsuario {
-//            if usuarioDig == usuario.email && senhaDigitada == usuario.senha {
-//                    usuarioEnviado = usuario
-//                    isSameUsuario = true
-//            }
-//        }
-//        return isSameUsuario
-//    }
+
     
     // se o usuário existe é direcionado para outra tela atraves do delegate
     func mudarDeTela(usuario: Bool){
@@ -49,6 +39,7 @@ class LoginViewModel {
         }
     }
     
+    // trantando login pelo google
     func loginGoogle(presenter: UIViewController) {
         fireBaseService.loginGoogle(presenter: presenter) { usuario in
             self.usuarioGoogle = usuario
@@ -61,15 +52,11 @@ class LoginViewModel {
                 self.fireBaseService.salvarUsuarioNoDataBase(user: user)
             }
             let imageURL = usuario?.profile?.imageURL(withDimension: 150)
-//            var imageData: Foundation.Data?
-//
-//            if  let imageURL = imageURL,
-//                let data = try? Foundation.Data(contentsOf: imageURL){
-//                imageData = data
-//            }
             let imageData = self.converteImagemPraData(imageUrl: imageURL)
             
-            self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: imageData)
+            //self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: imageData)
+            
+            self.servicoCoreData.saveUsuario(nome: nome, email: email, foto: nil)
             do {
                 let usuario = try self.servicoCoreData.getUsuario(email: email)?.converterParaUsuario()
                 self.sessionManager.usuarioLogado = usuario
@@ -81,6 +68,7 @@ class LoginViewModel {
         
     }
     
+    //tratando login do facebook
     func tratarLoginFacebook(result: LoginManagerLoginResult?, error: Error?){
         
         fireBaseService.tratarLoginFacebook(result: result, error: error) { userLogadoFace in
@@ -95,6 +83,7 @@ class LoginViewModel {
                 
                 self.fireBaseService.salvarUsuarioNoDataBase(user: userLogadoFace)
                 
+                // buscando o usuario no firebase
                 self.fireBaseService.fetchUser(uid: uid) { usuarioFirebase in
                     let nome = usuarioFirebase.nome
                     let email = usuarioFirebase.email
@@ -107,19 +96,20 @@ class LoginViewModel {
                         print(error.localizedDescription)
                     }
                 }
-                
             }
-            
-            
         }
-        
     }
     
+    // login pelo email e senha
     func verifyUser(email: String?, password: String?){
         fireBaseService.tratarLoginEmailSenha(email: email, senha: password) { user in
-            guard let uid = user?.uid else { return }
+            guard let uid = user?.uid else {
+                self.delegate?.apresentaAlerta()
+                return
+            }
             self.usuario = user
             
+            // buscando o usuario no firebase
             self.fireBaseService.fetchUser(uid: uid) { usuarioFirebase in
                 let nome = usuarioFirebase.nome
                 let email = usuarioFirebase.email
@@ -138,6 +128,7 @@ class LoginViewModel {
         }
     }
     
+    // convertendo fotos de URL para DATA
     func converteImagemPraData(imageUrl: URL?) -> Foundation.Data? {
         var imageData: Foundation.Data?
         

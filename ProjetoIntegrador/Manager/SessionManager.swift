@@ -12,12 +12,17 @@ class SessionManager {
     private let firebaseService = FireBaseService()
     private let servicoCoreData = ServiceCoreData()
     
+    //MARK: - propriedades publicas
+    
     static var shared = SessionManager()
+    
     var usuarioLogado: Usuario?
     
     var usuarioEntities: UsuarioEntities? {
         returnUsuarioEntities()
     }
+    
+    // MARK: - metodos publicos
     
     func fetchUsuario(completion: @escaping (Error?)->Void){
         guard let uid = Auth.auth().currentUser?.uid else { return }
@@ -33,7 +38,9 @@ class SessionManager {
         }
     }
     
-    func returnUsuarioEntities() -> UsuarioEntities? {
+    //MARK: - metodos privados
+    
+    private func returnUsuarioEntities() -> UsuarioEntities? {
         var usuario: UsuarioEntities?
         guard let email =  usuarioLogado?.email else {return nil}
         do {

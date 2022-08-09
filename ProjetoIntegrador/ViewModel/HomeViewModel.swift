@@ -15,12 +15,9 @@ protocol HomeViewModelDelegate {
 }
 
 class HomeViewModel {
-    private let servicosDeAPI = MovieAPI()
-    private let servicoDeSpoiler = ServicoDeSpoiler()
-    private let firebaseService = FireBaseService()
-    private let servicoCoreData = ServiceCoreData()
-    let sessionManager = SessionManager.shared
-    
+
+    // MARK: - Propriedades publicas
+
     var delegate: HomeViewModelDelegate?
     var filmeSelecionado: Filme?
     var spoiler: Spoiler?
@@ -29,6 +26,12 @@ class HomeViewModel {
     var filmes: [Filme] = []
     var filmesCoreData: [Filme] = []
     
+    // MARK: - Propriedades privadas
+    private let sessionManager = SessionManager.shared
+    private let servicosDeAPI = MovieAPI()
+    private let servicoDeSpoiler = ServicoDeSpoiler()
+    private let firebaseService = FireBaseService()
+    private let servicoCoreData = ServiceCoreData()
     
     // usuario logado
     private var usuarioLogado: Usuario? {
@@ -61,7 +64,7 @@ class HomeViewModel {
     }
     
     
-    
+    // pega o spoiler do filme
     func getSpoiler(filme: Filme?) -> Spoiler? {
         let spoilerExist = servicoDeSpoiler.listaDeFilmesSpoiler.first { tituloDoFilmeNoSpoiler in
                tituloDoFilmeNoSpoiler.title == filme?.title
@@ -69,6 +72,7 @@ class HomeViewModel {
         spoiler = spoilerExist
             return spoiler
     }
+    
     // pega o posição do filme selecionado na lista
     func selecionarFilme(posicao: Int) {
         filmeSelecionado = getFilme(posicao: posicao)
