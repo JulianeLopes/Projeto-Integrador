@@ -27,7 +27,7 @@ class DadosPessoaisViewController: UIViewController {
     private func configuraTela(){
         nomeLabel.text = "Olá \(viewModel.getNomeDoUsuario())"
         fotoPerfil.image = viewModel.getFotoDoUsuario()
-        fotoPerfil.layer.cornerRadius = 125
+        fotoPerfil.layer.cornerRadius = 100
         emailTextField.attributedText = NSAttributedString(string: viewModel.getEmailDoUsuario())
     }
     
@@ -71,7 +71,7 @@ extension DadosPessoaisViewController: DadosPessoaisDelegate {
     }
     
     func sucessoAoAtualizarEmail() {
-        let alerta = UIAlertController(title: "Sucesso!", message: "Atualizamos seu email!", preferredStyle: UIAlertController.Style.alert)
+        let alerta = UIAlertController(title: "Sucesso!", message: "Atualizamos seus dados!", preferredStyle: UIAlertController.Style.alert)
         let ok = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
         alerta.addAction(ok)
         self.present(alerta, animated: true, completion: nil)

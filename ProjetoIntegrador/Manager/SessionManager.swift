@@ -38,6 +38,19 @@ class SessionManager {
         }
     }
     
+    func fetchFotoUsuario() -> UIImage? {
+        var foto: UIImage?
+        if let uid = Auth.auth().currentUser?.uid {
+            firebaseService.fetchUserFoto(uid: uid) { userFirebase in
+                if let fotoData = userFirebase.foto?.dataRepresentation {
+                    let fotoUsuario = UIImage(data: fotoData)
+                    foto = fotoUsuario
+                }
+            }
+        }
+        return foto
+    }
+    
     //MARK: - metodos privados
     
     private func returnUsuarioEntities() -> UsuarioEntities? {

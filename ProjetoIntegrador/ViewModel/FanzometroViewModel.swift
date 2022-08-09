@@ -16,6 +16,7 @@ class FanzometroViewModel {
     var quantidadeDeFilmes: Int?
     var porcentagem: String = ""
     var filmes: [Filme] = []
+    var sessionManager = SessionManager()
     
     // usuario logado
     private var usuarioLogado: Usuario? {

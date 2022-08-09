@@ -704,7 +704,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="namePhonePad" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="namePhonePad" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload de foto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Nc-0N-0Wg">
                                         <rect key="frame" x="0.0" y="156" width="141.5" height="24"/>
@@ -721,14 +721,14 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoMarvel" translatesAutoresizingMaskIntoConstraints="NO" id="sFZ-BX-G8x">
-                                <rect key="frame" x="147" y="680" width="120" height="56"/>
+                                <rect key="frame" x="147" y="630" width="120" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="hbU-Ry-xf9"/>
                                     <constraint firstAttribute="width" constant="120" id="tjP-UP-Kqk"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY6-FT-yef">
-                                <rect key="frame" x="82" y="578" width="250" height="31"/>
+                                <rect key="frame" x="82" y="528" width="250" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="kbt-Ob-AOD"/>
                                 </constraints>
@@ -740,14 +740,14 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fkj-F8-LLa">
-                                <rect key="frame" x="82" y="308" width="250" height="250"/>
+                                <rect key="frame" x="107" y="308" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="Suq-jJ-D9q"/>
-                                    <constraint firstAttribute="height" constant="250" id="Xia-tX-Ebz"/>
+                                    <constraint firstAttribute="width" constant="200" id="Suq-jJ-D9q"/>
+                                    <constraint firstAttribute="height" constant="200" id="Xia-tX-Ebz"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOh-fr-IyX">
-                                <rect key="frame" x="82" y="625" width="250" height="31"/>
+                                <rect key="frame" x="82" y="575" width="250" height="31"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="ysa-fd-YiW"/>

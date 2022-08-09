@@ -60,6 +60,14 @@ class FireBaseService {
         }
     }
     
+    func fetchUserFoto(uid: String, completion: @escaping (UsuarioFirebase)->Void) {
+        usersREF.child(uid).observe(.value) { snapshot in
+            guard let dicionario = snapshot.value as? [String: AnyObject] else { return }
+            let user = UsuarioFirebase(uid: uid, dicionario: dicionario)
+            completion(user)
+        }
+    }
+    
     // salvando o usuario logado pelo facebook no database
     
     func salvarUsuarioNoDataBase(user: User){
