@@ -15,6 +15,8 @@ Aplicativo desenvolvido do zero pelo time iOS do curso de Swift da Digital House
 
 ## Vídeo:
 
+<div align="center">
+
 https://user-images.githubusercontent.com/101293197/183962095-17c7d06c-1201-4b0a-a3b8-756271b44468.mp4
 
 
