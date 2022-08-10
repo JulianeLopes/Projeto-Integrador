@@ -48,12 +48,32 @@ Tela de Detalhes | Tela de Pesquisa | Tela de Minha Lista de Filmes | Tela de Fa
 
       open Projeto-Integrador.xcworkspace
   
+<div align="start">
 
 ## Realização do projeto:
 
-O projeto foi realizado utilizando a arquitetura Model-View-ViewModel(MVVM) e o Storyboard foi o layout aplicado. Durante o desenvolvimento do app,  foi utilizada a metodologia ágil Scrum e o código foi implementado, por sua maioria, por meio de pair programming. Este conjunto de estratégias proporcionou uma melhor qualidade e otimização de tempo, além de reduzir os erros, por ter a equipe presente na realização do código. 
+O projeto foi realizado utilizando a arquitetura Model-View-ViewModel(MVVM) e o layout aplicado foi o Storyboard. Durante o desenvolvimento do app,  foi utilizada a metodologia ágil Scrum e o código foi implementado, por sua maioria, por meio de pair programming. Este conjunto de estratégias proporcionou uma melhor qualidade e otimização de tempo, além de reduzir os erros, por ter a equipe presente na realização do código. O projeto foi feito baseado nos seguintes requisitos, no qual possui todos apresentados abaixo: 
 
 
+
+- Deve possuir um design em todas as telas utilizando auto layout 
+- Aplicação do POO. 
+- Deve possuir navegação entre telas (Navigation e Modal) 
+- Tratativas de erros
+- Deve consumir uma API
+- Deve funcionar em modo offline
+- A arquitetura deve ser MVVM
+- O código precisa estar comentado
+- Testes Unitários
+- O app deve conter, pelo menos, os seguintes componentes do UIKit: (UITextField,  UIButton, UILabel, UICollectionView e UITableView).
+- O app deve possuir as seguintes features:
+    - Tela de carregamento
+    - Tela de login (Facebook e Google são obrigatórios)
+    - Tela inicial que deve conter um resumo das funcionalidades do app
+    - Tela de descrição do item
+    - Tela de listagem de características
+- Todo o trabalho deve ser feito utilizando o GitFlow
+- No final, o ReadMe deve estar atualizado com screenshots das telas do app e descrição detalhada das funcionalidades.
 
 
 ## Integrantes:
