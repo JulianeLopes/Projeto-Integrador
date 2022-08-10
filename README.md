@@ -34,7 +34,7 @@ Tela de Detalhes | Tela de Pesquisa | Tela de Minha Lista de Filmes | Tela de Fa
 
 * Clonar o seguinte repositório
 
-      git clone <https://github.com/JulianeLopes/Projeto-Integrador.git>
+      git clone https://github.com/JulianeLopes/Projeto-Integrador.git
 
 * Acesse a pasta do projeto no terminal/cmd
 
@@ -51,7 +51,7 @@ Tela de Detalhes | Tela de Pesquisa | Tela de Minha Lista de Filmes | Tela de Fa
 
 ## Realização do projeto:
 
-O projeto foi realizado utilizando a arquitetura Model-View-ViewModel(MVVM) e o Storyboard foi o layout aplicado. Durante o desenvolvimento do app,  foi utilizada a metodologia ágil Scrum e o código foi implementado, por sua maioria, por meio de pair programmin. Este conjunto de estratégias proporcionou uma melhor qualidade e otimização de tempo, além de reduzir os erros, por ter a equipe presente na realização do código. 
+O projeto foi realizado utilizando a arquitetura Model-View-ViewModel(MVVM) e o Storyboard foi o layout aplicado. Durante o desenvolvimento do app,  foi utilizada a metodologia ágil Scrum e o código foi implementado, por sua maioria, por meio de pair programming. Este conjunto de estratégias proporcionou uma melhor qualidade e otimização de tempo, além de reduzir os erros, por ter a equipe presente na realização do código. 
 
 
 
