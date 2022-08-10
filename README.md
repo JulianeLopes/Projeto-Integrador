@@ -17,6 +17,8 @@ Aplicativo desenvolvido do zero pelo time iOS do curso de Swift da Digital House
 
 https://user-images.githubusercontent.com/101293197/179420555-c5a3895a-db6d-4878-8200-86e3f08d38eb.mp4
 
+https://github.com/JulianeLopes/Projeto-Integrador/blob/main/%23Imagens/AppMarvel.mp4
+
 ## Telas:
 
 AppMarvel | Tela de Cadastro | Tela Home | Tela de Detalhes | Tela de Detalhes
