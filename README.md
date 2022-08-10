@@ -60,9 +60,3 @@ O projeto foi realizado utilizando a arquitetura Model-View-ViewModel(MVVM) e o 
 | :---: | :---: | :---: | :---: | :---: | :---: |
 
 
-* Danielle Nozaki Ogawa
-* Fernanda Montes
-* Giselle Andrade
-* Guilherme Dunzer
-* Juliane Lopes
-* Rafael Saugo
