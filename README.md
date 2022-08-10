@@ -38,7 +38,7 @@ Tela de Detalhes | Tela de Pesquisa | Tela de Minha Lista de Filmes | Tela de Fa
 
 * Acesse a pasta do projeto no terminal/cmd
 
-      cd AppMarvel
+      cd Projeto-Integrador
 
 * Execute o comando *pod install* para iniciar o projeto com as libs necessárias
 
@@ -46,7 +46,7 @@ Tela de Detalhes | Tela de Pesquisa | Tela de Minha Lista de Filmes | Tela de Fa
 
 * Abra o projeto no XCode
 
-      open AppMarvel.xcworkspace
+      open Projeto-Integrador.xcworkspace
   
 
 ## Realização do projeto:
