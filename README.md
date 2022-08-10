@@ -28,7 +28,7 @@ AppMarvel | Tela de Cadastro | Tela Home | Tela de Detalhes | Tela de Detalhes
 
 Tela de Detalhes | Tela de Pesquisa | Tela de Minha Lista de Filmes | Tela de Fanzometro| Tela de Configuração
 ---|---|---|---|---|
-<img src="https://github.com/JulianeLopes/Projeto-Integrador/blob/main/%23Imagens/detalhes3.png"> | <img src="https://github.com/JulianeLopes/Projeto-Integrador/blob/main/%23Imagens/pesquisa.png"> | <img src="https://github.com/JulianeLopes/Projeto-Integrador/blob/main/%23Imagens/minhalista.png"> | <img src="https://github.com/Giselleandrade/APP-Filmes-da-Marvel-/blob/main/%23Imagens/08.png"> | <img src="https://github.com/JulianeLopes/Projeto-Integrador/blob/main/%23Imagens/configuracao.png">
+<img src="https://github.com/JulianeLopes/Projeto-Integrador/blob/main/%23Imagens/detalhes3.png"> | <img src="https://github.com/JulianeLopes/Projeto-Integrador/blob/main/%23Imagens/pesquisa.png"> | <img src="https://github.com/JulianeLopes/Projeto-Integrador/blob/main/%23Imagens/minhalista.png"> | <img src="https://github.com/JulianeLopes/Projeto-Integrador/blob/main/%23Imagens/Fanzometro.jpeg"> | <img src="https://github.com/JulianeLopes/Projeto-Integrador/blob/main/%23Imagens/configuracao.png">
 
 ## Para abrir o projeto:
 
