@@ -21,11 +21,11 @@ https://user-images.githubusercontent.com/101293197/179420555-c5a3895a-db6d-4878
 
 AppMarvel | Tela de Cadastro | Tela Home | Tela de Detalhes | Tela de Detalhes
 ---|---|---|---|---|
-<img src="https://github.com/Giselleandrade/APP-Filmes-da-Marvel-/blob/main/%23Imagens/01.png"> | <img src="https://github.com/Giselleandrade/APP-Filmes-da-Marvel-/blob/main/%23Imagens/11.png"> | <img src="https://github.com/Giselleandrade/APP-Filmes-da-Marvel-/blob/main/%23Imagens/02.png"> | <img src="https://github.com/Giselleandrade/APP-Filmes-da-Marvel-/blob/main/%23Imagens/03.png"> | <img src="https://github.com/Giselleandrade/APP-Filmes-da-Marvel-/blob/main/%23Imagens/04.png">
+<img src="https://github.com/Giselleandrade/APP-Filmes-da-Marvel-/blob/main/%23Imagens/01.png"> | <img src="https://github.com/Giselleandrade/APP-Filmes-da-Marvel-/blob/main/%23Imagens/11.png"> | <img src="https://github.com/JulianeLopes/Projeto-Integrador/blob/main/%23Imagens/home.png"> | <img src="https://github.com/JulianeLopes/Projeto-Integrador/blob/main/%23Imagens/detalhes.png"> | <img src="https://github.com/JulianeLopes/Projeto-Integrador/blob/main/%23Imagens/detalhes2.png">
 
-Tela de Pesquisa | Tela de Pesquisa | Tela de Minha Lista de Filmes | Tela de Fanzometro| Tela de Configuração
+Tela de Detalhes | Tela de Pesquisa | Tela de Minha Lista de Filmes | Tela de Fanzometro| Tela de Configuração
 ---|---|---|---|---|
-<img src="https://github.com/Giselleandrade/APP-Filmes-da-Marvel-/blob/main/%23Imagens/05.png"> | <img src="https://github.com/Giselleandrade/APP-Filmes-da-Marvel-/blob/main/%23Imagens/06.png"> | <img src="https://github.com/Giselleandrade/APP-Filmes-da-Marvel-/blob/main/%23Imagens/07.png"> | <img src="https://github.com/Giselleandrade/APP-Filmes-da-Marvel-/blob/main/%23Imagens/08.png"> | <img src="https://github.com/Giselleandrade/APP-Filmes-da-Marvel-/blob/main/%23Imagens/09.png">
+<img src="https://github.com/JulianeLopes/Projeto-Integrador/blob/main/%23Imagens/detalhes3.png"> | <img src="https://github.com/JulianeLopes/Projeto-Integrador/blob/main/%23Imagens/pesquisa.png"> | <img src="https://github.com/JulianeLopes/Projeto-Integrador/blob/main/%23Imagens/minhalista.png"> | <img src="https://github.com/Giselleandrade/APP-Filmes-da-Marvel-/blob/main/%23Imagens/08.png"> | <img src="https://github.com/JulianeLopes/Projeto-Integrador/blob/main/%23Imagens/configuracao.png">
 
 ## Para abrir o projeto:
 
@@ -54,6 +54,9 @@ O projeto foi realizado utilizando a arquitetura Model-View-ViewModel(MVVM) e o 
 
 
 ## Integrantes:
+
+| [<img src="" width=115><br><sub>Danielle Nozaki Ogawa</sub>](https://github.com/danielleogawa) | <img src="" width=115><br><sub>Fernanda Montes</sub>](https://github.com/NandaPerovano) | [  [<img src="" width=115><br><sub>Giselle Andrade</sub>](https:https://github.com/Giselleandrade) |<img src="" width=115><br><sub> Guilherme Dunzer</sub>](https:https://github.com/rafaelsaugo) |<img src="" width=115><br><sub> Juliane Lopes</sub>](https://github.com/JulianeLopes) |<img src="" width=115><br><sub> Rafael Saugo</sub>](https:https://github.com/rafaelsaugo) |
+| :---: | :---: | :---: |
 
 * Danielle Nozaki Ogawa
 * Fernanda Montes
