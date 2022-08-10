@@ -2,7 +2,7 @@
 # App Marvel 
 ## Projeto-Integrador
 
-#### Principal funcionalidade do App: 
+### Principal funcionalidade do App: 
 
 Aplicativo desenvolvido do zero pelo time iOS do curso de Swift da Digital House. A principal funcionalidade do app é, além de trazer informações básicas sobre os filmes da Marvel, trazer também informações inovadoras aos fãs, como:
 
