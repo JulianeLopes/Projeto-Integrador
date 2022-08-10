@@ -20,6 +20,7 @@ class PesquisaViewController: UIViewController {
         viewModel.delegate = self
         collectionView.dataSource = self
         collectionView.delegate = self
+        pesquisaTextField.delegate = self
         
         viewModel.getFilmesDaAPI {
             DispatchQueue.main.async {
@@ -73,5 +74,29 @@ extension PesquisaViewController: PesquisaViewModelDelegate {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
+    }
+}
+
+
+extension PesquisaViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+//        hideKeyBoardWhenTappedAround()
+        textField.returnKeyType = .done
+        return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+}
+
+extension UIViewController {
+    func hideKeyBoardWhenTappedAround() {
+        let tapGesture = UIGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        view.addGestureRecognizer(tapGesture)
+    }
+    @objc func hideKeyboard(){
+        view.endEditing(true)
     }
 }
