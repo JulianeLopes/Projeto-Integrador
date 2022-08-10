@@ -53,7 +53,7 @@ class PesquisaViewModel {
     // pega a posição do filme na lista
     func getFilme(posicao: Int) -> Filme? {
         let filmeSelecionado = listaDeFilme[posicao]
-        spoiler = servicoDeSpoiler.listaDeFilmesSpoiler[posicao]
+        spoiler = getSpoiler(filme: filmeSelecionado)
         return filmeSelecionado
     }
     

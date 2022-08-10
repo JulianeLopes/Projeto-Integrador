@@ -14,9 +14,7 @@ import UIKit
 
 protocol NovoUsuarioViewModelDelegate {
     func alertaDadosDeCadastroIncorretos()
-    
     func usuarioCadastrado()
-    
 }
 
 class NovoUsuarioViewModel {
@@ -26,20 +24,22 @@ class NovoUsuarioViewModel {
     
     let sessionManager = SessionManager.shared
     
-    
+    // registrando o usuario no firebase e coredata
     func registrarUsuario(nome: String?, senha: String?, email: String?, fotoUsuario: UIImage?){
         guard let email = email, let senha = senha, let nome = nome else { return }
         guard let profileImageData = fotoUsuario?.jpegData(compressionQuality: 0.3) else {
             print("sem foto")
             return }
-        // refatorar para utilizar em outros lugares
+        
         let fileName = NSUUID().uuidString
         let storageReference = storageProfileImages.child(fileName)
         
+        // salvando usuário do database do firebase
         storageReference.putData(profileImageData, metadata: nil) { meta, error in
             if let error = error {
                 print(error.localizedDescription)
             }
+            
             storageReference.downloadURL { url, error in
                 guard let profileImageUrl = url?.absoluteString else { return }
                 Auth.auth().createUser(withEmail: email, password: senha) { result, error in
@@ -58,6 +58,7 @@ class NovoUsuarioViewModel {
                         }
                     }
                     
+                    // salvando usuario no coredata
                     self.serviceCoreData.saveUsuario(nome: nome, email: email, foto: profileImageData)
                     do {
                         let usuarioLogado = try self.serviceCoreData.getUsuario(email: email)?.converterParaUsuario()

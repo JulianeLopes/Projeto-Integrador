@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		161E92C6286B9DEB005EF165 /* FilmesEntities+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161E92C4286B9DEB005EF165 /* FilmesEntities+CoreDataClass.swift */; };
 		161E92C7286B9DEB005EF165 /* FilmesEntities+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161E92C5286B9DEB005EF165 /* FilmesEntities+CoreDataProperties.swift */; };
-		161E92CB286BA143005EF165 /* FilmeEntityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 161E92CA286BA143005EF165 /* FilmeEntityService.swift */; };
 		1629ED2B28417271009F9D2C /* Main Tela Cadastro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1629ED2A28417271009F9D2C /* Main Tela Cadastro.storyboard */; };
 		1642540428442A7D006F92A4 /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1642540328442A7D006F92A4 /* Usuario.swift */; };
 		16753069283EB9F700D7CE3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16753068283EB9F700D7CE3A /* AppDelegate.swift */; };
@@ -52,6 +51,8 @@
 		EE118C3228445AB2005852F7 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118C3128445AB2005852F7 /* HomeViewModel.swift */; };
 		EE118C3628446054005852F7 /* FilmesDetalhesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118C3528446054005852F7 /* FilmesDetalhesViewController.swift */; };
 		EE118C382844E6D6005852F7 /* PesquisaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE118C372844E6D6005852F7 /* PesquisaViewController.swift */; };
+		EE11B5E7289DF1C000B676EC /* UsuarioEntities+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11B5E5289DF1C000B676EC /* UsuarioEntities+CoreDataProperties.swift */; };
+		EE11B5E8289DF1C000B676EC /* UsuarioEntities+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE11B5E6289DF1C000B676EC /* UsuarioEntities+CoreDataClass.swift */; };
 		EE2D484B284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2D484A284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift */; };
 		EE3823B2287DE57400206A87 /* IndicacoesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3823B1287DE57400206A87 /* IndicacoesCollectionViewCell.swift */; };
 		EE4ABEBE285BE8B1002A5AC7 /* DadosPessoaisViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE4ABEBD285BE8B1002A5AC7 /* DadosPessoaisViewModel.swift */; };
@@ -64,7 +65,6 @@
 		EE9C4B8B28973CB8008244FC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9C4B8A28973CB8008244FC /* Constants.swift */; };
 		EEC71A38286F735D001116E7 /* SpoilerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC71A37286F735D001116E7 /* SpoilerViewModel.swift */; };
 		FB64D92A2880E3FD00D7C509 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB64D9292880E3FD00D7C509 /* GoogleService-Info.plist */; };
-		FBDBE28028443AC100C897A4 /*  ServicoDeUsuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE27F28443AC100C897A4 /*  ServicoDeUsuario.swift */; };
 		FBDBE28228443D7B00C897A4 /* Fanzometro.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE28128443D7B00C897A4 /* Fanzometro.swift */; };
 		FBDBE28428443F5600C897A4 /* FanzometroViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE28328443F5600C897A4 /* FanzometroViewModel.swift */; };
 		FBDBE2862844437C00C897A4 /* FanzometroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBDBE2852844437C00C897A4 /* FanzometroCollectionViewCell.swift */; };
@@ -92,7 +92,6 @@
 		0C225FA15985C56A3A200669 /* Pods-ProjetoIntegrador-ProjetoIntegradorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjetoIntegrador-ProjetoIntegradorUITests.release.xcconfig"; path = "Target Support Files/Pods-ProjetoIntegrador-ProjetoIntegradorUITests/Pods-ProjetoIntegrador-ProjetoIntegradorUITests.release.xcconfig"; sourceTree = "<group>"; };
 		161E92C4286B9DEB005EF165 /* FilmesEntities+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilmesEntities+CoreDataClass.swift"; sourceTree = "<group>"; };
 		161E92C5286B9DEB005EF165 /* FilmesEntities+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FilmesEntities+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		161E92CA286BA143005EF165 /* FilmeEntityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmeEntityService.swift; sourceTree = "<group>"; };
 		1629ED2A28417271009F9D2C /* Main Tela Cadastro.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Main Tela Cadastro.storyboard"; sourceTree = "<group>"; };
 		1642540328442A7D006F92A4 /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		16753065283EB9F700D7CE3A /* ProjetoIntegrador.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjetoIntegrador.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +142,8 @@
 		EE118C3128445AB2005852F7 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		EE118C3528446054005852F7 /* FilmesDetalhesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmesDetalhesViewController.swift; sourceTree = "<group>"; };
 		EE118C372844E6D6005852F7 /* PesquisaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PesquisaViewController.swift; sourceTree = "<group>"; };
+		EE11B5E5289DF1C000B676EC /* UsuarioEntities+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UsuarioEntities+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		EE11B5E6289DF1C000B676EC /* UsuarioEntities+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UsuarioEntities+CoreDataClass.swift"; sourceTree = "<group>"; };
 		EE2D484A284FD6F900C6CFF2 /* ConfiguracaoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracaoViewModel.swift; sourceTree = "<group>"; };
 		EE3823B1287DE57400206A87 /* IndicacoesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicacoesCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE4ABEBD285BE8B1002A5AC7 /* DadosPessoaisViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DadosPessoaisViewModel.swift; sourceTree = "<group>"; };
@@ -156,7 +157,6 @@
 		EEC71A37286F735D001116E7 /* SpoilerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpoilerViewModel.swift; sourceTree = "<group>"; };
 		F53FC665A2528476EA2994BE /* Pods_ProjetoIntegrador_ProjetoIntegradorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProjetoIntegrador_ProjetoIntegradorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB64D9292880E3FD00D7C509 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		FBDBE27F28443AC100C897A4 /*  ServicoDeUsuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " ServicoDeUsuario.swift"; sourceTree = "<group>"; };
 		FBDBE28128443D7B00C897A4 /* Fanzometro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fanzometro.swift; sourceTree = "<group>"; };
 		FBDBE28328443F5600C897A4 /* FanzometroViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanzometroViewModel.swift; sourceTree = "<group>"; };
 		FBDBE2852844437C00C897A4 /* FanzometroCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FanzometroCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -194,8 +194,13 @@
 		161E92C8286B9E95005EF165 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				EE74E542289DDF3200523050 /* UsuarioEntities+CoreDataClass.swift */,
 				EE74E543289DDF3300523050 /* UsuarioEntities+CoreDataProperties.swift */,
+=======
+				EE11B5E6289DF1C000B676EC /* UsuarioEntities+CoreDataClass.swift */,
+				EE11B5E5289DF1C000B676EC /* UsuarioEntities+CoreDataProperties.swift */,
+>>>>>>> main
 				1F6FABDA286FD23500F7E7D1 /* FilmesParaAssistir+CoreDataClass.swift */,
 				1F6FABDB286FD23500F7E7D1 /* FilmesParaAssistir+CoreDataProperties.swift */,
 				161E92C4286B9DEB005EF165 /* FilmesEntities+CoreDataClass.swift */,
@@ -207,7 +212,6 @@
 		161E92C9286BA12A005EF165 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				161E92CA286BA143005EF165 /* FilmeEntityService.swift */,
 				FBEAD0A4287374AD00C9029D /* UserDefaultsService.swift */,
 				33F3FB30287FA1F700FC76C2 /* FireBaseService.swift */,
 				5E2BD6DB28875A3A00558557 /* ServiceCoreData.swift */,
@@ -350,7 +354,6 @@
 			isa = PBXGroup;
 			children = (
 				5EABB815285011EC00250EF6 /* SessionManager.swift */,
-				FBDBE27F28443AC100C897A4 /*  ServicoDeUsuario.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -626,6 +629,7 @@
 				1699316A284E984F00AF1014 /* PesquisaViewModel.swift in Sources */,
 				16D749EB284981F200ECD9DB /* LoginViewController.swift in Sources */,
 				16753073283EB9F700D7CE3A /* ProjetoIntegrador.xcdatamodeld in Sources */,
+				EE11B5E7289DF1C000B676EC /* UsuarioEntities+CoreDataProperties.swift in Sources */,
 				16D749ED2849829400ECD9DB /* LoginViewModel.swift in Sources */,
 				EE74E544289DDF3300523050 /* UsuarioEntities+CoreDataClass.swift in Sources */,
 				5E2BD6DC28875A3A00558557 /* ServiceCoreData.swift in Sources */,
@@ -658,16 +662,15 @@
 				EE53C4B9284FEC20005DB3AC /* NovoUsuarioViewController.swift in Sources */,
 				161E92C6286B9DEB005EF165 /* FilmesEntities+CoreDataClass.swift in Sources */,
 				331CF45A284EDA3400A32933 /* ConfiguracaoTableViewCell.swift in Sources */,
+				EE11B5E8289DF1C000B676EC /* UsuarioEntities+CoreDataClass.swift in Sources */,
 				5ECB49D12865349800F19206 /* Spoiler.swift in Sources */,
 				1675306B283EB9F700D7CE3A /* SceneDelegate.swift in Sources */,
 				EE503F5228974BB6001508BD /* UsuarioFirebase.swift in Sources */,
 				33F3FB31287FA1F700FC76C2 /* FireBaseService.swift in Sources */,
 				EE53C4BB2851087B005DB3AC /* FavoritoViewModel.swift in Sources */,
 				EE3823B2287DE57400206A87 /* IndicacoesCollectionViewCell.swift in Sources */,
-				FBDBE28028443AC100C897A4 /*  ServicoDeUsuario.swift in Sources */,
 				FBDBE28228443D7B00C897A4 /* Fanzometro.swift in Sources */,
 				5E8A070028593BD900F09A5D /* MovieAPI.swift in Sources */,
-				161E92CB286BA143005EF165 /* FilmeEntityService.swift in Sources */,
 				330B982F2844554500313B85 /* FavoritoViewController.swift in Sources */,
 				336A38D12856987D00814CA3 /* DetalheDoFilmeViewModel.swift in Sources */,
 				FBDBE2862844437C00C897A4 /* FanzometroCollectionViewCell.swift in Sources */,
@@ -850,7 +853,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = HUSK72RPC6;
+				DEVELOPMENT_TEAM = N34W3XSZ62;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ProjetoIntegrador/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Permissão para acessar a camera";
@@ -879,7 +882,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = HUSK72RPC6;
+				DEVELOPMENT_TEAM = N34W3XSZ62;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ProjetoIntegrador/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Permissão para acessar a camera";

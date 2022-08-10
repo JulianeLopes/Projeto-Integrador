@@ -26,10 +26,10 @@ class HomeViewController: UIViewController {
         configuraTela()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-       // viewModel.fetchUsuario()
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//       // viewModel.fetchUsuario()
+//    }
     
 //visualizar os detalhes do filme selecionado
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

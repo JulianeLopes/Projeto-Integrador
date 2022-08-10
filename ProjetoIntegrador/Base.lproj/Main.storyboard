@@ -671,8 +671,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Olá, Gisele" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQi-gj-MBT">
-                                <rect key="frame" x="20" y="64" width="103" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Olá," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQi-gj-MBT">
+                                <rect key="frame" x="20" y="64" width="38" height="24"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -689,6 +689,7 @@
                                     <textField opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HUk-0S-rbx">
                                         <rect key="frame" x="0.0" y="34" width="382" height="34"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
@@ -701,8 +702,9 @@
                                     <textField opaque="NO" alpha="0.20000000298023224" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WxI-AW-FSp">
                                         <rect key="frame" x="0.0" y="112" width="382" height="34"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="namePhonePad" enablesReturnKeyAutomatically="YES"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="namePhonePad" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload de foto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Nc-0N-0Wg">
                                         <rect key="frame" x="0.0" y="156" width="141.5" height="24"/>
@@ -719,14 +721,17 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoMarvel" translatesAutoresizingMaskIntoConstraints="NO" id="sFZ-BX-G8x">
-                                <rect key="frame" x="147" y="707" width="120" height="56"/>
+                                <rect key="frame" x="147" y="630" width="120" height="56"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="aYQ-8q-sGO"/>
-                                    <constraint firstAttribute="width" constant="120" id="hIj-wc-git"/>
+                                    <constraint firstAttribute="height" constant="56" id="hbU-Ry-xf9"/>
+                                    <constraint firstAttribute="width" constant="120" id="tjP-UP-Kqk"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eY6-FT-yef">
-                                <rect key="frame" x="147" y="578" width="120" height="31"/>
+                                <rect key="frame" x="82" y="528" width="250" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="kbt-Ob-AOD"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Upload de foto"/>
@@ -735,27 +740,44 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fkj-F8-LLa">
-                                <rect key="frame" x="82" y="308" width="250" height="250"/>
+                                <rect key="frame" x="107" y="308" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="Suq-jJ-D9q"/>
-                                    <constraint firstAttribute="height" constant="250" id="Xia-tX-Ebz"/>
+                                    <constraint firstAttribute="width" constant="200" id="Suq-jJ-D9q"/>
+                                    <constraint firstAttribute="height" constant="200" id="Xia-tX-Ebz"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qOh-fr-IyX">
+                                <rect key="frame" x="82" y="575" width="250" height="31"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="ysa-fd-YiW"/>
+                                </constraints>
+                                <color key="tintColor" name="Vermelho Marvel"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Salvar dados"/>
+                                <connections>
+                                    <action selector="salvarDadosButton:" destination="IUN-CD-b0q" eventType="touchUpInside" id="edu-RR-cio"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="J56-VI-FFl"/>
                         <color key="backgroundColor" name="Vermelho Marvel"/>
                         <constraints>
+                            <constraint firstItem="qOh-fr-IyX" firstAttribute="centerX" secondItem="QdQ-5r-6oU" secondAttribute="centerX" id="11U-fr-i82"/>
+                            <constraint firstItem="sFZ-BX-G8x" firstAttribute="top" secondItem="qOh-fr-IyX" secondAttribute="bottom" constant="24" id="1XF-sf-b5I"/>
+                            <constraint firstItem="sFZ-BX-G8x" firstAttribute="centerX" secondItem="QdQ-5r-6oU" secondAttribute="centerX" id="1wP-En-gs1"/>
                             <constraint firstItem="gQi-gj-MBT" firstAttribute="top" secondItem="J56-VI-FFl" secondAttribute="top" constant="20" id="4kz-1t-YUr"/>
                             <constraint firstItem="fkj-F8-LLa" firstAttribute="centerX" secondItem="QdQ-5r-6oU" secondAttribute="centerX" id="8gF-J2-frb"/>
                             <constraint firstItem="J56-VI-FFl" firstAttribute="trailing" secondItem="Ddj-qV-b83" secondAttribute="trailing" constant="16" id="Akr-Xk-QjA"/>
+                            <constraint firstItem="qOh-fr-IyX" firstAttribute="top" secondItem="eY6-FT-yef" secondAttribute="bottom" constant="16" id="DtN-6y-qZf"/>
                             <constraint firstItem="eY6-FT-yef" firstAttribute="centerX" secondItem="QdQ-5r-6oU" secondAttribute="centerX" id="Igt-rk-8mq"/>
+                            <constraint firstItem="sFZ-BX-G8x" firstAttribute="centerX" secondItem="QdQ-5r-6oU" secondAttribute="centerX" id="JsN-Le-2nx"/>
                             <constraint firstItem="fkj-F8-LLa" firstAttribute="top" secondItem="Ddj-qV-b83" secondAttribute="bottom" constant="20" id="Kmk-ds-XLC"/>
                             <constraint firstItem="Ddj-qV-b83" firstAttribute="top" secondItem="gQi-gj-MBT" secondAttribute="bottom" constant="20" id="NKg-Pf-5C7"/>
+                            <constraint firstItem="sFZ-BX-G8x" firstAttribute="top" secondItem="qOh-fr-IyX" secondAttribute="bottom" constant="24" id="Ndi-QM-suS"/>
                             <constraint firstItem="eY6-FT-yef" firstAttribute="top" secondItem="fkj-F8-LLa" secondAttribute="bottom" constant="20" id="Xkc-WY-XeX"/>
                             <constraint firstItem="gQi-gj-MBT" firstAttribute="leading" secondItem="J56-VI-FFl" secondAttribute="leading" constant="20" id="a3b-4X-W1l"/>
                             <constraint firstItem="Ddj-qV-b83" firstAttribute="leading" secondItem="J56-VI-FFl" secondAttribute="leading" constant="16" id="aCt-qu-sYL"/>
-                            <constraint firstItem="sFZ-BX-G8x" firstAttribute="centerX" secondItem="QdQ-5r-6oU" secondAttribute="centerX" id="bqv-Dk-h01"/>
-                            <constraint firstItem="J56-VI-FFl" firstAttribute="bottom" secondItem="sFZ-BX-G8x" secondAttribute="bottom" constant="50" id="r0U-aN-MFH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Dados pessoais" id="Gf1-i6-9OJ"/>
@@ -1294,7 +1316,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kEu-Pf-PAy"/>
+        <segue reference="6JO-gK-PZS"/>
         <segue reference="PFt-4h-bo4"/>
     </inferredMetricsTieBreakers>
     <resources>

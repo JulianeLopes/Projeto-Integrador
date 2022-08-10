@@ -53,6 +53,14 @@ class FireBaseService {
     
     // encontrando o usuario no database
     func fetchUser(uid: String, completion: @escaping (UsuarioFirebase)->Void) {
+        usersREF.child(uid).observeSingleEvent(of: .value) { snapshot in
+            guard let dicionario = snapshot.value as? [String: AnyObject] else { return }
+            let user = UsuarioFirebase(uid: uid, dicionario: dicionario)
+            completion(user)
+        }
+    }
+    
+    func fetchUserFoto(uid: String, completion: @escaping (UsuarioFirebase)->Void) {
         usersREF.child(uid).observe(.value) { snapshot in
             guard let dicionario = snapshot.value as? [String: AnyObject] else { return }
             let user = UsuarioFirebase(uid: uid, dicionario: dicionario)
@@ -85,10 +93,47 @@ class FireBaseService {
                 print(error.localizedDescription)
             }
         }
-        
-        
     }
     
+    // atualizando dados no database
+    func atualizarDadosDoUsuarioNoDatabase(user: User, nome: String, foto: UIImage?, email: String?, completion: @escaping ()-> Void){
+        guard let profileImageData = foto?.jpegData(compressionQuality: 0.3) else { return }
+        
+        
+        let fileName = NSUUID().uuidString
+        let storageReference = storageProfileImages.child(fileName)
+        
+        storageReference.putData(profileImageData, metadata: nil) { meta, error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            
+            storageReference.downloadURL { url, error in
+                guard let email = email else {
+                    
+                    return
+                }
+
+                var valores: [String: String] = [
+                    "email": email
+                ]
+                
+                if let urlString = url?.absoluteString {
+                    valores["foto"] = urlString
+                }
+                
+                usersREF.child(user.uid).updateChildValues(valores) { error, databaseReference in
+                    if let error = error {
+                        print(error)
+                    }
+                    completion()
+                }
+            }
+        }
+    }
+    
+    
+
     
     // MARK: Login com o facebook
     func tratarLoginFacebook(result: LoginManagerLoginResult?, error: Error?, completion: @escaping (User) -> Void) {
@@ -156,6 +201,18 @@ class FireBaseService {
         }
     }
     
+    
+    func redefinirSenha(senha: String, completion: @escaping (Error?) -> Void){
+        Auth.auth().currentUser?.updatePassword(to: senha, completion: { error in
+            completion(error)
+        })
+    }
+    
+    func redefinirEmail(email: String, completion: @escaping (Error?) -> Void){
+        Auth.auth().currentUser?.updateEmail(to: email, completion: { error in
+            completion(error)
+        })
+    }
     
 }
 

@@ -16,6 +16,7 @@ class MovieAPI {
     let session = URLSession.shared
     let decoder = JSONDecoder()
     
+    // carregando lista de filmes da API
     func loadFilmes(completion: @escaping (([Filme])-> Void)){
         guard let url = URL(string: "https://mcuapi.herokuapp.com/api/v1/movies?page=1&limit=1000&columns=title%2Crelease_date%2Cphase%2Cpost_credit_scenes%2Ccover_url%2Csaga%2Cdirected_by%2Coverview&order=chronology%2CDESC") else {
             completion([])
@@ -45,6 +46,7 @@ class MovieAPI {
         task.resume()
     }
 
+    // convertendo imagem do poster do filme para UIImage
     func getPosterFilmeDestaqueDaApi(url: String?, completion: @escaping (UIImage?) -> Void) {
         guard let poster = url else {
             completion(UIImage(named: "default_poster"))
